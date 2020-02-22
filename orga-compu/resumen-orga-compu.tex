@@ -1,0 +1,66 @@
+\documentclass{article}
+
+\begin{document}
+
+Jerarquia de Memoria
+--------------------
+
+La Jerarquia de Memoria, toma las ventajas del principio de localidad y el costo de performance de las memorias.
+El principio de localidad dice que los programas no acceden al todo el codigo o datos uniformemente.
+
+Tipico nivel de herarquia:
+
+    CPI   |   Cache   |  Memoria  | I/O device
+
+
+Como la memorias rapidas son caras, la Jerarquia de Memoria esta organizada en distitos niveles.
+
+El objetivo es proveer un sistema de memoria con costos tan bajos como el nivel de memoria mas barato y
+velocidad casi tan tapidos como el nivel mas veloz.
+
+Review Caches
+-------------
+
+Cache: Es el primer nivel de la Jerarquia. 
+    - Se utiliza cuando sea necesario un buffer para reusar items que ocurren comunmente.
+
+Cache Hit: Cuando la CPU requiere un dato y lo cuentra como item en la cache.
+Cache Miss: Cuando la CPU requiere un dato y NO lo cuentra como item en la cache.
+    - El tiempo requerido depende de la latencia y el ancho de banda de la memoria.
+    - Es manejado por el hardware.
+
+Bloque: Una coleccion de datos con tamaño fijo que contiene la palabra(dato) requerida, es recuperada
+de memoria y situada en la cache.
+
+Localidad temporal: Nos dice que podemos probablemente vamos a necesitar el mismo datos en un futuro cercano.
+    Entonces es util dejarlo en la cache para utilizarlo rapidamente.
+
+Localidad espacial: Nos dice que hay altas posibilidades de utilizar pronto otro dato del mismo bloque.
+
+Paginas: Espacios de memoria separados en bloques de tamaño fijo. 
+    - Una pagina puede recidir tanto en memoria como en disco.
+    - Cuando el CPU hace referencia a un item dentro de una pagina que no esta presente (not present)
+      en la cache, or memoria principal, se produce un PAGE FAULT, y la pagina entera es movida
+      del disco a memoria principal.
+      Como los page fault toman mucho tiempo, estos se manejan por software y la CPU no se detiene(STALLED)
+      La cache y la memoria principal tienen la misma relacion en memoria y en disco.
+
+
+Perfomance de Cache:
+-------------------
+    Para evaluar la perfomance de la cache expandiremos el uso de la ecuación de CPU Excecution Time.
+
+    Memory Stall Cycles: Numero de ciclos que necesita esperar la CPU para acceder a la memoria.
+
+    CPU exe = (CPU clock cycles + Memory Stall cycles ) * Clock cycle time.
+    
+    Memory Stall cycles depende de la cantidad de misses y el costo por miss.
+
+    \begin{equation}
+        Memory Stall cycles = IC * Misses/Instruction * Miss Penalty
+    \end{equation}
+
+        Donde IC es Instruction Count. 
+
+
+\end{document}
