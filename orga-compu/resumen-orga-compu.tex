@@ -398,12 +398,29 @@ Ante un cache miss en L2, la dirección fisica es utilizada para obtener el bloq
 
 \subsection{Modelo 3C}
 Es un modelo que permite buscar las fuentes de fallos en una jerarquia de memoria  y ver como los cambios en la jerarquia repercuten en la tasa de fallos.
-
+Este modelo clasifica los cache misses en tres tipos:
 \begin{itemize} 
-    \item \textit{Fallos inevitables (Compulsory misses)} - Estos son los fallos de cache causados por el primer acceso a un bloque que nunca ha estado en la cache. Tambien se llaman fallos de arranca en frio (cold start misses)
-    \item \textit{Fallos de capacidad (Capacity misses)} - Estos son fallos cuando la cache no puede alocar todos los bloques necesarios para la ejecución de un programa. Los fallos de capacidad ocurre porque los bloques reemplazados son accedidos mas tarde. 
-    \item \textit{Fallos de conflicto (Conflict misses)} - Estos occuren en cache asociativas o de mapeo directo, cuando multiples bloques compiten por una misma ubicación. Los fallos de conflictos son eliminados por una cache totalmente asociativa del mismo tamaño. Tambien se llaman fallos por colisión.
+    \item \textit{Fallos inevitables (Compulsory misses)} - Estos son los fallos de cache causados por el primer acceso a un bloque que nunca ha estado en la cache. Tambien se llaman fallos de arranca en frio (cold start misses). Es el miss rate de una cache LRU de tamaño infinito.
+    \item \textit{Fallos de capacidad (Capacity misses)} - Estos son fallos cuando la cache no puede alocar todos los bloques necesarios para la ejecución de un programa. Los fallos de capacidad ocurre porque los bloques reemplazados son accedidos mas tarde. Es el miss rate de una cache LRU full associative menos el miss rate de una cache LRU full associative de tamaño infinito.
+    \item \textit{Fallos de conflicto (Conflict misses)} - Estos occuren en cache asociativas o de mapeo directo, cuando multiples bloques compiten por una misma ubicación. Los fallos de conflictos son eliminados por una cache totalmente asociativa del mismo tamaño. Tambien se llaman fallos por colisión. Es el miss rate de la cache bajo estudio \textit{menos} el miss rate de una cache LRU full associative del mismo tamaño. 
 \end{itemize}
+
+\newpage
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/Conjuntos3C.png}
+\end{figure}
+
+Donde \textit{U} es el conjunto de todas las referencias a memoria hechas por el programa, \textit{B} es el conjunto de referencias a memoria que dieron miss en la cache bajo analisis, 
+\textit{A} es el conjunto de referencias que dieron miss en una cache full associative del mismo tamaño que la cache bajo analisis y usando una politica de reemplazo LRU y C es el conjunto que corresponde a las referencias a memoria en una cache de tamaño infinito.
+
+\begin{align*}\label{eu_eqn} 
+    Compulsory &= \#C \\
+    Capacity &= \#A - \#C \\
+    Conflict &= \#B - \#A
+\end{align*} 
+
+Donde \#C, \#A y \#B es el numero de elementos en los conjuntos C, A y B respectivamente. 
+Es sabido que en algunos casos es posible obtener valores negativos de miss rate de conflicto. Estos casos aparecen cuando una cache set associative tiene un miss rate mas chico que una cache full associative (\#A > \#B). 
 
 
 \subsection{Arquitectura multihilo}
