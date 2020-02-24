@@ -460,6 +460,76 @@ Si la TLB machea con un hit, la \textit{physical page number} es enviado a la ca
 Si el resultado de chequear el tag en cache L1 es un miss, la dirección fisica es usado en la cache L2. La parte el medio de la dirección fisica se utiliza como indice y la parte superior es comparado con tag de cache L2 seleccionado con el indice. Si coincide con el tag, entonces se produce un L2 cache hit, y el L2 data es enviado a la CPU, que junto con el offset se selecciona la palabra deseada.
 Ante un cache miss en L2, la dirección fisica es utilizada para obtener el bloque de memoria.
 
+\newpage
+\section{Pipeline}
+
+\subsection{Camino de datos MIPS simplificado}
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/simple-datapath.png}
+\end{figure}
+
+Cada instrucción se divide en 5 etapas, lo que significa un pipeline de 5 etapas. 
+
+\begin{enumerate}
+    \item IF: Búsqueda de instrucción.
+    \item ID: Decodificación y lectura de registros.
+    \item EX: Ejecución ó Calculo de salto.
+    \item MEM: Acceso a memoria.
+    \item WR: Escritura en registro.
+\end{enumerate}
+
+\newpage
+\subsection{Version Pipeline del Camino de datos MIPS}
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/pipeline-datapath.png}
+\end{figure}
+
+\begin{itemize}
+    \item Camino de una instrucción \textbf{load}
+    \begin{enumerate}
+        \item IF: La instrucción es leida de memoria utilizando el PC y lo guarda en registro del pipeline IF/ID. Se incrementa la dirección del PC de a 4 y tambien se guarda en el registro IF/ID.
+        \item ID: Del registro IF/ID se toman los 16 bits immediate para aplicar la extension de signo, y los numeros de registros para leer los datos de los registros. Estos tres valores son guardados en el registro ID/EX junto con el \(PC+4\).
+        \item MEM: Se lee el dato de memoria utilizando la direccion calculada en el registro EX/MEM, y se carga en el registro MEM/WB del pipeline.
+        \item WB: Se lee el dato cargado de MEM/WB y se escribe en el \textit{register file}
+    \end{enumerate}
+    \item Camino de una instrucción \textbf{store}
+    \begin{enumerate}
+        \item IF: La instrucción es leida de memoria utilizando el PC y lo guarda en registro del pipeline IF/ID. Se incrementa la dirección del PC de a 4 y tambien se guarda en el registro IF/ID.
+        \item ID: Del registro IF/ID se toman los 16 bits immediate para aplicar la extension de signo, y los numeros de registros para leer los datos de los registros. Estos tres valores son guardados en el registro ID/EX junto con el \(PC+4\).
+        \item EX: Utilizando la ALU, se suman el contenido del registro 1 y el valor del immediate con signo extendido. La suma se guarda en el registro EX/MEM.
+        \item MEM: Notar que el registro que contiene el dato a guardar se recupero en etapas previas y se guardo en ID/EX. Se debe pasar este dato al registro EX/MEM en la etapa EX, como se hizo con la dirrecion de memoria destino que esta en el EX/MEM. 
+        \item WB: No hace nada y no hay forma de acelerar el paso aqui porque la siguiente instrucción ya esta en progreso.
+    \end{enumerate}
+    \item Cada unidad funcional solo puede usarse una vez en cada etapa simple del pipeline. De otra forma, habrian \textit{riesgos estructurales}.
+    \item Se necesita preservar el registro destino en la instrucción \textit{load}. Analogamente a la instrucción \textit{store}, el numero de resgistro destino debe pasar desde ID/EX, pasando por EX/MEM al registro del pipeline MEM/WB para ser usado en la etapa WB.
+\end{itemize}
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/pipeline-loadstore.png}
+\end{figure}
+
+
+\newpage
+\subsubsection{Pipeline control}
+
+Se puede dividir las lineas de control en 5 etapas.
+\begin{enumerate}
+    \item IF: Las lineas de control para leer la instrucción de memoria y para escribir el PC siempre estan activas(asserted).
+    \item ID: No hay lineas de control opcionales para setear.
+    \item EX: Las señales para setear son RegDst, ALUOp, y ALUSrc. La señal para seleccionar el \textit{Result register}, el \textit{ALU operation} y ambos \textit{Read Data 2} ó \textit{sign extended immediate} para la ALU.
+    \item MEM: Las lineas de control para setear son Branch, MemRead, y MemWrite. Estas señales son seteadas por las instrucciones \textit{branch equal, load y store}. Emite la señal PCSrc seleccionando la siguiente dirección secuencial a menos que la linea de control Branch se active y el ALU result sea zero. 
+    \item WB: Las dos lineas de control son MemtoReg, el cual decide entre enviar el resultado de la ALU o el resultado de la memoria al \textit{register file}, y la señal RegWrite el cual escribe el valor elegido. 
+\end{enumerate}
+
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/pipeline-control.png}
+\end{figure}
+
+\newpage
+\section{Arquitectura paralelas}
+
 \subsection{Arquitectura multihilo}
 
 \textit{Multithreading} permite que multiples hilos compartan las unidades funcionales de un procesador simple de forma solapada. Para que puedan compartirse, el procesador debe duplicar el estado de cada hilo.
@@ -483,6 +553,7 @@ Simultaneous multithreading (SMT)
     \begin{enumerate}
         \item 1985 -  El 80386 extiende la arquitectura de 80286 a 32 bits. Ademas de agregar una arquitectura de 32 bits con registros de 32bits y un espacio de direcciones de 32 bits, agrega nuevos modos de direccionamiento y operaciones adicionales.
     \end{enumerate}
+
 
 \end{document}
 
