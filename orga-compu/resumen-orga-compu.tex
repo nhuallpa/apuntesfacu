@@ -1,7 +1,7 @@
 \documentclass{article}
-
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage[top=3cm, bottom=3cm, right=3cm, left=3cm]{geometry}
 
 \begin{document}
 
@@ -463,6 +463,43 @@ Ante un cache miss en L2, la dirección fisica es utilizada para obtener el bloq
 \newpage
 \section{Pipeline}
 
+
+\subsection{Monociclo}
+
+\subsubsection{Diseño de Instrucciones}
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/formato-inst.png}
+\end{figure}
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/format-jump.png}
+\end{figure}
+
+\newpage
+\subsubsection{Caminos de datos por tipo instrucción}
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/inst-add.png}
+\end{figure}
+\newpage
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/inst-load.png}
+\end{figure}
+\newpage
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/inst-branch.png}
+\end{figure}
+\newpage
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/inst-jump.png}
+\end{figure}
+
+\newpage
+\subsection{Multiciclo}
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/multiciclo.png}
+\end{figure}
+
 \subsection{Camino de datos MIPS simplificado}
 
 \begin{figure}[h!]
@@ -526,6 +563,23 @@ Se puede dividir las lineas de control en 5 etapas.
 \begin{figure}[h!]
     \includegraphics[width=\linewidth]{imagenes/pipeline/pipeline-control.png}
 \end{figure}
+
+\newpage
+\subsubsection{Señales de control generadas y transportadas }
+Se extiende los registros del pipeline para incluir información de control:
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/pipeline-transporte.png}
+\end{figure}
+
+\newpage
+\subsubsection{Datapath completo con registros extendidos }
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/pipeline-control-transport.png}
+\end{figure}
+
+
 
 \newpage
 \section{Arquitectura paralelas}
