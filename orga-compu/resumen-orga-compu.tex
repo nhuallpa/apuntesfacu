@@ -110,7 +110,7 @@ Para simplificar la formula, combinamos las lecturas y escrituras y buscamos un 
 
 El miss rate es una de las medidas mas importantes de diseño de cache.
 
-
+\newpage
 \subsection{Categorias de organizacion de Cache}
 
 En la imagen de abajo se muestra las restricciones cuando se quiere situar un bloque en cache.
@@ -127,18 +127,16 @@ En la imagen de abajo se muestra las restricciones cuando se quiere situar un bl
     \item Si cada bloque puede situarse solo en algunos lugares restringidos de la cache, se dice que la cache es \textit{Set Associative}. Si hay N bloques en un conjunto se dice que la cache es \textit{N-Way Set Associative}.
 \end{itemize}
 
+\newpage
 \begin{figure}[h!]
     \includegraphics[width=\linewidth]{imagenes/CacheMapeoDirecto.png}
 \end{figure}
-
 \newpage
-
 \begin{figure}[h!]
     \includegraphics[width=\linewidth]{imagenes/CacheNWayAssosiative.png}
 \end{figure}
 
 \newpage
-
 \subsection{¿Como se ubica un bloque en la Cache?}
 
 La cache tiene un tag de direcciones (\textit{address tag}) en cada bloque de frame que te da la direccion del bloque (\textit{block address}).
@@ -156,20 +154,25 @@ Exploremos la relación entra la dirección de la CPU (\textit{CPU Adress}) y la
 A su vez el el block address se puede dividir en \textit{tag field} y \textit{index field}. 
 El block offset seleccionar el dato deseado dentro del bloque, el campo indice selecciona el conjunto, y el campo tag field es comparado con la porcion que corresponde de la dirección para buscar un hit. 
 
-El indice es usado para seleccionar el conjunto. Pero el caso de unaa cache full asociativa, no tiene indice.
+El indice es usado para seleccionar el conjunto. Para el caso de una cache full asociativa, \textit{no tiene indice}.
 
 \subsection{¿Que bloque debe ser replazado ante un Cache Miss?}
 
 Cuando un ocurre un cache miss, el controlador de la cache debe seleccionar un bloque para ser replazado con el dato deseado.
 Para una cache \textit{direct map} el hardware requerido para la decision se simplifica ya que no requiere elección.
 Con las caches \textit{full associative} y \textit{set associative} hay muchos bloques para elegir frente a un cache miss.
-Hay tres estrategias para seleccionar que bloque remplazar:
+Hay varias estrategias para seleccionar que bloque reemplazar:
 
 
 \begin{itemize} 
     \item \textit{Random} - El bloque candidato es seleccionado aleatoriamente
     \item \textit{Least-recently used (LRU)} - Si el bloque recientemente usado es el mas probable para ser usado de nuevo, entonces un buen candidato para ser desechado es el bloque menos recientemente usado (\textit{the least-recently used block}).
     \item \textit{First in, first out(FIFO)} - Se remplaza por el bloque mas viejo. Es una aproximación a LRU ya que es complicado de implementar.
+    \item \textit{Distancia LRU(DRLU)} - Se define distancia de pila DLRU para una referencia dada como el número de referencias al bloques de memoria distintos que hubo desde la ultima referencia al bloque dado.
+    \begin{itemize}
+        \item Conociendo la distancia de Pila LRU \textit{d} para la instancia \textit{i} de la referencia a un bloque de memoria \textit{b}, tenemos la información de como ha resultado la localidad temporal para la instancia \(i-1\) de la referencia al bloque dado \textit{b}. Bajo la hipotesis de comportamiento repetitivo se puede predecir en que momento el bloque de memoria \textit{b} volvera a ser referenciado: Se espera que la instancia \(i+1\) de refencia al bloque \textit{b} sea dentro de \textit{d} referencias a bloques de memoria distintos.
+        \item Se asume que los bloques de memoria seran referenciado luego de \textit{d} referencias a bloques de memoria distintos, luego ante un fallo el candidato a ser reemplazado sera el bloque de cache que le falten mas referencias a bloques de memoria distintos o sea el bloque de cache a ser referenciado mas lejos en el futuro.
+    \end{itemize} 
 \end{itemize}
 
 \subsection{¿Que pasa ante una escritura?}
@@ -207,6 +210,8 @@ Dado que a veces el dato no es necesario en una escritura, hay dos opciones dura
 Normalmente write back caches usa write allocate, suponiendo que el subsiguiente write al bloque sea capturado por la cache.
 Write through cache se usa con no-write allocate y la razón es que si hay subsecuentes writes al bloque, los writes van a ir a la memoria de mas bajo nivel, y no hay ganancia al tenerlos cache. 
 
+\subsection{Anomalia de Belady}
+Dada una serie corta de referencias a memoria que ha sido definida utilizando una cache FIFO totalmente asociativa, la misma produce un mayor numero de desacietos cuando el tamaño de cache dado es aumentado. Este fenómeno es conocido como la anomalia de Belady.
 
 \subsection{Un ejemplo: Alpha 21264 Data Cache}
 
@@ -244,7 +249,7 @@ Resumen de formulas:
     \includegraphics[width=\linewidth]{imagenes/ResumenPerformance.png}
 \end{figure}
 
-
+\newpage
 \section{Herramientas de modelado y analisis}
 
 \subsection{Modelo 3C}
@@ -252,7 +257,7 @@ Es un modelo que permite buscar las fuentes de fallos en una jerarquia de memori
 Este modelo clasifica los cache misses en tres tipos:
 \begin{itemize} 
     \item \textit{Fallos inevitables (Compulsory misses)} - Estos son los fallos de cache causados por el primer acceso a un bloque que nunca ha estado en la cache. Tambien se llaman fallos de arranca en frio (cold start misses). Es el miss rate de una cache LRU de tamaño infinito.
-    \item \textit{Fallos de capacidad (Capacity misses)} - Estos son fallos cuando la cache no puede alocar todos los bloques necesarios para la ejecución de un programa. Los fallos de capacidad ocurre porque los bloques reemplazados son accedidos mas tarde. Es el miss rate de una cache LRU full associative menos el miss rate de una cache LRU full associative de tamaño infinito.
+    \item \textit{Fallos de capacidad (Capacity misses)} - Estos son fallos cuando la cache no puede alocar todos los bloques necesarios para la ejecución de un programa. Los fallos de capacidad ocurre porque los bloques reemplazados son accedidos mas tarde. Es el miss rate de una cache LRU full associative con el mismo tamaño que la cache bajo analisis \textit{menos} el miss rate de una cache LRU full associative de tamaño infinito.
     \item \textit{Fallos de conflicto (Conflict misses)} - Estos occuren en cache asociativas o de mapeo directo, cuando multiples bloques compiten por una misma ubicación. Los fallos de conflictos son eliminados por una cache totalmente asociativa del mismo tamaño. Tambien se llaman fallos por colisión. Es el miss rate de la cache bajo estudio \textit{menos} el miss rate de una cache LRU full associative del mismo tamaño. 
 \end{itemize}
 
@@ -275,6 +280,7 @@ Es sabido que en algunos casos es posible obtener valores negativos de miss rate
 
 El caracter estatico de este modelo no permite la clasificación individuales de los misses de memoria.
 
+\newpage
 \subsection{Modelo D3C: Deterministic 3C model}
 Se presenta una nueva definición para los tipos de misses. Para la correspondiente definición operacional se utiliza un politica de reemplazo LRU basado en distancias.
 
@@ -291,6 +297,11 @@ Se presenta una nueva definición para los tipos de misses. Para la correspondie
 \end{align*} 
 Las operaciones son realizadas mediante conjuntos y por lo tanto los misses son clasificados de forma individual.
 
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/conjuntos-d3c.png}
+\end{figure}
+
+\newpage
 \subsection{Reducción de tasa de misses}
 
 \begin{itemize}
@@ -346,11 +357,11 @@ La memoria virtual maneja de manera automatica los dos niveles de jeraquia de me
 \end{figure}
 
 \begin{quote}
-    La memoria virtual implementa la traducción del espacio de direcciones de un programa a direcciones fisicas. Este proceso de traducción asegura del espacio de direcciones de un programa de otros.
-    Ademas permite que un simple programa de usuario exceda el tamaño de la memoria principal
+    La memoria virtual implementa la traducción del espacio de direcciones de un programa a direcciones fisicas. Este proceso de traducción protege el espacio de direcciones de un programa para que no sea accedido por otro.
+    Ademas permite que un simple programa de usuario exceda el tamaño de la memoria principal.
 \end{quote}
 
-Ademas de proveer protección para la memoria comportida y el manejo automatico de la jerarquia de memoria, tambien simplifica la carga de programas para su ejecución.
+Ademas de proveer protección para la memoria compartida y el manejo automatico de la jerarquia de memoria, tambien simplifica la carga de programas para su ejecución.
 Llamamos \textit{relocación} al mecanismo que permite que el mismo programa se ejecuté en cualquier locación de la memoria fisica.
 
 Varias ideas extraidas de la jeraquia de memorias con caches se pueden aplicar analogamente a memorias virtuales, aunque los terminos sean diferentes.
@@ -407,7 +418,7 @@ El sistema operativo limpia de forma periodica el bit de uso que luego son escri
 
 \subsubsection{¿Que pasa ante una escritura?}
 
-La estrategia de escritura es simpre Wirte Back. La memoria virtual incluye un \textit{dirty bit}. Este bit permite que los bloques sean escritos a disco solo si estos tuvieron cambios desde que fueron leidos desde disco.
+La estrategia de escritura es simpre Write Back. La memoria virtual incluye un \textit{dirty bit}. Este bit permite que los bloques sean escritos a disco solo si estos tuvieron cambios desde que fueron leidos desde disco.
 
 \newpage
 \subsection{Técnicas para una rapida traducción de direcciones}
