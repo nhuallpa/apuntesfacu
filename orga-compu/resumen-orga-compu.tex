@@ -590,11 +590,50 @@ Se extiende los registros del pipeline para incluir información de control:
     \includegraphics[width=\linewidth]{imagenes/pipeline/pipeline-control-transport.png}
 \end{figure}
 
+\newpage
+\subsection{Riesgos}
+\subsubsection{Branch Target Buffer}
 
+Debido a que la BTB predice la siguiente direccion de instrución y debe enviarse antes de decodificar la instrucción, debemos saber si la instrucción branch es predecida como tomado.
+Si el PC de la instruccion leida coincide con un PC en el buffer de prediccion (\textit{instructions addresses of known branches}), el correspondiente PC predecido (\textit{Predicted PC}) es usado como el siguitente PC.
+Solo necesitamos guardar los branch predecidos como tomado en el branch target buffer dado que los branchs no tomados simplemente continuan con la siguiente instrucciones secuencial como si no hubiera un branch.
+El tercer campo es opcional y puede ser usado como un bit extra de predicción.
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/btb.png}
+\end{figure}
+\newpage
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/btb-steps.png}
+\end{figure}
+Podemos ver que no existe ningun delay si se encuentra una entrada que coincida con el BTB y la predicción es correcta. De otro modo, habria una penalidad de 2 ciclos.
 
 \newpage
 \section{Arquitectura paralelas}
 
+\subsection{Taxonomia de arquitecturas paralelas}
+Un modelo simple para categorizar todas las computadoras.
+\begin{enumerate}
+    \item Single instruction stream, single data stream (SISD) - Un unico procesador.
+    \item Single instruction stream, multiple data stream (SIMD) - La misma instrucción es ejecutada por multiples procesadores usando diferentes flujos de datos. Las computadores SIMD explotan el paralelismo a nivel de datos (\textit{data-level-parallelism}) aplicando las mismas operaciones en multiples items de datos en paralelo. Cada procesador tiene su propia memoria de datos, hay una unica memoria de instrucciones y control de procesador, el cual recupera y envia las instrucciones. Las instrucciones multimedia son una forma de paralelismo SIMD. Las arquicturas vectoriales son de clase SIMD.
+    \item Multiple instruction stream, Simple data stream (MISD) - No se comercializan estos procesadores hasta la fecha.
+    \item Multiple instruction stream, multiple data stream (MIMD) - Cada procesador recupera sus propias instrucciones y opera con sus pripios datos. Las computadores explotan el paralelismo a nivel de hilos (\textit{thread-level parallelism}).
+\end{enumerate}
+
+Existen dos clases de multiprocesadores MIMD, que dependiendo del numero de procesadores involucrados, que se diseñan la organización de memoria y la estrategia de interconexión.
+\begin{enumerate}
+    \item Memoria compartida (Centralized shared-memory arquitecture). Fuertemente acoplado.
+    \begin{figure}[h!]
+        \includegraphics[width=\linewidth]{imagenes/paralelo/memoria-compartida.png}
+    \end{figure}
+
+    \item Memoria distribuida (Distributed memory arquitecure). Debilmente acoplado.
+    \begin{figure}[h!]
+        \includegraphics[width=\linewidth]{imagenes/paralelo/memoria-distribuida.png}
+    \end{figure}
+\end{enumerate} 
+
+\newpage
 \subsection{Arquitectura multihilo}
 
 \textit{Multithreading} permite que multiples hilos compartan las unidades funcionales de un procesador simple de forma solapada. Para que puedan compartirse, el procesador debe duplicar el estado de cada hilo.
@@ -603,13 +642,90 @@ La memoria puede ser compartida mediante el mecanismo de la memoria virtual, el 
 Ademas, el hardware debe poder tener la habilidad de poder cambiar a un hilo diferente relativamente rapido. Un thread switch debe ser mas rapido que un context switch de un procesador.
 
 Hay dos aproximaciones de multihilos, \textit{Fine-grained Multithreading(FMT)} cambia entre hilos en cada instrucción, intercalando asi la ejecución de multiples hilos. Para intercarlar hilos se utiliza round-robin, saltando los hilos que esten en stall. Para que sea practico, el CPU debe poder cambiar de hilo en cada ciclo de reloj.
-Una ventaja es que se puede ocultar la perdida throughput de tanto stall largos como cortos, ejecutando instrucciones de otro hilo mientras un hilo este en stall. 
-La principal desventaja es que se demora la ejecución de hilos individuales, debido a que si un hilo que no esta en stall, debe esperar a que se terminen de ejecutar intrucciones de otros hilos.
+Una \textbf{ventaja} es que se puede ocultar la perdida throughput de tanto stall largos como cortos, ejecutando instrucciones de otro hilo mientras un hilo este en stall. 
+La principal \textbf{desventaja} es que se demora la ejecución de hilos individuales, debido a que si un hilo que no esta en stall, debe esperar a que se terminen de ejecutar intrucciones de otros hilos.
 
 \textit{Coarse-grained Multithreading(CMT)} Solo cambia de hilo cuando un stall es muy costoso. Esta limitado su capacidad de obtener bajo throughput, especialmente en stall cortos.
 
 Simultaneous multithreading (SMT)
 
+\newpage
+\subsection{Superar riesgos de datos con administración dinamica(Dynamic Scheduling)}
+En la administración dinamica, el hardware reordena la ejecición de instrucciones para reducir el stall  mientras se mantiene el flujo de datos y el comportamiento de las excepciones.
+La administración dinamica ofrece las siguientes ventajas:
+\begin{enumerate}
+    \item Maneja dependencias que no pueden ser conocidas en tiempo de compilación y simplifica la compilación.
+    \item Permite al procesador tolerar demoras que son inpredecibles como los cache misses.
+    \item Permite que codigo que fue compilado pensado para un pipeline pueda ejecutarse en diferentes pipelines.
+\end{enumerate}
+
+Con un pipeline que utiliza \textbf{out-of-order execution} queremos que una instrucción sea ejecuta tan pronto este disponible los datos de los operando.
+
+\subsubsection{Renombre de registros}
+Los riesgos WAW y WAR, son eliminados mediante el renombre de registros. El \textbf{renombre de registros} elimina estos riesgos renombrando todos los registros destinos, incluyendo aquellos con escrituras o lecturas pendientes en instrucciones previas, por eso las escrituras out-of-order no afecta ningun instrucción que dependa de un valor previo de un operando. 
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/ejemplo-renombre.png}
+\end{figure}
+
+\newpage
+\subsubsection{MIPS usando Tomasulo}
+
+Es una organización particular del camino de datos de un superescalar.
+Realiza un seguimiento de las dependencias entre instrucciones para minimizar los riesgos RAW permitiendo ejecutar instrucciones tan pronto esten disponibles sus operandos. Ademas intruduce renombramiento de registros para eliminar los riesgos WAR y WAW.
+Los riesgos RAW se evitan ejecutando una instrucción solo cuando los operandos esten disponibles. 
+
+Etapas:
+\begin{enumerate}
+    \item Etapa IF: Busca y guarda en la cola de instrucciones.
+    \item Etapa ID: Instruction Decode separada en dos estapas.
+    \begin{enumerate}
+        \item issue: Decodificación y chequeo de riesgos estructuras: Obtiene la instrucción. Si hay ER(Estación de reserva) despacha instrucción. Los operandos son: el valor del registro o bien el tag de la ER que lo produce. Asi, se renombran los registros evitando WAR y WAW. 
+        \item Read operands: Espera has que no haya riesgos de datos, luego lee los operando.
+    \end{enumerate}
+    \item Etapa EX: 
+        \begin{enumerate}
+            \item Las intrucciones pueden tomar distintos ciclos deacuerdo a las unidades funcionales.
+            \item Multiples instrucciones en ejecución a la vez, ejecutandose fuera de orden.
+        \end{enumerate}
+    \item Etapa Write Result: 
+\end{enumerate}
+
+\newpage
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/pipeline/esquema-tomasulo.png}
+\end{figure}
+
+Especificación  de arquitectura de tomasulo
+
+\begin{itemize}
+    \item Campos de cada estación de reserva
+    \begin{itemize}
+        \item Op: Operación
+        \item \(Q_{j},Q_{k}\): Etiqueta de los operandos \(j\) y \(k\). Si esta vacio el operando esta disponible.
+        \item \(V_{j},V_{k}\): Valores de los operando.
+        \item Busy: Indica que la estación de reserva esta en uso(Ocupado). 
+    \end{itemize}
+    \item Buffer de Load
+    \begin{itemize}
+        \item Dirección: Para el acceso a memoria.
+        \item Busy: Indica si el bufer esta ocupado.
+    \end{itemize}
+    \item Buffer de Store
+    \begin{itemize}
+        \item Dirección: Para el acceso a memoria.
+        \item Busy: Indica si el bufer esta ocupado.    
+    \end{itemize}
+    \item File Register de FP. Tendra la estructura:
+    \begin{itemize}
+        \item \(Q_{i}\): Numero de la estacion de RS cuya operacion producira el valor a almacenar en el registro. Si el valor de \(Q_{i}\) es blanco (ó 0), no hay una instrucción activa que este computando el resultado destino para este registro, lo que significa que el valor es simplemente el contenido del registro.
+    \end{itemize}
+\end{itemize}
+
+\begin{quote}
+    \textbf{Scoreboarding} es otra técnica que permite que las instrucciones se ejecuten fuera de orden cuando hayan suficientes recursos y no haya dependencia de datos. 
+\end{quote}
 
 \section{Un viaje de Arquitectura de conjunto de instrucciones (ISA)}
 
@@ -618,6 +734,9 @@ Simultaneous multithreading (SMT)
     \begin{enumerate}
         \item 1985 -  El 80386 extiende la arquitectura de 80286 a 32 bits. Ademas de agregar una arquitectura de 32 bits con registros de 32bits y un espacio de direcciones de 32 bits, agrega nuevos modos de direccionamiento y operaciones adicionales.
     \end{enumerate}
+
+
+
 
 
 \end{document}
