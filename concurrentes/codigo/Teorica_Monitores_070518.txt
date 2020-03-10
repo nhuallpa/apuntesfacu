@@ -1,0 +1,159 @@
+                    MONITORES
+
+Encapsula el sincronismo de los semaforos.
+
+* Condition Variables
+    -Variable que no guarda ningun valor.
+    -C/Condicion variable tiene relacionada una Fifo.
+    -Tiene tres operaciones atomicas.
+        waitC(cond): no es de semaforos!. 
+            Encola el proceso P en la FIFO asociada a la condicion "cond".
+            Cambia el stado del proceso al BLOQUEADO.
+            Liberar el lock asociado al monitor. **
+        signalC(cond): no es de semaforos!.  
+            Si FIFO no esta vacia, se toma el 1er proceso elemento de la FIFO
+            El proceso que se quieto de la FIFO, se pasa al estado READY
+        empty(cond)
+            Indica si la queue esta vacio.
+
+* Monitores 
+    Componentes consta de :
+        -Nombre
+        -Variables internas, solo pueden ser accedidas dentro del monitor.
+        -Procedimientos del motor.
+        -Interfaz publica, para acceder a las variables internas.
+        -Init de las variables internas.
+        -Un conj de cond variables que incorpora sincronizmo al monitor.
+
+        Ej: de Monitores
+            acquire()  intenta tomar el monitor.
+                Si el recurso esta ocupado, se va a bloquear hasta que no este ocupado. waitC(nonbusy). 
+                Hasta que otro procedimiento haga release()
+
+    Simulador de semaforos.
+        - Variable S como contador.
+        - waitC(Not_Zero) espera hasta que no sea cero.
+
+
+Monitores incorpora: Immediate Resumption Requirement (IRR)
+
+    Los PROCESOS pueden tomar distintos estados:
+        -Esperando entrar al monitor.
+        -Ejecutando el monitor.
+        -Bloqueado en la FIFO.
+        -Recien liberado de la wait condition.
+        -Recien completo un signalC.
+
+    De todos los procesos en los distintos estados
+    ¿Quien tiene la prioridad para ejecutar el monitor?
+
+    Sean:
+        E: Procesos esperando para entrar al monitor.
+        S: Procesos que terminaron de ejecut signal Cambia
+        W: Procesos que fueron liberados de la waitcontion.
+
+    Se definen las siguientes prioridades.
+        E < S < W
+
+Implementaciones con semaforo.
+    Los metodos del monitor se utilizan en exclucion mutua.
+    S: semaforo  de exclusion mutua.
+    C.Sem: Semaforos tipo block queue para cumplir con el requrimiento de fifo.
+    Count: Contador de procesos bloqueados.
+
+    Metodos del monitor.
+       waitC()               signalC()       
+    
+    wait(s)                  wait(s)
+    count:=count+1           if (count > 1)
+    signal(s)                  signal(c.sem)
+    wait(C.sem) *            end if  
+    wait(s)                  signal(s)
+    count:=count-1
+    signal(s)
+
+    Tiene problemas con varios procesos *, se soluciona el el siguiente codigo:
+
+    wait(s)                  wait(s)   ****
+    count:=count+1           if (count > 1)
+    signal(s)                  signal(c.sem)  Libera los que esperan en ** lo desencola.
+    wait(C.sem)  **          else   
+    count:=count-1             signal(s)      Se ejecuta si no hay procesos bloquedados
+    signal(s)    libera el semaforo de ***
+
+* Productores y consumidores
+    Encapsula, el buffer, punteros y las variables de sincronismo con mintores.
+
+* Lectores y escritores
+    Lectores dan paso a escritores y escritores dan paso a lectores.
+    CORRECCION:
+        Teorema:   (R>0 => W=0) ^ (W<=1) ^ (W=1 -> R=0)     W escritores, R Lectores   Demostrar un invariante.
+
+        CASO BASE:   R = 0     W = 0   En el estado incial
+                Reemplazo:  (R>0 => W=0) Verdadero
+                            (W<=1)       Verdadero
+                            (W=1 -> R=0)    Hipotesis falsa, pero implica es Verdadero.
+
+        CASO INDUCTIVO:
+                1-Start_Read : Si pasa el waitC(OK to read) es porque hay w=0, no hay escritores:
+                        entonces   (R>0 => W=0) es verdadero cuando llega a REaders= Readers + 1
+                2-End Read: Como R>0 todavia hay readers y no hay writes en "(R>0 => W=0)"
+                3-Start Write : Como no se cumple que writer <> 0, writer = 0 y es verdadro (W<=1) cuando pasa por WRITER=Writer+1
+                4-End Write: Como w=0 es siempre verdadro cuando pasa por writer=writer-1, (R>0 => W=0) es verdaro por tabla.
+
+
+        tabla de verdad
+        A  B  A=> B
+        V  V   V
+        V  F   F
+        F  V   V
+        F  V   V
+
+
+    AUSENCIA DE STARVATION
+        Ver del libro.
+
+* Filosofos Comensales  (Monitor de tenedores)
+    AUSENCIA DE DEADLOCK
+        Invariante: ¬empty(ok_to_eat[i]) =>  (fork[i]<2)   (1)
+
+                    Sum(0,4) fork[i] = 10-2.E              (2)
+
+        Condicion para deadloadk -> E = 0 cantidad de filosofos que no estan comiendo y que todos esten encolados.
+
+
+                    E=0  ->  Sum(0,4) fork[i] = 10  por (2)
+                             Sum(0,4) fork[i] < 5   por (1)   con estos dos se da un absurdo.
+
+
+
+
+LIBRO:
+
+Monitors, provee primitivas estructuradas para la programacion concurrente que concentra la responsabilidad 
+de la CORRECCION en unos modulos.
+El monitor no solo protege los datos internos de los accesos no permitidos, sino que tambien 
+sincroniza los llamados a los procedimientos de la interfase.
+
+
+Un monitor no es un proceso es una modulo con estico de datos y procedimientos declarados.
+
+PRODUCTORRES CONSUMIDORES (implementado con monitores): 
+    - Solo se permite que un proceso ejecute un procedimiento del monitor a la vez.
+    - En este caso, el productor puede ejecutar Append ó el consumidor puede ejecutar Take pero no ambos.
+    - Esto asegura la exclusion mutua de las variables globales. Por ejemplo Count el cual es actualizado 
+      por ambos procedimientos.
+
+    * Esta solucion es mas structurar que la solucion con semaforos, porque los datos y los procedimientos estan encapsulados.
+    * La exclusion mutua es satisfecha por la definicion de monitor.
+    * Para sincronizar utiliza condition variables.
+
+    WaitC(cond) : Permite al proceso supenderse a si mismo. El nombre de cond representa lo que quiere leer.
+        Por ejemplo: WaitC(Cond)"Estoy esperando hasta que ocurra 'Cond' " y SignalC(Cond) "Señalizo que Cond ha ocurrido"
+
+    Una "condition variable" señala una decicion, no como los semaforos que utilizan contadores.
+
+    
+
+
+

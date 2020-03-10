@@ -1,0 +1,177 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\usepackage[top=3cm, bottom=3cm, right=3cm, left=3cm]{geometry}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle, texcl=true}
+
+\begin{document}
+
+\newpage{}
+\tableofcontents
+\newpage{}
+
+\newpage
+\section{Semaforos}
+
+\section{Problemas tipicos con Semaforos}
+
+\subsection{Productor consumidor - buffer infinito}
+
+\lstinputlisting[language=Ada]{codigo/AlgoritmoProductorConsumidor_BufferInfinito.ads}
+
+\newpage
+\subsection{Productor consumidor - buffer finito}
+
+Invariantes:
+\begin{itemize}
+    \item No se puede consumir lo que no hay.
+    \item Todos los item producidos son eventualmente consumidos.
+    \item Al espacio de almacenamiento se accede de a uno.
+    \item Se debe respetar el orden de almacenamiento y retiro de los elementos.
+\end{itemize}
+
+El buffer sirve para comunicar dos componentes que colocan y sacan a velocidades parecidas.
+Hay dos problemas de sincronismo.
+\begin{enumerate}
+    \item No se puede consumir si el buffer esta vacio
+    \item No se puede producir si el buffer esta lleno. 
+\end{enumerate}
+
+\lstinputlisting[language=Ada]{codigo/AlgoritmoProductorConsumidor_BufferFinito.ads}
+\begin{quote}
+    La lectura es destructiva y La soluciones es simetrica, ambos tienen el mismo codigo.        
+\end{quote}
+
+\newpage
+\subsection{Lectores escritores}
+
+Para situaciones donde las estructuras de datos, base de datos o sistema de archivos son leidos y escritos por hilos concurrentes.
+
+La solución es asimetrica. El escritor y el productor ejecutan códigos distintos antes de entrar en la seccion critica.
+
+Las restricciones de sincronizacion son:
+\begin{itemize}
+    \item Readers : Es proceso no requiere la exclución de otro proceso Readers.
+    \item Writers : Proceso que requiere la exclución de otros procesos Reader y Writers
+\end{itemize}
+
+El patron de exclución se llama Categorical Mutual Exclution.
+Un hilo en la sección critica no necesita excluir otro hilos pero en la presencia de una categoria en la seccion critica excluye otras categorias.
+
+\subsubsection{SOLUCION 1: Prioridad a Lectores}
+
+\lstinputlisting[language=Ada]{codigo/AlgoritmoLectoresEscritore_Semaforos1.ads}
+
+\newpage
+\subsubsection{SOLUCION 1a: Usando Lightswich}
+Se utiliza un patron llamado Lightswich. El primero que entra prende la luz, el último que sale lo apaga. Entonces se arma un pre y pos protocolo para simplificar el reader.
+
+\lstinputlisting[language=Ada]{codigo/AlgoritmoLectoresEscritore_Semaforos1a.ads}
+
+\textbf{PROBLEMA}: Es posible que el writer tenga stavation.
+Si un escritor llega mientras hay escritores en la sección critica, este puede esperar en la cola por siempre mientras que los lector continuan llegando. 
+Mientras llegen lectores ante del último de los lectores, siempre habra un lector en el Room. Hasta que los lectores no llegen a CERO, no pueden dale paso a los escritores.
+
+\newpage
+\subsubsection{SOLUCION 2: Agregar un molinete (turnstile).}
+
+\lstinputlisting[language=Ada]{codigo/AlgoritmoLectoresEscritore_Semaforos2.ads}
+
+Esta solución garantiza que al menos un escritor proceda. En esta solución no hay prioridad entre escritores y lectores. Hay Justicia!. Pero aun es posible que lectores entran mientras haya mas escritores encolados.
+
+A veces es preferible una solución que da mas prioridad a los escritores! Y esto depende del contexto.
+Por ejemplo: Si los writes tienen tiempos criticos de updates, es mejor minimizar las lecturas de datos viejos y priorizar la actualización.
+
+\newpage
+\subsubsection{SOLUCION 3: Mas prioridad a los escritores}
+
+Mientras entran escritores, ningún lector debe entrar hasta que se haya ido el último escritor.
+
+\lstinputlisting[language=Ada]{codigo/AlgoritmoLectoresEscritore_Semaforos3.ads}
+
+\newpage
+\subsection{Filosofos comenzales}
+\begin{itemize}
+    \item Acciones Pensar y comer
+    \item 1 Mesa con 5 platos, 5 tenedores
+\end{itemize}
+
+Sincronización:
+\begin{itemize}
+    \item Cada filosofo puede tomar un tenedor de la izquierda y de la derecha, pero solo uno a la vez.
+    \item Un filosofo solo puede comer si tiene dos tenedores.
+\end{itemize}
+
+Restricciones:
+\begin{itemize}
+    \item Un filosofo solo puede comer si tiene dos tenedores.
+    \item Dos filosofos no pueden tener el mismo tenedor simultaneamente
+    \item No hay deadlock
+    \item No hay indivual stavation
+    \item Comportamiento eficiente bajo ausencia de contención.
+\end{itemize}
+
+\subsubsection{SOLUCIÓN 1}
+
+\lstinputlisting[language=Ada]{codigo/AlgoritmoFilosofosComensales_Semaforos1.ads}
+
+\begin{quote}
+    Presenta deadlock porque los 5 filosofos pueden tomar el tener de la izq al mismo tiempo.
+\end{quote}
+
+\newpage
+\subsubsection{SOLUCIÓN 2}
+
+\lstinputlisting[language=Ada]{codigo/AlgoritmoFilosofosComensales_Semaforos2.ads}
+
+Se asumio que el semaforo Room es de tipo Cola-Bloqueante, entonces cada filosofo entrar al cuarto eventualmente. Con esto nos aseguramos que haya justicia.
+El resto de los semaforos, pueden ser block-set.
+
+\subsubsection{SOLUCIÓN 3: SOLUCION ASIMETRICA}
+
+Los primeros 4 filosofos ejecutan la solución 1, pero el 5to filosofo (cualquier), toma primero el de la derecha y luego el de la izquierda.
+
+\lstinputlisting[language=Ada]{codigo/AlgoritmoFilosofosComensales_Semaforos3.ads}
+
+\begin{quote}
+    De esta manera nos evitamos entrar en deadlock o starvation
+\end{quote}
+
+
+
+\section{Monitores}
+
+\section{Problemas tipicos con monitores}
+
+
+\end{document}
+

@@ -1,0 +1,110 @@
+Problemas tipicos de concurrencia
+
+
+Productores y consumidores
+  Dos familias de procesos: productores y consumidores. Los primeros generan datos y los consumidores necesitan es dato.
+  Requisitos:
+    No se puede consumir lo que no hay
+    Todos los items producidos son eventualmente consumidos.
+
+        obligacion de misma velocidad si solo hay un espacio disponible entre productor y consumidos. Usar un buffer para no perder la informacion. Se permite una cierta variacion de velocidad con eso.
+     Se debe respetar el orden de almacenamiento.
+
+     Problemas de usar buffer de comunicacion
+        No se puede consumir si el buffer esta vacio.
+        No se puede producir si el buffer esta lleno.
+
+    Solucion 1 buffer infinito
+
+        EL productor lo dejo en el posicion cero.
+            el consumidor para el until In_Ptr > Out_Ptr
+            El sincronismo es en un solo sentido. El consumidor se bloquea si no hay datos.
+
+            #E es el indice del buffer y siempre >0
+            #E = 0 + In_Ptr - Out_Ptr
+
+            Estos son lo invariantes del semaforo. y funciona porque el buffer es infinito.
+
+            Si Semaphore se inicializa >0 no funciona, porque no hay dato.
+
+    Solucion 2 buffer acotado.
+
+        Tecnica 1: Buffer circular.
+        Tecnica 2: Pool de buffer. (anecdotico, no se va a ver en la clase)
+
+        USAR DOS SEMAFOROS. No se puede resolver con un solo semaforo.
+
+        La suma de los dos valores Elements y Space siempre da N
+
+        Algoritmo.
+
+            Teoreama: el consumidor nunca consume si el buffer esta vacio. el productor no produce si no hay espacio.
+
+            No tiene deadlock. Pa qe tenga deadlock spaces y elemente deberian ser CEROñ
+            Pero verificando los invariantes de semaforo, se da un abusurdo si spaces y elements con CERO.
+
+            No tiene estarvation. Uno desbloquea al otro.
+
+        Para despertear un wait, se puede enviar cualquier señal y chequear el ERR_INT.
+
+Lectores y escritores
+    Existe un area de escritura y lectura
+    Los lectores leen sin destruir.
+    Requisitos:
+        Todos los lectores puedej leer al mismo tiempo
+        no se puede leer mientras se escribe.
+        Solo se puede escribir de auno a la vez.
+
+    Solucion 1:
+        Usamos semaforos binarios.
+        Escritor
+        Lector
+            Si soy el primer lector, quiro dejar afuera a los escritores, hago wait(roomEmty) _> roomEmty =0
+            Si ahora viene otro lector, no vuelve a hacer wait y pasa.
+
+            Si reader == 0 significa que salio el ultimo lector. y habilitamos a los escritores con signal(roomEmpty)
+
+    Problema:
+        Favorece a los lectores. Podria generar un starvation de escrotires si son infinitos lectores.
+
+        Extraemos el pre y post en procedimientos. y queda un poco mas simetrico.
+    Solucion 2:
+        TURNSTILE: MOLINETE con esto, al entrar un escritor corta que sigan entrando lectores. Con esto se intercalan lectores.
+        Puede pasar que se de starvation de escritores.
+    Solucion 3:
+        Dar priordad a escritores y evita estarvations.
+        Cuenta escritores y lectores.
+        Semaforos para evitar que entren escritores y lectores.
+
+        Con el wait(noWriter) esperan los escritores.
+        Se desbloquean entre lectores y escritores.
+
+        Littler book of semaforos. LiveSwitch
+
+Filosofos Comensales.
+    Caracteristicas
+        Dos actividades comer y pensar
+        Dos tenedores para comer.
+        La cantidad de tenedores es igual a la cantidad de filosofos
+        Requsitos.(Premisas - propiedades - invariantes)
+
+        Algoritmo
+            dos wait para los tenedores. Exclusion mutua con los adyasentes.
+            dos signar para liberarlos.
+
+        #Pi = canti de filosofos que tienen el tenedor i
+        #Pi = #wait(Fork[i]) - #signal(Fork[i])
+        S.v = K + #Signal(S) -Wait(S)
+
+        Tiene exclusion mutua
+        Problema de deadlock
+
+    Solucion 2:
+
+        Utilizamos semaforo para limitar a los que entran al comedor.
+        Se soluciona el problema de deadlock pero si starvation
+
+
+    Room es BlockQueue, nos aseguramos que uno esta afuera del room y que esta encolado. No hay manera de bloquearse.
+
+    Solucion 3: Es asimetrico, toma primero el tenedor derecho y depsues el izquierdo.

@@ -1,0 +1,98 @@
+                        TEORICA: REDES ORDINARIAS DE PETRI
+
+Las redes de petri son modelos exactos matematicamente y 
+ambos modelos de estructura y de comportamiento puede describirse 
+usando conceptos matematicos.
+
+Tipos de redes de Petri son:
+    - Redes ordinarias de Petri
+    - Redes generales de Petri
+    - Redes de colores de petri
+    - Redes de transiciones predicados
+    - Redes de Petri estocastico (Para modelos de performance)
+
+Red ORDINARIAS de Petri
+
+Es un grafo dirigido bipartito que consiste en un conjunto de nodos y arcos:
+
+            PN = (T, P, A)
+P={p1, p2, ..., pn} es un conjunto de nodos llamados lugares(Places).
+T={t1, t2, ..., tn} es un conjunto de nodos llamados transiciones
+A incluido en (TxP) U (PxT) es un conjunto de arcos.
+
+            (p1) ---> |t1| ---> (p2)  ---> |t2|--|
+                                  ^--------------|
+            p son los estados del sistema
+            t son los eventos que ocacionan los cambios de estados.
+
+Intepretacion general de una modelo de red de Petri:
+    - Considerar a los lugares como condiciones del sistema.
+    - Considerar a las transaciones  como eventos del sistema.
+    - El estado de un modelo de sistema esta definido por los estados de las condiciones.
+
+    obs: El tipo de condicion que eligamos para representar el modelo determina 
+    el grado de abstraccion del modelo especificado.
+
+    Hasta ahora vimos el modelo estatico de estructura de un sistema.
+
+
+Funcion MARCA Indica donde esta parado el estado en el grafo con el tiempo.
+    Mt(p1, p2) es una foto de la marca en el tiempo t, p1 y p2 pueden tomar los valores 0 o 1 segun donde este la marca.
+
+    Ejemplo: M0 (1,0)  la marca M(p1)=1 y la M(p2)=0
+
+
+
+Funcion de Entrada y Salida
+    Son los diparadores
+
+    Sea t pertenece a PN = (T,P,A) una transicion t
+
+    Se definen I(t) es la entrada de la tansicion y O(t) es la salida de la transicion.
+
+Condiciones de disparo:
+    Indica como se van moviendo los puntos.
+
+    -La transicion t esta habilitada sii M(p) > 0 para todos los p pertenecientes a I(t)
+    -Cuando se dispara, las marcas en las entradas restan 1 (-1) y las marcas en las salidas suman 1.
+
+Ejemplo 1 de diapo:
+    M0 = {1,0,0,0,0})
+
+    En P4 hay un problema de conflicto cuando su marca es 1.
+
+Grafo de alcance.
+    Cuyos nodos representan los estados alcanzables por la red
+    Los arcos entre los nodos son estados que se alcanzan directamente.
+    El nombre de los arcos son las transiciones disparadas
+
+Reglas generales de disparo de transiciones.
+
+Grafo con peso
+
+
+||
+|| --->    fuente
+
+-->  ||   sumidero
+
+
+Buffer acotado:
+    Se usa N para limitar el buffer. Analogo al productor consumidor con semaforos.
+
+Solo se puede ejcutar t2
+
+luego, p4=1, p2=1 y se puede ejecutar t4 (recibiendo peticion)
+
+Luego p7 = 1 listo para enviar y se habilita t5
+
+Luego p5=1 y p8=1
+
+Usos:
+    Las redes de Petri es un modelo de proposito general comunmente
+    utilizado para modelos de sistemas de hardware y software.
+    Pero tambien es utilizado para modelar otro tipo de sistemas
+    como reacciones quimicas e interacion humana.
+    Esto es porque no hay una impuesto ninguna restriccion en como 
+    intepretar los elementos de la red como los nodos lugares y las transiciones.    
+
