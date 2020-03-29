@@ -1,4 +1,5 @@
 \documentclass{article}
+9+k,úpoiuyfdsjhg,.
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage[top=3cm, bottom=3cm, right=3cm, left=3cm]{geometry}
@@ -14,30 +15,16 @@
 
 \subsection{Introducción}
 \subsubsection{Conceptos basicos}
-
-Los fenónmenos de \textit{congestión} o \textit{espera} estan relacionados con los sistemas estocasticos y pueden describirse como sistemas integrados por uno o mas \textit{centros de atención} donde se brinda un servicio.
-Cada centro de atención es, a su vez, un sistema constituido por:
-
-\begin{itemize}
-    \item \textit{canales (ó servidores)}: Entidades que prestan el servicio. 
-    \item \textit{clientes (ó usuario)}: Entidades que reciben el servicio. 
-\end{itemize}
-
-    \begin{figure}[h!]
-        \includegraphics[width=\linewidth]{imagenes/modelo_sistema.png}
-    \end{figure}
-
-Las colas se forman cuando la demande de un servicio dado en un intervalo de tiempo exede la capacidad para proveerlo.
-El administrador del sistema de establecer un balance apropiado entre los costos asociados a la espera de los usuarios y los costos vinculados con la mejora del servicio (mas servidores, mayor velocidad de atención, etc).
+cdegfffffffffffffffun balance apropiado entre los costos asociados a la espera de los usuarios y los costos vinculados con la mejora del servicio (mas servidores, mayor velocidad de atención, etc).
 En la mayoria de los procesos de atención, los tiempos entre arribos de clientes y los tiempos de los servicios no son predecibles. En estas condiciones se aplica la denomida \textit{teoría de colas} para determinar el comportamiento del sistema bajo diferentes alternativas.
-Se estudiaran aquellos sistemas que describan los procesos mas generales y que son los que pueden formularse como \textit{cadenas markovianas de primer orden}. Se analisaran los sistemas en regimen permanente, a través de variables tales como la \textit{longitud promedio de la cola}, el \textit{tiempo de espera promedio} del cliente para recibir el servicio, el \textit{tiempo de permanencia} en el sistema, etc. 
+Se estudiaran aquellos sistemas que describan los procesos mas generales y que son los que pueden formularse como \textit{cadenas markovianas de primer orden}. Se analizaran los sistemas en régimen permanente, a través de variables tales como la \textit{longitud promedio de la cola}, el \textit{tiempo de espera promedio} del cliente para recibir el servicio, el \textit{tiempo de permanencia} en el sistema, etc. 
 Esta información, junstamente con los costos relevantes, permitira al directivo determinar los valores apropiados de las variables de decisión. Las variables de decisión tipicas en los sistemas de colas estan referidas a la \textit{capacidad de servicio}(numero de canales, velocidad de canales) ó la \textit{capadidad de espera} (número de lugares).
 
     \begin{figure}[h!]
         \includegraphics[width=\linewidth]{imagenes/ejemplo_sistemas_colas.png}
     \end{figure}
 
-La \textbf{población} es el conjunto de usuario potenciales del sistema. Puede ser finito o infito.
+La \textbf{población} es el conjunto de usuario potenciales del sistema. Puede ser finito o infini  to.
 
 En los \textbf{arribos} la llegada de los clientes puede ser deterministica o aleatoria. A menudo los intervalos entre llegadas son estadisticamente independientes y estacionarios a lo largo de prolongados periodos de tiempo, por lo que se puede suponer poissonianos.
 
@@ -105,7 +92,7 @@ En los sistemas de capacidad finita o de población impaciente, no todos los cli
 \end{figure}
 
 \newpage
-\subsubsection{Notación Kendal}
+\subsubsection{Notación Kendall}
 Especifica las caracteristicas descriptivas de una unidad operativa de un sistema de colas. Es una notación de 6 posiciones:
 \begin{equation}
     1 / 2 / 3 / 4 / 5 / 6    
@@ -125,16 +112,58 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
         \item G: Cualquier otro proceso.
     \end{itemize}
     \item La posición 3 indica el número de canales de atención dispuestos en paralelo en la unidad operativa.
-    \item La posición 4 indica la capacidad de la unidad operativa del sistema. Se asume infinita y no se indica.
-    \item La posición 5 indica la prioridad de atension de la cola. 
+    \item La posición 4 indica la capacidad de la unidad operativa del sistema(Los que pueden esperar en la cola mas los que se pueden atender). Se asume infinita y no se indica.
+    \item La posición 5 indica la prioridad de atension de la cola.  Si no se especifica se asume de tipo FIFO.
     \begin{itemize}
         \item FIFO
         \item LIFO
         \item SIRO
         \item G: Cualquier otra modalidad de atención
     \end{itemize}
-    \item La ultima posición se refiere al tamaño de la población. Si no se indica, el tamaño es infinito.
+    \item La última posición (entre paréntesis) se refiere al tamaño de la población. Si no se indica, el tamaño es infinito.
 \end{enumerate}
+
+
+
+\newpage
+\subsubsection{Preguntas y respuestas}
+\begin{itemize}
+    \item ¿Qué características posee la población?
+        \textit{Rta: Puede ser Finita o infinita}
+    \item ¿En qué consiste el fenómeno de impaciencia? ¿cuántos tipos de impaciencia hay? ¿en qué consisten?
+        \textit{Rta: Ver punto de impaciencia mas arriba.}
+    \item ¿Qué características posee el sistema?
+        \textit{Rta: Dependiendo de las hipotesis, puede uno o varios canales, con una o varias colas, y la cola puede ser finita o infinita}
+    \item ¿Qué se entiende por capacidad del sistema?
+        \textit{Rta: Es el numero máximo de clientes que pueden estar en todo el sistema}
+    \item ¿Con qué notación identificamos cada uno de los ítems enunciados?
+        \begin{itemize}
+            \item \(L_c\): La cantidad promedio de clientes que están esperando para recibir el servicio en un determinado momento.
+            \item \(L\): La cantidad promedio de clientes que se encuentran en el sistema en un determinado momento, ya sea esperando ser atendidos como atendiéndose.
+            \item \(W_c\): El tiempo promedio que un cliente debe esperar para ser atendido.
+            \item \(W\): El tiempo promedio que un cliente permanece en el sistema, ya sea esperando ser atendido como atendiéndose.
+            \item \(\lambda\): La cantidad promedio de clientes que arriban al sistema en un determinado momento.
+            \item $\overline{\lambda}$: la cantidad promedio de clientes que ingresan al sistema en un determinado momento.
+            \item $\overline{\mu}$: La cantidad promedio de clientes que egresan del sistema luego de ser atendidos.
+            \item \(\mu\): La velocidad promedio de atención de un canal.
+            \item \(T_a\): El tiempo promedio entre arribos.
+            \item \(H\): La cantidad promedio de canales ocupados.
+            \item \(PA\): El porcentaje de actividad de cada canal.
+        \end{itemize}
+l    \item ¿Cuál es la diferencia entre “la cantidad promedio de clientes que arriban al sistema en un determinado momento” y “la cantidad promedio de clientes que ingresan al sistema en un determinado momento”?
+        \textit{Rta: No todos los clientes que arriban al sistema, ingresan. Y por esos se diferencia los que arriban, y dentro de estos lo que finalmente ingresan.}
+    \item ¿Qué significa que se encuentren en régimen permanente o estacionario?
+        Cuando los valores de las variables no dependen de las condiciones iniciales del sistema.        
+    \item ¿qué se indica cada una de las posiciones de la notación Kendall?
+        \textit{Rta: Se describen mas arriba}
+    \item ¿Qué características posee el modelo \(P/P/1\)?
+        \textit{Se refiere a una unidad operativa de un sistema de colas con arribo Poisson, servicio Poisson, un canal, con capacidad infinita, en modalidad FIFO ya que no especifica y con población infinita}
+    \item ¿Cuánto debe valer \(\rho\) en un \(P/P/1\)? ¿Por qué?
+        
+    \item Según el modelo \(P/P/1/N\) ¿Cuáles son sus características según la notación de Kendall?
+    \item En el modelo \(P/P/1/N\), ¿debe verificarse lo mismo que en el \(P/P/1\) respecto del valor de \(\rho\)? ¿Por qué?
+    \item ¿Qué ejemplos de la vida cotidiana se podrían plantear en cada uno de los modelos mencionados?
+\end{itemize}
 
 \end{document}
 
