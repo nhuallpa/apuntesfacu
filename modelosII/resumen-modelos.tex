@@ -1,5 +1,4 @@
 \documentclass{article}
-9+k,úpoiuyfdsjhg,.
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage[top=3cm, bottom=3cm, right=3cm, left=3cm]{geometry}
@@ -44,8 +43,8 @@ En los \textbf{arribos} la llegada de los clientes puede ser deterministica o al
 
 La \textbf{impaciencia} se verifica cuando algunos usuarios que arriban al sistema se retiran sin recibir el servicio porque consideran que el tiempo de espera sera suficientemente largo. Se distingen dos tiempos de impaciencia:
 \begin{enumerate}
-    \item Un cliente que arriba, observa la cantidad de gente que esta delante de él esperando y en función de ello toma la decisión de incorporarse o no al sistema.
-    \item Un cliente que arriba, ingresa al sistema y al cabo de un tiempo toma la decisión de seguir esperando o no.
+    \item \textbf{Rechazo ($\overline{R}$)}: Un cliente que arriba, observa la cantidad de gente que esta delante de él esperando y en función de ello toma la decisión de incorporarse o no al sistema. \textbf{En la materia se trata unicamente este tipo de impaciencia}.
+    \item \textbf{Abandono ($\overline{A}$)}: Un cliente que arriba, ingresa al sistema y al cabo de un tiempo toma la decisión de seguir esperando o no.
 \end{enumerate}
 
 La \textbf{capacidad} es el número máximo de clientes que puede permanecer en el sistema simultaneamente(en espera y atendiéndose).
@@ -137,19 +136,25 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
     \item La última posición (entre paréntesis) se refiere al tamaño de la población. Si no se indica, el tamaño es infinito.
 \end{enumerate}
 
+\subsubsection{Ecuacion de estado en regimen permante}
+
+\begin{equation}
+    p(n)= p(n-1) \cdot \frac{ \lambda_{n-1}}{\mu_n}
+\end{equation}
+
 
 
 \newpage
 \subsubsection{Preguntas y respuestas}
 \begin{itemize}
     \item ¿Qué características posee la población?
-        \textit{Rta: Puede ser Finita o infinita}
+        \newline\textit{Rta: Puede ser Finita o infinita}
     \item ¿En qué consiste el fenómeno de impaciencia? ¿cuántos tipos de impaciencia hay? ¿en qué consisten?
-        \textit{Rta: Ver punto de impaciencia mas arriba.}
+        \newline\textit{Rta: Ver punto de impaciencia mas arriba.}
     \item ¿Qué características posee el sistema?
-        \textit{Rta: Dependiendo de las hipotesis, puede uno o varios canales, con una o varias colas, y la cola puede ser finita o infinita}
+        \newline\textit{Rta: Dependiendo de las hipotesis, puede uno o varios canales, con una o varias colas, y la cola puede ser finita o infinita}
     \item ¿Qué se entiende por capacidad del sistema?
-        \textit{Rta: Es el numero máximo de clientes que pueden estar en todo el sistema}
+        \newline\textit{Rta: Es el numero máximo de clientes que pueden estar en todo el sistema}
     \item ¿Con qué notación identificamos cada uno de los ítems enunciados?
         \begin{itemize}
             \item \(L_c\): La cantidad promedio de clientes que están esperando para recibir el servicio en un determinado momento.
@@ -164,14 +169,14 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
             \item \(H\): La cantidad promedio de canales ocupados.
             \item \(PA\): El porcentaje de actividad de cada canal.
         \end{itemize}
-l    \item ¿Cuál es la diferencia entre “la cantidad promedio de clientes que arriban al sistema en un determinado momento” y “la cantidad promedio de clientes que ingresan al sistema en un determinado momento”?
-        \textit{Rta: No todos los clientes que arriban al sistema, ingresan. Y por esos se diferencia los que arriban, y dentro de estos lo que finalmente ingresan.}
+    \item ¿Cuál es la diferencia entre “la cantidad promedio de clientes que arriban al sistema en un determinado momento” y “la cantidad promedio de clientes que ingresan al sistema en un determinado momento”?
+        \newline\textit{Rta: No todos los clientes que arriban al sistema, ingresan. Y por esos se diferencia los que arriban, y dentro de estos lo que finalmente ingresan.}
     \item ¿Qué significa que se encuentren en régimen permanente o estacionario?
-        Cuando los valores de las variables no dependen de las condiciones iniciales del sistema.        
+        \newline\textit{Cuando los valores de las variables no dependen de las condiciones iniciales del sistema.}       
     \item ¿qué se indica cada una de las posiciones de la notación Kendall?
-        \textit{Rta: Se describen mas arriba}
+        \newline\textit{Rta: Se describen mas arriba}
     \item ¿Qué características posee el modelo \(P/P/1\)?
-        \textit{Se refiere a una unidad operativa de un sistema de colas con arribo Poisson, servicio Poisson, un canal, con capacidad infinita, en modalidad FIFO ya que no especifica y con población infinita}
+        \newline\textit{Se refiere a una unidad operativa de un sistema de colas con arribo Poisson, servicio Poisson, un canal, con capacidad infinita, en modalidad FIFO ya que no especifica y con población infinita}
     \item ¿Cuánto debe valer \(\rho\) en un \(P/P/1\)? ¿Por qué?
         
     \item Según el modelo \(P/P/1/N\) ¿Cuáles son sus características según la notación de Kendall?
@@ -181,5 +186,21 @@ l    \item ¿Cuál es la diferencia entre “la cantidad promedio de clientes qu
 
 \subsection{Sistemas de un solo canal, capacidad infinita y poblacion infinita}
 
+\underline{HIPOTESIS}
+\begin{itemize}
+    \item El proceso de arribos de clientes es de tipo Poisson.
+    \item El proceso de servicio tambien es de tipo Poisson.
+    \item El sistema se encuentra en condiciones estables.
+    \item Los clientes que llegan al sistema forman una cola simple.
+    \item La diciplina de atención es FIFO.
+    \item Se dispone de un solo canal de atención.
+    \item La capacidad del sistema es ilimitada.
+    \item Los clientes que llegan al sistema no presentan impaciencia.
+    \item La población de clientes potenciales del sistema es infinita.
+\end{itemize}
+
+\begin{quote}
+    
+\end{quote}
 \end{document}
 
