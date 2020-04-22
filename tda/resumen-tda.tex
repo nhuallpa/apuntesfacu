@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[top=3cm, bottom=3cm, right=3cm, left=3cm]{geometry}
+
+\begin{document}
+
+\newpage{}
+\tableofcontents
+\newpage{}
+
+\newpage
+\section{Stable Maching problema}
+
+\subsection{Algoritmo Gale-Shapley}
+\subsection{Alternativas}
+\subsubsection{Diferentes cantidades de oferentes que requeridos}
+
+Dado n oferentes y m requeridos, con \(m <> n\), no se puede encontrar un matching stable. 
+
+Entonces, tenemos que redefinir el concepto de estable. Una pareja (s,r) es \textbf{estable} si:
+\begin{itemize}
+    \item No existe requerido r' sin pareja al que s prefiera a su actual pareja.
+    \item No existe un requerido r' en pareja, tal que s y r' se prefieran sobre sus respectivas parejas.
+    \item No existe solicitante s' sin pareja al que r prefiera a su actual pareja.
+    \item No existe un solicitante s' en pareja tal que r y s' se prefieran sobre sus respectivas parejas.
+\end{itemize}    
+
+
+Por lo tanto un matching es estable si:
+\begin{itemize}
+    \item No tienen parejas inestables bajo la condicion anterior.
+    \item Que no queden requeridos y solicitantes sin pareja.
+\end{itemize}
+
+Soluciones para ajustar al modelo de Gale-Shapley:
+\begin{enumerate}
+    \item Inventar \(|n-m|\) elementos ficticios
+    \begin{itemize}
+        \item Los elementos ficticios se pondran en las listas de preferencias con menos elementos.
+        \item Estos elementos ficticios se agregan al final y deben ser los menos preferidos.
+        \item Luego ejecutar Gale-Shapley
+        \item Por ultimo, eliminar las parejas con elementos ficticios. Estos seran los requeridos que quedan sin pareja.
+    \end{itemize}
+    \item Adecuar el Algoritmo
+    \begin{itemize}
+        \item Si hay mas \textbf{solicitantes} que requeridos, quitar de la \textit{lista de solicitantes} sin parejas a aquellos que agotaron sus propuestas.
+        \item Si hay mas \textbf{requeridos} que solicitantes, quitar de la \textit{lista de parejas} a aquellas donde el requerido quedo sin pareja.
+    \end{itemize}
+\end{enumerate}
+
+
+\subsubsection{Preferencias incompletas}
+Las listas de preferencias de los oferentes y los requeridos son un subset de las contrapartes.
+
+Son parejas \textbf{aceptables} de un elemento a aquellas contrapartes que figuran en su lista de preferencias.
+
+Una pareja (s,r) es \textbf{estable} si:
+\begin{itemize}
+    \item Son \textit{aceptables} entre ellos.
+    \item No existe requerido \textit{aceptable} r' sin pareja al que s prefiera a su actual pareja.
+    \item No existe un requerido \textit{aceptable} r' en pareja, tal que s y r' se prefieran sobre sus respectivas parejas.
+    \item No existe solicitante \textit{aceptable} s' sin pareja al que r prefiera a su actual pareja.
+    \item No existe un solicitante \textit{aceptable} s' en pareja tal que r y s' se prefieran sobre sus respectivas parejas.
+\end{itemize}
+
+\begin{quote}
+    \textbf{Un matching es estable si no tiene parejas inestables bajo la condicion anterios.}
+\end{quote}
+
+
+
+\subsubsection{Preferencias con empates}
+
+\end{document}
+
