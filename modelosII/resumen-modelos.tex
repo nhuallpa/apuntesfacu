@@ -184,23 +184,151 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
     \item ¿Qué ejemplos de la vida cotidiana se podrían plantear en cada uno de los modelos mencionados?
 \end{itemize}
 
-\subsection{Sistemas de un solo canal, capacidad infinita y poblacion infinita}
+\subsection{Modelo \(P/P/1\)}
+\textbf{Sistemas de un solo canal, capacidad infinita y poblacion infinita}
 
+\noindent
 \underline{HIPOTESIS}
 \begin{itemize}
-    \item El proceso de arribos de clientes es de tipo Poisson.
-    \item El proceso de servicio tambien es de tipo Poisson.
+    \item El \textit{proceso de arribos} de clientes es de tipo \textbf{Poisson}.
+    \item El \textit{proceso de servicio} tambien es de tipo \textbf{Poisson}.
     \item El sistema se encuentra en condiciones estables.
     \item Los clientes que llegan al sistema forman una cola simple.
     \item La diciplina de atención es FIFO.
-    \item Se dispone de un solo canal de atención.
+    \item Se dispone de \textbf{un solo canal} de atención.
     \item La capacidad del sistema es ilimitada.
-    \item Los clientes que llegan al sistema no presentan impaciencia.
-    \item La población de clientes potenciales del sistema es infinita.
+    \item Los clientes que llegan al sistema \textbf{no presentan impaciencia}.
+    \item La \textit{población de clientes} potenciales del sistema es \textbf{infinita}.
 \end{itemize}
 
-\begin{quote}
-    
-\end{quote}
+\noindent
+\underline{FORMULAS para el modelo \(P/P/1\)}
+
+\begin{itemize}
+    \item Determinacion de probabilidades
+        \begin{equation} \label{eu_eqn}
+            p(n) = \rho^n \cdot (1 - \rho)
+        \end{equation}
+        \begin{equation} \label{eu_eqn}
+            p(0) = 1-\rho
+        \end{equation}
+    \item Calculo de \(L\): valor esperado de que en el sistema haya n clientes.
+        \begin{equation} \label{eu_eqn}
+            L = \frac{\rho}{1-\rho} = \frac{\lambda}{\mu-\lambda}
+        \end{equation}
+    \item Calculo de \(L_c\): Esperanza de haya \(n-1\) clientes en la cola.
+        \begin{equation} \label{eu_eqn}
+            L_c = \frac{\rho^2}{1-\rho} = \frac{\lambda^2}{\mu(\mu-\lambda)}
+        \end{equation}
+    \item Calculo de \(H\): Cantidad promedio de canales ocupados.
+        \begin{equation} \label{eu_eqn}
+            H = 1 - p(0) = \rho
+        \end{equation}
+    \item Porcentaje de actividad: 
+        Dado que la cantidad de canales es uno \(M=1\)
+        \begin{equation} \label{eu_eqn}
+            PA = \frac{H}{M} = H = \rho
+        \end{equation}
+    \item Calculo de \(\overline{\lambda}\): 
+        Dado que \(\lambda_n\) vale \(\lambda\) para todo \(n\), entonces:
+        \begin{equation} \label{eu_eqn}
+            \overline{\lambda} = \lambda
+        \end{equation}  
+        Por lo tanto, todo lo arriba al sistema, ingresa al sistema.
+    \item Calculo de \(\overline{\mu}\): 
+        Dado que \(\mu_n\) vale \(\mu\) para \(n>=1\), entonces:
+        \begin{equation} \label{eu_eqn}
+            \overline{\mu} = \mu.\rho = \mu.H
+        \end{equation}  
+        Como el sistema se encuentra en equilibrio, \(\overline{\lambda} = \overline{\mu}\), todo lo que entra sale, no perdemos ningun cliente en ningun lado.
+    \item Calculo de \(W_c\): Tiempo de espera en cola
+        \begin{equation}
+            W_c = \frac{L_c}{\overline{\lambda}}
+        \end{equation}  
+        \begin{equation} \label{eu_eqn}
+            W_c = \frac{\lambda}{\mu.(\mu-\lambda)}
+        \end{equation}  
+    \item Calculo de \(W\): Tiempo de \textit{permanencia} en el sistema.
+        \begin{equation} \label{eu_eqn}
+            W = W_c+Tc 
+        \end{equation}  
+        \begin{equation} \label{eu_eqn}
+            W = \frac{L}{\overline{\lambda}} 
+        \end{equation}
+        Entonces reemplazando \(L\) y \(\overline{\lambda}\):  
+        \begin{equation} \label{eu_eqn}
+            W = \frac{1}{\mu - \lambda} 
+        \end{equation}  
+        
+\end{itemize}
+
+\newpage
+\subsection{Modelo \(P/P/1/N\)}
+\textbf{Sistemas de un solo canal, capacidad finita y poblacion infinita}
+
+\noindent
+\underline{HIPOTESIS}
+\begin{itemize}
+    \item El \textit{proceso de arribos} de clientes es de tipo \textbf{Poisson}.
+    \item El \textit{proceso de servicio} tambien es de tipo \textbf{Poisson}.
+    \item El sistema se encuentra en condiciones estables.
+    \item Los clientes que llegan al sistema forman una cola simple.
+    \item La diciplina de atención es FIFO.
+    \item Se dispone de \textbf{un solo canal} de atención.
+    \item La capacidad del sistema es \textbf{finita}, esta limitada a un valor \(N\).
+    \item Los clientes que llegan al sistema \textbf{no presentan impaciencia}.
+    \item La \textit{población de clientes} potenciales del sistema es \textbf{infinita}.
+\end{itemize}
+
+\noindent
+\underline{FORMULAS para el modelo \(P/P/1/N\)}
+\begin{itemize}
+    \item Determinacion de probabilidades
+        \begin{equation} \label{eu_eqn}
+            P(n) = \rho^n . p(0)
+        \end{equation}
+        \begin{equation} \label{eu_eqn}
+            P(0) = \frac{1}{1+\rho+\rho^2+\rho^3+\rho^4+\dots+\rho^N}
+        \end{equation}
+    \item Calculo de \(L\): valor esperado de que en el sistema haya n clientes.
+        \begin{equation} \label{eu_eqn}
+            L = P(1) + 2.P(2) + 3.P(3) + \ddots + N.P(N)
+        \end{equation}
+    \item Calculo de \(L_c\): Cantidad promedio de clientes esperando a ser antendidos.
+        \begin{equation} \label{eu_eqn}
+            L = 1.P(2) + 2.P(3) + 3.P(4) + \ddots + (N-1).P(N)
+        \end{equation}
+    \item Calculo de \(H\): Cantidad canales activos.
+        \begin{equation} \label{eu_eqn}
+            L = P(1) + P(2) + P(3) + \ddots + P(N) = 1 - P(0)
+        \end{equation}
+    \item Calculo de \(\overline{\lambda}\): 
+        Dado que \(\lambda_n\) vale cero cuando \(n=N\), entonces:
+        \begin{equation} \label{eu_eqn}
+            \overline{\lambda} = \lambda[1-P(N)]
+        \end{equation}  
+    \item Calculo de \(\overline{\mu}\): 
+        Dado que \(\mu_n\) vale \(\mu\) para \(n>=1\), entonces:
+        \begin{equation} \label{eu_eqn}
+            \overline{\mu} = \mu.(1-P(0)) = \mu.H
+        \end{equation}  
+    \item Calculo de \(\overline{R}\): 
+        Solo tiene valor cuando n=N y es igual a \(R_N = \lambda\)
+        \begin{equation} \label{eu_eqn}
+            \overline{R} = \lambda.P(N)
+        \end{equation}  
+    \item Calculo de \(W_c\): Tiempo de espera en cola
+        \begin{equation}
+            W_c = \frac{L_c}{\overline{\lambda}}
+        \end{equation}  
+    \item Calculo de \(W\): Tiempo de \textit{permanencia} en el sistema.
+        \begin{equation} \label{eu_eqn}
+            W = W_c+Tc 
+        \end{equation}  
+        \begin{equation} \label{eu_eqn}
+            W = \frac{L}{\overline{\lambda}} 
+        \end{equation}
+    \end{itemize}
+
 \end{document}
 
