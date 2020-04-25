@@ -165,7 +165,18 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
             \item $\overline{\lambda}$: la cantidad promedio de clientes que ingresan al sistema en un determinado momento.
             \item $\overline{\mu}$: La cantidad promedio de clientes que egresan del sistema luego de ser atendidos.
             \item \(\mu\): La velocidad promedio de atención de un canal.
+            \item \(\rho\): Factor de transito (o de trafico).
+                \begin{equation}
+                    \rho = \frac{\lambda}{\mu}
+                \end{equation}
             \item \(T_a\): El tiempo promedio entre arribos.
+                \begin{equation}
+                    T_a = \frac{1}{\lambda}
+                \end{equation}
+            \item \(T_s\): El tiempo promedio del servicio.
+                \begin{equation}
+                    T_s = \frac{1}{\mu}
+                \end{equation}
             \item \(H\): La cantidad promedio de canales ocupados.
             \item \(PA\): El porcentaje de actividad de cada canal.
         \end{itemize}
@@ -292,15 +303,15 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
         \end{equation}
     \item Calculo de \(L\): valor esperado de que en el sistema haya n clientes.
         \begin{equation} \label{eu_eqn}
-            L = P(1) + 2.P(2) + 3.P(3) + \ddots + N.P(N)
+            L = P(1) + 2.P(2) + 3.P(3) + \cdots + N.P(N)
         \end{equation}
     \item Calculo de \(L_c\): Cantidad promedio de clientes esperando a ser antendidos.
         \begin{equation} \label{eu_eqn}
-            L = 1.P(2) + 2.P(3) + 3.P(4) + \ddots + (N-1).P(N)
+            L = 1.P(2) + 2.P(3) + 3.P(4) + \cdots + (N-1).P(N)
         \end{equation}
     \item Calculo de \(H\): Cantidad canales activos.
         \begin{equation} \label{eu_eqn}
-            L = P(1) + P(2) + P(3) + \ddots + P(N) = 1 - P(0)
+            L = P(1) + P(2) + P(3) + \cdots + P(N) = 1 - P(0)
         \end{equation}
     \item Calculo de \(\overline{\lambda}\): 
         Dado que \(\lambda_n\) vale cero cuando \(n=N\), entonces:
