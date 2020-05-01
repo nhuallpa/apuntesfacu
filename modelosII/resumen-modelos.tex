@@ -136,7 +136,15 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
     \item La última posición (entre paréntesis) se refiere al tamaño de la población. Si no se indica, el tamaño es infinito.
 \end{enumerate}
 
-\subsubsection{Ecuacion de estado en regimen permante}
+
+\subsubsection{Ecuacion de estado de regimen permante}
+
+\begin{equation}
+    0 = p(n-1) \cdot \lambda_{n-1} - p(n) \cdot [\lambda_n + \mu_n] + p(n+1) \cdot \mu_{n+1}
+\end{equation}
+
+
+\subsubsection{Ecuacion simplificada de estado de regimen permante}
 
 \begin{equation}
     p(n)= p(n-1) \cdot \frac{ \lambda_{n-1}}{\mu_n}
@@ -212,26 +220,60 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
     \item La \textit{población de clientes} potenciales del sistema es \textbf{infinita}.
 \end{itemize}
 
+
+
 \noindent
 \underline{FORMULAS para el modelo \(P/P/1\)}
 
 \begin{itemize}
-    \item Determinacion de probabilidades
+    \item Determinacion de probabilidades.
+
+    Dado que no hay impaciencia ni restricciones de capacidad en el sistema, la probabilidad de ingresar es 1 para cualquier "n", por lo tanto la tasa de arribos promedio \(\lambda_n\) es siempre igual a la tasa de arribos promedio \(\lambda\).
+    \newline La tasa de egresos es \(\mu_n\) es cero cuando el sistema esta vacio (n=0). Para cualquier otro valor de "n", la tasa esperada de egresos es igual a la velocidad promedio de atención, es decir, \(\mu\).
+
+    \[
+        \lambda_n =  \lambda \begin{array}{lcc}
+                    si & n = 1,2,3,...
+                    \end{array}
+    \]
+
+    \[
+        \mu_n = \left\{ \begin{array}{lcc}
+            0 &   si  & n = 0 \\
+            \\ \mu &  si & n = 1,2,3,... \\
+            \end{array}
+        \right.
+    \]
+    Reemplazando en la ecuación simplificada de regimen en estado estacionario y mediante inducción para \(n=1,2,3\) se obtiene:
+
+    \begin{equation} \label{eu_eqn}
+        p(n) = \rho^n \cdot p(0)
+    \end{equation}
+    \begin{equation} \label{eu_eqn}
+        p(0) = 1-\rho
+    \end{equation}
+    
+    \item Calculo de \(L\): La longitud de sistema es una variable aleatoria cuya media (L) es el valor esperado de que en el sistema haya \(n\) clientes. Es decir:
         \begin{equation} \label{eu_eqn}
-            p(n) = \rho^n \cdot (1 - \rho)
+            L = \sum_{0}^{\infty}n \cdot p(n) 
         \end{equation}
-        \begin{equation} \label{eu_eqn}
-            p(0) = 1-\rho
-        \end{equation}
-    \item Calculo de \(L\): valor esperado de que en el sistema haya n clientes.
+        Remplazando la expresión de \(p(n)\) y utilizando una serie gemotrica, obtenemos:
         \begin{equation} \label{eu_eqn}
             L = \frac{\rho}{1-\rho} = \frac{\lambda}{\mu-\lambda}
         \end{equation}
-    \item Calculo de \(L_c\): Esperanza de haya \(n-1\) clientes en la cola.
+    \item Calculo de \(L_c\): Esperanza de haya \(n-1\) clientes en la cola, ya que solo hay un canal en el sistema.
         \begin{equation} \label{eu_eqn}
-            L_c = \frac{\rho^2}{1-\rho} = \frac{\lambda^2}{\mu(\mu-\lambda)}
+            L = \sum_{1}^{\infty}(n-1) \cdot p(n) 
         \end{equation}
-    \item Calculo de \(H\): Cantidad promedio de canales ocupados.
+        Distribuyendo y remplazando por L y \(\rho\), se obtiene:
+        \begin{equation} \label{eu_eqn}
+            L_c = L - \rho = \frac{\rho^2}{1-\rho} = \frac{\lambda^2}{\mu(\mu-\lambda)}
+        \end{equation}
+    \item Calculo de \(H\): H es el número promedio de canales activos. Para el estado n=0 no hay canales ocupados, mientras que para cualquier otro estado, \textit{hay un canal ocupado}. Entonces:
+        \begin{equation} \label{eu_eqn}
+            H = \sum_{1}^{\infty}p(n) = 1 -p(0) 
+        \end{equation}
+        Remplazando por el valor de \(\rho\):
         \begin{equation} \label{eu_eqn}
             H = 1 - p(0) = \rho
         \end{equation}
@@ -241,13 +283,23 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
             PA = \frac{H}{M} = H = \rho
         \end{equation}
     \item Calculo de \(\overline{\lambda}\): 
+        \[
+            \overline{\lambda} = \sum_{0}^{\infty}\lambda_n \cdot p(n) 
+        \]
         Dado que \(\lambda_n\) vale \(\lambda\) para todo \(n\), entonces:
-        \begin{equation} \label{eu_eqn}
-            \overline{\lambda} = \lambda
-        \end{equation}  
+        \begin{align} 
+            \overline{\lambda} = \sum_{0}^{\infty}\lambda \cdot p(n) = \lambda \cdot \sum_{0}^{\infty} p(n) = \lambda \cdot 1 \Rightarrow \overline{\lambda} = \lambda
+        \end{align}  
+        Esto se debe a que no hay restricciones de capacidad en el sistema y que los clientes no presentan el fenomeno de impaciencia.
         Por lo tanto, todo lo arriba al sistema, ingresa al sistema.
     \item Calculo de \(\overline{\mu}\): 
-        Dado que \(\mu_n\) vale \(\mu\) para \(n>=1\), entonces:
+        \[
+            \overline{\mu} = \sum_{0}^{\infty}\mu_n \cdot p(n) 
+        \]
+        Dado \(\mu_0\) vale cero para \(n=0\) y que \(\mu_n\) vale \(\mu\) para \(n>=1\), entonces:
+        \[
+            \overline{\mu} = \sum_{1}^{\infty}\mu \cdot p(n) = \mu \cdot \sum_{1}^{\infty} p(n) = \mu \cdot [1-p(0)] 
+        \]
         \begin{equation} \label{eu_eqn}
             \overline{\mu} = \mu.\rho = \mu.H
         \end{equation}  
@@ -295,6 +347,23 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
 \underline{FORMULAS para el modelo \(P/P/1/N\)}
 \begin{itemize}
     \item Determinacion de probabilidades
+    \newline La probabilidad de ingresar al sistema siempre es 1, excepto cuando el sistema esta completo (n=N), en cuyo caso la probabilidad es cero.
+    \newline La tasa promedio de egresos \(\mu_n\), es cero cuando el sistema esta vacio (n=0). Para cualquier otro valor de "n", la tasa esperada de egresos es igual a la velocidad promedio de atención del canal, es decir, \(\mu\).    
+        \[
+            \lambda_n = \left\{ \begin{array}{lcc}
+                 \lambda &  si & n =0,1,2,3,... \\
+                \\ 0 &   si  & n = N \\
+                \end{array}
+            \right.
+        \]
+        \[
+            \mu_n = \left\{ \begin{array}{lcc}
+                0 &   si  & n = 0 \\
+                \\ \mu &  si & n = 1,2,3,... \\
+                \end{array}
+            \right.
+        \]
+        Remplazando los valores en la ecuación de regimen de estado estacionario, se obtiene:
         \begin{equation} \label{eu_eqn}
             P(n) = \rho^n . p(0)
         \end{equation}
@@ -340,6 +409,44 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
             W = \frac{L}{\overline{\lambda}} 
         \end{equation}
     \end{itemize}
+
+
+\subsection{Modelo \(P/P/M\)}
+
+\textbf{Sistemas con M canales de atención, capacidad infinita y poblacion infinita}
+
+\noindent
+\underline{HIPOTESIS}
+\begin{itemize}
+    \item El \textit{proceso de arribos} de clientes es de tipo \textbf{Poisson}.
+    \item El \textit{proceso de servicio} tambien es de tipo \textbf{Poisson}.
+    \item El sistema se encuentra en condiciones estables.
+    \item Los clientes que llegan al sistema forman una cola simple.
+    \item La diciplina de atención es FIFO.
+    \item \textbf{Hay varios canales de atención dispuestos en paralelo. Todos tienen la misma velocidad de atención}.
+    \item La capacidad del sistema es ilimitada.
+    \item Los clientes que llegan al sistema \textbf{no presentan impaciencia}.
+    \item La \textit{población de clientes} potenciales del sistema es \textbf{infinita}.
+\end{itemize}
+
+\subsection{Modelo \(P/P/M/N\)}
+
+\textbf{Sistemas con M canales de atención, capacidad finita y poblacion infinita}
+
+\noindent
+\underline{HIPOTESIS}
+\begin{itemize}
+    \item El \textit{proceso de arribos} de clientes es de tipo \textbf{Poisson}.
+    \item El \textit{proceso de servicio} tambien es de tipo \textbf{Poisson}.
+    \item El sistema se encuentra en condiciones estables.
+    \item Los clientes que llegan al sistema forman una cola simple.
+    \item La diciplina de atención es FIFO.
+    \item Hay varios canales de atención dispuestos en paralelo. Todos tienen la misma velocidad de atención.
+    \item La capacidad del sistema es finita. Esta limitada a un valor N.
+    \item Los clientes que llegan al sistema \textbf{no presentan impaciencia}.
+    \item La \textit{población de clientes} potenciales del sistema es \textbf{infinita}.
+\end{itemize}
+
 
 \end{document}
 

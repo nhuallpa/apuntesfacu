@@ -2,6 +2,33 @@
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage[top=3cm, bottom=3cm, right=3cm, left=3cm]{geometry}
+\usepackage{xcolor}
+\usepackage{listings}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
 
 \begin{document}
 
@@ -13,6 +40,36 @@
 \section{Stable Maching problema}
 
 \subsection{Algoritmo Gale-Shapley}
+Este algoritmo al terminar de ejecutarse se encuentra un matching prefecto si:
+\begin{itemize}
+    \item Si existen \(n\) solicitantes con diferentes preferencias.
+    \item Si existen \(n\) requeridos con diferentes preferencias.
+\end{itemize}
+Eligiendo las estructuras correctamente se puede plantear en \(O(n)\).
+
+\begin{lstlisting}[language=Python, caption=Algoritmo de Gale-Shapley]
+    Inicialmente M=Vacio
+    
+    Mientras existe un solicitante sin pareja que no aun se haya postulado a todas las parejas
+    
+        Sea s un solicitante sin pareja
+        Sea r el requerido de su mayor preferencia al que no le
+                    solicito previamente
+            
+        if r esta desocupado
+            M = M U (s,r)
+            s esta ocupado
+        else
+            Sea s' tal que (s', r) pertenece a M
+
+            si r prefiere a s sobres s'
+                M = M - {(s', r)} U (s,r)
+                s esta ocupado
+                s' esta libre
+    Retornar M
+    
+\end{lstlisting}    
+
 \subsection{Alternativas}
 \subsubsection{Diferentes cantidades de oferentes que requeridos}
 
@@ -68,9 +125,259 @@ Una pareja (s,r) es \textbf{estable} si:
     \textbf{Un matching es estable si no tiene parejas inestables bajo la condicion anterios.}
 \end{quote}
 
+\begin{lstlisting}[language=Python, caption=Algoritmo para parejas incompletas]
+Inicialmente M=Vacio
+
+#Iterea mientras no haya acotado su sublista de preferencias
+Mientras existe un solicitante sin pareja
+                'que no aun se haya postulado a todas las parejas' 
+
+    Sea s un solicitante sin pareja
+    Sea r el requerido de su mayor preferencia al que no le
+                solicito previamente
+    
+    # se condiera si es aceptable
+    if r considera 'aceptable' a s
+
+        if r esta desocupado
+            M = M U (s,r)
+            s esta ocupado
+        else
+            Sea s' tal que (s', r) pertenece a M
+            si r prefiere a s sobres s'
+                M = M - {(s', r)} U (s,r)
+                s esta ocupado
+                s' esta libre
+
+# Retornar solo parejas aceptables
+Retornar M
+
+\end{lstlisting}    
 
 
 \subsubsection{Preferencias con empates}
 
-\end{document}
 
+\textbf{INDIFERENCIA Y PREFERENCIA ESTRICTA}
+
+\begin{enumerate}
+    \item X es \textbf{indiferente} a "y" y a "z" si en su lista de preferencias estan el la misma posicion.
+    \item X es \textbf{prefefiere estrictamente} a "y" sobre "z" si en su lista de preferencias no le son indiferentes y 
+          "y" se encuentra antes que "z" en la misma.
+\end{enumerate}
+
+\noindent
+\textbf{ESTABILIDAD DEBIL}
+\newline Una pareja (s,r) es debilmente estable si no existe una pareja (s' y r') talque:
+\begin{itemize}
+    \item s prefiere estrictamente a r' sobre r \textit{(pareja actual de s)}
+    \item r' prefiere estrictamente a s sobre s' \textit{(pareja actual de r')}
+\end{itemize}
+
+
+
+\begin{lstlisting}[language=Python, caption=Algoritmo para parejas incompletas]
+    Inicialmente M=Vacio
+    
+    #Iterea mientras no haya acotado su sublista de preferencias
+    Mientras existe un solicitante sin pareja
+                    'que no aun se haya postulado a todas las parejas' 
+    
+        Sea s un solicitante sin pareja
+        Sea r el requerido de su mayor preferencia al que no le
+                    solicito previamente
+            
+        if r esta desocupado
+            M = M U (s,r)
+            s esta ocupado
+        else
+            Sea s' tal que (s', r) pertenece a M
+
+            # prefiere estrictamente
+            si r prefiere estrictamente a s sobres s'
+                M = M - {(s', r)} U (s,r)
+                s esta ocupado
+                s' esta libre
+    
+    Retornar M
+    
+\end{lstlisting}    
+\begin{quote}
+    En caso de que sea empate, se mantendra con su pareja actual.
+\end{quote}
+
+\noindent
+\textbf{ESTABILIDAD FUERTE}
+\newline Una pareja (s,r) es debilmente estable si no existe una pareja (s' y r') talque:
+\begin{itemize}
+    \item s prefiere estrictamente o le es indiferente a r' sobre r \textit{(pareja actual de s)}
+    \item r' prefiere estrictamente o le es indiferente a s sobre s' \textit{(pareja actual de r')}
+\end{itemize}
+Puede no existir un matching perfecto.
+
+\begin{lstlisting}[language=Python, caption=Algoritmo para parejas super estables]
+    Inicialmente M=Vacio
+    
+    Mientras existe un solicitante sin pareja y no exista solicitante que agoto sus parejas
+    
+        Sea s un solicitante sin pareja
+        Sea r el requerido de su mayor preferencia al que pueda proponer
+        Por cada sucesor s' a s en la lista de preferencias de r
+            if (s',r) pertence a M
+                M = M - {(s',r)}
+                s' esta libre
+            quitar s' de la lista de preferencias de r
+            quitar r de la lista de preferncias de s'
+
+        Por cada requerido r' que tiene multiples parejas
+            Por cada pareja s' en pareja con r' 
+                M = M - {(s',r')}
+                quitar s' de la lista de preferencias de r'
+                quitar r' de la lista de preferencias de s'
+
+    if estan todos en pareja
+        Retornar M
+    else
+        No existe ningun matching super estable
+\end{lstlisting}    
+\begin{quote}
+    En caso de que sea empate, se mantendra con su pareja actual.
+\end{quote}
+
+\subsubsection{Agrupacion de 1 a muchos}
+El solicitante puede tener varios cupos por lo tanto:
+\begin{itemize}
+    \item Exiten \(m\) requeridos, donde un requerido puede estar unicamente con 1 pareja.
+    \item Exiten \(n\) solicitantes, donde cada solicitante puede tener \(c\) cupos para armar parejas.
+\end{itemize}
+
+Existe un matching estable si la cantidad de requeridos es igual a la cantidad de solicitantes por la cantidad de cupos.
+
+\begin{equation} \label{eu_eqn}
+    m=n*c
+\end{equation}
+
+No cambia la definición de Gale Shampey para \textbf{matching estable}
+
+\begin{lstlisting}[language=Python, caption=Algoritmo de solicitantes con cupos]
+    Inicialmente M=Vacio
+    
+    Mientras exista un solicitante con cupo disponible
+    
+        Sea s un solicitante sin pareja
+        Sea r el requerido de su mayor preferencia al que no le
+                    solicito previamente
+            
+        if r esta desocupado
+            M = M U (s,r)
+            s decremente su disponibilidad de parejas
+        else
+            Sea s' tal que (s', r) pertenece a M
+
+            si r prefiere a s sobres s'
+                M = M - {(s', r)} U (s,r)
+                s decremente su disponibilidad de parejas
+                s' incrementa su disponibilidad de parejas
+    Retornar M
+    
+\end{lstlisting}    
+\begin{quote}
+    \textbf{La complejidad algoritmica no se modifica porque solo se agrega un contador.}
+\end{quote}
+
+
+\subsubsection{Agrupacion de muchos a 1}
+El requerido puede tener varios cupos por lo tanto:
+\begin{itemize}
+    \item Exiten \(m\) requeridos, donde cada solicitante puede tener \(z\) cupos para armar parejas.
+    \item Exiten \(n\) solicitantes, donde un requerido puede estar unicamente con 1 pareja.
+\end{itemize}
+
+Existe un matching estable si la cantidad de solicitantes es igual a la cantidad de requeridos por la cantidad de cupos.
+
+\begin{equation} \label{eu_eqn}
+    n=m*z
+\end{equation}
+
+No cambia la definición de Gale Shampey para \textbf{matching estable}
+
+\begin{lstlisting}[language=Python, caption=Algoritmo de requeridos con cupos]
+    Inicialmente M=Vacio
+    
+    Mientras exista un solicitante con cupo disponible
+    
+        Sea s un solicitante sin pareja
+        Sea r el requerido de su mayor preferencia al que no le
+                    solicito previamente
+            
+        if r tiene cupo 
+            M = M U (s,r)
+            s esta ocupado
+            r decrementa su disponibilidad de parejas
+        else
+            Sea s' tal que (s', r) pertenece a M y 
+                    s' es el menos preferidos de las parejas r
+
+            si r prefiere a s sobres s'
+                M = M - {(s', r)} U (s,r)
+                s esta ocupado
+                s' esta libre
+    Retornar M
+    
+\end{lstlisting}    
+\begin{quote}
+    \textbf{La complejidad algoritmica si se modifica.}
+\end{quote}
+Para conocer el solicitante de menor preferencia podemos utilizar un heap de minimos. Como el cupo es de z, la complejidad algoritmica para actualizar el heap es \(log (z)\).
+
+\subsubsection{Agrupacion de y a x}
+\begin{itemize}
+    \item Exiten \(n\) solicitantes, donde cada solicitante puede tener \(c\) cupos para armar parejas.
+    \item Exiten \(m\) requeridos, donde cada requerido puede tener \(z\) cupos para armar parejas.
+\end{itemize}
+
+
+Existe un matching estable si:
+
+\begin{equation} \label{eu_eqn}
+    n*c=m*z
+\end{equation}
+
+
+No cambia la definición de Gale Shampey para \textbf{matching estable}
+\newline
+Para implementar se requieren las siguientes estructuras:
+\begin{itemize}
+    \item Un heap de minimos para los requeridos.
+    \item Un contador de cupos para los solicitantes.
+\end{itemize}
+
+\begin{quote}
+    \textbf{La complejidad algoritmica es igual a la de los requeridos con cupos}
+\end{quote}
+
+\subsubsection{Conjuntos no bipartios - Stable Roommate Problem}
+Pendiente
+
+\section{Analisis amortizado}
+
+\subsubsection{Metodo de agregacion}
+\subsubsection{Metodo del banquero}
+\subsubsection{Metodo del potencial}
+
+\subsubsection{Heap binomial y fibonacci}
+Revisar capitulo 19 del Corven.
+\newline
+Para el \textbf{heap binomial} se utilizan bosques de arboles binarios. Existe un proceso donde se van ordenando los arboles.
+
+\newline
+Al insertar, se parece al ejemplo de contador binario y la amortizacion es O(1)
+\newline
+Decrementar en un log binomial, es log(n) porque no es posible amortizar
+\newline 
+Eliminar el minimo, es el el peor caso es log(n)
+
+Para el \textbf{heap fibonacci} ...
+
+
+\end{document}
