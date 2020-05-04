@@ -380,22 +380,26 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
         \end{equation}
     \item Calculo de \(H\): Cantidad canales activos.
         \begin{equation} \label{eu_eqn}
-            L = P(1) + P(2) + P(3) + \cdots + P(N) = 1 - P(0)
+            H = P(1) + P(2) + P(3) + \cdots + P(N) = 1 - P(0)
         \end{equation}
-    \item Calculo de \(\overline{\lambda}\): 
-        Dado que \(\lambda_n\) vale cero cuando \(n=N\), entonces:
+    \item Calculo de \(\overline{\lambda}\): La tasa promedio de ingreso de clientes al sistama \(\overline{\lambda}\), esta dada por la expresión.
+        \[
+            \overline{\lambda} = \sum_{0}^{N}\lambda_n \cdot p(n) 
+        \]
+        pero como \(\lambda_n = \lambda\) para todo \(n=0,1,2,3,...,N-1\) y dado que \(\lambda_N=0\), entonces:
         \begin{equation} \label{eu_eqn}
-            \overline{\lambda} = \lambda[1-P(N)]
+            \overline{\lambda} = \sum_{0}^{N}\lambda_n \cdot p(n) = \sum_{0}^{N-1}\lambda \cdot p(n) = \lambda \cdot \sum_{0}^{N-1}p(n) = \lambda \cdot [1-P(N)]
         \end{equation}  
     \item Calculo de \(\overline{\mu}\): 
-        Dado que \(\mu_n\) vale \(\mu\) para \(n>=1\), entonces:
+        \[
+            \overline{\mu} = \sum_{0}^{\infty}\mu_n \cdot p(n) 
+        \]
+        Pero como \(\mu_0=0\) y dado que \(\mu_n\) vale \(\mu\) para \(n>=1\), entonces:
         \begin{equation} \label{eu_eqn}
-            \overline{\mu} = \mu.(1-P(0)) = \mu.H
+            \overline{\mu} = \sum_{1}^{\infty}\mu \cdot p(n) = \mu \cdot [1-P(0)] = \mu \cdot H
         \end{equation}  
-    \item Calculo de \(\overline{R}\): 
-        Solo tiene valor cuando n=N y es igual a \(R_N = \lambda\)
-        \begin{equation} \label{eu_eqn}
-            \overline{R} = \lambda.P(N)
+    \item Calculo de \(\overline{R}\): El número promedio de clientes rechazados por unidad de tiempo \(\overline{R}\) es igual a la tasa promedio de arribos \(\lambda\) multiplicada por la probabilidad de no ingresar \([p(N)]\):        \begin{equation} \label{eu_eqn}
+            \overline{R} = \lambda \cdot p(N)
         \end{equation}  
     \item Calculo de \(W_c\): Tiempo de espera en cola
         \begin{equation}
@@ -410,6 +414,23 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
         \end{equation}
     \end{itemize}
 
+
+\subsection{Modelo \(P/P/1\) con impaciencia}
+\textbf{Sistemas de un solo canal, capacidad infinita y poblacion infinita}
+
+\noindent
+\underline{HIPOTESIS}
+\begin{itemize}
+    \item El \textit{proceso de arribos} de clientes es de tipo \textbf{Poisson}.
+    \item El \textit{proceso de servicio} tambien es de tipo \textbf{Poisson}.
+    \item El sistema se encuentra en condiciones estables.
+    \item Los clientes que llegan al sistema forman una cola simple.
+    \item La diciplina de atención es FIFO.
+    \item Se dispone de \textbf{un solo canal} de atención.
+    \item La capacidad del sistema es ilimitada.
+    \item Los clientes que llegan al sistema \textbf{presentan impaciencia}. El fenómeno de impaciencia del tipo que \textbf{toma la desición antes de ingresar al sistema}.
+    \item La \textit{población de clientes} potenciales del sistema es \textbf{infinita}.
+\end{itemize}
 
 \subsection{Modelo \(P/P/M\)}
 

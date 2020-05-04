@@ -370,7 +370,6 @@ Revisar capitulo 19 del Corven.
 \newline
 Para el \textbf{heap binomial} se utilizan bosques de arboles binarios. Existe un proceso donde se van ordenando los arboles.
 
-\newline
 Al insertar, se parece al ejemplo de contador binario y la amortizacion es O(1)
 \newline
 Decrementar en un log binomial, es log(n) porque no es posible amortizar
@@ -379,5 +378,42 @@ Eliminar el minimo, es el el peor caso es log(n)
 
 Para el \textbf{heap fibonacci} ...
 
+\section{Algoritmos Greedy}
+
+Utiliza heurisica de seleccion para encontrar una solución global optima despues de muchos pasos.
+
+\subsubsection{Mochila fraccionaria}
+
+Dado un contener de capacidad W, y un conjunto de elementos n fraccionables de valor \(v_i\) y peso \(w_i\)
+
+El objetivo es seleccionar un subconjunto de elemento o fracciones de ellos de modo de maximizar el valor almacenado y sin superar la capacidad de la mochila.
+
+La complejidad es \(O(nlog(n))\)
+
+\subsubsection{Cambio de moneda}
+
+Es una solución es conocido como solución de cajero. Contamos con un conjunto de diferentes monedas de diferentes denominación sin restricción de cantidad.
+
+\[
+    \$=(C_1,C_2,C_3,\cdots,C_n)  
+\]
+
+El objetivo es entregar la menor cantidad posible de monedas como cambio.
+
+Tiene una complejidad de \(O(n)\).
+
+El sistema \(\$\) se conoce como \textbf{canonico} a aquel en el que para todo x, \(greedy(\$,x)=optimo(\$,x)\).
+
+Para saber si una base es canonica:
+\begin{enumerate}
+    \item Basta con buscar un contraejemplo. Estaria entre la 3ra denomininacion y la suma de las ultimas dos doniminaciones.
+    \item Utilizar un algoritmo Polinimico para determinar si es un sistema canonico.
+\end{enumerate}
+
+Si el problema no es greddy, se puede construir un algoritmo utilizando programación dinamica.
+
+
+\subsubsection{Seam Carving}
+Es un algoritmo para adecuar imagenes. Analiza imagenes recortando pixeles de menor importancia. Retira tantas vetas como sea necesario para llegar a un tamaño optimo.
 
 \end{document}
