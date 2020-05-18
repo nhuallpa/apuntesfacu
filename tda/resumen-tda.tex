@@ -1,10 +1,10 @@
 \documentclass{article}
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
-\usepackage[top=3cm, bottom=3cm, right=3cm, left=3cm]{geometry}
 \usepackage{xcolor}
 \usepackage{listings}
-
+\renewcommand{\baselinestretch}{1.5}
+\setlength{\parskip}{1em}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
@@ -382,7 +382,7 @@ Para el \textbf{heap fibonacci} ...
 
 Utiliza heurisica de seleccion para encontrar una solución global optima despues de muchos pasos.
 
-\subsubsection{Mochila fraccionaria}
+\subsection{Mochila fraccionaria}
 
 Dado un contener de capacidad W, y un conjunto de elementos n fraccionables de valor \(v_i\) y peso \(w_i\)
 
@@ -390,7 +390,7 @@ El objetivo es seleccionar un subconjunto de elemento o fracciones de ellos de m
 
 La complejidad es \(O(nlog(n))\)
 
-\subsubsection{Cambio de moneda}
+\subsection{Cambio de moneda}
 
 Es una solución es conocido como solución de cajero. Contamos con un conjunto de diferentes monedas de diferentes denominación sin restricción de cantidad.
 
@@ -412,8 +412,138 @@ Para saber si una base es canonica:
 
 Si el problema no es greddy, se puede construir un algoritmo utilizando programación dinamica.
 
+\newpage
+\subsection{Interval Scheduling: Algoritmo de Greedy Stay Ahead}
 
-\subsubsection{Seam Carving}
+Tenemos un conjunto de requests \(\{1,2,..,n\}\); el request \(i^{th}\) corresponde a un intervalo de tiempo que comienza al instante \(s(i)\) y finaliza al instante \(f(i)\).
+Diremos que un subconjunto de requests es compatible si no hay dos de ellos que al mismo tiempo se superponen, y nuestro objetivo es aceptar un subconjunto compatible tan grande como sea posible. El conjunto compatible con mayor tamaño sera el \textbf{óptimo}.
+
+La idea básica en un algoritmo greedy para interval scheduling es usar una simple regla para seleccionar el primer request \(i_1\). Una vez que el request \(i_1\) aceptado, rechazamos todos los request que no son compatibles con \(i_1\). Luego seleccionamos el siguiente request \(i_2\), y volvemos a rechazar todos lo request que no son compatibles con \(i_2\). 
+Continuamos de esta manera hasta que nos quedemos sin requests. El desafio en diseñar un buen algoritmo greedy esta en decidir que regla usar para la selección.
+
+Pueden probar con varias reglas, pero las mas optimo es la siguiente idea: Aceptaremos el request que termina primero, o sea el request para el cual tiene el menor \(f(i)\) posible. 
+Asi nos aseguramos que nuestros recursos se liberen tan pronto como sea posible mientras satisfacemos un request. De esta manera podemos maximizar el tiempo restante para satisfacer otro request.
+
+Para escribir el pseudo código, utilizaremos \(R\) para denotar al conjunto de request que aún no estan aceptados ni rechazados, y usaremos \(A\) para denotar al conjunto de los request aceptados.
+
+\begin{lstlisting}[language=Python, caption=Algoritmo de greedy para Interval Scheduling]
+Inicialmente R contiene todos los requests, y A es un conjunto vacio.
+
+Mientras R no esta vacio
+
+    Seleccionar un request i de R que tenga el instante de finalizacion mas chico.
+    Agregar el registro i a A
+    Eliminar todos los request de R que no sean compatibles con el request i    
+
+Fin mientras
+
+Retornar el conjunto A como el conjunto de los request aceptados.
+
+\end{lstlisting}    
+
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/intervalos-compatibles.png}
+\end{figure}
+
+\begin{quote}
+    De forma inmediata podemos decir que el conjunto retornado tiene request compatibles.
+\end{quote}
+
+Lo que necesitamos es demostrar que la solución es optima. Definimos a \(O\), un conjunto de intervalos optimos. 
+Luego, vamos a mostrar que \(|A| = |O|\), o sea que el conjunto \(A\) tiene la misma cantidad de intervalos que \(O\), y por lo tanto, \(A\) tambien es una solución optima.
+
+Para la prueba introduciremos la siguiente notación:
+\begin{itemize}
+    \item Dado \(\{i_1,...,i_k\}\) el conjunto de request en \(A\) en orden que fueron agregados a \(A\). Notar que \(|A|=k\).
+    \item Dado \(\{j_1,...,j_m\}\) el conjunto de request en \(O\) ordenos de izquierda a derecha. Notar que \(|O|=m\).
+\end{itemize}
+El objetivo es probar que \(k=m\).
+
+La manera en que el algoritmo de greedy se mantenga adelante(\textbf{stays ahead}) es que cada uno de sus intervalos finalice al menos tan pronto como lo haga el correspondiente intervalo en el conjunto \(O\).
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/demo-greedy-intervalos.png}
+\end{figure}
+
+\begin{quote}
+    \textbf{(3.1) Para todos los indices \(r<k\) tenemos que \(f(i_r) \leq f(j_r)\)}
+\end{quote}
+
+\textbf{Demostración:}  Probaremos la sentencia anterior mediante el método inductivo. Para \(r=1\) la sentencia anterior es cierta, el algoritmo empieza seleccionando el request \(i_1\) con el menor tiempo de finalización.
+
+Para el caso inductivo, o sea \(r>1\) asumiremos como nuestra hipotesis inductiva que la sentencia es verdadera para \(r-1\), y queremos probar que es tambien es lo es para \(r\). La hipotesis inductiva nos dice que asumamos verdadero que \(f(i_{r-1}) \leq f(j_{r-1})\). Queremos demostrar que \(f(i_{r}) \leq f(j_{r})\).
+
+Dado que \(O\) consiste en intervalos compatibles, sabemos que \(f(j_{r-1}) \leq s(j_r)\). Combinando esto último con la hipotesis inductiva \(f(i_{r-1}) \leq f(j_{r-1})\), obtenemos \(f(i_{r-1}) \leq s(j_{r})\). Asi el intervalo \(j_r\) esta en conjunto \(R\) de los intervalos disponibles al mismo tiempo cuando el algoritmo de greedy selecciona \(i_r\).
+El algoritmo de greedy selecciona el intervalo con el \textit{tiempo final mas chico} (\(i_{r}\)); y dado que intervalo \(j_{r}\) es uno de estos intervalos, tenemos que \(f(i_r) \leq f(j_r)\), completando asi el paso inductivo.
+
+De esta forma demostramos que nuestro algoritmo se mantiene adelante del conjunto optimo \(O\). Ahora veremos porque esto implica optimalidad del conjunto \(A\) de algoritmo de greedy.
+
+\begin{quote}
+    \textbf{El algoritmo de greedy retorna un conjunto \(A\) óptimo.}
+\end{quote}
+
+\textbf{Demostración:} Para demostrarlo utilizaremos la contradicción. Si \(A\) no es optimo, entonces el conjunto \(O\) debe tener mas requests, o sea que tenemos \(m>k\) y aplicando 3.1, cuando r=k, 
+obtenemos que \(f(i_k) \leq f(j_k)\). Dado que \(m>k\), existe un request \(j_{k+1}\) en \(O\). Este request empieza despues que el request \(j_k\) termina y por consiguiente despues de que el request \(i_k\) termine.
+Entonces, despues de eliminar todos los requests que no son compatibles con los request \(i_1,...,i_k\), el conjunto de posibles requests R aún contiene el requests \(j_{k+1}\). 
+Pero el algoritmo de greedy se detiene con el request \(i_k\) y este supuestamente se detiene porque \(R\) esta vacio, lo cual es una contradicción. 
+
+
+
+\subsection{Seam Carving - TODO}
 Es un algoritmo para adecuar imagenes. Analiza imagenes recortando pixeles de menor importancia. Retira tantas vetas como sea necesario para llegar a un tamaño optimo.
+
+
+\subsection{Caminimos Minimos - TODO}
+
+Dado dos nodos, uno inicial \(s\) y otro final \(t\) el algoritmo encuentra el camino minimo que los une, tambien entre \(s\) y el resto de los nodos.
+
+\subsection{Compresión de datos - TODO}
+
+El algoritmo de greedy arma un arbol de "hufman" para armar un arbol optimo de prefijos.
+
+\section{División y conquista}
+
+\subsection{Teorema mestro - TODO}
+
+
+\subsubsection{Mediana con datos separadas}
+
+
+\section{Programación dinamica}
+
+\subsubsection{Cambio de monedas}
+
+Contamos con un conjunto de monedas de diferente denominación sin restricción de cantidad. Representamos de esta manera \(\$=(c_1,c_2,....,c_n)\) y tenemos un importe x a dar. 
+Concluimos que no existe un algoritmo satisfactorio de greedy para resolver este problema.
+
+Si buscamos la solución por \textbf{fuerza bruta}, se puede armar un arbol de decisión. Por cada moneda posible, se genera un subproblema. 
+Entonces el camino a la hoja con menor profundidad es la menor cantidad de monedas a dar. Esto hace que la complejidad sea \(O(x^n)\).
+
+Analizando el problema anterios se pueden obtener algunas mejoras. Parte de los caminos del arbol son iguales. 
+Hay distintas ramas con nodos que tienen el mismo resto, y por lo tanto se puede calcular solo una vez. Este caso de resto igual en varios nodos, lo llamaremos subproblemas.
+
+\textbf{Subproblema}: Calcular el óptimo(OPT) del cambio \(x\) debe usar el mínimo entre los subproblemas \(X - C_j\) para \(j=1...n\).
+
+Cada vez que paso por un subproblema se \(E\) incremente en el \(1\) que es la cantidad de monedas a dar. Que seria: \(1+min\{subprolemas\}\).
+
+Para la solución \textbf{recurrente}, podemos plantear:
+
+    \[
+        \left\{ \begin{array}{lcc}
+            OPT(x) = 0 &   si  & x = 0 \\
+            \\ OPT(x) = 1+min\{OPT(x-C_i)\} &  si & x > 0 \\
+            \end{array}
+        \right.
+    \]
+
+El resultado con el minimo cambio sera OPT(x) y para poder carcularlo, necesito calcular lo \(x-1\) óptimos anterios. 
+Para evitar el recalculo, si calculo el optimo de algun resto, lo almaceno para no volver a calcularlo de nuevo.
+Ademas en cada subproblema debo analizar \(n\) comparaciones, lo cual impacta en la complejidad.
+
+Para la solución \textbf{iterativa}: TODO
+
+\subsubsection{Publicidad en la carretera}
+
 
 \end{document}
