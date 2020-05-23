@@ -468,6 +468,7 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
     \item La \textit{población de clientes} potenciales del sistema es \textbf{infinita}.
 \end{itemize}
 
+\newpage
 \section{Gestión de stock}
 
 \subsection{Introducción}
@@ -505,5 +506,128 @@ Costos intevinientes:
 Mediante la formulación de modelos matemáticos se busca balancear estos costos de modo 
 de determinar la cantidad de unidades a solicitar que minimice el costo total esperado del proceso.
 
-\end{document}
+\subsection{Modelo básico}
 
+El objetivo del problema que se encara es determinar el tamaño del lote de adquisición de un 
+producto que minimice el costo de total esperado.
+
+\underline{HIPOTESIS:}
+\begin{itemize}
+    \item Se administra un único ítem.
+    \item El producto es de demanda independiente.
+    \item La demanda es conocida y se efectúa a tasa constante.
+    \item El plazo de entrega ("lead time") del producto solicitado, es conocido y constante.
+    \item La reposición se hace exactamente cuando el nivel de stock es cero.
+    \item El aprovisionamiento es instantaneo. Tasa de reposición es infinita.
+    \item El horizonte de planeamiento es de largo plazo.
+    \item El costo de agotamiento es infinitamente alto.
+    \item El costo de adquisición "b", cost. uni. de almacenamiento "\(c_1\)" y el costo de pedido "k" son independientes de la cantidad a pedir "q".
+    \item No hay restricciones sobre el tamaño a tomar del lote.
+    \item Todos los parametros monetarios estan expresados en moneda constante.
+    \item El producto se mide en una unidad continua. (Litros, kilogramos, etc).
+\end{itemize}
+
+\underline{Parametros:}
+\begin{itemize}
+    \item D: Demanda del producto.
+    \item b: Costo unitario de adquisición.
+    \item \(c_1\):  Costo unitario de almacenamiento.
+    \item k: Costo de orden.
+    \item T=1: Parámetro de dimensionamiento que sirve para referenciar todos los parámetros temporales a la misma unidad de tiempo.
+    \item LT: Lead time.
+\end{itemize}
+
+\underline{VARIABLES:}
+\begin{itemize}
+    \item q: tamaño del lote.
+    \item t: intervalo del ciclo.
+    \item \(CTE\): Costo total esperado referido al período estratégico del tiempo.
+    \item \(SR\): Stock de reorden.
+\end{itemize}
+
+\subsubsection{Restricciones}
+
+\begin{itemize}
+    \item Restriccion de espacio.
+    \item Restricción financiera.
+    \item Restricción administrativa.
+    \item Restricción de condiciones variables.
+    \item 
+\end{itemize}
+
+\underline{Modelado}
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/stock-modelo-basico.png}
+\end{figure}
+
+Para un ciclo cualquiere \(i\), el \textbf{costo total de adquisición} será:
+
+\[
+    b.q
+\]
+
+El costo total de adquisición para un ciclo, es el area bajo la curva.
+
+\[
+    \frac{1}{2} \cdot q \cdot c_1 \cdot t
+\]
+Por ultimo el \textbf{costo total de orden} es siplemente \(k\) porque se emite un solo pedido por ciclo. 
+Por lo tanto, el \textbf{costo total esperado} por ciclo es:
+
+\[
+    CTE_i= b \cdot q+\frac{1}{2} \cdot q \cdot c_1 \cdot t + k
+\]
+
+El número de ciclos por periodo de referencia (ej: un año) es el cosiente entre la \textbf{demanda anual} \(D\) 
+y la cantidad solicitada en cada ciclo \(q\); o también el cociente entre el parametro \(T\) (equivale a 1) y \(t\)
+(duración de un ciclo, expresada en unidad de año).
+
+\[
+    n=\frac{D}{q}=\frac{T}{t}
+\]
+
+Luego, multiplicamos \(CTE_i\) y \(n\), obtenemos el \textbf{costo total esperado anual}:
+
+\[
+    CTE= b \cdot D +\frac{1}{2} \cdot q \cdot c_1 \cdot T + k \cdot \frac{D}{q}
+\]
+
+Esta última función es la que necesitamos minimizar siendo \(q\) la variable a derivar y luego igualando a cero.
+
+\subsection{Modelo básico con protección de stock}
+
+\subsubsection{Hipotesis}
+
+\subsubsection{Parametros}
+
+\subsubsection{Variables}
+
+\subsection{Modelo básico con agotamiento admitido}
+
+
+\subsubsection{Hipotesis}
+
+\subsubsection{Parametros}
+
+\subsubsection{Variables}
+
+\subsection{Modelo Reposición no instantaneo}
+
+
+\subsubsection{Hipotesis}
+
+\subsubsection{Parametros}
+
+\subsubsection{Variables}
+
+\subsection{Modelo Reaprovicionamiento Constantes - Descarga instantanea}
+
+\subsubsection{Hipotesis}
+\begin{itemize}
+    \item Se admite un unico item.
+    \item La producción es conocida y se efectúa
+\end{itemize}
+
+
+\end{document}
