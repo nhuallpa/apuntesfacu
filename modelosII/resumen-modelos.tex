@@ -617,7 +617,7 @@ Este es el tamaño de lote óptimo.
 Luego, hallamos el \textbf{Costo Total Esperado} óptimo, reemplazando \(q_0\) en \(CTE\):
 
 \begin{equation}
-    CTE_0 = b \cdot D + \sqrt{2 \cdot D \cdot T \cdot c_1}
+    CTE_0 = b \cdot D + \sqrt{2 \cdot k \cdot D \cdot T \cdot c_1}
 \end{equation}
 
 A partir de la formula de \(n\), obtenemos a \(t_0\) y a \(n_0\):
@@ -662,10 +662,66 @@ El \textbf{Stock de Protección} es un nivel de existencias que se mantiene a lo
 \end{enumerate}
 
 
+\underline{Parametros:}
+\begin{itemize}
+    \item Idem parametro de modelo básico.
+    \item \(S_p\): Stock de protección
+\end{itemize}
 
-\subsubsection{Parametros}
+\underline{VARIABLES:}
+\begin{itemize}
+    \item Idem variables de modelo básico.
+    \item S: Stock máximo.
+\end{itemize}
 
-\subsubsection{Variables}
+
+\underline{Modelado}
+
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/stock-proteccion.png}
+\end{figure}
+
+Para un ciclo cualquiera, tendremos la siguiente expresión del costo total esperado:
+
+\begin{equation}
+    CTE_i= b \cdot q+\frac{1}{2} \cdot q \cdot c_1 \cdot t + k + S_p \cdot c_1 \cdot t
+\end{equation}
+
+Multiplicando por \(n\) obtenemos:
+
+\begin{equation}
+    CTE= b \cdot D +\frac{1}{2} \cdot q \cdot c_1 \cdot T + k \cdot \frac{D}{q} + S_P \cdot c_1 \cdot T
+\end{equation}
+
+Obtenemos el valor optimo de \(q\), el cual es independiente del nivel de stock de protección:
+
+\begin{equation}
+    q_0 = \sqrt{\frac{2 \cdot k \cdot D}{T \cdot c_1}}
+\end{equation}
+
+Obtenemos el \textbf{costo total esperado} con stock de protección:
+
+\begin{equation}
+    CTE_0 = b \cdot D + \sqrt{2 \cdot k \cdot D \cdot T \cdot c_1} + S_P \cdot C_1 \cdot T
+\end{equation}
+
+Tambien hayamos \(t_0\) y \(n_0\)
+
+\begin{equation}
+    t_0 = \sqrt{\frac{2 \cdot k \cdot T}{D \cdot c_1}}
+\end{equation}
+
+\begin{equation}
+    n_0 = \sqrt{\frac{T \cdot c_1 \cdot D}{2 \cdot k}}
+\end{equation}
+
+Luego, al \textbf{stock de reorden} se suma el stock de protección:
+
+\begin{equation}
+    S_R = LT \cdot d + S_P
+\end{equation}
+
 
 \subsection{Modelo básico con agotamiento admitido}
 
