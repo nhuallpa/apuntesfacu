@@ -538,9 +538,10 @@ producto que minimice el costo de total esperado.
 \end{enumerate}
 
 \noindent
-\underline{Parametros:}
+\underline{PARAMETROS:}
 \begin{itemize}
     \item D[u/t]: Demanda del producto.
+    \item d[u/t]: Tasa de egreso del producto.
     \item b[\$/u]: Costo unitario de adquisición.
     \item \(c_1[\$/u.t]\):  Costo unitario de almacenamiento.
     \item k[\$]: Costo de orden.
@@ -729,7 +730,7 @@ El \textbf{Stock de Protección} es un nivel de existencias que se mantiene a lo
 
 
 \noindent
-\underline{Parametros:}
+\underline{PARAMETROS:}
 \begin{itemize}
     \item Idem parametro de modelo básico.
     \item \(S_P\): Stock de protección
@@ -883,12 +884,54 @@ Finalmente, obtendremos el stock de reorden de:
 \newpage
 \subsection{Modelo Reposición no instantaneo}
 
+El ingreso de producto al almacen no es instantanea y se realiza a tasa constante.
 
-\subsubsection{Hipotesis}
 
-\subsubsection{Parametros}
+\noindent
+\underline{HIPOTESIS:}
+\begin{enumerate}
+    \item Se administra un único ítem.
+    \item El producto es de demanda independiente.
+    \item La demanda es conocida y se efectúa a tasa constante.
+    \item El plazo de entrega ("lead time") del producto solicitado, es conocido y constante.
+    \item La reposición no es instantaneo. La tasa de aprovisionamiento es finita.
+    \item El horizonte de planeamiento es de largo plazo.
+    \item El costo de agotamiento es infinitamente alto. El agotamiento no está permitido.
+    \item El costo de adquisición "b", cost. uni. de almacenamiento "\(c_1\)" y el costo de pedido "k" son independientes de la cantidad a pedir "q".
+    \item No hay restricciones sobre el tamaño a tomar del lote.
+    \item Todos los parametros monetarios estan expresados en moneda constante.
+    \item El producto se mide en una unidad continua. (Litros, kilogramos, etc).
+\end{enumerate}
 
-\subsubsection{Variables}
+
+\noindent
+\underline{PARAMETROS:}
+\begin{itemize}
+    \item Idem parametro de modelo básico.
+    \item \(P[u/t]\): Reposición del producto a un periodo t. 
+    \item \(p[u/t]\): Tasa de reposición
+\end{itemize}
+
+
+\noindent
+\underline{VARIABLES:}
+\begin{itemize}
+    \item Idem variables de modelo básico.
+    \item \(t_1\): Periodo de aprovisionamiento.
+    \item \(t_2\): No hay ingreso de mercaderia. Solo hay egresos.
+\end{itemize}
+
+
+\noindent
+\underline{MODELADO:}
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/stock-modelo-no-instantaneo.png}
+\end{figure}
+
+
+
+
 
 \subsection{Modelo Reaprovicionamiento Constantes - Descarga instantanea}
 
