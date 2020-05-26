@@ -2,6 +2,15 @@
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
 \usepackage[top=3cm, bottom=3cm, right=3cm, left=3cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
 
 \begin{document}
 
@@ -511,6 +520,7 @@ de determinar la cantidad de unidades a solicitar que minimice el costo total es
 El objetivo del problema que se encara es determinar el tamaño del lote de adquisición de un 
 producto que minimice el costo de total esperado.
 
+\noindent
 \underline{HIPOTESIS:}
 \begin{enumerate}
     \item Se administra un único ítem.
@@ -527,35 +537,29 @@ producto que minimice el costo de total esperado.
     \item El producto se mide en una unidad continua. (Litros, kilogramos, etc).
 \end{enumerate}
 
+\noindent
 \underline{Parametros:}
 \begin{itemize}
-    \item D: Demanda del producto.
-    \item b: Costo unitario de adquisición.
-    \item \(c_1\):  Costo unitario de almacenamiento.
-    \item k: Costo de orden.
+    \item D[u/t]: Demanda del producto.
+    \item b[\$/u]: Costo unitario de adquisición.
+    \item \(c_1[\$/u.t]\):  Costo unitario de almacenamiento.
+    \item k[\$]: Costo de orden.
     \item T=1: Parámetro de dimensionamiento que sirve para referenciar todos los parámetros temporales a la misma unidad de tiempo.
-    \item LT: Lead time.
+    \item LT[t]: Lead time.
 \end{itemize}
 
+\noindent
 \underline{VARIABLES:}
 \begin{itemize}
     \item q: tamaño del lote.
     \item t: intervalo del ciclo.
-    \item \(CTE\): Costo total esperado referido al período estratégico del tiempo.
-    \item \(SR\): Stock de reorden.
+    \item n[pedidos/t]: Cantidad de ciclos.
+    \item \(CTE[\$/t]\): Costo total esperado referido al período estratégico del tiempo.
+    \item \(SR[u]\): Stock de reorden.
 \end{itemize}
 
-\subsubsection{Restricciones}
-
-\begin{itemize}
-    \item Restriccion de espacio.
-    \item Restricción financiera.
-    \item Restricción administrativa.
-    \item Restricción de condiciones variables.
-    \item 
-\end{itemize}
-
-\underline{Modelado}
+\noindent
+\underline{MODELADO:}
 
 \begin{figure}[h!]
     \includegraphics[width=\linewidth]{imagenes/stock-modelo-basico.png}
@@ -567,7 +571,7 @@ Para un ciclo cualquiere \(i\), el \textbf{costo total de adquisición} será:
     b.q
 \]
 
-El costo total de adquisición para un ciclo, es el area bajo la curva.
+El costo total de almacenamiento para un ciclo, es el area bajo la curva.
 
 \[
     \frac{1}{2} \cdot q \cdot c_1 \cdot t
@@ -607,27 +611,27 @@ luego igualando a cero.
     \frac{\partial CTE}{ \partial q} = \frac{1}{2} \cdot c_1 \cdot T - k \cdot \frac{D}{q^2} = 0
 \]
 
-Como la derivada segunda es positiva, tendremos un minimo en ese punto. Despejando \(q_0\):
+Como la derivada segunda es positiva, tendremos un minimo en ese punto. Despejando \(q_o\):
 
 \begin{equation}
-    q_0 = \sqrt{\frac{2 \cdot k \cdot D}{T \cdot c_1}}
+    q_o = \sqrt{\frac{2 \cdot k \cdot D}{T \cdot c_1}}
 \end{equation}
 Este es el tamaño de lote óptimo.
 
-Luego, hallamos el \textbf{Costo Total Esperado} óptimo, reemplazando \(q_0\) en \(CTE\):
+Luego, hallamos el \textbf{Costo Total Esperado} óptimo, reemplazando \(q_o\) en \(CTE\):
 
 \begin{equation}
-    CTE_0 = b \cdot D + \sqrt{2 \cdot k \cdot D \cdot T \cdot c_1}
+    CTE_o = b \cdot D + \sqrt{2 \cdot k \cdot D \cdot T \cdot c_1}
 \end{equation}
 
-A partir de la formula de \(n\), obtenemos a \(t_0\) y a \(n_0\):
+A partir de la formula de \(n\), obtenemos a \(t_o\) y a \(n_o\):
 
 \begin{equation}
-    t_0 = \sqrt{\frac{2 \cdot k \cdot T}{D \cdot c_1}}
+    t_o = \sqrt{\frac{2 \cdot k \cdot T}{D \cdot c_1}}
 \end{equation}
 
 \begin{equation}
-    n_0 = \sqrt{\frac{T \cdot c_1 \cdot D}{2 \cdot k}}
+    n_o = \sqrt{\frac{T \cdot c_1 \cdot D}{2 \cdot k}}
 \end{equation}
 
 Tambien se puede determinar el \textbf{stock de reorden} o punto de pedido, en base al \textit{lead time} y la \textit{tasa de demanda} \(d\):
@@ -637,14 +641,76 @@ Tambien se puede determinar el \textbf{stock de reorden} o punto de pedido, en b
 \end{equation}
 
 \begin{figure}[h!]
-    \includegraphics[width=\linewidth]{imagenes/stock-q-optimo.png}
+    \includegraphics[width=\linewidth]{imagenes/stock-reorden.png}
 \end{figure}
+
+
+\newpage
+\subsection{Restricciones}
+
+Ahora si plenteamos distintas variantes de restricciones que puede haber a partir de este modelo:
+
+\begin{itemize}
+    \item Fisicas
+    \item Administrativas.
+    \item Financieras:
+    \item Operativas
+    \item Condiciones de la variable.
+\end{itemize}
+
+\subsubsection{Restricciones Fisicas}
+
+Definimos:
+\begin{itemize}
+    \item SU: Superficie ocupada por cada unidad de producto.
+    \item SUPTOT: Superficie total disponible.
+\end{itemize}
+Se debe cumplir la resticción \(SUP \cdot q \leq SUPTOT\) despues de calcular el \(q_o\). 
+Si no se cumple se debe calcular el nuevo lote de compra \(q*\) que no sera el óptimo:
+
+\begin{equation}
+    q* = \frac{SUBTOT}{SU}
+\end{equation}
+
+
+\subsubsection{Restricciones Financieras}
+Existe una restricción de capital máximo a inmovilizar. Entonces definimos, \(CMI\) como el capital máximo a inmovilizar,
+y se debe cumplir la restricción \(b \cdot q \leq CMI\), utilizando el \(q_o\).
+
+Si no se cumple la restricción, se debe calcular el nuevo lote de compra \(q*\) que no sera el óptimo:
+
+\begin{equation}
+    q* = \frac{CMI}{b}
+\end{equation}
+
+\subsubsection{Restricciones Administrativas}
+Existe una cantidad de ordenes a emitir. Se defino \(CMO\) como la cantidad máxima de ordenes a emitir y 
+se debe cumplir la restricción \(\frac{D}{q} \leq CMO\), utilizando el \(q_o\).
+
+Si no se cumple la restricción, se debe calcular el nuevo lote de compra \(q*\) que no sera el óptimo:
+
+\begin{equation}
+    q* = \frac{D}{CMO}
+\end{equation}
+
+Notar que si se quiere hallar CTE no se debe utilizar la formula de \(CTE_o\), sino que se debe partir de la formula general
+remplando \(q\) por \(q*=\frac{D}{CMO}\).
+
+\subsubsection{Restricciones de condiciones de variable}
+
+Si se impone como restricción que el \textit{stock debe ser cero} al finalizar el periodo de estudio,
+Entonces la restricción es que la \textbf{cantidad de ciclos debe ser entero}.
+
+Si al calcular \(n_o = \frac{D}{q_o}\) no cumple la restricción, se debe calcular los \(CTE\) (con la formula sin derivar) para los valores
+de q para dos valores enteros de \(n\) entre los valores de \(n_o\) y nos quedamos que el \(n\) con menor costo total esperado (CTE).
+
 
 \newpage
 \subsection{Modelo básico con protección de stock}
 
 El \textbf{Stock de Protección} es un nivel de existencias que se mantiene a los fines de absorber situaciones imprevistas.
 
+\noindent
 \underline{HIPOTESIS:}
 \begin{enumerate}
     \item Se administra un único ítem.
@@ -662,12 +728,15 @@ El \textbf{Stock de Protección} es un nivel de existencias que se mantiene a lo
 \end{enumerate}
 
 
+\noindent
 \underline{Parametros:}
 \begin{itemize}
     \item Idem parametro de modelo básico.
-    \item \(S_p\): Stock de protección
+    \item \(S_P\): Stock de protección
 \end{itemize}
 
+
+\noindent
 \underline{VARIABLES:}
 \begin{itemize}
     \item Idem variables de modelo básico.
@@ -685,7 +754,7 @@ El \textbf{Stock de Protección} es un nivel de existencias que se mantiene a lo
 Para un ciclo cualquiera, tendremos la siguiente expresión del costo total esperado:
 
 \begin{equation}
-    CTE_i= b \cdot q+\frac{1}{2} \cdot q \cdot c_1 \cdot t + k + S_p \cdot c_1 \cdot t
+    CTE_i= b \cdot q+\frac{1}{2} \cdot q \cdot c_1 \cdot t + k + S_P \cdot c_1 \cdot t
 \end{equation}
 
 Multiplicando por \(n\) obtenemos:
@@ -697,23 +766,23 @@ Multiplicando por \(n\) obtenemos:
 Obtenemos el valor optimo de \(q\), el cual es independiente del nivel de stock de protección:
 
 \begin{equation}
-    q_0 = \sqrt{\frac{2 \cdot k \cdot D}{T \cdot c_1}}
+    q_o = \sqrt{\frac{2 \cdot k \cdot D}{T \cdot c_1}}
 \end{equation}
 
 Obtenemos el \textbf{costo total esperado} con stock de protección:
 
 \begin{equation}
-    CTE_0 = b \cdot D + \sqrt{2 \cdot k \cdot D \cdot T \cdot c_1} + S_P \cdot C_1 \cdot T
+    CTE_o = b \cdot D + \sqrt{2 \cdot k \cdot D \cdot T \cdot c_1} + S_P \cdot C_1 \cdot T
 \end{equation}
 
-Tambien hayamos \(t_0\) y \(n_0\)
+Tambien hayamos \(t_o\) y \(n_o\)
 
 \begin{equation}
-    t_0 = \sqrt{\frac{2 \cdot k \cdot T}{D \cdot c_1}}
+    t_o = \sqrt{\frac{2 \cdot k \cdot T}{D \cdot c_1}}
 \end{equation}
 
 \begin{equation}
-    n_0 = \sqrt{\frac{T \cdot c_1 \cdot D}{2 \cdot k}}
+    n_o = \sqrt{\frac{T \cdot c_1 \cdot D}{2 \cdot k}}
 \end{equation}
 
 Luego, al \textbf{stock de reorden} se suma el stock de protección:
@@ -722,16 +791,96 @@ Luego, al \textbf{stock de reorden} se suma el stock de protección:
     S_R = LT \cdot d + S_P
 \end{equation}
 
+En conclución el \textbf{stock de protección} no impacta en el tamaño del lote \(q\), pero si impacta en el punto de 
+pedido \(S_R\) o punto de reorden. Sobre el stock de protección se pueden montar otros modelos. 
 
+\newpage
 \subsection{Modelo básico con agotamiento admitido}
 
+El agotamiento de las existencias se verifica cuando no quedan más unidades disponibles para satisfacer la demanda.
 
-\subsubsection{Hipotesis}
+\noindent
+\underline{HIPOTESIS:}
+\begin{enumerate}
+    \item Se administra un único ítem.
+    \item El producto es de demanda independiente.
+    \item La demanda es conocida y se efectúa a tasa constante.
+    \item El plazo de entrega ("lead time") del producto solicitado, es conocido y constante.
+    \item La reposición se hace exactamente cuando el nivel de stock es cero.
+    \item \textbf{El agotamiento esta permitido}. 
+    \item El horizonte de planeamiento es de largo plazo.
+    \item El costo de adquisición "b", cost. uni. de almacenamiento "\(c_1\)" y el costo de pedido "k" son independientes de la cantidad a pedir "q".
+    \item No hay restricciones sobre el tamaño a tomar del lote.
+    \item Todos los parametros monetarios estan expresados en moneda constante.
+    \item El producto se mide en una unidad continua. (Litros, kilogramos, etc).
+    \item \textbf{El costo de agotamiento esta dado por el costo en el que se incurre por unidad de tiempo de deficit.}
+\end{enumerate}
 
-\subsubsection{Parametros}
+\noindent
+\underline{PARAMETROS:}
+\begin{itemize}
+    \item Idem parametro de modelo básico.
+    \item \(c_2\): Costo de agotamiento por unidad de tiempo de postergarción.
+\end{itemize}
 
-\subsubsection{Variables}
+\noindent
+\underline{VARIABLES:}
+\begin{itemize}
+    \item Idem variables de modelo básico.
+    \item \(t_1\): Periodo de entrega de mercadería.
+    \item \(t_2\): Periodo de déficit de mercadería.
+    \item \(S_A\): Cantidad máxima de unidades agotadas.
+\end{itemize}
 
+\noindent
+\underline{MODELADO:}
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/stock-modelo-agotamiento.png}
+\end{figure}
+
+El costo total esperado por ciclo sera:
+
+\begin{equation}
+    CTE_i= b \cdot q + \frac{1}{2} \cdot S \cdot c_1 \cdot t_1 + \frac{1}{2} \cdot (q - S) \cdot c_2 \cdot t_2 + k
+\end{equation}
+
+La expresión de \textbf{lote optimo de adquisición} es:
+
+\begin{equation}
+    q_o = \sqrt{\frac{2 \cdot k \cdot D}{T \cdot c_1}} \cdot \sqrt{\frac{c_1+c_2}{c_2}}
+\end{equation}
+
+La expresión del valor óptimo de la \textbf{cantidad máxima a almacenar} \(S\):
+
+\begin{equation}
+    S_o = \frac{q_o \cdot c_2}{c_1 + c_2}
+\end{equation}
+
+La expresión para la \textbf{cantidad máxima agotada óptima} por período:
+
+\begin{equation}
+    S_{Ao} = q_o \cdot \frac{c_1}{c_1 + c_2}
+\end{equation}
+
+Luego, hallamos el \textbf{Costo Total Esperado} óptimo, sera:
+
+\begin{equation}
+    CTE_o = b \cdot D + \sqrt{2 \cdot k \cdot D \cdot T \cdot c_1} \cdot \sqrt{\frac{c_2}{c_1 + c_2}}
+\end{equation}
+
+Finalmente, obtendremos el stock de reorden de:
+
+\begin{equation}
+    S_R = LT \cdot d - S_{Ao}
+\end{equation}
+
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/stock-reorden-agotamiento.png}
+\end{figure}
+
+\newpage
 \subsection{Modelo Reposición no instantaneo}
 
 
