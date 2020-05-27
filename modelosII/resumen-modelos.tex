@@ -912,7 +912,6 @@ El ingreso de producto al almacen no es instantanea y se realiza a tasa constant
     \item \(p[u/t]\): Tasa de reposición
 \end{itemize}
 
-
 \noindent
 \underline{VARIABLES:}
 \begin{itemize}
@@ -921,7 +920,6 @@ El ingreso de producto al almacen no es instantanea y se realiza a tasa constant
     \item \(t_2\): No hay ingreso de mercaderia. Solo hay egresos.
 \end{itemize}
 
-
 \noindent
 \underline{MODELADO:}
 
@@ -929,6 +927,46 @@ El ingreso de producto al almacen no es instantanea y se realiza a tasa constant
     \includegraphics[width=\linewidth]{imagenes/stock-modelo-no-instantaneo.png}
 \end{figure}
 
+Determinar el \(CTE\) en cada ciclo \(i\):
+\begin{equation}
+    CTE_i= b \cdot q + \frac{1}{2} \cdot S \cdot c_1 \cdot t + k
+\end{equation}
+
+Del grafico se puede obtener \(S\) y \(t_1\):
+
+\begin{equation}
+    q= p \cdot t_1 \implies t_1 = \frac{q}{p}
+\end{equation}
+
+\begin{equation}
+    S = q \cdot (1 - \frac{d}{p})
+\end{equation}
+
+Remplazando S, entonces el costo esperado total para los \(n\) ciclos sera(la ecuación a minimizar):
+
+\begin{equation}
+    CTE = b \cdot D + \frac{1}{2} \cdot q \cdot (1-\frac{d}{p}) \cdot c_1 \cdot T + \frac{k \cdot D}{q} 
+\end{equation}
+
+Derivando y despejando, obtenemos el \(q_o\):
+
+\begin{equation}
+    q_o = \sqrt{\frac{2 \cdot k \cdot D}{T \cdot c_1 \cdot (1-\frac{d}{p})}}
+\end{equation}
+
+Reemplazando el \(q_o\), obtenemos el \(CTE_o\) óptimo:
+
+\begin{equation}
+    CTE_o = b \cdot D + \sqrt{2 \cdot k \cdot D \cdot T \cdot c_1 \cdot (1-\frac{d}{p})}
+\end{equation}
+
+El tamaño de  stock maximo sera:
+
+\begin{equation}
+    S_o = q_o \cdot (1-\frac{d}{p})
+\end{equation}
+
+Seguimos y hallamos \(t_o\); \(t_1\); \(t_2\) y \(n_o\):
 
 
 
