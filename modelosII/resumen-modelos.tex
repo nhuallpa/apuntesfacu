@@ -821,7 +821,7 @@ El agotamiento de las existencias se verifica cuando no quedan más unidades dis
 \underline{PARAMETROS:}
 \begin{itemize}
     \item Idem parametro de modelo básico.
-    \item \(c_2\): Costo de agotamiento por unidad de tiempo de postergarción.
+    \item \(c_2[\$/u.t]\): Costo de agotamiento por unidad de tiempo de postergarción.
 \end{itemize}
 
 \noindent
@@ -833,7 +833,8 @@ El agotamiento de las existencias se verifica cuando no quedan más unidades dis
     \item \(S_A\): Cantidad máxima de unidades agotadas.
 \end{itemize}
 
-\noindent
+
+\newpage
 \underline{MODELADO:}
 
 \begin{figure}[h!]
@@ -844,6 +845,16 @@ El costo total esperado por ciclo sera:
 
 \begin{equation}
     CTE_i= b \cdot q + \frac{1}{2} \cdot S \cdot c_1 \cdot t_1 + \frac{1}{2} \cdot (q - S) \cdot c_2 \cdot t_2 + k
+\end{equation}
+
+Pero, como se calculan \(t_1\)y \(t_2\), utilizando relación entre triangulos:
+
+\begin{equation}
+    \frac{S}{q} = \frac{t_1}{t_i}  \implies t_1 = t_i \cdot \frac{S}{q}
+\end{equation}
+
+\begin{equation}
+    \frac{q-S}{q} = \frac{t_2}{t_i}  \implies t_2 = t_i \cdot \frac{q-S}{q}
 \end{equation}
 
 La expresión de \textbf{lote optimo de adquisición} es:
@@ -870,16 +881,43 @@ Luego, hallamos el \textbf{Costo Total Esperado} óptimo, sera:
     CTE_o = b \cdot D + \sqrt{2 \cdot k \cdot D \cdot T \cdot c_1} \cdot \sqrt{\frac{c_2}{c_1 + c_2}}
 \end{equation}
 
+
+Intervalo óptimo de cada ciclo:
+
+\begin{equation}
+    t_o = \frac{q_o \cdot T}{D}
+\end{equation}
+
+Periodo óptimo de entrega:
+
+\begin{equation}
+    t_{1o} = t_{io} \cdot \frac{S_o}{q_o}
+\end{equation}
+
+Periodo óptimo de déficit:
+
+\begin{equation}
+    t_{2o} = t_{io} \cdot \frac{q_o - S_o}{q_o}
+\end{equation}
+
+Número óptimo de pedidos a efectuar:
+
+\begin{equation}
+    n_o = \frac{D}{q_o}
+\end{equation}
+
+
+\newpage
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/stock-reorden-agotamiento.png}
+\end{figure}
+
 Finalmente, obtendremos el stock de reorden de:
 
 \begin{equation}
     S_R = LT \cdot d - S_{Ao}
 \end{equation}
 
-
-\begin{figure}[h!]
-    \includegraphics[width=\linewidth]{imagenes/stock-reorden-agotamiento.png}
-\end{figure}
 
 \newpage
 \subsection{Modelo Reposición no instantaneo}
