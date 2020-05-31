@@ -3,7 +3,7 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{listings}
-\renewcommand{\baselinestretch}{1.5}
+\renewcommand{\baselinestretch}{1.2}
 \setlength{\parskip}{1em}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -507,12 +507,12 @@ El algoritmo de greedy arma un arbol de "hufman" para armar un arbol optimo de p
 \subsection{Teorema mestro - TODO}
 
 
-\subsubsection{Mediana con datos separadas}
+\subsection{Mediana con datos separadas}
 
 
 \section{Programación dinamica}
 
-\subsubsection{Cambio de monedas}
+\subsection{Cambio de monedas}
 
 Contamos con un conjunto de monedas de diferente denominación sin restricción de cantidad. Representamos de esta manera \(\$=(c_1,c_2,....,c_n)\) y tenemos un importe x a dar. 
 Concluimos que no existe un algoritmo satisfactorio de greedy para resolver este problema.
@@ -543,13 +543,269 @@ Ademas en cada subproblema debo analizar \(n\) comparaciones, lo cual impacta en
 
 Para la solución \textbf{iterativa}: TODO
 
-\subsubsection{Publicidad en la carretera}
+\subsection{Publicidad en la carretera}
 
 
-\subsubsection{Programación de intervalos ponderados}
+\subsection{Programación de intervalos ponderados}
 
 
+\newpage
+\subsection{Bellman Ford}
+
+Se extiendo el problema de hallar caminos minimos utilizando \textbf{aristas ponderas negativas}. 
+Se puede hayar un camino global que pase por aristas ponderadas negativamente y que sea el optimo, 
+en vez de utilizar un algotimo de reedy de \textit{Dijkstra} que para este caso no seria óptimo.
+
+Una solución por \textbf{fuerza bruta} seria, calcular para un grafo poderado \textbf{sin ciclos negativos}:
+
+\begin{itemize}
+    \item Todos los costos de los caminos posibles de \(s\) a \(t\) de longitud 1.
+    \item Todos los costos de los caminos posibles de \(s\) a \(t\) de longitud 2.
+    \item ...
+    \item Todos los costos de los caminos posibles de \(s\) a \(t\) de longitud n-1.
+\end{itemize}
+
+\textbf{El camino mínimo tendra longitud n-1 como máximo} sin ciclos negativos.
+
+El algoritmo de \textbf{Bellman-Ford} halla el camino mínimo con aristas negativos utilizando programación dinámica.
+
+\underline{ANÁLISIS}
+
+Para llegar desde "s" a un nodo \(n_i\) puede haber utilizado diferntes caminino y longitudes.
+Lo puede hacer a travez de sus nodos predecesores \(pre[n_i]\).
+
+Para poder llegar a \(n_i\) en \(j\) pasos, tengo que haber llegado a sus predeceroes en \(j-1\) pasos. 
+Asi sucesivamente hasta "s" se puede ir resolviendo \textit{sub casos}.
+
+Definimos \(minPath(n,j)\) al camino mínimo hasta el nodo \(n_i\) con longitud máxima \(j\).
+
+\underline{SOLUCIÓN RECURRENTE}
+
+\begin{align*}
+minPath('s', j) &= 0 \\
+minPath(n_i, 0) &= +\infty & n_i \neq s \\
+minPath(n_i, j) &=min\left\{\begin{array}{ll}
+                minPath(n_i, j-1)              \\
+                min \{minPath(n_x, j-1) + w(n_x, n_i)\}          
+        \end{array}\right. & n_x \in pred(n_i)
+\end{align*}
+
+\begin{itemize}
+    \item El camino mínimo a 's' para cualquier longitud es siempre 0.
+    \item El camino mínimo a \(n_i\) al comienzo es infinito.
+    \item TODO
+\end{itemize}
+
+\underline{SOLUCIÓN ITERATIVA}
+
+Definimos a \(OPT[l][v]\) como el camino mínimo de "s" al nodo \(n\) con longitud\(l\)
+
+El nodo "s" se encuentra en v=0
+El nodo "t" se encuentra en v=n
+
+\begin{lstlisting}[language=Python, caption=Algoritmo de requeridos con cupos]
+    Desde l=0 a n-1
+        OPT[l][0] = 0
+    Desde v=0 a n-1
+        OPT[0][v] = +infinito
 
 
+    Desde l=1 a n-1   // max longitud del camino
+        Desde v=1 a n // nodo
+            OPT[l][v] = OPT[l-1][v]
+            Por cada p predecesor de v
+                si OPT[l][v] > OPT[l-1][p] + w(p,v)
+                    OPT[l][v] = OPT[l-1][p] + w(p,v)
+                   
+    retornar OPT[n-1, n]
+\end{lstlisting}
+
+La complejidad del primer loop esta acotado por n. La segunda parte se ejecuta m veces por cada predecesor.
+O sea es \(O(m*n)\)
+
+La complejidad espacial es m*n porque la matriz ocupa n*m
+
+\underline{RECONSTRUIR LAS ELECCIONES}
+
+Agregar un nodo predecesor y almacenar en la posición \(i\) cual fue el predecesor del nodo.
+
+\textit{¿Que pasa si hay un ciclo negativo?}
+
+Si en una iteración despues de haber llegado a la longitud maxima, cambia el minimo de al menos un nodo, entonces el grafo \textit{tiene ciclos negativos}.
+
+
+\subsection{Problema de Maximo subarreglo}
+
+Se necesita calcular un subconjunto \textit{contiguo de elementos} \(S\) 
+tal que la suma de los valores sea la máxima posible. 
+
+El maximo subvector que termina en el elemento \(i\), esta relacionado con el máximo
+subvector que termina en el elemento \(i-1\).
+
+\underline{SOLUCIÓN RECURRENTE}
+
+\begin{align*}
+    MAX(1) &= v[1] \\
+    MAX(i) &= max\{MAX(i-1), 0\} + v[i]
+\end{align*}
+    
+
+\underline{SOLUCIÓN ITERATIVA}
+
+\begin{lstlisting}[language=Python, caption=Solución iterativa]
+
+    MaximoGlobal = v[1]
+    MaximoLocal = v[1]
+    IdxFinMaximo = 1
+
+    Desde i=2 a n
+        MaximoLocal = max(MaximoLocal, 0) + v[i]
+
+        si MaximoLocal > MaximoGlobal
+            MaximoGlobal = MaximoLocal 
+            IdxFinMaximo = i
+
+    Retornar MaximoGlobal
+
+\end{lstlisting}
+
+\newpage
+\subsection{Problema de cuadrados minimos}
+
+Dado un conjunto de puntos \(P={(x_1,y_1),(x_2,y_2),...,(x_n,y_n)}\), con \(x_1<x_2<\cdots<x_n\). 
+Usamos \(p_i\) para indicar un punto \((x_i, y_i)\). 
+
+Queremos aproximimar mediante segmentos los puntos de \(P\) minimizando el error comentido. 
+Los sementos se forman mediante \textit{rectas de aproximación} hallando \(a\) y \(b\). 
+El calculo del error cometido se obtiene sumando las distancias de los puntos a las rectas. 
+
+Se agrega un parametro de penalización \(C>0\) por cada segmento que se agrega.
+\begin{itemize}
+    \item A mayor "C" entonces: menos segmentos
+    \item A menor "C" entonces: menos error
+\end{itemize}
+
+Al analizar una solución por \textbf{fuerza bruta} se obtiene una complejidad de \(O(2^{n*n})\).
+
+\underline{SOLUCIÓN RECURRENTE}
+
+Como no conocemos cual es el ultimo segmento, se elige el último segmento como aquel que \textbf{minimice el error general}.  
+O sea que queremos minimizar el error del segmento, mas la constante \(c\) 
+mas el error conocido en el \textit{subproblema que contiene los puntos de segmentemos anteriores} 
+sea el minimo entre todos los posibles.
+
+
+\begin{align*}
+    OPT(i) &= min_{1 \leq x \leq i} (e_{x,i} + C + OPT(x-1)) \\ 
+    OPT(0) &= 0
+\end{align*}
+    
+\noindent
+\underline{SOLUCIÓN ITERATIVA}
+
+\begin{lstlisting}[language=Python, caption=Solución iterativa]
+    OPT[0] = 0
+
+    Para todo para i,j con i <= j
+        Calcular e[i][j]
+
+    Desde j=1 a n
+        OPTIMO[j] = +infinito
+    
+        Desde i=1 a n
+            segmento = e[i][j] + C + OPT[i-1]
+
+            si OPTIMO[j] > segmento 
+                OPTIMO[j] = segmento
+
+    Retornar OPT[n]
+
+\end{lstlisting}
+
+Analizando la \textbf{complejidad temporal}, el calculo del optimo es \(O(n)\), pero se calculan \(n\) óptimos,
+Por lo tanto esta partes es \(O(n^2)\).
+
+Pero como en la primer se itera sobre todos los pares posibles es \(O(n)\). Y como el calculo del error
+es \(O(n)\), la primer interación termina siendo \(O(n^3)\), y este le gana a \(O(n^2)\).
+
+La complejidad total es \(O(n^3)\).
+
+Para el calculo de la \textbf{complejidad espacial}, los errores se almacenan en \(O(n^2)\), mientras que 
+los óptimos en \(O(n)\). Por lo tanto la complejidad espacial total es de \(O(n^2)\).
+
+\newpage
+\subsection{Problema del viajante}
+
+Sea un conjunto de \(n\) ciudades "C", un conjunto de rutas de costo de tránsito, existe una ruta 
+que une cada par de ciudades.
+
+Queremos obtener el circuito de menor costo que inicie y finalice en una ciudad y
+que pase por el resto de las ciudades \textit{una y solo una} vez
+
+Mediante \textbf{fuerza bruta} tenemos que calcular todos los ciclos posibles, y por lo tanto
+existen \((n-1)!\) ciclos de longitud \(n-1\). 
+Luego por cada ciclo calculamos su costo y nos quedamos con el mínimo. Por lo tanto la complejidad total es \(O(n!)\).
+
+Mediante el \textbf{algoritmo Belman-Held-Karp} lo resuelvo utilizando programación dinamica.
+Se puede decomponer como el mínimo entre los subproblemas menores con \((n-1)!\) hojas.
+
+\noindent
+\underline{SOLUCIÓN RECURRENTE}
+
+Dado \(S\) un subconjunto de ciudades e \(i\) la ciudad donde estoy parado. \textbf{start} es la ciudad de partida.
+La siguiente es la ecución de recurrencia:
+
+\begin{align*}
+    OPT(i, \{S\}) &= min_{j in \{S\}} (w(i,j) + OPT(j, \{S-j\})) \\ 
+    OPT(i, \emptyset) &= w(i, start)
+\end{align*}
+
+\begin{itemize}
+    \item El optimo i con el subconjuto s va a ser igual al minimo de los subproblemas que son elegir alguna de las ciudades que estan en s. 
+          Sumando el peso de i a j mas el optimo de partir de j hacia el resto de las ciudades (s-j).
+    \item En el caso base, ya no quedan ciudades para visitas, entonces solo queda sumar el peso de ir de \(i\) a la ciudad de inicio \textit{Start}.
+\end{itemize}
+    
+\noindent
+\underline{SOLUCIÓN ITERATIVA}
+Llamamos a \(C\) al conjunto de todas las ciudades, 1 es la ciudad inicial, y el resto de las ciudades
+estan numeradas de 2 a n.
+
+
+\begin{lstlisting}[language=Python, caption=Solución iterativa]
+
+    Desde i=2 a n
+        OPT[i][0] = W[i][1]
+    
+    Desde k=1 a n-2
+        Para todo subset S de C-{1} de tamanio k
+            Para cada elemento i de S
+                OPT[i, S-{i}] = +infinito
+
+                Por cada elemento j de S - {i}
+                    r=OPT[j, S-{i,j}] + w[j][i]
+
+                    si (r<OPT[i, S-{i}])
+                        OPT[i, S-{i}] = r
+
+    
+    CamininoMinimo=+infinito
+    Desde j=2 a n
+        ciclo = OPT[i, S-{1, i}] + w[1, i]
+        Si (CamininoMinimo>ciclo)
+            CamininoMinimo = ciclo
+    
+    Retornar CamininoMinimo
+
+\end{lstlisting}
+
+\begin{itemize}
+    \item La primer iteración se cargan los casos bases para las \(n\) ciudades.
+    \item Despues desarrollamos los subproblemas, primero iteramos las ciudades que quedan por visitar
+    \item Luego generamos las variantes de subset y por cada uno calculo el minimo y 
+    utilizo los subproblemas de tamaño menor, ver cual de todos es el minimo.
+\end{itemize}
+
+La complejidad total es \(O(n^2 2^n)\)
 
 \end{document}
