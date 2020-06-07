@@ -3,12 +3,31 @@
 \usepackage{graphicx}
 \usepackage{xcolor}
 \usepackage{listings}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\rhead{\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+
+
 \renewcommand{\baselinestretch}{1.2}
 \setlength{\parskip}{1em}
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
 
 \lstdefinestyle{mystyle}{
     backgroundcolor=\color{backcolour},   
@@ -70,6 +89,7 @@ Eligiendo las estructuras correctamente se puede plantear en \(O(n)\).
     
 \end{lstlisting}    
 
+\newpage
 \subsection{Alternativas}
 \subsubsection{Diferentes cantidades de oferentes que requeridos}
 
@@ -106,7 +126,7 @@ Soluciones para ajustar al modelo de Gale-Shapley:
     \end{itemize}
 \end{enumerate}
 
-
+\newpage
 \subsubsection{Preferencias incompletas}
 Las listas de preferencias de los oferentes y los requeridos son un subset de las contrapartes.
 
@@ -244,6 +264,7 @@ Puede no existir un matching perfecto.
     En caso de que sea empate, se mantendra con su pareja actual.
 \end{quote}
 
+\newpage
 \subsubsection{Agrupacion de 1 a muchos}
 El solicitante puede tener varios cupos por lo tanto:
 \begin{itemize}
@@ -285,7 +306,7 @@ No cambia la definición de Gale Shampey para \textbf{matching estable}
     \textbf{La complejidad algoritmica no se modifica porque solo se agrega un contador.}
 \end{quote}
 
-
+\newpage
 \subsubsection{Agrupacion de muchos a 1}
 El requerido puede tener varios cupos por lo tanto:
 \begin{itemize}
@@ -330,6 +351,7 @@ No cambia la definición de Gale Shampey para \textbf{matching estable}
 \end{quote}
 Para conocer el solicitante de menor preferencia podemos utilizar un heap de minimos. Como el cupo es de z, la complejidad algoritmica para actualizar el heap es \(log (z)\).
 
+\newpage
 \subsubsection{Agrupacion de y a x}
 \begin{itemize}
     \item Exiten \(n\) solicitantes, donde cada solicitante puede tener \(c\) cupos para armar parejas.
@@ -356,15 +378,18 @@ Para implementar se requieren las siguientes estructuras:
     \textbf{La complejidad algoritmica es igual a la de los requeridos con cupos}
 \end{quote}
 
+\newpage
 \subsubsection{Conjuntos no bipartios - Stable Roommate Problem}
 Pendiente
 
+\newpage
 \section{Analisis amortizado}
 
 \subsubsection{Metodo de agregacion}
 \subsubsection{Metodo del banquero}
 \subsubsection{Metodo del potencial}
 
+\newpage
 \subsubsection{Heap binomial y fibonacci}
 Revisar capitulo 19 del Corven.
 \newline
@@ -489,7 +514,7 @@ Entonces, despues de eliminar todos los requests que no son compatibles con los 
 Pero el algoritmo de greedy se detiene con el request \(i_k\) y este supuestamente se detiene porque \(R\) esta vacio, lo cual es una contradicción. 
 
 
-
+\newpage
 \subsection{Seam Carving - TODO}
 Es un algoritmo para adecuar imagenes. Analiza imagenes recortando pixeles de menor importancia. Retira tantas vetas como sea necesario para llegar a un tamaño optimo.
 
@@ -509,7 +534,7 @@ El algoritmo de greedy arma un arbol de "hufman" para armar un arbol optimo de p
 
 \subsection{Mediana con datos separadas}
 
-
+\newpage
 \section{Programación dinamica}
 
 \subsection{Cambio de monedas}
@@ -543,10 +568,36 @@ Ademas en cada subproblema debo analizar \(n\) comparaciones, lo cual impacta en
 
 Para la solución \textbf{iterativa}: TODO
 
+\newpage
 \subsection{Publicidad en la carretera}
 
-
+\newpage
 \subsection{Programación de intervalos ponderados}
+
+
+
+
+\newpage
+\subsection{Problema de Subset Sum y Knapsack (mochila) }
+
+\newpage
+\subsection{Problema de Subset Sum }
+
+Sea un conjunto de \(n\) elementos \(E=\{e_1, e_2, ..., e_n \}\) donde cada elemento \(e_i\) 
+cuenta con un peso asociado \(w_i\).
+
+Queremos seleccionar un subset de elementos de E con el mayor peso posible que no supere un 
+valor \(W\) de peso máximo.
+
+Para plantear una solución por \textbf{fuerza bruta}, un elemento puede estar o no. O sea que si
+tengo \(n\) elementos pueden existir \(2^n\) combinaciones. Entonces la complejidad total esta acotado
+por \(O(2^n)\).
+
+
+
+
+
+
 
 
 \newpage
@@ -633,7 +684,7 @@ Agregar un nodo predecesor y almacenar en la posición \(i\) cual fue el predece
 
 Si en una iteración despues de haber llegado a la longitud maxima, cambia el minimo de al menos un nodo, entonces el grafo \textit{tiene ciclos negativos}.
 
-
+\newpage
 \subsection{Problema de Maximo subarreglo}
 
 Se necesita calcular un subconjunto \textit{contiguo de elementos} \(S\) 
@@ -756,7 +807,7 @@ Dado \(S\) un subconjunto de ciudades e \(i\) la ciudad donde estoy parado. \tex
 La siguiente es la ecución de recurrencia:
 
 \begin{align*}
-    OPT(i, \{S\}) &= min_{j in \{S\}} (w(i,j) + OPT(j, \{S-j\})) \\ 
+    OPT(i, \{S\}) &= min_{j \in \{S\}} (w(i,j) + OPT(j, \{S-j\})) \\ 
     OPT(i, \emptyset) &= w(i, start)
 \end{align*}
 
@@ -808,4 +859,213 @@ estan numeradas de 2 a n.
 
 La complejidad total es \(O(n^2 2^n)\)
 
+\newpage
+\section{Redes de flujo}
+
+Se trata de problemas de flujos de trafico en redes. 
+Por ejemplo, tubos de gas, autopistas, rutas de aviones, redes electricas.
+
+Definiciones:
+\begin{itemize}
+    \item Los \textbf{ejes} transportan algun tipo de flujo
+    \item Los \textbf{vértices} actúan como conmutador de tráfico entre los diferentes ejes.
+    \item Capacidad: cantidada máxima que un eje puede transportar.
+    \item Fuente: Vértices que generan tráfico saliente.
+    \item Sumidero:Vértice que absorbe tráfico entrante.
+    \item Flujo: Cantidad transportada por eje.
+\end{itemize}
+
+Definimos \textbf{corte de grafo} como: 
+
+
+Dos cortes diferentes, tienen capacidades de transporte maxima diferentes.
+
+
+\subsection{Algoritmo Ford-Fulkerson}
+
+Calcula el maximo flujo a travez de una red.
+
+\noindent
+\underline{\textbf{Grafo residual}}
+
+Dado un red de flujo \(G\) y un flujo \(f\) en \(G\), 
+\textbf{definimos el grafo residual \(G_f\) (de \(G\) con respecto a \(f\))} a:
+
+\begin{itemize}
+    \item Los mismos vértices de G,
+    \item \textbf{Ejes hacia adelante}: Para cada \(e=(u,v) \in E\) en el que \(f(e) < C_e\). 
+    Lo incluimos en \(G_f\) con capacidad \(C_e-f(e)\) [\textbf{capacidad residual} de flujo].
+    \item \textbf{Ejes hacia atras}: Para casa \(e=(u,v) \in E\) en el que \(f(e) > 0\). 
+    Incluimos \(e'=(v,u)\) con capacidad \(f(e)\).
+\end{itemize}
+
+\noindent
+\underline{\textbf{Cuello de botella}}
+
+Sea \(P\) un \textbf{camino simple} \(s-t\) en \(G_f\), o sea que \(P\) no visita más de una vez el mismo vértice.
+
+Difinimos \textbf{bottleneck(P,f)} a la \underline{capacidad residual mínima} de cualquier eje de P con repecto al flujo \(f\).
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/cuello-de-botella.png}
+\end{figure}
+
+Lo máximo que se puede transportar es 20, para que no deje cumplir la condición de capacidad.
+
+\begin{quote}
+    \textit{Con el grafo residual, podemos redireccionar el flujo en el caminio original para aumentar el flujo total de la red.}
+\end{quote}
+
+Llamamos \(P\) al caminio de aumento (\textbf{augmenting path}):
+
+\begin{itemize}
+    \item \(P\) es una caminio simple que va de \(s\) a \(t\) en \(G_f\).
+    \item \(P\) no visita el mismo nodo mas de una vez.
+\end{itemize}
+ 
+Ahora definimos la operación \textbf{augment(f,P)} el cual cede un nuevo flujo \(f'\) en e\(G\)
+
+\begin{lstlisting}[language=Python, caption=Operación de augment]
+augment(f, p)
+    Sea b = bottleneck(P, f)
+    Para cada eje e=(u, v) perteneciente a P
+        Si e=(u,v) eje hacia adelante
+            f(e) += b en G
+        sino si es eje para atras 
+            e' = (v,u)
+            f(e') -=b en G   
+    Retornar f
+\end{lstlisting}
+
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/camino-aumento.png}
+\end{figure}
+
+\textit{¿Es valido el nuevo flujo?}PENDIENTE
+
+Con el grafo residual y el camino de aumento definimos el \textit{pseudocódigo de Ford-Fulkerson}.
+
+
+\begin{lstlisting}[language=Python, caption=Operación de augment]
+Max-Flow
+    Inicialmente  f(e)=0 para todo 'e' en G
+
+    Mientras haya un camino s-t en Gf
+
+        Sea P un caminio s-t simple en Gf
+        f' = augment(f,P)
+
+        Actualizar f para ser f'
+        Actualizar Gf para ser Gf'
+
+
+    Retornar f
+\end{lstlisting}
+
+La \textbf{complejidad} es \(O(|E|*C)\) donde \(|E|\) es la cantidad de ejes y C es la suma de todas
+las \(C_e\) de los ejes que salen de la fuente.
+
+
+\textit{¿Es óptimo?}PENDIENTE
+
+\begin{quote}
+    \textbf{El flujo retornado por el algoritmo Ford-Fulkerson es el flujo máximo}
+\end{quote}
+
+Ademas podemos mediante BFS en \(G_f\) construir el corte mínimo s-t (A,B) obteniendo A y por diferencia B.
+
+Consideraciones si las capacidades no son enteras:
+\begin{itemize}
+    \item Si son racionales, multiplicar por minimo comun multiplo
+    \item Si son irracionales, \textit{no esta asegurado que el algoritmo termine}.
+\end{itemize}
+
+\subsection{Variante: Circulación con demanda}
+
+Cada nodo pueder ser productor o consumir de flujo. O un nodo que no es consumidor ni productor de flujo.
+
+\newpage
+\subsection{Bipartite Matching Problem}
+
+Llamamos un grafo bipartito a \(G=(V,E)\) un \textit{grafo no dirigido}, puede particionarse en 
+como \(V=X \cup Y\), con la propiedad de que cada eje \(e \in E\) se conecta en una punta con
+un nodo en \(X\) y la otra punta un nodo en \(Y\). Un \textit{matching M} en \(G\) es un subconjunto
+de ejes \(M \subseteq E\) tal que cada nodo aparece en al menos un eje en \(M\).
+Se necesita encontrar el set \(M\) de mayor tamaño posible. O sea la mayor cantidad de parejas.
+
+
+Resolvemos el matching utilizando el problema de flujo máximo.
+Construimos una red de flujo \(G'\) como la siguiente imagen. Pasamos todos los ejes a ejes dirigidos de
+\(X\) a \(Y\). Luego agregamos el nodo \(s\) y un eje \((s,x)\) desde \(s\) a cada nodo en \(X\). 
+Tambien agregamos el nodo \(t\) y un eje \((y,t)\) desde cada nodo en \(Y\) a \(t\).
+Finalmente, le damos una capacidad de \(1\) a cada eje en \(G'\)
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/bipartito-redes-flujo.png}
+\end{figure}
+
+Resolvemos el problema de red de flujo máximo con \(G'\). Obtenemos el flujo máximo \(s-t\). Entonces
+\textit{El valor del flujo total es igual al tamaño del matiching máximo.}
+
+\textbf{Analisis} Pendiente
+
+\newpage
+\subsection{Diseño de encuentas}
+
+Considere el problema de una compañia que vende \(k\) productos y que tiene una base de datos con el 
+historias de las compras de todos sus clientes. La compañia desea enviar encuestas con preguntas
+personalizadas a un grupo particular de \(n\) clientes, para determinar que productos la gente 
+prefiere sobre el total.
+
+Lineamientos para la encuesta:
+\begin{itemize}
+    \item Cada cliente recibira preguntas acerca de cierto subconjunto de productos.
+    \item Un cliente solo puede contestar sobre los productos que él o ella haya comprado.
+    \item Cada cliente sera preguntado sobre un número de productos entre \(c_i\) y\(c'_i\) 
+    \item Cada producto debe tener entre \(p_j\) y \(p'_j\) preguntas de clientes distintos.
+\end{itemize}
+
+El problema de diseño de encuentas toma como input un \textit{grafo bipartito} \(G\) cuyos nodos son 
+clientes y productos, y hay un eje entre un cliente \(i\) y un producto \(j\) si el cliente compro el producto \(j\).
+Mas aún, por cada cliente \(i=1,2,...,n\) tenemos la limitante de \(c_i \leq c'_i\) en el numero de productos en el que un 
+cliente puede constestar; por cada producto \(j=1,...,k\), tenemos la limitante \(p_j \leq p'_j\) en el 
+número de cliente distintos que se pueden consultar por cada producto.
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/grafo-encuesta.png}
+\end{figure}
+
+El problema se resuelve reduciendo este a un problema de red de flujo en \(G'\) con demanda y un limite inferior. 
+
+Para obtener un grafo \(G'\) de \(G\), necesitamos:
+\begin{itemize}
+    \item Orientar los ejes de \(G\) desde los clientes a los productos.
+    \item Agregar un nodo ficticio \(s\) con los ejes \((s,i)\) por cada cliente \(i=1,...,n\).
+    \item Agragar un nodo ficticio \(t\) con los ejes \((j,t)\) por cada producto \(j=1,...,k\).
+\end{itemize}
+
+La circulacion en la red, corresponde con la manera en la que se tienen que realizar las preguntas.
+
+Se debe pasar de un problema de circulación con \textit{demanda y limite inferior} a un problema
+de circulación con demanda y luego a un problema de flujo máximo. Finalmente se resuelve con Ford-Fulkerson.
+
+Una vez obtenido el flujo máximo:
+
+\begin{itemize}
+    \item El flujo que va de \((t,s)\) corresponde al número total de preguntas a realizar.
+    \item El flujo en los ejes \((s,i)\) es el número de productos que deben contener el cuestionario para cada cliente \(i\).
+    \item El flujo en los ejes \((j,t)\) corresponde con él numero de clientes que deben ser preguntados para el producto \(j\).
+    \item Por ultimo, aquellos ejes \((i,j)\) con flujo 1, corresponden a preguntar al cliente \(i\) sobre el producto \(j\).
+\end{itemize}
+
+\newpage
+\subsection{Selección de proyectos}
+
+
 \end{document}
+
+
+
+
+
