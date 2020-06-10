@@ -415,6 +415,7 @@ El objetivo es seleccionar un subconjunto de elemento o fracciones de ellos de m
 
 La complejidad es \(O(nlog(n))\)
 
+\newpage
 \subsection{Cambio de moneda}
 
 Es una solución es conocido como solución de cajero. Contamos con un conjunto de diferentes monedas de diferentes denominación sin restricción de cantidad.
@@ -436,6 +437,7 @@ Para saber si una base es canonica:
 \end{enumerate}
 
 Si el problema no es greddy, se puede construir un algoritmo utilizando programación dinamica.
+
 
 \newpage
 \subsection{Interval Scheduling: Algoritmo de Greedy Stay Ahead}
@@ -534,23 +536,42 @@ El algoritmo de greedy arma un arbol de "hufman" para armar un arbol optimo de p
 
 \subsection{Mediana con datos separadas}
 
+
+
+
 \newpage
 \section{Programación dinamica}
 
 \subsection{Cambio de monedas}
 
-Contamos con un conjunto de monedas de diferente denominación sin restricción de cantidad. Representamos de esta manera \(\$=(c_1,c_2,....,c_n)\) y tenemos un importe x a dar. 
+Contamos con un conjunto de monedas de diferente denominación sin restricción de cantidad. 
+Representamos de esta manera \(\$=(c_1,c_2,....,c_n)\) y tenemos un importe \(x\) a dar. 
 Concluimos que no existe un algoritmo satisfactorio de greedy para resolver este problema.
 
-Si buscamos la solución por \textbf{fuerza bruta}, se puede armar un arbol de decisión. Por cada moneda posible, se genera un subproblema. 
+Si buscamos la solución por \textbf{fuerza bruta}, se puede armar un arbol de decisión. 
+Por cada moneda posible, se genera un subproblema. 
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/dinamico-arbol-moneda.png}
+\end{figure}
+
 Entonces el camino a la hoja con menor profundidad es la menor cantidad de monedas a dar. Esto hace que la complejidad sea \(O(x^n)\).
 
-Analizando el problema anterios se pueden obtener algunas mejoras. Parte de los caminos del arbol son iguales. 
-Hay distintas ramas con nodos que tienen el mismo resto, y por lo tanto se puede calcular solo una vez. Este caso de resto igual en varios nodos, lo llamaremos subproblemas.
+Analizando el problema anteriores se pueden obtener algunas mejoras. 
+Parte de los caminos del arbol son iguales. 
+Hay distintas ramas con nodos que tienen el mismo resto, 
+y por lo tanto se puede calcular solo una vez. 
+Este caso de resto igual en varios nodos, lo llamaremos subproblemas.
 
+\begin{figure}[h!]
+    \includegraphics[scale=0.5]{imagenes/dinamico-moneda-subproblema.png}
+\end{figure}
+
+\newpage
 \textbf{Subproblema}: Calcular el óptimo(OPT) del cambio \(x\) debe usar el mínimo entre los subproblemas \(X - C_j\) para \(j=1...n\).
 
-Cada vez que paso por un subproblema se \(E\) incremente en el \(1\) que es la cantidad de monedas a dar. Que seria: \(1+min\{subprolemas\}\).
+Cada vez que paso por un subproblema se incremente en \(1\) para contar la cantidad de monedas a dar. 
+Que seria: \(1+min\{subproblemas\}\).
 
 Para la solución \textbf{recurrente}, podemos plantear:
 
@@ -562,23 +583,188 @@ Para la solución \textbf{recurrente}, podemos plantear:
         \right.
     \]
 
-El resultado con el minimo cambio sera OPT(x) y para poder carcularlo, necesito calcular lo \(x-1\) óptimos anterios. 
-Para evitar el recalculo, si calculo el optimo de algun resto, lo almaceno para no volver a calcularlo de nuevo.
+El resultado con el minimo cambio sera OPT(x) y para poder calcularlo, 
+necesito calcular los \(x-1\) óptimos anterios. 
+Para evitar el recalculo, si calculo el optimo de algun resto, 
+lo almaceno para no volver a calcularlo de nuevo.
 Ademas en cada subproblema debo analizar \(n\) comparaciones, lo cual impacta en la complejidad.
 
-Para la solución \textbf{iterativa}: TODO
+\noindent
+\underline{SOLUCIÓN ITERATIVA}
+\begin{lstlisting}[language=Python, caption=Solución iterativa]
+
+OPT[0] = 0
+Desde i=1 a X
+    minimo = +infinito
+    Desde j=1 a n
+        resto = i - C[j]
+        si resto > 0 y minimo > OPT[resto]
+            minimo = OPT[resto]
+    
+    OPT[i] = 1 + minimo
+
+Retornar OPT[X]
+\end{lstlisting}
+
+La complejidad es \(O(X*n)\) porque no solo depende de los diferentes tipos de monedas, tambien
+depende del parametro de entrada \(X\). Se dice que es un algotimo pseudo polinomial.
+
+\noindent
+\underline{RECONSTRUIR LAS ELECCIONES}
+
+\begin{lstlisting}[language=Python, caption=Solución iterativa con reconstrucción]
+
+OPT[0] = 0
+elegida[0] = 0
+Desde i=1 a X
+    minimo = +infinito
+    elegida[i] = 0
+    Desde j=1 a n
+        resto = i - C[j]
+        si resto > 0 y minimo > OPT[resto]
+            elegida[i] = j
+            minimo = OPT[resto]
+    
+    OPT[i] = 1 + minimo
+
+resto = x
+Mientras resto > 0
+    Imprimir C[elegida[resto]]
+    resto = resto - C[elegida[resto]]
+
+Imprimir OPT[x]
+
+\end{lstlisting}
 
 \newpage
-\subsection{Publicidad en la carretera}
+\subsection{Problema de la Publicidad en la carretera}
+
+Sea una carretera de longitud \(M\) km, un conjunto de \(n\) carteles publicitarios en el 
+intevalo \([0,M]\), cada cartel \(i\) tiene una posición \(x_i\) y un valor de ganancia \(r_i\).
+Entonces queremos seleccionar carteles para maximizar la ganancia. Como restriccción ningún cartel
+puede estar a menos de 5 km de otro.
+
+\begin{figure}[h!]
+    \includegraphics[scale=0.4]{imagenes/dinamico-ejemplo-ruta.png}
+\end{figure}
+
+Podemos armar un arbol de decisión utilizando una funcion de \textit{anteriores(i)}. La función anterior
+nos dice cual es el cartel anterior al \(i\) que cumple con la restriccción.
+
+\begin{figure}[h!]
+    \includegraphics[scale=0.4]{imagenes/dinamico-ruta-arbol.png}
+\end{figure}
+
+
+Para la solución \textbf{recurrente}, podemos plantear:
+
+\[
+    \left\{ \begin{array}{lcc}
+        OPT(i) = 0 &   si  & i = 0 \\
+        \\ OPT(i) = max\{r_i + OPT(anterior(i)), OPT(i-1) \} &  si & i > 0 \\
+        \end{array}
+    \right.
+\]
+
+El resultado con la máxima ganancia sera: \(OPT(n)\). 
+
+\noindent
+\textbf{\underline{SOLUCIÓN ITERATIVA}}
+
+\begin{lstlisting}[language=Python, caption=Solución iterativa]
+
+OPT[0] = 0
+OPT[1] = r[1]
+
+Desde i=2 a n
+
+    estaCartel = r[i] + OPT[anterior(i)]
+    noEstaCartel = OPT[i-1]
+
+    OPT[i] = max (estaCartel, noEstaCartel)
+
+Retornar OPT[n]
+\end{lstlisting}
+
+
+\noindent
+\textbf{\underline{SOLUCIÓN ITERATIVA - CARTELES SELECCIONADOS}}
+
+\begin{lstlisting}[language=Python, caption=Solución iterativa con reconstrucción]
+
+OPT[0] = 0
+OPT[1] = r[1]
+elegidos[0] = false
+elegidos[1] = true
+
+Desde i=2 a n
+
+    estaCartel = r[i] + OPT[anterior(i)]
+    noEstaCartel = OPT[i-1]
+
+    Si estaCartel>noEstaCartel 
+        elegido[i] = true
+    sino
+        elegido[i] = false
+
+    OPT[i] = max (estaCartel, noEstaCartel)
+
+Retornar OPT[n]
+\end{lstlisting}
+
+
+La complejidad temportal es \(O(n)\) ya que solo hago sumas y comparaciones. La complejidad espacial
+es \(O(n)\) porque se almacenan los \(n\) óptimos en un array.
+
+\noindent
+\textbf{\underline{SOLUCIÓN ITERATIVA - RECONSTRUIR}}
+
+\begin{lstlisting}[language=Python, caption=Solución iterativa]
+
+i = n
+
+Mientras i>0
+    si elegido[i]
+        Imprimir i
+        i = anterior[i]
+    sino 
+        i = i-1
+
+Retornar OPT[n]
+\end{lstlisting}
+
+
+La complejidad temportal es \(O(n)\). La complejidad espacial es \(O(n)\).
+
+
+
+\noindent
+\textbf{\underline{CALCULO CONSTRUIR}}
+
+Se hace un apareo entre las posiciones del cartel \(x\) y el limite del mismo.
+
+\begin{lstlisting}[language=Python, caption=Solución iterativa]
+
+i=n
+j=n-1
+
+Mientras i>1
+    Si limite(n) >= posicion(j)
+        anterior[i] = j
+        i=i-1
+    sino
+        j=j-1
+
+\end{lstlisting}
+
+
 
 \newpage
 \subsection{Programación de intervalos ponderados}
 
 
-
-
 \newpage
-\subsection{Problema de Subset Sum y Knapsack (mochila) }
+\subsection{Problema de Knapsack (mochila) }
 
 \newpage
 \subsection{Problema de Subset Sum }
@@ -592,11 +778,6 @@ valor \(W\) de peso máximo.
 Para plantear una solución por \textbf{fuerza bruta}, un elemento puede estar o no. O sea que si
 tengo \(n\) elementos pueden existir \(2^n\) combinaciones. Entonces la complejidad total esta acotado
 por \(O(2^n)\).
-
-
-
-
-
 
 
 
@@ -862,6 +1043,8 @@ La complejidad total es \(O(n^2 2^n)\)
 \newpage
 \section{Redes de flujo}
 
+\subsection{Conceptos}
+
 Se trata de problemas de flujos de trafico en redes. 
 Por ejemplo, tubos de gas, autopistas, rutas de aviones, redes electricas.
 
@@ -875,12 +1058,34 @@ Definiciones:
     \item Flujo: Cantidad transportada por eje.
 \end{itemize}
 
-Definimos \textbf{corte de grafo} como: 
+Sea \(G=(V,E)\) un grafo dirigido, para todo \(e \in E\) llamamos \(C_e \geq 0\) (valor entero) a su capacidad.
+Existe un único \(s \in V\) llamado fuente (source). O sea no tiene ejes entrantes.
+Existe un único \(t \in V\) llamado sumidero (sink). O sea no tiene ejes salientes.
+El resto de los vertices son internos como si fueran conmutadores de fuentes.
 
+\noindent
+\textbf{\underline{DEFINICION DE FLUJO}}
+El flujo \(s-t\) es una funcion \(f\) que mapea cada \(e\) a un número real no negativo,
+\(f: E \mapsto R^+\). Un flujo tiene las siguientes caracteristicas:
+
+\begin{itemize}
+    \item (Condición de capacidad) Para cada \(e \in E\), tenemos que \(0 \leq f(e) \leq C_e\).
+    \item (Condición de conversación) Para cada nodo \(v\) que no sean \(s\) y \(t\) , tenemos que:
+    \[
+        \sum_{e into v} f(e)  = \sum_{e out of v} f(e) 
+    \]
+\end{itemize}
+
+\noindent
+\textbf{\underline{PROBLEMA DE FLUJO MAXIMO}}
+TODO: SEGUIR POR ACA
+
+Definimos \textbf{corte de grafo} como: 
 
 Dos cortes diferentes, tienen capacidades de transporte maxima diferentes.
 
 
+\newpage
 \subsection{Algoritmo Ford-Fulkerson}
 
 Calcula el maximo flujo a travez de una red.
@@ -913,10 +1118,12 @@ Difinimos \textbf{bottleneck(P,f)} a la \underline{capacidad residual mínima} d
 Lo máximo que se puede transportar es 20, para que no deje cumplir la condición de capacidad.
 
 \begin{quote}
-    \textit{Con el grafo residual, podemos redireccionar el flujo en el caminio original para aumentar el flujo total de la red.}
+    \textit{Con el grafo residual, podemos redireccionar el flujo en el camino original para aumentar el flujo total de la red.}
 \end{quote}
 
-Llamamos \(P\) al caminio de aumento (\textbf{augmenting path}):
+Tambien nos ayuda a saber cuanto flujo se esta trasportando por ese eje.
+
+Llamamos \(P\) al camino de aumento (\textbf{augmenting path}):
 
 \begin{itemize}
     \item \(P\) es una caminio simple que va de \(s\) a \(t\) en \(G_f\).
@@ -1060,7 +1267,28 @@ Una vez obtenido el flujo máximo:
 \end{itemize}
 
 \newpage
-\subsection{Selección de proyectos}
+\subsection{Problema de Selección de proyectos}
+
+Dado un conjunto \(P\) de proyectos para seleccionar y cada proyecto \(i \in P\) tiene
+asociado una ganancia \(p_i\), el cual puede ser \textit{positivo} como \textit{negativo}.
+Algunos proyectos son requisitos de otros proyectos, y modelaremos esta relación mediante un \textit{grafo
+dirigido sin ciclos} \(G=(P,E)\). Los nodos de \(G\) son los proyectos y hay un eje \((i,j)\) para indicar
+que un proyecto \(i\) puede ser seleccionado solo si el proyecto \(j\) es tambien seleccionado.
+Un proyecto \(i\) pude tener muchos prerequisitos, y puede haber muchos proyectos \(j\) que pueden
+ser parte de esos prerequisitos. Un conjunto de proyecto de \(A \subseteq P\) es \textit{viable} si los 
+prerequisitos de cada proyecto de \(A\) tambien pertenecen a \(A\):
+\begin{quote}
+    Por cada \(i \in A\) y cada eje \((i,j) \in E\), tenemos que \(j \in A\)
+\end{quote}
+Estos prerequisitos vendrian a ser las \textit{restricciones de precedencia}. La ganancia del conjunto de proyectos
+se define como:
+
+\[
+    profit(A) = \sum_{i\in A} p_i 
+\]
+
+El \textit{problema de selección de proyectos} seleccionar el conjunto de proyectos viables con la maxima ganancia.
+
 
 
 \end{document}
