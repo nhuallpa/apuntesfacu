@@ -739,9 +739,11 @@ La complejidad temportal es \(O(n)\). La complejidad espacial es \(O(n)\).
 
 
 \noindent
-\textbf{\underline{CALCULO CONSTRUIR}}
+\textbf{\underline{CALCULO anterior de i}}
 
-Se hace un apareo entre las posiciones del cartel \(x\) y el limite del mismo.
+
+Se hace un apareo entre las posiciones del cartel \(x\) y el limite del mismo. 
+El objetivo es armar un array de anteriores.
 
 \begin{lstlisting}[language=Python, caption=Solución iterativa]
 
@@ -756,7 +758,6 @@ Mientras i>1
         j=j-1
 
 \end{lstlisting}
-
 
 
 \newpage
@@ -1078,7 +1079,6 @@ El flujo \(s-t\) es una funcion \(f\) que mapea cada \(e\) a un número real no 
 
 \noindent
 \textbf{\underline{PROBLEMA DE FLUJO MAXIMO}}
-TODO: SEGUIR POR ACA
 
 Definimos \textbf{corte de grafo} como: 
 
@@ -1290,10 +1290,188 @@ se define como:
 El \textit{problema de selección de proyectos} seleccionar el conjunto de proyectos viables con la maxima ganancia.
 
 
+\newpage
+\section{Problemas NP}
+
+\subsection{Clasificación}
+
+\subsubsection{Clase P}
+
+Un algoritmo A resuelve \textbf{eficientemente} un problema \(S\) si para toda instancia \(I\) de \(S\),
+encuentra la solución en tiempo polinomico, entonces existe una constante \(k / A = O(n^k)\). 
+Ejemplo, Gale Shapley resuelve el problema de "Stable Marriage Problem" en \(O(n^2)\)
+
+Se conoce como \(P\) al conjunto de problemas de desición para los que existe un algotirmo que lo resuelva en
+\(forma eficiente\).
+
+Un algoritmo B \textbf{certifica eficientemente} un problema de decisión \(S\)  si para toda instancia \(I\) de \(S\),
+dado un certificado \(t\) que contiene evidencia de la solución \(s(i)\) es \textit{"Si"}, 
+entonces existe una constante \(k / B = O(n^k)\). 
+
+O sea que el algoritmo B va a recibir dos parametros, la instancia \(I\) y el certificado \(T\).  
+Responde si o no. Por ejemplo, en el problema de la moneda, seria las cantidades de monedas a dar, 
+y certificado seria la solución conocida. Para validar, se ejecuta el algoritmo de certificación
+con el certificado \(T\).
+
+
+\subsubsection{Clase NP}
+
+Se conoce como \(NP\) al conjunto de problemas de desición para los que existe un algoritmo
+que lo certifique en forma eficiente.
+
+
+¿\(P \subseteq NP\)?. Si el problema \(Q \in P\), existe un algoritmo \( A = O(n^k)\) que lo resuelve. Y podemos definir como:
+
+\begin{lstlisting}[language=Python, caption=Algoritmo B]
+
+    B(I, t)
+        s = A(I)
+        Si s == t
+            retornar "si"
+        retornar "no"
+
+\end{lstlisting}
+
+Que certifica el problema \(Q\) y lo hace en tiempo polinomial. Entonce se cumple:
+
+\[
+    Q \in P \implies Q \in NP
+\]
+
+¿\(NP \subseteq P\)?. Es un problema sin resolver.
+
+
+\subsection{Reducciones}
+
+Reducir un problema a otro conocido.
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/reduccion.png}
+\end{figure}
+
+Una reducción polinomial corresponde a una reducción en la que ambas transformaciones se realizan en tiempo polinonimial.
+
+Sean X, Y problemas, diremos \(Y \leq_p X\), se lee Y es polinomialmente reducible (en tiempo) a "X"
+
+Si podemos transformar cualquier instancia de y en una instancia de x en tiempo polinomica (tractable).
+
+Para \textbf{comparar problemas} con reducciones, sean \(X, Y\) problemas, si \(Y \leq_p X\), diremos que 
+el problema \(X\) es al menos tan dificil que el problema \(Y\)
+
+Para \textbf{acotar un problema} a la clase \(P\). 
+\begin{itemize}
+    \item Sean \(X,Y\) problemas si \(X \in P\) y \(Y \leq_p X\) 
+    entonces \(Y \in P\), porque \(X\) es igual de complicado que \(Y\). Ejemplo:
+    \begin{gather*}
+        MAX-MATCHING \leq_p MAX-FLOW \\
+        MAX-FLOW \in P \implies MAX-MATCHING \in "P"    
+    \end{gather*}
+    
+    \item Sean \(X,Y\) problemas si \(Y \notin P\) y \(Y \leq_p X\) 
+    entonces \(X \notin P\), porque \(X\) es igual de complicado que \(Y\).
+    
+\end{itemize}
+
+Las siguientes son propiedades de reducciones:
+
+\begin{itemize}
+    \item \textit{Equivalencia}: Sean \(X,Y\) problemas si \(Y \leq_p X\) y \(X \leq_p Y\) 
+    entonces \(X\) e \(Y\) tiene la misma complejidad.
+    \item \textit{Transitividad}: Si \(Z \leq_p Y\) y \(Y \leq_p X\) 
+    entonces \(Z \leq_p X\)
+\end{itemize}
+
+
+\subsection{Clase NP completo}
+
+\subsubsection{Problema de satisfabilidad booleana}
+Dado un conjunto de variable booleanas que definen una expresión boolean, determinar si existe una
+asignación de valores de las variables, tal que el resultado de la expresión es "TRUE".
+
+Sea una instancia \(I\) del problema \textbf{SAT} \(\in NP\) y un certificado que corresponde a un valor
+de asignación de cada variable.
+
+Podemos certificar en tiempo polinomial si esa asignación de variables producen un resultado "TRUE".
+
+El \textbf{teorema de Cook-Levin} dice, sea \(X \in NP\) entonces \(X \leq_p\) Boolean satisfability problem (SAT). 
+O sea, \textbf{que todo problema perteneciente a NP es a lo sumo tan complejo de resolver que SAT}.
+ 
+\textbf{NP-HARD}: Sea un problema \(X\) tal que para todo problema \(Y \in NP\) y \(Y \leq_p X\), entonces \(X \in NP-HARD\).
+\textbf{X es al menos igual de dificil que cualquier problema NP}.
+
+\textbf{NP-Complete}: Sea un problema \(X\) tal que para todo problema \(X \in\)NP-HARD y \(Y \in \) NP, entonces \(X \in NP-C\).
+\textbf{X es uno de los problemas mas dificiles dentro de NP}.
+
+\underline{Ejemplo de uso}, para cada problema de \(X \in NP\) que analiza Richard Carp, toma un problema 
+demostrado como NP-C y lo reduce a \(X\), con esto \(X\) pasa a ser un problema \textbf{NP-C}.
+
+\textbf{Probar que un problema} es \textit{NP-C}. Sea el problema \(X\) de decisión. Probamos:
+
+\begin{itemize}
+    \item Probar que \(X \in NP\), definiendo un certificado eficiente:
+    \item Probar que \(X \in NP\)-HARD, dado un problema \(Y \in NP\)-C, 
+    reducir polinomialmente \(Y\) a \(X\). Eligiendo el problema \(Y\) correcto para reducir, 
+    podemos obtener \(Y \leq_p X\) y agregar a \(X\) en la clasificación de los problemas \textit{NP-C}.
+\end{itemize}
+
+\subsubsection{Problema de conjunto independiente}
+
+Sea un grafo \(G=(V,E)\), un valor \(K\), determinar si existe un conjunto independiente de nodos 
+de como mucho tamaño k.
+
+Definimos un conjunto de nodos \(C \subseteq V\) es independiente si no existe \(a,b \in C\) tal que existe eje \((a,b) in E\) 
+y el \textbf{tamaño del conjunto independiente} corresponde con la cantidad de nodos dentro del conjunto C.
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/conjunto-independiente.png}
+\end{figure}
+
+Dado un grafo \(G=(V,E)\) con tamaño \(k\) de conjunto y un certificado \(T\) igual 
+al subconjunto de nodos. Si se puede verificar en tiempo polinomial con \(|T| = K\) que:
+\[
+    \forall a,b \in T, !\exists (a,b) \in E \implies INDEPENDENTSET \in NP    
+\]
+
+\subsubsection{3-SAT}
+Es una variante de SAT donde cualquier instancia de SAT se puede reducir polinomialmente a 3SAT:
+
+\[
+    SAT \leq_p 3SAT \implies 3SAT \in NPComplete
+\]
+
+Dado \(X={x_1,...,x_n}\) conjunto de \(n\) variables booleanas = \(\{0,1\}\) y 
+\(k\) \textit{clausulas} booleanas \(T_i=(t_{i1} \lor t_{i2} \lor t_{i3} )\) 
+con cada \(t_{ij} \in X \cup \overline{X} \cup {1}\). Entonces debemos 
+\textbf{determinar si existe asignación de variables} tal que \(T_1 \land T_2 \land ... \land T_k = 1\)
+
+\subsubsection{Reducción de 3-SAT a INDEPENDENT-SET}
+Por cada \textit{clausula} \(T_i=(t_{i1} \lor t_{i2} \lor t_{i3} )\) \textbf{vamos a generar tres vertices entre si}.
+Y por cada \(t_{ij}=x_a,t_{kl}=\overline{x_a} \), crear un eje entre \(t_{ij}\) y \(t_{kl}\).
+
+\begin{figure}[h!]
+    \includegraphics[scale=0.4]{imagenes/reduccion-3sat.png}
+\end{figure}
+
+\textbf{El grafo resultante }\(G\) corresponde a una instancia del problema \textit{INDEPENDENT-SET} 
+con k=numeros de clausulas en la expresión. Ejemplo, sea la expresión:
+
+\(E=(x_1 \lor x_2 \lor x_3) \land (\overline{x_1} \lor \overline{x_2} \lor \overline{x_4}) 
+    \land (\overline{x_2} \lor \overline{x_3} \lor x_4) 
+    \land (\overline{x_1} \lor \overline{x_2} \lor x_3)\)
+
+Reducimos polinomialmente y resuelvo:
+\begin{figure}[h!]
+    \includegraphics[scale=0.4]{imagenes/ejemplo-reduccion-3sat.png}
+\end{figure}
+
+Entonces, luego resuelvo 3SAT con \(x_1 = 1\), \(\overline{x_2} = 1 \implies x_2=0\), 
+\(x_4=1\) y elijo \(x_3=0\) porque en este caso es indistinto.
+
+Por lo tanto, como INDEPENDENT-SET \(\in NP\) y \(3SAT \leq_p INDEPENDENTSET\) NP.
+
+Entonces INDEPENDENT-SET \(\in NPComplete\)
 
 \end{document}
-
-
 
 
 
