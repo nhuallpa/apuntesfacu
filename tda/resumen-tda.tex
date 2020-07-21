@@ -5,6 +5,8 @@
 \usepackage{listings}
 \usepackage{fancyhdr}
 
+
+
 \pagestyle{fancy}
 \fancyhf{}
 
@@ -607,7 +609,7 @@ Retornar OPT[X]
 \end{lstlisting}
 
 La complejidad es \(O(X*n)\) porque no solo depende de los diferentes tipos de monedas, tambien
-depende del parametro de entrada \(X\). Se dice que es un algotimo pseudo polinomial.
+depende del parametro de entrada \(X\). Se dice que es un algoritmo pseudo polinomial.
 
 \noindent
 \underline{RECONSTRUIR LAS ELECCIONES}
@@ -1297,12 +1299,15 @@ El \textit{problema de selección de proyectos} seleccionar el conjunto de proye
 
 \subsubsection{Clase P}
 
+La clase \(P\) consiste en aquellos problemas que pueden resolverse en tiempo polinomial (eficientemente).
+
 Un algoritmo A resuelve \textbf{eficientemente} un problema \(S\) si para toda instancia \(I\) de \(S\),
-encuentra la solución en tiempo polinomico, entonces existe una constante \(k / A = O(n^k)\). 
+encuentra la solución en tiempo polinomico, entonces existe una constante \(k / A = O(n^k)\) 
+y donde \(n\) es el tamaño de la entrada del problema. 
 Ejemplo, Gale Shapley resuelve el problema de "Stable Marriage Problem" en \(O(n^2)\)
 
-Se conoce como \(P\) al conjunto de problemas de desición para los que existe un algotirmo que lo resuelva en
-\(forma eficiente\).
+Se conoce como \(P\) al conjunto de problemas de decisión para los que existe un algoritmo que lo resuelva en
+\textit{forma eficiente}.
 
 Un algoritmo B \textbf{certifica eficientemente} un problema de decisión \(S\)  si para toda instancia \(I\) de \(S\),
 dado un certificado \(t\) que contiene evidencia de la solución \(s(i)\) es \textit{"Si"}, 
@@ -1316,9 +1321,8 @@ con el certificado \(T\).
 
 \subsubsection{Clase NP}
 
-Se conoce como \(NP\) al conjunto de problemas de desición para los que existe un algoritmo
-que lo certifique en forma eficiente.
-
+Se conoce como \(NP\) al conjunto de problemas de decisión para los que existe un algoritmo
+que lo verifique (certifique) en tiempo polinomial (eficientemente).
 
 ¿\(P \subseteq NP\)?. Si el problema \(Q \in P\), existe un algoritmo \( A = O(n^k)\) que lo resuelve. Y podemos definir como:
 
@@ -1353,7 +1357,7 @@ Una reducción polinomial corresponde a una reducción en la que ambas transform
 
 Sean X, Y problemas, diremos \(Y \leq_p X\), se lee Y es polinomialmente reducible (en tiempo) a "X"
 
-Si podemos transformar cualquier instancia de y en una instancia de x en tiempo polinomica (tractable).
+Si podemos transformar cualquier instancia de \(Y\) en una instancia de \(X\) en tiempo polinomico (tractable).
 
 Para \textbf{comparar problemas} con reducciones, sean \(X, Y\) problemas, si \(Y \leq_p X\), diremos que 
 el problema \(X\) es al menos tan dificil que el problema \(Y\)
@@ -1363,8 +1367,8 @@ Para \textbf{acotar un problema} a la clase \(P\).
     \item Sean \(X,Y\) problemas si \(X \in P\) y \(Y \leq_p X\) 
     entonces \(Y \in P\), porque \(X\) es igual de complicado que \(Y\). Ejemplo:
     \begin{gather*}
-        MAX-MATCHING \leq_p MAX-FLOW \\
-        MAX-FLOW \in P \implies MAX-MATCHING \in "P"    
+        MAXMATCHING \leq_p MAXFLOW \\
+        MAXFLOW \in P \implies MAXMATCHING \in "P"    
     \end{gather*}
     
     \item Sean \(X,Y\) problemas si \(Y \notin P\) y \(Y \leq_p X\) 
@@ -1384,8 +1388,8 @@ Las siguientes son propiedades de reducciones:
 
 \subsection{Clase NP completo}
 
-\subsubsection{Problema de satisfabilidad booleana}
-Dado un conjunto de variable booleanas que definen una expresión boolean, determinar si existe una
+\subsubsection{Problema de satisfabilidad booleana - SAT}
+Dado un conjunto de variable booleanas que definen una expresión booleana, determinar si existe una
 asignación de valores de las variables, tal que el resultado de la expresión es "TRUE".
 
 Sea una instancia \(I\) del problema \textbf{SAT} \(\in NP\) y un certificado que corresponde a un valor
@@ -1414,12 +1418,13 @@ demostrado como NP-C y lo reduce a \(X\), con esto \(X\) pasa a ser un problema 
     podemos obtener \(Y \leq_p X\) y agregar a \(X\) en la clasificación de los problemas \textit{NP-C}.
 \end{itemize}
 
-\subsubsection{Problema de conjunto independiente}
+
+\subsection{Problema de conjunto independiente}
 
 Sea un grafo \(G=(V,E)\), un valor \(K\), determinar si existe un conjunto independiente de nodos 
 de como mucho tamaño k.
 
-Definimos un conjunto de nodos \(C \subseteq V\) es independiente si no existe \(a,b \in C\) tal que existe eje \((a,b) in E\) 
+Definimos un conjunto de nodos \(C \subseteq V\) es independiente si no existe \(a,b \in C\) tal que existe eje \((a,b) \in E\) 
 y el \textbf{tamaño del conjunto independiente} corresponde con la cantidad de nodos dentro del conjunto C.
 
 \begin{figure}[h!]
@@ -1444,6 +1449,7 @@ Dado \(X={x_1,...,x_n}\) conjunto de \(n\) variables booleanas = \(\{0,1\}\) y
 con cada \(t_{ij} \in X \cup \overline{X} \cup {1}\). Entonces debemos 
 \textbf{determinar si existe asignación de variables} tal que \(T_1 \land T_2 \land ... \land T_k = 1\)
 
+\newpage
 \subsubsection{Reducción de 3-SAT a INDEPENDENT-SET}
 Por cada \textit{clausula} \(T_i=(t_{i1} \lor t_{i2} \lor t_{i3} )\) \textbf{vamos a generar tres vertices entre si}.
 Y por cada \(t_{ij}=x_a,t_{kl}=\overline{x_a} \), crear un eje entre \(t_{ij}\) y \(t_{kl}\).
@@ -1471,7 +1477,290 @@ Por lo tanto, como INDEPENDENT-SET \(\in NP\) y \(3SAT \leq_p INDEPENDENTSET\) N
 
 Entonces INDEPENDENT-SET \(\in NPComplete\)
 
+\newpage
+\subsection{Problema de cobertura de vertices}
+Sea un grafo \(G=(V,E)\) diremos que existe un conjunto \(S \subseteq V\) es una cobertura de vétices si:
+\[
+    \forall \;eje\; e \in E=(u,v), u\in S \;\; y/o \;\; v \in S
+\]
+Donde \(u\) y/ó \(v\) pertenecen al conjunto \(S\).
+
+El \textbf{problema de decisión} sera que dado un grafo \(G=(V,E)\), determinar si existe una conbertura
+de vértices (VERTEX-COVER) de tamaño al menos \(k\). 
+\textbf{El problema de optimización busca el subconjunto de menor tamaño}.
+
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[width=\linewidth]{imagenes/ejemplo-cobertura-v-k3.png}
+    \caption{\small \sl Ejemplo de conbertura de vertices de k=3.\label{fig:Stupendous}} 
+    \end{center}
+\end{figure}
+
+Para ver si VERTEX-COVER pertenece a un \textbf{problema NP}, verificamos de la siguiente manera: 
+
+Sea un grafo \(G=(V,E)\) y un certificado \(T\) como un conjunto de nodos de \(V\) que forman el cubrimiento. 
+Verificamos que:
+\[
+    \forall \;eje\; e \in E=(u,v), \; si \; u\in T \;\; o \;\; v \in T \implies O(V*E)
+\]
+observamos si uno de estos vertices pertenece al certificado y lo podemos ver en tiempo polinomial de \(O(V*E)\) y si ademas \(|T|=k\), 
+entonces el certificado nos da la respuesta con tamaño k, y por lo tanto \textbf{VERTEX-COVER} \(\in\) \textbf{"NP"}
+
+Para ver si VERTEX-COVER pertenece a un \textbf{problema NP-Completo}, utilizaremos INDEPENDENT-SET.
+
+\newpage
+\subsection{Problema de cobertura de conjunto}
+
+Sea un conjunto \(U\) de \(n\) elementos. Una colección \(S_1,...,S_m\) de subconjuntos de U. 
+Problema de decisión: ¿Existe una colección de como mucho \(k\) de los subconjuntos cuya unión es igual a U?
+
+La idea es probar que SET-COVER es NP-COMPLETO. Sea U un conjunto de elementos, 
+K tamaño buscado, los subset \(S_1,...,Sm\) y un \(T\) certificado con los indices de los subconjuntos del conjunto.
+
+Verificamos que \(|T|=k\) para todo elemento en \(U\), si existen en algunos de los subconjuntos de \(T\). 
+Por lo tanto se puede hace en tiempo polinomial y se puede afirmar que \textbf{SET-COVER es "NP"}.
+
+Luego elegimos un problema que previamente se haya demostrado que es NP-Completo. Para esto vamos a usar VERTEX-COVER.
+Vamos a intentar demostrar que VERTEX-COVER \(\leq_p\) SET-COVER. El algoritmo de reducción sera:
+
+\newpage
+Para la \textbf{reducción de VERTEX-COVER a SET-COVER}, partimos de \(G=(V,E)\) y \(k\). Queremos que todos los ejes
+queden cubiertos y construimos un conjunto de elemtentos U=E. Por cada vertice \(v \in V\), 
+creamos un subconjunto \(S_v\) con todos los ejes incidentes a el, y mantenemos en \(k\) la cantidad
+de subconjuntos a buscar para cubrir U. Toda esta transformación se puede hacer en tiempo polinomial.
+
+Si encontramos el subconjunto, eso nos dira que vertices seleccionar.
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[width=\linewidth]{imagenes/ejemplo-set-cover.png}
+    \caption{\small \sl Ejemplo de reducción de VERTEX-COVER a SET-COVER.\label{fig:Stupendous}} 
+    \end{center}
+\end{figure}
+
+Si se resuelve SET-COVER, se obtiene los subconjuntos que corresponden a los nodos resultantes en el 
+problema de VERTEX-COVER.
+
+Resumiendo, demostramos que SET-COVER es NP-COMPLETO, porque reducimos VERTEX-COVER a SET-COVER en tiempo
+polinomial, y si resolvemos cualquier instancia de set-cover, podemos resolver cualquier instancia
+de vertex-cover.
+
+\newpage
+\subsection{Problema 3 Dimensional Matching}
+
+Dado 3 conjuntos disjuntos \(X, Y, Z\) de tamaño \(n\) 
+cada uno y un conjunto \(C \subset X \times Y \times Z\) de trip\(X, Y, Z\)las ordenadas. Determinar si existe
+un subset de \(n\) triplas ene \(C\) tal que cada elemento de \(X \cup Y \cup Z\) sea contenido
+exactamente en una de esas triplas.
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[width=\linewidth]{imagenes/ejemplo-3DM.png}
+    \caption{\small \sl Ejemplo de uso de 3DM.\label{fig:ejm3dm}} 
+    \end{center}
+\end{figure}
+
+Para verificar que 3DM pertence a NP, dado 3 conjuntos disjuntos \(X, Y, Z\), \(C=(x,y,z)\) 
+conjunto de triplas y un certificado \(T\), de triplas con un subconjunto de C.
+
+Podemos certificar en tiempo polinomial que todo elemento en X, Y y Z, \underline{se encuentra 1 
+y solo 1 vez en algun} \(T_i\). Y si \(|T|=n\), entonces:
+\[
+    3DM \in NP
+\] 
+
+Ahora queremos probar que 3DM pertenece a los problemas NP-HARD. Probamos que \(3SAT \leq_p 3DM\).
+
+Sea \(I\) instancia de 3SAT con \(n\) variables \(x_1,...,x_n\) y \(k\) clausulas \(c_1,...,c_k\), 
+reducimos en tiempo polinomial la instancia \(I\) a un problema 3DM.
+
+PENDIENTE DE REDUCCION Y DEMOSTRACION.
+
+\subsection{Ciclo Hamiltoneano}
+Sea un grafo G=(V,E) dirigido definimos un ciclo C en G como hamiltoneano si visita cada vértice
+1 y solo 1 vez. Es un recorrido que inicia y finaliza en el mismo vertices.
+
+El problema de decisión sera HAM-CYCLE, sea G=(V,E) grafo dirigido, ¿existe un ciclo hamiltoneano?
+
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[scale=0.3]{imagenes/ejemplo-ciclo-hamilton.png}
+    \caption{\small \sl Ejemplo de un ciclo de hamilton.\label{fig:hamilton-ej}} 
+    \end{center}
+\end{figure}
+
+Para saber si el HAM-CYCLE pertenece a NP, dado un grafo G=(V,E) 
+y un certificado \(T = \{t_0,...,t_{|v|}\}\) lista ordena de vertices.
+Puedo verificar en tiempo polinomial los siguientes puntos:
+
+\begin{enumerate}
+    \item La cantidad nodos en T es igual a la cantidad de vertices en V. \(|T|=|V|\) y \(t_0=t_|M|\).
+    \item Todos los vértices de V estan en T.
+    \item Para todo par de vertices \(t_i, t_{i+1} \in T\) existe un eje direccionado \((t_i, t_{i+1}) \in E\) que los une. 
+    O sea seguimos el camino ordenado de nodos.
+\end{enumerate}
+
+Por lo tanto podemos afirmar que \textbf{HAM-CYCLE}\(\in NP\).
+
+NP C - PENDIENTE
+
+\section{Algoritmos Randomizados}
+
+Un algoritmo randomizado es aquel que resuelve un problema P utilizando 
+como parametro extra una cadena aleatoria "\(r\)". Las decisiones de ejecución
+se realizan teniendo en cuenta la lectura de la cedena aleatoria.
+
+\textbf{Clase de complejidad RP}: Se conoce como "RP" o "R" a aquellos problemas de decisión
+para los que existe un programa "M" randomizado que se ejecuta en tiempo polinomial. Y que para 
+toda instancia \(I\) del problema:
+\begin{itemize}
+    \item Si la instancia \(I\) debe tener como resultado "Si", entonces:
+     \[
+         Probabilidad(M(I,r)="Si")\geq 1/2
+     \] 
+    \item Si la instancia \(I\) debe tener como resultado "No" (no debe tener falsos positivos), entonces:
+    \[
+        Probabilidad(M(I,r)="No") = 0
+    \] 
+    
+\end{itemize}
+
+\textbf{Clase de complejidad co-RP}: Se conoce como "RP" o "R" a aquellos problemas de decisión
+para los que existe un programa "M" randomizado que se ejecuta en tiempo polinomial. Y que para 
+toda instancia \(I\) del problema:
+\begin{itemize}
+    \item Si la instancia \(I\) debe tener como resultado "Si" (no debe tener falsos negativos), entonces:
+     \[
+         Probabilidad(M(I,r)="No") = 0
+     \] 
+    \item Si la instancia \(I\) debe tener como resultado "No", entonces:
+    \[
+        Probabilidad(M(I,r)="No") \geq 1/2
+    \]
+\end{itemize}
+
+\textbf{Clase de complejidad ZPP}: Se conoce como \textit{zero-error probabilistic P} (ZPP) a aquellos
+problemas de decisión que pertenecen a "RP" y "co-RP". Implica que para toda instancia I del problema
+podemos ejecutar el algoritmo en RP y co-RP, entonces en tiempo polinomial tendremos 3 respuestas posibles:
+"Si", "No" y "No es posible".
+
+La repetición de un número no determinado de ejecuciones nos asegura obtener el resultado correcto.
+Este tipo de clase de complejidad corresponde a los algoritmos de \textbf{Las Vegas}, en la intersección RP \(\cap\) co-CP.
+
+
+\textbf{Clase de complejidad BPP}: Se conoce como \textit{bounded-error probabilistic P} (BPP) a aquellos problemas de decisión
+para los que existe un programa "M" randomizado que se ejecuta en tiempo polinomial. Y que para 
+toda instancia \(I\) del problema:
+\begin{itemize}
+    \item Si la instancia \(I\) debe tener como resultado "Si", entonces:
+     \[
+         Probabilidad(M(I,r)="Si") \geq 2/3
+     \] 
+    \item Si la instancia \(I\) debe tener como resultado "No", entonces:
+    \[
+        Probabilidad(M(I,r)="Si") \leq 1/3
+    \]
+\end{itemize}
+
+No podemos estar seguros. Si el resultado es correcto, podemos afirmarlo con "alta probabilidad".
+Este tipo de clase de complejidad corresponde a los algoritmos de \textbf{Monte Carlo}.
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[scale=0.3]{imagenes/relacion-rp-p-zpp-bpp.png}
+    \caption{\small \sl Relación entre clases.\label{fig:hamilton-ej}} 
+    \end{center}
+\end{figure}
+
+\newpage
+\subsection{Mezcla aleatoria}
+
+Sea un conjunto A de \(n\) elementos que queremos generar un listado de A ordenado aleatoriamente.
+Mezclar conjuntos se utilizan en \textit{juegos de azar, reproducción de musica aleatoria, modelos estadisticos 
+simulaciones, pruebas de complejidad algoritmica y otros mas}.
+
+\textbf{Permutación por ordenamientos}: 
+Para cada \(i\) elemento en A, generaremos un numero \(p_i\) aleatorio como su clave.
+Utilizando \(p_i\) para cada elemento \(a_i\) como "clave", ordenaremos "A". Podemos elegir 
+cualquier metodo de ordenamiento como caja negra para resolverlo. O sea ordenamos basandonos
+en la clave aleatoria que generamos para cada elemento.
+
+
+\begin{lstlisting}[language=Python, caption=Algoritmo de permutación por odenamiento]
+Sea A[1..n] conjunto a ordenar
+Sea P[1..n] vector numerico // vector de prioridades.
+
+Desde j=1...n
+    P[j] = random_value(1...x)
+
+Ordenamos A utilizando P como clave
+
+Retornar A
+\end{lstlisting}
+
+Este algoritmo tiene un problema y es que si se generan claves repetidas, en metodos de 
+ordenamientos como los estables, no se realizara la permutación y de esta forma no se podra 
+obtener una permutación aleatoria uniforme (en terminos de probabilidad). 
+
+Para disminuir la posibilidad de claves repetidas, tenemos que tomar las siguientes acciones:
+
+\begin{enumerate}
+    \item Podemos establecer un valor de X muy alto. \(X >>> n \) (Por ejemplo \(n^5\)).
+    \item Se puede agregar un registro de claves utilizadas y volver a seleccionar otra clave 
+            si surge una ya utilizada. En el peor de los casos, se puede obtener siempre la misma
+            clave y por consiguiente entrar en un loop infinito, si se elige mal el valor de \(x\).
+\end{enumerate}
+
+La complejidad temporal es \(O(n log(n))\) por que la generación de claves es \(O(n)\) y el ordenamiento
+es \(O(n log(n))\) por lo que mandan el ordenamiento. La complejidad espacial es \(O(n)\).
+
+Según el análisis de uniformidad cualquier permutación tiene probabilidad \(1/n!\).
+Por lo tanto este método genera una \textit{permutación aleatoria uniforme}.
+
+\textbf{Algoritmo de mezcla de Fisher-yates}: Tambien se conoce como "barajado de sombrero".
+Se introducen todos los números en un sombrero, se agita el contenido(se mezclan) y se van sacando
+de a uno y se listan el mismo orden en el que se sacan hasta que no queden ninguno.
+
+La descripción algoritmica es, para cada elemento A[i], generamos un calor \(x\) al azar entre \(i\) y \(n\). 
+Luego intercambiamos A[i] con A[x].
+
+\begin{lstlisting}[language=Python, caption=Algoritmo de Fisher-yates]
+Sea A[1..n] conjunto a ordenar
+
+Desde i=1...n
+    intercambiar A[i] con A[random_value(i...n)]
+
+Retornar A
+\end{lstlisting}    
+
+Según el análisis de uniformidad cualquier permutación tiene probabilidad \(1/n!\).
+Por lo tanto este método genera una \textit{permutación aleatoria uniforme}.
+
+La complejidad temporal es O(n) porque tenemos \(n\) interaciones, y dentro de cada interación
+tenemos un intercambio que es O(1) y un ramdom que tambien es O(1). La complejidad espacial 
+es O(1) porque todo el algoritmo se puede hacer sobre el mismo vector.
+
+Ejemplo con \(A=\{a_1,a_2,a_3,a_4\}\):
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[scale=0.3]{imagenes/ejemplo-mezcla-aleatoria.png}
+    \caption{\small \sl Ejemplo de mezcla de Fisher-yates} 
+    \end{center}
+\end{figure}
+
+
+\subsection{Algoritmos de aproximación}
+
+\subsection{Problema del balanceo de carga}
+
+Dado un conjunto de maquinas \(M_1,M_2,..,M_m\), un conjunto de \(n\) tareas donde cada tarea \(j\)
+requiere \(T_j\) de tiempo de procesamiento. El objetivo es asignar las tareas a las maquinas
+de tal forma que la carga quede balanceada (El tiempo asignado a cada maquina sea lo mas parejo posible).
+
 \end{document}
+
 
 
 
