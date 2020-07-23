@@ -1750,14 +1750,61 @@ Ejemplo con \(A=\{a_1,a_2,a_3,a_4\}\):
     \end{center}
 \end{figure}
 
+\subsection{Problema de K conectividad de en un grafo}
 
-\subsection{Algoritmos de aproximación}
+Sea \(G=(V,E)\) grafo conexo y no dirigido, deseamos saber ¿cuantos ejes se pueden remover antes 
+que G deje de ser conexo?. Se espera encontrar la minima cantidad de ejes para que se un grafo conexo.
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[scale=0.5]{imagenes/ejemplo-k-conectividad.png}
+    \caption{\small \sl Ejemplo de k conectividad} 
+    \end{center}
+\end{figure}
+
+Analizamos el problema y lo podemos pensar como encontrar el corte global mínimo del grafo si
+analizamos toda posible subdivisión A-B del grafo en 2 conjuntos disjuntos. En cada 
+subdivisión contamos la cantidad de ejes entre conjuntos y tomamos la subdivisión con menor 
+de ejes. Resolverlo por fuerza bruta, tendria una complejidad exponencial.
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[scale=0.5]{imagenes/ejemplo-subdivicion.png}
+    \caption{\small \sl Ejemplo de k conectividad} 
+    \end{center}
+\end{figure}
+
+Para solver el problema, vamos a realizar una reducción al problema de flujos:
+
+\begin{enumerate}
+    \item Por cada eje \(e=(u,v)\) creamos 2 ejes dirigidos (u,v) y (v,u), les asignamos una capacidad de 1.
+    \item Por cada combinación posible de dos nodos, etiquetamos como s y t respectivamente y resolvermos \textit{"MAX-FLOW MIN-CUT"}.
+    \item El menor de los cortes mínimos corresponde al valor de la K-conectividad del eje del grafo.
+\end{enumerate}
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[scale=0.5]{imagenes/ejemplo-k-mincut.png}
+    \caption{\small \sl Ejemplo de k conectividad} 
+    \end{center}
+\end{figure}
+
+La complejidad temporal va a ser \(O(n^5)\) ya que por una lado, vamos a repetir el problema de flujo maximo en \(O(|V|^2)\)
+y por el otro en el peor de los casos, si usamos ford-fulkenson la complejidad sera \(O(|V|^3)\).
+
+\textbf{Algoritmo de Karger}:
+
+
+\newpage
+\section{Algoritmos de aproximación}
 
 \subsection{Problema del balanceo de carga}
 
 Dado un conjunto de maquinas \(M_1,M_2,..,M_m\), un conjunto de \(n\) tareas donde cada tarea \(j\)
 requiere \(T_j\) de tiempo de procesamiento. El objetivo es asignar las tareas a las maquinas
 de tal forma que la carga quede balanceada (El tiempo asignado a cada maquina sea lo mas parejo posible).
+
+
 
 \end{document}
 
