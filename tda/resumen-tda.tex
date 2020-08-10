@@ -5,7 +5,8 @@
 \usepackage{listings}
 \usepackage{fancyhdr}
 
-
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -245,7 +246,7 @@ Puede no existir un matching perfecto.
         Sea s un solicitante sin pareja
         Sea r el requerido de su mayor preferencia al que pueda proponer
         Por cada sucesor s' a s en la lista de preferencias de r
-            if (s',r) pertence a M
+            if (s',r) pertenece a M
                 M = M - {(s',r)}
                 s' esta libre
             quitar s' de la lista de preferencias de r
@@ -1561,7 +1562,9 @@ exactamente en una de esas triplas.
     \end{center}
 \end{figure}
 
-Para verificar que 3DM pertence a NP, dado 3 conjuntos disjuntos \(X, Y, Z\), \(C=(x,y,z)\) 
+\subsubsection{3DM pertenece a los problemas NP?}
+
+Para verificar que 3DM pertenece a NP, dado 3 conjuntos disjuntos \(X, Y, Z\), \(C=(x,y,z)\) 
 conjunto de triplas y un certificado \(T\), de triplas con un subconjunto de C.
 
 Podemos certificar en tiempo polinomial que todo elemento en X, Y y Z, \underline{se encuentra 1 
@@ -1570,13 +1573,67 @@ y solo 1 vez en algun} \(T_i\). Y si \(|T|=n\), entonces:
     3DM \in NP
 \] 
 
+\subsubsection{3DM pertenece a los problemas NP-HARD ?}
+
 Ahora queremos probar que 3DM pertenece a los problemas NP-HARD. Probamos que \(3SAT \leq_p 3DM\).
 
-Sea \(I\) instancia de 3SAT con \(n\) variables \(x_1,...,x_n\) y \(k\) clausulas \(c_1,...,c_k\), 
-reducimos en tiempo polinomial la instancia \(I\) a un problema 3DM.
+Sea \(I\) instancia de \textit{problema 3SAT} con \(n\) variables \(x_1,...,x_n\) y \(k\) clausulas \(c_1,...,c_k\), 
+reducimos en tiempo polinomial la instancia \(I\) a un \textit{problema 3DM}.
 
-PENDIENTE DE REDUCCION Y DEMOSTRACION.
+\begin{quote}
+    \textbf{Gadget:} Formas o plantillas pre-armadas para hacer reducción de cualquier instancia. 
+    Se van a utilizar gadget para las variables y para las clausulas.
+\end{quote}
 
+\subsubsection{Reducción de 3SAT a 3DM}
+
+Por cada variable \(x_i\) creamos un gadget formado por los siguientes conjuntos:
+\begin{enumerate}
+    \item \(A_i=\{a_{i,1},a_{i,2},...,a_{i,2k}\}\) , seria el nucleo del gadget (2k elementos)
+    \item \(B_i=\{b_{i,1},b_{i,2},...,b_{i,2k}\}\) , seria las puntas del gadget (2k elementos)
+\end{enumerate}
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[scale=0.3]{imagenes/ejemplo-3dm-gadget-xi.png}
+    \caption{\small \sl Ejemplo para 2k elementos. Para la variable xi y k=2 clausulas, se generan 4 elementos por conjunto} 
+    \end{center}
+\end{figure}
+
+Por cada variable \(x_i\) creamos triplas que van a estar formados por dos elementos del nucleo del gadget
+y 1 elemento de la punta del gadget: 
+
+\[
+    t_{ij}=\{a_{i,j}, a_{i,j+1}, b_{i,j}\}
+\]
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[scale=0.3]{imagenes/ejemplo-3dm-gadget-clausula-xi.png}
+    \caption{\small \sl Las triplas se superponen. Cada uno de los elemento del nucleo va a formar parte de dos triplas. Cada elemento 
+    de la punta estara unicamente dentro de una tripla. Luego numeramos las triplas segun el valor de \(j\) y lo hacemos 
+    en el orden de las agujas del reloj, \textit{llamamos tripla par, si j es par y tripla impar si j es impar}.} 
+    \end{center}
+\end{figure}
+
+Por cada clausula creamos un set de elementos llamados nucleos:\(C_j=\{p_j,p'_j\}\). Por cada
+variable \(i\) en la clausula \(C_j\):
+\begin{itemize}
+    \item Si contiene la variable \(\overline{x_i}\) \(\rightarrow\) creamos la tripla \(p_j, p'_j, b_{i,2j-1}\)
+    \item Si contiene la variable \(x_i\) \(\rightarrow\) creamos la tripla \(p_j, p'_j, b_{i,2j}\)
+\end{itemize}
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[scale=0.3]{imagenes/ejemplo-3dm-gadget-ci.png}
+    \caption{\small \sl Ejemplo con clausula 1: con la variable  \(\overline{x_i}\)=1 y j=1, la tripla formada sera \(p_1, p'_1, b_{1,1}\).}
+\end{center}
+\end{figure}
+
+CONTINUACION PENDIENTE.
+
+
+\newpage
 \subsection{Ciclo Hamiltoneano}
 Sea un grafo G=(V,E) dirigido definimos un ciclo C en G como hamiltoneano si visita cada vértice
 1 y solo 1 vez. Es un recorrido que inicia y finaliza en el mismo vertices.
@@ -1605,7 +1662,83 @@ Puedo verificar en tiempo polinomial los siguientes puntos:
 Por lo tanto podemos afirmar que \textbf{HAM-CYCLE}\(\in NP\).
 
 NP C - PENDIENTE
+\newpage
+\subsection{Problema del caballo}
 
+Se conoce como \textit{problema del caballo}, a encontrar una serie de movimientos del caballo de ajedrez
+que partiendo de una posición del tablero recorra todos los casilleros y regrese a la casilla inicial 
+sin pisar dos veces la misma casilla. 
+
+¿Es posible que un caballo de ajedres desde una posición determinada recorra todo el tablero sin 
+pisar dos veces la misma casilla?
+
+Para tableros nxn en "Solution of the knight’s Hamiltonian path problem on chessboards" Axel Conrad 
+probaron que:
+
+\begin{itemize}
+    \item si \(n \geq 5\) se puede hallar un \textit{camino} hamiltoneano.
+    \item si \(n \geq 6\) se puede hallar un \textit{ciclo} hamiltoneano.
+\end{itemize}
+
+Es un caso particular del ciclo hamiltoneano y que se puede resolver en forma polinomial para ambos casos.
+
+\begin{quote}
+En particular no interesa analizar si el problema es un NP-Completo el cual no podemos resolver ó existe 
+un caso particular como este que si.
+\end{quote}
+
+\newpage
+\subsection{Problema del viajante de comercio}
+Un viajante debe recorrer \(n\) ciudades \(v_1,v_2,...,v_n\) partiendo de \(v_1\) se debe construir
+un tour visitando cada ciudad una vez y retornar a la ciudad inicial.
+
+\textbf{Caminos:} Para todo par de ciudades: 
+\begin{itemize}
+    \item Se especifica una distancia \(d(v_x,v_y)\) entre las ciudades.
+    \item No necesariamente hay simetria: \(d(v_x,v_y)\) puede ser diferente a \(d(v_y,v_x)\)
+    \item No necesariamente se cumple la desigualdad triangular: \(d(v_i,v_j)+d(v_j,v_k)>d(v_i,v_k)\)
+\end{itemize}
+Esto es un caso generalizado.
+
+\textbf{Problema de decisión:} Dado \(n\) ciudades y las distancias entre cada par de ciudades, 
+determinar un tour(o ciclo) de distancia total menor a \(k\). \(k\) sera un parametro del problema.
+
+\subsubsection{Problema del viajante es NP?}
+
+Sea \(n\) ciudades, las distancias entre cada par de ciudades, \(T\) certificado = tour de ciudades y \(k\)
+distancia como limite. Se debe verificar \(T\) contiene todas las ciudades (solo 1 vez) y termina y comienza en la misma. 
+Y por ultimo, la suma de las distancias recorrida es menor a \(k\). Todas estas verificaciones se puede hacer en timpo polinomial
+y por lo tanto el problema del viajante es NP.
+
+\subsubsection{Problema del viajante es NP Completo?}
+
+Utilizamos HAM-CYCLE para reducir al problema del viajante. Sea una instancia \(I\) de HAM-CYCLE \(G=(V,E)\).
+
+\begin{enumerate}
+    \item Por cada vértice \(v_i \in V\), creamos una ciudad \(v'_i\)
+    \item Por cada arista \(e_{i,j} \in E\), definimos la distancia \(d(v'_i, v'_j)=1\)
+    \item Aquellas distancias que no estan definidas(Las que en el grafo original no tienen aristas) las 
+    creamos con valor 2. 
+\end{enumerate}
+
+Tambien definimos el valor K, el cual es la distancia limite que tienen que medir el camino. 
+Ponemos como valor \(k=|V|\) (numero de vertices del grafo original)
+
+Solucionamos el viajante con \(k\) definido si existe un camino con longitud \(k\), entonces existe ciclo hamiltoneano.
+Si se encontro un ciclo cuya longitud es mayor a \(k\), es porque se tomo un camino con distancia 2, los cuales no existen 
+en el grafo original, y entonces no puede formarse un ciclo hamiltoneano en el grafo original.
+
+Si encontramos el ciclo en le viajante, cuya longitud sea igual a \(k\), y como cada ciudad corresponde a un 
+vertice del grafo original, se puede tranformar a un ciclo hamiltoneado. Esta transformación es polinomial y 
+por lo tanto cualquier problema hamiltoneano lo podemos reducir a un problema del viajante. 
+Como antes demostramos que el problema del viajante es NP, entonces podemos decir que el problema del viajante
+es NP-Completo.
+
+\begin{quote}
+    VIAJANTE \(\in NP\) y \(HAM-CYCLE \leq_p VIAJANTE\) \(\implies\) VIAJANTE \(\in NPComplete\)
+\end{quote}
+
+\newpage
 \section{Algoritmos Randomizados}
 
 Un algoritmo randomizado es aquel que resuelve un problema P utilizando 
@@ -1792,8 +1925,70 @@ Para solver el problema, vamos a realizar una reducción al problema de flujos:
 La complejidad temporal va a ser \(O(n^5)\) ya que por una lado, vamos a repetir el problema de flujo maximo en \(O(|V|^2)\)
 y por el otro en el peor de los casos, si usamos ford-fulkenson la complejidad sera \(O(|V|^3)\).
 
-\textbf{Algoritmo de Karger}:
+\textbf{Algoritmo de Karger}: Es un algoritmo randomizado que funciona en tiempo polinomial y
+\textit{puede retornar un resultado erroneo}. Utiliza un proceso de contracción 
+(\textit{Contraction Algoritms}). El proceso de contracción es el siguiente:
 
+\begin{enumerate}
+    \item Seleccionar: Un eje \(e=(u,v)\) de forma aleatoria y uniforme.
+    \item Reemplazar: Los nodos \(u\) y \(v\) por un nuevo nodo \(w\). Todos los ejes \((u,v)\) 
+    se eliminan. Los ejes \((u,a)\) y \((v,a)\) con \(a \in E - \{u,v\}\) se reemplaza por \((w,a)\).
+    \item Repetir: Hasta que solo queden 2 nodos en el grafo G resultante.
+\end{enumerate}
+
+Para encontrar K con alta probalidad de exito hay que ejecutar el algoritmo varias veces
+y quedarnos con la mejor K entre todas las iteraciones. Esto da una complejidad total temporal 
+de \(O(|V|^4*log |V|)\), funcionando peor y puede fallar con 
+cierta probabilidad. La mejora de \textbf{steiner-karger}(1996) aplica la siguiente variante:
+
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[width=\linewidth]{imagenes/ejemplo-contraccion1.png}
+    \includegraphics[width=\linewidth]{imagenes/ejemplo-contraccion2.png}
+    \caption{\small \sl Ejemplo de contracción Karger} 
+    \end{center}
+\end{figure}
+
+
+
+\begin{enumerate}
+    \item Si \(|V|\) es pequeño resuelve por fuerza bruta
+    \item Sino contrae \(|V|/\sqrt{2}\) nodos y aplica técnica de división y conquista con el resto.
+\end{enumerate}
+
+Con esto encuentra con alta probabilidad K, con \underline{complejidad temporal \(O(|V|^2 log^3 |V|)\)}.
+
+\newpage
+\subsection{Resolución de conflictos en sistemas distribuidos}
+
+Supongamos que tenemos \(n\) procesos \(P_1, P2,...,P_n\), cada uno compite para acceder a un 
+recurso compartido (ejemplo: base de datos). Divimos el tiempo en rondas discretas. 
+Las bases de datos tienen la propiedad de que esta puede ser accedida por un solo proceso a la vez
+en una ronda. Si dos o mas procesos intenta acceder a esto simultaneamente, entonces todos los procesos
+seran lockeados en lo que dura la ronda. 
+
+\textbf{Diseño de un algoritmo randomizado}: La aleatoriedad provee un protocolo natural para este 
+problema, el cual se puede especificar de la siguiente manera. Para un valor de \(p > 0\), que determinaremos
+luego, cada proceso intentara acceder a la base de datos en cada ronda con probabilidad \(p\),
+independiente de la decisión que tomen los otros procesos. Entonces:
+
+\begin{enumerate}
+    \item Si exactamente un proceso solicita el recurso en una ronda, lo conseguira con exito.
+    \item Si dos o mas procesos solicitan el recuros, se lockearan.
+    \item Si nadie solicita el recurso, el turno se pierde.
+\end{enumerate}
+
+Esta estrategia, se conoce como quiebre de simetria. Si cada vez que un proceso falla,
+solicita el proceso inmediatamente en el turno siguiente se provocará un atasco, pero 
+utilizando la aleatoriedad se puede corregir la contensión.
+
+
+ANALISIS PENDIENTE!!
+
+
+En conclución, con probabilidad de \(1-n^{-1}\) todos los procesos tendran exito en 
+acceder al recurso al menos 1 vez en no mas de \(t=2*\ceil{en}*lnO(n)\) rondas.
 
 \newpage
 \section{Algoritmos de aproximación}
@@ -1804,6 +1999,125 @@ Dado un conjunto de maquinas \(M_1,M_2,..,M_m\), un conjunto de \(n\) tareas don
 requiere \(T_j\) de tiempo de procesamiento. El objetivo es asignar las tareas a las maquinas
 de tal forma que la carga quede balanceada (El tiempo asignado a cada maquina sea lo mas parejo posible).
 
+\textit{¿Como medimos el balanceo de carga?} Si llamamos \(A(i)\) al conjunto de tareas asignadas a la 
+maquina \(i\), podemos calcular la carga de la maquina \(i\) como:
+\[
+    T_i=\sum_{ j\in A(i)}t_j
+\]
+Lo que buscamos es minimizar el makespan; esto es simplemente la maxima carga 
+sobre cualquier maquina, \(T = max_i t_i\). Podemos medir el balanceo por diferente indicadores:
+
+\textbf{Makespan: max(Ti) para todas las maquinas}
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[scale=0.4]{imagenes/grafico-makespan.png}
+    \caption{\small \sl Ejemplo de makespan} 
+    \end{center}
+\end{figure}
+
+Un método para seleccionar la asignación y la naturaleza de los trabajos determinará
+la programación final de las tareas. El problema para la asignación de tareas con minimo makespan 
+es NP-HARD.
+
+Vamos a utilizar un \textbf{método greedy} para realizar la aproximación. Para cada tarea i, asignar a la maquina j
+con menor carga en el momento.
+
+\begin{lstlisting}[language=Python, caption=Algoritmo de aproximación greedy]
+Comenzar sin trabajos asignados
+Definir Ti=0 y A(i) != 0 para todas las maquinas Mi
+Desde j=1 a n
+   Sea Mi la maquina con menor Tk (k=1 a m)
+   Asignar la tarea j a maquina Mi
+   Establecer A(i) <- A(i) union {j}
+   Establecer Ti <- Ti + Tj
+
+\end{lstlisting}    
+
+\textbf{Analisis}: Podemos acotar inferiormente el tiempo optimo para el makespan de dos maneras:
+
+\begin{itemize}
+    \item \(T* \geq \frac{1}{m}\sum_{j}t_j\): El optimo es mayor o igual al tiempo promedio total.
+    \item \(T* \geq max_j t_j\): El optimo es mayor o igual al tiempo del trabajo mas largo.
+\end{itemize}
+
+\textbf{El algoritmo asigna los trabajos a las maquinas con un makespan T \(\leq\) 2T*}. Demostración pendiente.
+
+En el peor de los casos, si la ultima tarea coincide con aquella de longitud mas grande, quedara
+peor balanceado.
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[width=\linewidth]{imagenes/ejemplo-aproximación-balanceo-greedy.png}
+    \caption{\small \sl Ejemplo de balanceo con greddy} 
+    \end{center}
+\end{figure}
+
+\textbf{Algoritmo mejorado}: Se agrega un preprocesamiento para ordenar las tareas segun su duración 
+en forma decreciente.
+
+\begin{lstlisting}[language=Python, caption=Algoritmo de aproximación greedy mejorado]
+Comenzar sin trabajos asignados
+Ordenar las tarea de mayor a menor duracion
+Definir Ti=0 y A(i) != 0 para todas las maquinas Mi
+Desde j=1 a n
+    Sea Mi la maquina con menor Tk (k=1 a m)
+    Asignar la tarea j a maquina Mi
+    Establecer A(i) <- A(i) union {j}
+    Establecer Ti <- Ti + Tj
+
+\end{lstlisting}    
+
+\textbf{El algoritmo asigna los trabajos a las maquinas con un makespan T \(\leq\) 3/2T*}. Demostración pendiente.
+
+
+\newpage
+\section{Teoría de la computabilidad}
+La teoria de la computabilidad comienza con una pregunta. ¿Que es una computadora?. Se utiliza una
+computadora ideal llamado modelo computacional.
+
+\subsection{Automata finito}
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[width=\linewidth]{imagenes/ejemplo-maquina-estado.png}
+    \caption{\small \sl Ejemplo de tabla de función de transición y diagrama de estados} 
+    \end{center}
+\end{figure}
+\textbf{Definición formal de automata finito}: Un autómata finito "M" es una 5-tupla \(\textstyle (Q,  \sum, \delta , q_0, F)\) donde:
+\begin{enumerate}
+    \item \(Q\) Conjunto finito llamado "estados". (Ejemplo: \(q_0,q_1,q_3\))
+    \item \(\textstyle \sum\) Conjunto finito llamado "alfabeto" (ejemplo: 0, 1)
+    \item \(\delta: Q \times \textstyle \sum \rightarrow Q\) es una función de transición.
+    \item \(q_0 \in Q\) estado inicial (ejemplo \(q_0\)).
+    \item \(F \subset Q\) conjunto de estados de aceptación. (ejemplo \(q_3\))
+\end{enumerate}
+
+El autómata recibe un string de entrada (escrito en el alfabeto \(\textstyle \sum\)), procesa el string
+partiendo del estado inicial utilizando la función de transición y produce una salida:
+\begin{itemize}
+    \item "Aceptación": si al terminar de procesar el string el estado final corresponde a uno de aceptación.
+    \item "Rechazo" si no es de aceptación.
+\end{itemize}
+
+
+\textbf{Definición formal de computo}: Sea \(M=\textstyle (Q,  \sum, \delta , q_0, F)\) un autómata finito y 
+dado \(w=w_1, w_2, \dots, w_n\) una cadena donde cada \(w_i\) es parte del alfabeto \(\textstyle \sum\), 
+entonces \(M\) acepta \(w\) si existe una secuencia de estados \(r_0,r_0,\dots,r_n\) en \(Q\) con las condiciones:
+
+\begin{enumerate}
+    \item \(r_0=q_0\)
+    \item \(\delta(r_1, w_{i+1})=r_{i+1}\), para cada \(i=0,\dots,n-1\) y
+    \item \(r_n \in F\)
+\end{enumerate}
+
+La \textit{condición 1} dice que la maquina de estado comienza en el estado de comienzo. La \textit{condición 2} dice que la maquina de estado para de un estado a otro deacuerdo a la función de transición.
+La \textit{condición 3} dice que la maquina acepta su entrada si este termina en un estado aceptado. 
+Decimos que \textit{M} reconoce el lenguaje \textit{A} si \(A=\{w | M\) acepta a \(w \}\).
+
+
+\subsection{Automata finito no determinista (AFND)}
+
 
 
 \end{document}
@@ -1811,3 +2125,4 @@ de tal forma que la carga quede balanceada (El tiempo asignado a cada maquina se
 
 
 
+ 
