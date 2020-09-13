@@ -1085,7 +1085,16 @@ El flujo \(s-t\) es una funcion \(f\) que mapea cada \(e\) a un número real no 
 
 Definimos \textbf{corte de grafo} como: 
 
-Dos cortes diferentes, tienen capacidades de transporte maxima diferentes.
+Dividimos los nodos del grafo en dos conjuntos (A y B). Donde la fuente \(s \in A\) y 
+el sumidero \(t \in B\). Cualquier flujo \(s-t\) debe cruzar en algún punto de A a B.
+El corte define un limite al caudal máximo del flujo. Pero dos cortes diferentes, 
+tienen capacidades de transporte maxima diferentes. Entonces deberia calcular todos
+los posibles cortes del grafo tomar el que maximice el flujo segun los limites de la 
+red de transporte. Calcular de esta manera se torna inviable.
+
+\begin{quote}
+    \textbf{Entonces el problema de flujo maximo, será dada una red de flujo, encontrar el flujo de maximo valor posible.}
+\end{quote}
 
 
 \newpage
@@ -1739,6 +1748,10 @@ es NP-Completo.
 \end{quote}
 
 \newpage
+\subsection{Coloreo de Grafos}
+
+
+\newpage
 \section{Algoritmos Randomizados}
 
 Un algoritmo randomizado es aquel que resuelve un problema P utilizando 
@@ -2071,6 +2084,237 @@ Desde j=1 a n
 \textbf{El algoritmo asigna los trabajos a las maquinas con un makespan T \(\leq\) 3/2T*}. Demostración pendiente.
 
 
+
+\newpage
+\subsection{Problema del selección de centros}
+
+Tenemos un conjunto de \(S\) de \(n\) sitios. Queremos seleccionar \(k\) centros para construir 
+diferentes shopping malls. Esperamos que cada persona de las \(n\) ciudades pueda ir a comprar a 
+uno de los shopping, y queremos seleccionar los sitios de los \(k\) shopping centrales.
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[width=\linewidth]{imagenes/problema-aproximacion-centros.png}
+    \caption{\small \sl Ejemplo con k=3 centros} 
+    \end{center}
+\end{figure}
+
+\begin{lstlisting}[language=Python, caption=Algoritmo de aproximación greedy]
+    
+    Asumimos k < |S| (sino definimos C = S)
+    Seleccionar cualquier sitio 's' y convertirilo en un centro C = {s} 
+    Mientras |C| < k
+        Seleccionar sitio 's' pertenece a S que maximice la distancia dist(s,C)
+        C = C U {s}
+    Retornar C como los sitios seleccionados
+    
+\end{lstlisting}    
+
+\begin{quote}
+    Algoritmo de aproximación greedy que retorna un conjunto C de k puntos tales que r(C) \( \leq \) 2r(C*) donde C* es un conjunto optimo de k puntos.
+\end{quote}
+
+Corresponde a una \textbf{2-aproximación} del problema de centros.
+
+\newpage
+\subsection{Problema del cobertura de conjuntos}
+Es un problema ya planeado donde vimos que es NP-Completo, pero al tener grandes aplicaciones podemos
+aproximarlo para resolverlo en tiempo polinomial.
+Sea un conjunto \(X\) de \(n\) elementos y una lista de F={\(S_1,...,S_m\)} de subconjuntos de elementos de \(X\).
+
+Un \(Set Cover\) es un subconjunto de F cuya unión es \(X\). El \underline{objetivo} es encontrar el set cover \(S\) con menor cantidad de subset.
+
+Tratando de construir un buen algoritmo construiremos un algoritmo greedy donde iremos seleccionando
+un subset de F paso a paso para el cover set. Intentaremos cubrir la mayor cantidad de elementos aún
+no seleccionados.
+
+\begin{lstlisting}[language=Python, caption=Algoritmo de aproximación greedy]
+    
+    Empezamos R = X y S = Vacio (Sin conjuntos seleccionados)
+    Mientras R != 0
+        Seleccionar el conjunto Si con mayor puntos cubiertos en R
+        Agregamos Si a S
+        Quitamos elementos de Si de R
+
+\end{lstlisting}   
+
+\newpage
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[width=\linewidth]{imagenes/ejemplo-problema-aprox-coverset1.png}
+    \includegraphics[scale=0.3]{imagenes/ejemplo-problema-aprox-coverset2.png}
+    \caption{\small \sl Ejemplo ejecución de coverset utilizando Greedy. Se puede observar que el algoritmos nos dio una solución que no es la óptima.} 
+    \end{center}
+\end{figure}
+
+El algoritmo es un \textbf{(1+log n)-algoritmo de aproximación}.
+
+
+
+
+
+\newpage
+\subsection{Problema del cobertura de vertices}
+
+Sea un grafo \(G=(V,E)\) no dirigido, donde cada vértice \(i\) tiene un peso \(w_i \geq 0\).
+Queremos encontrar un subconjunto \(S \subset V\) donde cada arista de E del grafo
+pertenezca a algún vértice de S.
+Minimizando el costo de los vértices seleccionados.
+Esta caso es mas general que el problema que ya se vio con pesos en los vértices igual a uno. 
+
+\textbf{Costo pagado}: Existen diferentes sub conjuntos S de V que conforman un vertex cover.
+Llamaramos \(w(S)\) como el costo del vertex cover formado por  \(S \subset V\).
+
+La solución optima S* es aquella para la que \(w(S*) \leq w(S)\) para todo S.
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[width=\linewidth]{imagenes/problema-aprox-vertexcover.png}
+    \caption{\small \sl Se pueden elegir varios subconjuntos de vértices, pero se busca el de menor costo.} 
+    \end{center}
+\end{figure}
+
+Mediante el método de Pricing, podemos pensar cada peso de los \textit{vértices} como un "costo".
+Cada \textit{eje} es un "agente" dispuesto a pagar algo al vértice que lo cubre. Entonces se puede ver 
+que los agentes deberian pagar un costo para ser cubiertos por lo menos por uno nodo.
+
+Diremos que un vertice esta \textit{pagado} si la suma de lo pagado por sus ejes es igual al costo de sus vértices.
+
+Diremos que un precio \(p_e\) que tiene que pagar un eje \(e\) al vertice \(i \) es justo si no paga 
+mas que el costo \(w_i\) del vertice.
+
+
+\begin{lstlisting}[language=Python, caption=Algoritmo de aproximación greedy. La integridad se respeta si se paga el precio justo.]
+    
+    Definir pe = 0 para todo e pertenece a E
+
+    Mientras exista un eje e=(i,j) tal que i o j no este "Pagado"
+        Seleccionar el eje e
+        Incrementar pe si violar la integridad
+    
+    Sea S el conjunto de todos los nodos pagados
+    Retonar S
+
+\end{lstlisting}   
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[width=\linewidth]{imagenes/ejemplo-aprox-vertexcover.png}
+    \caption{\small \sl Inicialmente cada eje no paga nada y no esta cubierto, no hay nodo pagado. 
+    selecciono algun eje, por ejemplo el e=(a,b). 
+    El eje paga el minimo que es 3. Se marca el nodo b como "pagado" y se cubre el eje (a,b) y (b,c).
+    Luego selecciono e=(a,d) y se cubre los ejes (a,d) y (a,c) y se marca como pagado el nodo a.
+    Por último, selecciono el eje e=(c,d), pagando el minimo que es 2, se cubre el eje (c,d) y se marca como pagado el nodo c.
+    El algoritmo termina diciendo que los vertices cubiertos son a,b,d pagando W(s)=3+4+3=10} 
+    \end{center}
+\end{figure}
+
+\begin{quote}
+    El costo del conjunto S retornado por el algoritmo es como mucho el doble de algún vertex cover posible.
+    El algoritmo es un \textbf{2-algoritmo} de aproximación
+\end{quote}
+
+\[
+    w(S) \leq 2w(S*)
+\]
+
+
+\newpage
+\subsection{Problema de la mochila}
+
+Supongamos que tenemos \(n\) elementos que queremos guardar en una mochila. Cada elemento \(i=1,..,n\)
+tiene dos parametros: un peso \(w_i\) y un valor \(v_i\). Siendo \(W\) la capacidad de la mochila, el
+objetivo global del problema es encontrar un subconjunto de \(S\) con los elementos que maximicen el 
+valor sujeto a la restricción del peso total que no debe superar \(W\).
+
+
+
+Nuestro problema tomara como entrada los pesos, los valores definidos por el problema y tambien
+tomaremos un parametro extra \(\epsilon\), para obtener la precision deseada.
+
+Llamamos \(OPT(i,V)\) al subproblema de determinar el menor peso que se puede obtener con los primeros
+\(i\) items cuyo valor iguale o supere el valor de al menos \(V\) en la mochila.
+
+\begin{lstlisting}[language=Python, caption=Algoritmo de aproximación con programación dinamica usando interativo]
+    
+    Desde i=0 a n
+        OPT[i][0]=0
+    
+    Desde v=1 a Vmax
+        OPT[0][v]=+infinito
+
+    Desde i=1 a n   // Elementos
+        Desde v=1 a Vmax // valores 
+    
+            enOptimo = w[i] + OPT[i-1, v-v[i]]
+            noEnOptimo = OPT[i-1, v]
+
+            si enOptimo < noEnOptimo
+                OPT[i][v] = enOptimo
+            sino
+                OPT[i][v] = noEnOptmimo
+    
+    Desde v=Vmax a 0
+        si OPT[n,v] <= w
+            retornar OPT[n][v]
+
+
+\end{lstlisting}   
+
+La complejidad temporal es \(O(nV_{max})\) y la espacial es \(O(nV_{max})\). Para recobrar los elementos seleccionados
+debemos almacenar para cada caso si se selecciono o no que él elemento este en el óptimo. Iterar desde el óptimo hacia
+atrás reconstruyendo.
+
+Si llamamos v*=max {\(v_i\)} con \(0 < i \leq n\) podemos acotar:
+
+\[
+    V_max = \sum_{j=1}^{n}v_j \leq nv*
+\]
+
+Por lo tanto la complejidad de la programación dinámica sera \(O(n^2, v*)\). Si \(n\) es pequeño
+el algoritmos se resuelve en tiempo polinomia. Sino, se resolvera en tiempo pseudo polinomial.
+
+Para realizar la aproximación, utilizaremos un parametro \(b\) de rendondeo, 
+donde para cada elemento i calculamos:
+
+\[
+     \tilde{v_i} = \ceil{v_i/b}b
+\]
+
+De esta forma queda acotado \(v_i \leq \tilde{v_i} \leq v_i + b\) y ademas es multiplo de b.
+Podemos resolver mediante programación dinamica \(v'_i = \ceil{v_i/b}\). De esta forma,
+nos quedara un Vmax mas pequeño, una cota v* mas pequeño, \textbf{la programación dinamica sera 
+mas manejable y se ejecutara como si fuese polinomial.}
+
+Para elegir \(b\) utilizaremos:
+\begin{itemize}
+    \item \(\epsilon\) para generar \(b\)
+    \item con \(0 < \epsilon \leq 1\)
+    \item Y por comodidad \(\frac{1}{\epsilon}=\epsilon^{-1}\) es un \textit{número entero}.
+\end{itemize}
+Un valor conveniente para \(b=\epsilon v* / 2n\).
+
+
+\begin{lstlisting}[language=Python, caption=Knapsack-Approx(e:epsilon)]
+Knapsack-Approx(e:epsilon)
+    Obtenemos el precio maximo vmax
+    b = (e/2n) * vmax / 2n
+    Para cada elemento i
+        Calcular v'i con b
+
+    Resolvemos con programacion dinamica con los valores v'i
+
+    Retornar el conjunto de elementos encontrados.
+
+\end{lstlisting}   
+
+En todo el proceso la \textbf{complejidad temporal global} sera \(O(n^3\epsilon^{-1})\) para un valor
+fijo de \(e\) el algoritmo se ejecuta en tiempo polinomial.
+
+Para cualquier \( \epsilon > 0 \), la solución aproximada encuentra una solución factible cuyo
+valor esta dentro de un factor \(1+\epsilon\) de la solución óptima.
+
+
 \newpage
 \section{Teoría de la computabilidad}
 La teoria de la computabilidad comienza con una pregunta. ¿Que es una computadora?. Se utiliza una
@@ -2115,10 +2359,227 @@ La \textit{condición 1} dice que la maquina de estado comienza en el estado de 
 La \textit{condición 3} dice que la maquina acepta su entrada si este termina en un estado aceptado. 
 Decimos que \textit{M} reconoce el lenguaje \textit{A} si \(A=\{w | M\) acepta a \(w \}\).
 
-
+\newpage
 \subsection{Automata finito no determinista (AFND)}
 
+En una maquina no deterministica puede haber varias opciones para el siguiente paso en cualquier momento.
+Al computar una cadena, se van generando en paralelo diferentes ramificaciones de ejecución.
 
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[width=\linewidth]{imagenes/ejemplo_AFND.png}
+    \caption{\small \sl Ejemplo de automata finito no deterministico} 
+    \end{center}
+\end{figure}
+
+Al finalizar el procesamiento de una cadena, si al menos una rama termina en estado "Aceptación", retorna "Aceptación".
+De lo contrario retorna "Rechazo".
+
+A medida que se procesan las ramas pueden abandonar ramas que llegan a estados siguiente \(\emptyset\).
+
+\begin{quote}
+    \textbf{Diremos que dos maquinas son equivalentes si reconcen el mismo lenguaje.}
+\end{quote}
+
+\newpage
+\subsection{Lenguajes regulares}
+
+Un lenguaje es regular si existe algún autómata finito que lo reconozca.
+
+Existen algunas \textit{operaciones} que se pueden aplicar a los lenguajes regulares llamados operaciones
+regulares llamados \textit{operaciones regulares} cuyo resultado es tambien un lenguaje regular.
+Podemos utilizar los operadores regulares para construir expresiones que describan lenguajes, los cuales
+llamaremos \textit{\textbf{expresiones regulares}}. Ejemplo:
+
+\[
+    (0 \cup 1)0*
+\]
+
+El valor de esta expresión regular es un lenguaje que consiste en todas las posibles cadenas que
+empiezan con 0 ó 1, seguido de cualquier cantidad de 0s.
+
+\textbf{Operadores regulares}:
+
+Sean A, B dos lenguajes regulares:
+
+\begin{itemize}
+    \item Union: \(A \cup B\)
+    \item Concatenación: \(A \cup B\)
+    \item Estrella \(A*\)
+\end{itemize}
+
+\textbf{Definición de expresión regular}:
+Se dice que \(R\) es una expresión regular si \(R\) es:
+\begin{enumerate}
+    \item \(a\) para algun \(a\) en el alfabeto de \(\textstyle \sum\).
+    \item \(\epsilon\)
+    \item \(\emptyset\)
+    \item \(R_1 \cup R_2\), donde R1 y R2 son expresiones regulares.
+    \item \(R_1 \circ R_2\), donde R1 y R2 son expresiones regulares.
+    \item \(R_1*\), donde R1 es una expresión regular.
+\end{enumerate}
+
+Ejemplo para convertir una expresión regular \((a \cup b)*aba\) a una AFND. Pasos:
+
+\begin{figure}[h!]
+    \begin{center} 
+    \includegraphics[width=\linewidth]{imagenes/ejemplo-expresionregular-AFND.png}
+    \caption{\small \sl Ejemplo de expresion regular a AFND} 
+    \end{center}
+\end{figure}
+
+
+
+\newpage
+\subsection{Maquina de Turing}
+
+Es similar a un automata finito pero con memoria ilimitada y sin restricciones.
+El modelo de una maquina de Turing, utiliza un \textit{cinta infinita} con memoria ilimitada. 
+Tiene un cabezal de cinta que puede leer y escribir simbolos sobre la cinta.
+Inicialmente la cinta contiene una cadena de entrada y el resto esta en blanco.
+La maquina continua procesando hasta que decide producir una salida.
+Las salida \textit{aceptado} y \textit{rechazado} se obtienen ingresando los correspondientes 
+estados de aceptación y rechazo.
+
+
+Diferencias entre un automata finito y una maquina de Turing:
+
+\begin{enumerate}
+    \item Puede grabar o leer en la cinta en cada secuencia.
+    \item La lectura y escritura puede moverse de izquierda a derecha.
+    \item La cinta es infinita.
+    \item Los estados especiales para rechazar y aceptar toman efecto inmediatamente. 
+\end{enumerate}
+
+
+Configuación
+
+Sucesión de configuraciones
+
+Computo
+
+Lenguaje Turing Reconocible
+
+Loop en una maquina de Turing
+
+
+
+\subsection{Variantes de Máquinas de turing}
+
+\begin{enumerate}
+    \item Con posibilidad de no avanzar ademas de retroceder o avanzar el cabezal.
+    \item Con multiples cintas.
+    \item No deterministica.
+    \item Con impresora donde solo grabo simbolos.
+\end{enumerate}
+
+Todas las variantes tienen el mismo poder de computo. Pueden reconocer los mismos lenguajes.
+
+Equivalencia entra una Turing Machine (TM) y una Turing Machine Multicinta(TMM).
+
+\textbf{Turing Machine No Deterministica (NDTM)}: Permite en un punto del computo transicionar en simultaneo a varias posibilidades.
+En un arbol de ramificaciones, alguna rama se puede quedar loopeando en infinito. 
+El recorrido del arbol debe realizarse mediantes BFS para evitar el loopeo.
+
+FALTA EJEMPLO.
+
+En el ejemplo, la maquina de turing multicinta y la no deterministica tienen el mismo poder de computo.
+O sea, que puede reconocer exactamento los mismos lenguajes, y pueden resolver los mismos problemas.
+
+
+\newpage
+\subsection{Tesis Church-Turing}
+
+Entscheidungs Problem: Es un problema de decisión para encontrar un algoritmo general que decidiese si una fórmula del calculo 
+de primer orden es un teorema.
+
+Turing propone su maquina automatica como herramienta de cálculo. Alonzo Church desarrolla su cálculo lambda para el mismo motivo.
+
+Con la Tesis Church-Turing, se dio el marco para definir que es un algoritmo. Pero al ser una tesis no esta probado.
+
+El \textbf{10mo} problema planteado por David Hilbert, si lo restringimos a 1 variable, es TURING DECIDIBLE.
+Pero volviendo al problema original de decidir si una ecuación polinomica diofantica (2 o mas variables) tiene raiz entera,
+es TURING RECONOCIBLE, pero no es TURING DECIDIBLE. 
+
+\newpage
+\subsection{Lenguajes Turing no decidibles}
+
+\textbf{Maquina de Turing universal}: Permite simular cualquier otra maquina de Turing con un input arbitrario.
+El input de esta maquina universal, es la maquina a simular y su input.
+
+Existen lenguajes no decidibles:
+\begin{itemize}
+    \item Halting Problem
+    \item Post Correspondence problem
+    \item Wang tiles
+    \item Conway's Game of Life
+    \item 10mo problema de Hilbert
+    \item Otros
+\end{itemize}
+
+\newpage
+\subsection{Lenguajes Turing no reconocibles}
+
+Pueden existir \textit{infinitos leguajes a reconocer} e \textit{infinitas maquinas de Turing} que se pueden generar.
+
+¿Pueden existir lenguajes no reconocibles? Primero vamos a analizar el \textit{tamaño de los infinitos}(Georg Cantos).
+
+\textbf{Correspondencia entre conjuntos infinitos}: Dos conjuntos infinitos tienen el mismo tamaño 
+si pueden establecer entre ellos una \textit{correspondencia biyectiva}.
+
+\textbf{Conjuntos contables}: Un conjunto contable A es contable si es finito o si su tamaño es igual
+al conjunto de los números naturales. Ejemplo: pares, impares, primos, compuestos. Los números enteros
+con contables si podemos realizar una correspondencia utilizando algun pivoteo. En el caso de 
+números racionales, utilizando un recorrido tipo espiral, podemos listar los números y realizar
+la correspondencia con los números naturales. Por lo tanto, los numeros racionales son contables.
+Pero el conjunto de los números reales no son contables, porque no se puede armar una correspondencia.
+Al igual que los números binarios no son contables.
+
+El conjunto de las Maquinas de Turing es contable ya que puede realizarse una correspondencia con los
+números naturales. El conjunto de todos los lenguajes no es contable. Y como un lenguaje es reconocible
+si una maquina puede reconocerlo. Entonces: 
+
+\begin{quote}
+    \textbf{Existen lenguajes no reconocibles por una maquina de Turing}
+\end{quote}
+
+\newpage
+\subsection{Complejidad algorítmica con máquinas de Turing}
+
+\textbf{Clase complejidad temporal}: Sea \(t:N \rightarrow R+\) una función, definimos una clase
+de complejidad temporal TIME(T(n)) a la colección de todos los lenguajes que son decidibles por una
+maquina de \(O(t(n))\)-tiempo Maquina de Turing.
+
+\textbf{Clase complejidad temporal P}: P corresponde a la clase de lenguajes que son decibles en
+tiempo polinómico utilizando una máquina de Turing \textit{deterministica} con cinta única.
+
+\[
+    P=\cup_k TIME(n^k)
+\]
+
+\textbf{Clase complejidad temporal NP}: P corresponde a la clase de lenguajes que son decibles en
+tiempo polinómico utilizando una máquina de Turing \textit{no deterministica} con cinta única.
+
+Definimos NTIME(t(n))={L|L es un lenguaje decido por un O(T(n))-tiempo MT no determínisca}
+
+\[
+    P=\cup_k NTIME(n^k)
+\]
+
+NP: nodeterministic polynomial time
+
+\textbf{Clase complejidad temporal NP-Completo}: Un lenguaje B es NP-completo si satisface 2 condiciones:
+
+\begin{enumerate}
+    \item B pertenece a NP, y 
+    \item Todo A que pertenece a NP se puede reducir en tiempo polinomial a B.
+\end{enumerate}
+
+
+\newpage
+\subsection{Teorema de Levin Cook}
+
+Este teorema permite identificar al problema SAT como el primer lenguaje NP-Completo.
 
 \end{document}
 
