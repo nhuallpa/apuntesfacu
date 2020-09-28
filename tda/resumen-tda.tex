@@ -2003,6 +2003,107 @@ ANALISIS PENDIENTE!!
 En conclución, con probabilidad de \(1-n^{-1}\) todos los procesos tendran exito en 
 acceder al recurso al menos 1 vez en no mas de \(t=2*\ceil{en}*lnO(n)\) rondas.
 
+
+\newpage
+\subsection{Quick Sort Randomizado}
+
+Sea un set \(S=\{a_1, a_2,...,a_n\}\), la mediana es el número que queda en la posición del medio si
+se presentan ordenados. Formalmente, el mediano de S es igual K-esimo elemento mas grande en S, donde:
+
+\begin{itemize}
+    \item Si \(n\) es impar, \(K=n/2\).
+    \item Si \(n\) es par, \(K=(n+1)/2\).
+\end{itemize}
+La complejidad de Resolución hasta aqui es de \(O(n log n)\) debido al ordenamiento.
+
+
+\begin{lstlisting}[language=Python, caption=Algoritmo para calcular la mediana utilizando división y conquista]
+select(S,k)
+    Sl={}  Sr={}
+    p = calcular_pivot(k)
+    Desde j=1 hasta k
+        Si sj < p
+            Sl += {sj}
+        Si sj > p
+            Sr += {sj}
+    
+    Si size(sl) = k-1
+        return p
+    Sino si size(sl) > k - 1
+        select (sl, k)
+    sino 
+        select (sr, k-1 - size(sl))
+
+\end{lstlisting}    
+    
+Analizando la funcion calcular pivot, calculamos un pivot "centrado" que al menos
+\(\epsilon*n\) elementos menores y mayores que él(\(\epsilon>0\)). 
+Proponemos seleccionar un \(a_i \in S\) como \textbf{pivot uniforme al azar},
+considerando centrales a los elementos que al menos dejen 1/4 de los elementos 
+del lado izquierdo o derecho. La mitad de los elementos son centrales (\(\epsilon = 1/4\)).
+La probabilidad de seleccionar un pivot central es de 1/2.
+
+Al dividir en S+ y S- verificamos que la división cumpla el requisito, y sino cumple,
+volvemos a seleccionar al azar otro pivot. Probabilisticamente tendria que repetir
+a lo sumo 2 veces la elección. \textbf{Este proceso es O(n)}.
+
+\textbf{QuickSort} es un algoritmo de ordenamiento que utiliza división y conquista.
+Divide en cada paso en dos subproblemas utilizando un valor pivot.
+Por un lado se procesan los valores menores al pivot y por el otro los mayores.
+
+\begin{lstlisting}[language=Python, caption=Algoritmo QuickSort]
+QuickSort(S)
+    Si |S| <= 3
+        Ordenar S
+        Retornar S
+    Sino
+        p = seleccionar_pivot(S)
+        Por cada elemento de S
+            Ponerlo en S- si es menor a p
+            Ponerlo en S+ si es mayor a p
+
+        S- = QuickSort(S-)
+        S+ = QuickSort(S+)
+    
+    Retornar S-, p, S+
+\end{lstlisting} 
+
+Si el pivot es el valor medio, la complejidad es O(nlog n). Pero si el pivot es malo será \(O(n^2)\).
+
+\textbf{QuickSort Ramdomizado}: Modificamos el quicksort intentando \textbf{elegir un pivot aleatoriamente}.
+Al dividir en S- y S+ verificamos que se cumpla el requisito:
+
+\begin{enumerate}
+    \item Queremos que el pivot sea central, ni en 1/4 inicial ni en el final.
+    \item Si no cumple, volvemos a seleccionar al azar otro pivot.
+\end{enumerate}
+Probabilisticamente tendria que repetir a los sumo 2 veces la elección del pivot.
+
+\begin{lstlisting}[language=Python, caption=Algoritmo QuickSort ramdomizado]
+QuickSort(S)
+    Si |S| <= 3
+        Ordenar S
+        Retornar S
+    Sino
+        Repetir 
+        p = seleccionar_pivot(S)
+        Por cada elemento de S
+            Ponerlo en S- si es menor a p
+            Ponerlo en S+ si es mayor a p
+        Hasta que |S-| >= 1/4*|S| y |S+| >= 1/4*|S|  
+        S- = QuickSort(S-)
+        S+ = QuickSort(S+)
+    
+    Retornar S-, p, S+
+\end{lstlisting} 
+    
+\textbf{El proceso total es O(n*log(n))}.
+
+
+
+
+
+
 \newpage
 \section{Algoritmos de aproximación}
 
