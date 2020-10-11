@@ -534,10 +534,22 @@ El algoritmo de greedy arma un arbol de "hufman" para armar un arbol optimo de p
 
 \section{División y conquista}
 
-\subsection{Teorema mestro - TODO}
+\subsection{Encontrar un par de puntos mas cercanos}
 
+\textbf{Problema}: Dado \(n\) puntos en el plano, encontrar el par de puntos mas cercanos.
 
-\subsection{Mediana con datos separadas}
+\textbf{Diseño}: Definimos el conjunto de puntos \(P=\{p_1,..., p_n\}\) donde \(p_i\) tiene las
+coordenadas \(x_i, y_i\); y por cada dos puntos \(p_i, p_j \in P\) usamos \(d(p_i,p_j)\) como 
+la distancia euclideana entre ellos. El objetivo es buscar un par de puntos \(p_i, p_j\) que minimice
+la distancia \(d(p_i,p_j)\).
+
+Se asume que no hay dos puntos que tengan las misma coordenadas. En dos dimensiones
+ordenaremos los puntos en base a los ejes \(x\) e \(y\) y utilizaremos division y conquista
+para encontrar los puntos mas cercanes en la \textit{mitad de derecha} de P y los 
+puntos mas cercanes en la \textit{mitad de izquierda} de P.
+
+Por ultimo, las distancias no consideradas en las llamadas recursivas son las que estan 
+cercanos a la parte izquierda y derecha de la división de P.
 
 
 
@@ -592,6 +604,7 @@ Para evitar el recalculo, si calculo el optimo de algun resto,
 lo almaceno para no volver a calcularlo de nuevo.
 Ademas en cada subproblema debo analizar \(n\) comparaciones, lo cual impacta en la complejidad.
 
+\newpage
 \noindent
 \underline{SOLUCIÓN ITERATIVA}
 \begin{lstlisting}[language=Python, caption=Solución iterativa]
@@ -782,6 +795,31 @@ valor \(W\) de peso máximo.
 Para plantear una solución por \textbf{fuerza bruta}, un elemento puede estar o no. O sea que si
 tengo \(n\) elementos pueden existir \(2^n\) combinaciones. Entonces la complejidad total esta acotado
 por \(O(2^n)\).
+
+Definimos \(OPT(i, w)\) como el valor optimo de la solución usando un subconjunto de items \(\{1,..,i\}\)
+con un máximo de peso permitido \(w\)
+
+\begin{itemize}
+    \item Si \(n \notin O\), entonces \(OPT(n,W) = OPT(n-1, W)\), ignorando el elemento n
+    \item Si \(n \in O\), entonces \(OPT(n,W) = w_n + OPT(n-1, W-w_n)\), desde ahora buscaremos
+            utilizar lo que queda de capacidad \(W-w_n\) para hallar el optimo en los items \(\{1,2,..,n-1\}\).
+
+\end{itemize}
+
+
+\begin{lstlisting}[language=Python, caption=Algoritmo de requeridos con cupos]
+Subset-Sum(n, W)
+    Array M[0...n,0...W]
+    Inicializar M[0,w]=0 para cada w=0,1,...,W
+    Para cada i=1,2,...,n
+        Para cada w=0,...,W
+            Usar la reccurrencia para computar M[i,W]
+        Fin para
+    Fin para
+    Retornar M[n, W]
+\end{lstlisting}
+
+
 
 
 
