@@ -260,15 +260,76 @@ las necesidades y deseos del ser humano mediante procesos de intercambio.
             - Retener clientes
             - Para SATISFACER CLIENTES
 
-### Clase 13/10/2020 - Teoria de la organización
+## 5.  Martes 13/10/2020 - Teoria de la organización
+
+### Configuraciones estructurales
+
+1. Estructura simple.
+    - Coordinación: Supervición directa.
+    - Parte fundamental: Ápice estratégico.
+    - Parametro de diseño: Centralización.
+    - Factores de contingencia:????
+    - Problemas: 
+        - La decisión la toma una sola persona.
+        - Tiene a confundise lo operativo con lo estratégico.
+
+2. Burocracia Maquinal.
+    - Coordinación: Normalización de procesos.
+    - Parte fundamental: Tecno estructura.
+    - Parametro de diseño: 
+        - Formalización del comportamiento.
+        - Especialización vertical.
+        - Desentralización horizontal limitada.
+        - Planificación de acciones.
+        - Agrupaciones funcionales generales.
+    - Factores de contingencia:????
+        
+3. Burocracia profesional.
+    - Coordinación: Normalización de habilidades.
+    - Parte fundamental: Núcleo de operaciones.
+    - Parametro de diseño: 
+        - Preparación
+        - Especialización horizontal del puesto.
+        - Descentralización vertical y horizontal.
+    - Factores de contingencia:????
+
+4. Forma divisional.
+    - Coordinación: Normalización de salidas(outputs).
+    - Parte fundamental: Linea media.
+    - Parametro de diseño:
+        - Agrupación a base de mercado.
+        - Sistema de control de rendimiento.
+        - Descentralización vertical limitada
+    - Factores de contingencia:????
+    - La CEDE CENTRAL tiende a centralizar decisiones, cuando la mejor información la tienen las divisiones.
+    - Las DIVISIONES se suelen enfocar en sus objetivos económicos y fallan en lo social (ambiente laboral, calidad de producto, protección ambiental, etc).
+
+5. Adhocracia: Se forma a "ese efecto".
+    - Coordinación: Adaptación mutua.
+    - Parte fundamental: 
+        - Nucleo operativo (Adhocracia Operativa). Consultora, Estudio de desarrollo urbano.
+        - Staff de apoyo(Adhocracia administrativa). Estudio de arquitectos.
+    - Parametro de diseño:
+        - Agrupa especialistas en unidades funcionales.
+        - Desentralización selectiva vertical y horizontal.
+    - Problemas:
+        - Relaciones humanas: Puesto no claramente definido.
+        - Eficiencia: No es eficiente para acciones ordinarias. Irregular carga de trabajo.
+        - +DEMOCRACIA Y - BUROCRACIA => Pierde capacidad de INNOVAR.
+    - Ejemplo: Una obra. Cada parte participa y se forma para un fin especifico.
+    
+
+Configuración Estructural | Principal Mec coordinación | Parte Fundamental | Tipo de descentralización
+-- | -- | -- | -- 
+**Estructura simple** | Supervisión directa | Ápice Estratégico | Centralización V - H
+**Burocracia Maquinal** | Normalización de procesos de trabajo | Tecnoestructura | Descentralización H Limitada
+**Burocracia Profesional** | Normalización de habilidades | Núcleo de Operaciones | Descentralización V y H 
+**Forma Divisional** | Normalización Outputs | Línea Media | Descentralización V Limitada 
+**Adhocracia** | Adaptación Mutua | Staff de Apoyo | Descentralización Selectiva
 
 
 
-- Tecnoestructura: Normalización Procesos, habilidades
-- Nucleo operativo: Operarios que tienen contacto del cliente.
-
-
-#### Mecanismos de coordinación:
+### Mecanismos de coordinación:
 - Adaptación mutua
 - Supervisión directa
 - Normalización:
@@ -277,21 +338,9 @@ las necesidades y deseos del ser humano mediante procesos de intercambio.
     - de resultados
 
 
-
-
-#### Configuraciones Estructurales: 
-
-- Estructura simple
-- Burocracia Maquinal
-- Burocracia Profecional
-- Forma divisional
-- Adhocracia: Se forma a "ese efecto".
-    - Ejemplo: Una obra. Cada parte participa y se forma para un fin especifico.
-
-
 Revisar en la organización, que configuración tiene.
 
-#### Roles gerenciales:
+### Roles gerenciales:
 
 - Interpersonal
     - Figura Central
@@ -307,7 +356,7 @@ Revisar en la organización, que configuración tiene.
     - Asignador de recursos: Fisicos, financieros, información, y de recursos humanos.
     - Negociador: Relacionado con gestor de disturbios.
 
-#### Habilidades gerenciales:
+### Habilidades gerenciales:
 
 - Técnicas: Sabes lo que hay que hacer.
 - Interpersonales: Interactuar con todos. Con enfoque cooperativo. NO significa ser amistoso.
@@ -317,7 +366,7 @@ Revisar en la organización, que configuración tiene.
 - Toma de decisiones.
 - Administración del tiempo.
 
-#### Control y supervición:
+### Control y supervición:
 - Control
     - Ejecuta
     - Responde a un programa
@@ -329,7 +378,7 @@ Revisar en la organización, que configuración tiene.
     - 
 
 
-#### Proyectos:
+### Administración de Proyectos:
 
 Analís de factibilidad: 
 
@@ -346,7 +395,8 @@ Caracteristicas:
 - Transferencia
 
 
-## Clase de Viernes 16/10/20: 
+
+## 6. Viernes 16/10/20: ESTRATEGIA DELIBERADA
 
 ### Estrategia
 
@@ -364,7 +414,8 @@ Caracteristicas:
         - ¿Que quiero lograr?
         - ¿Donde quiero estar en el futuro?
         - ¿Para quien lo haré?
-    - _Valores_: Principios éticos y cultura de la empresa. No mas de 6 o 7 valores. ¿Como somos? ¿En que creemos? 
+    - _Valores_: Principios éticos y cultura de la empresa. No mas de 6 o 7 valores. ¿Como somos? ¿En que creemos?. Deben ser descriptivos y claros
+
 - Objetivos, Metas, Cuadro Integral de Mando (PENDIENTE)
     En base a la misión, visión y valores, se definen los objetivos y las metas. 
 
@@ -378,60 +429,52 @@ Caracteristicas:
     - **Jaula dorada**:  Pocos oferentes pero esta regulada, por ejemplo los monopolios.
 
 
-
 - Análisis de las Fuerzas competitivas
+    - Competencias Claves: 
+        - Permite que la alta gerencia enfoque sus esfuerzos en desarrollar ventajas competitivas.
+        - Permite _Conectar_ las estrategias de negocio con las competencias individuales y colectivas.
+        - Competencias fundacionales y estrategicas.
+    - Analisis de fuerzas competitivas 
+        - Proveedores: Son mucho o no, tienen fortaleza en sus productos.
+        - Competidores: ????????
+        - Nuevos y sustitutos: Productos que reemplaza al propio producto.
+        - Barrera de entrada: Son regulaciones o son las inversiones necesarias para el negocio.
+        - Barrera de salida: ???????
+
+    - Posicionamiento y segmentación
+        - Posicionamiento: Tener un pedazo de la cabeza de tu cliente. Cuando el cliente pienza en un producto o servicio, lo primero que le llega a la mente es la marca.
+        - Segmentación: No es separar a la gente. Es agrupar y reconocer los segmentos.
+
+    - Estrategias:
+        **Estrategia de liderazgo**: 
+            - en costo, 
+            - en ser el mejor, acompañado del precio ó 
+            - en ser el unico, que hace determinada cosa.
+        **Estrategia de Retador**:
+            - Pelar el lugar al Lider.
+        **Estrategia de Seguidor**
+            - Copia al lider. Clon, imitador o adaptador.
+        **Estrategia de Nichos**
+            - Atiende a un tipo de usuario.
+            - Atender a una etapa en la cadena de producción.
+            - Personalizar el producto para un tipo de producto.
+            - Operar en un determinado segmento del mercado.
+            - Hago un producto para un canal de venta.
+
+    - Cadena de Valor: (Mikel porter - Libro: Ventaja competitiva)
+        - Exiten criterios de evaluación
+            - Criterios de satisfacción
+            - Costo tecnologico sobre el costo total de la información.
+        - En los puntos donde hay incertidumbre o no hay información se deben hacer inferencias.
+    - Cadena de valor ampliada:
+        - La cadena de valor de empresa, se ve afectada por la cadena de valor de proveedores y compradores.
+        - Ejeplo de Bancos.
+
+
+
 - Perfil de respuesta del Competidor
-- Autoanálisis
-- FODA
-- CAME
+    - Si bajo el precio de m producto, como afecta a mis competidores.
 
-#### Mision, Vision, Valores
-
-
-
-### Competencias Claves
-- Ejemplod de competencias
-    - 
-- Analisis de fuerzas competitivas Completar
-    - Proveedores: Son mucho o no, tienen fortaleza en sus productos
-    - Competidores: 
-    - Nuevos y sustitutos: Productos que reemplaza al propio producto.}
-    - Barrera de entrada: Son regulaciones o son las inversiones necesarias para el negocio.
-    - Barrera de salida: 
-- Herramientas de analis con cuadros e indicadores.
-
-- Enfocarse en los clientes (Jeff Bezos)
-
-- Analisis de Competencias
-    - Posicionamiento: Tener un pedazo de la cabeza de tu cliente. Cuando el cliente pienza en un producto o servicio, lo primero que le llega a la mente es la marca.
-    - Segmentación: No es separar a la gente. Es agrupar y reconocer los segmentos.
-
-- Estrategias:
-    **Estrategia de liderazgo**: 
-        - en costo, 
-        - en ser el mejor, acompañado del precio ó 
-        - en ser el unico, que hace determinada cosa.
-    **Estrategia de Retador**:
-        - Pelar el lugar al Lider.
-    **Estrategia de Seguidor**
-        - Copia al lider. Clon, imitador o adaptador.
-    **Estrategia de Nichos**
-        - Atiende a un tipo de usuario.
-        - Atender a una etapa en la cadena de producción.
-        - Personalizar el producto para un tipo de producto.
-        - Operar en un determinado segmento del mercado.
-        - Hago un producto para un canal de venta.
-
-- Cadena de Valor: (Mikel porter - Libro: Ventaja competitiva)
-    - Exiten criterios de evaluación
-        - Criterios de satisfacción
-        - Costo tecnologico sobre el costo total de la información.
-    - En los puntos donde hay incertidumbre o no hay información se deben hacer inferencias.
-- Cadena de valor ampliada:
-    - La cadena de valor de empresa, se ve afectada por la cadena de valor de proveedores y compradores.
-    - Ejeplo de Bancos.
-- Analisis del Perfil de las respuestas del competidor.
-    - Si bajo el precio de me producto, como afecta a mis competidores.
 - Autoanálisis
     - Analisis de desempeño.
     - Analisis de diferencias.
@@ -449,19 +492,18 @@ Caracteristicas:
         - Desarrollo de mercado
         - Desarrollo de producto
         - Diversificación de mercados
-    - FODA: 
-        - Foralezas(internas): Ventajas competitivas
-        - Oportunidades(externo): Contexto donde la empresa no tiene control. 
-        - Debilidades(internas): 
-        - Amenazas(Externas): Contexto donde la empresa no tiene control. Tipo de cambio.
-    - Análisis CAME: 
-        - Foralezas: -> Mantener
-        - Oportunidades: -> Explotar
-        - Debilidades: -> Corregir
-        - Amenazas: -> Afrontar
+- FODA: 
+    - Foralezas(internas): Ventajas competitivas
+    - Oportunidades(externo): Contexto donde la empresa no tiene control. 
+    - Debilidades(internas): 
+    - Amenazas(Externas): Contexto donde la empresa no tiene control. Tipo de cambio.
+- Análisis CAME: 
+    - Foralezas: -> Mantener
+    - Oportunidades: -> Explotar
+    - Debilidades: -> Corregir
+    - Amenazas: -> Afrontar
 
 
-- Valores deben ser descriptivos y claros
 
 
 ## Clase de Martes 20/10/20: Cadena de Valor Agregado
@@ -487,4 +529,33 @@ Caracteristicas:
 - Comparación con la misma empresa o con competidores.
 - Estudiar la audiencia y la horatoria para las presentaciones.
 - Es eslabon mas debil, determina la fortaleza de la cadena.
-- 
+-
+
+## Estrategia Emergente
+
+- Lean start up:
+    - Plantear hipotesis
+    - Experimentar
+    - Aprendizaje
+- Diferencias:
+    - El cliente es el que paga. El usuario es el que usa el servicio/producto.
+- Modelo Blank:
+    - Descubrir al cliente: ¿Le interesa a alguien?
+    - Refrendar(confirmar) al cliente: ¿Cuantos clientes y si van a pagar?
+        - Se consiguen muchos cliente que pagan por el prototipo.
+        - MVP: Minimo producto que se pueda usar.
+    - Creación del cliente:  
+        - Se consiguen muchos cliente que pagan por el PRODUCTO.
+    - Construcción de la empresa: Se construye la empresa.
+- Piramide de Ries:
+    - Producto: Entrega del valor. 
+    - Estrategia: Creación del valor. 
+    - Valor: Captura el valor.
+- Método Lean Canvas
+- Propuesta de valor, para transcribir en el canvas. Diferente propuesta de valor para cada segmento.
+    - Trabajo con los clientes
+    - Dolores para el cliente
+    - Ganancia para el cliente
+    - Producto y Servicio: 
+    - Mitigadores de dolores: Garantias, valoraciones
+    - Creadores de ganancias: 
