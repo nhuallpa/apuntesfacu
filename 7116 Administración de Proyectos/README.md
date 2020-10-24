@@ -4,14 +4,58 @@
 - Productos Termoformado: http://www.pro-te.com.ar/tecnologia.php
 - Paso a paso restobar: 
 
-## Clase de Martes 29/9/20
----
+## 1.  Martes 29/9/20 - Teoria de la organización
 
-## Clase de Viernes 2/10/20: Pestel y Transformación digital
+### Partes de la organización
+
+- Apice Estrategico (AE):
+    - Establecer vinculos con los entornos
+    - Desarrollar la estrategia de la organización
+    - Ejercer supervisión directa.
+    - Tomar decisiones.
+- Linea media (LM): Operacional
+- Nuclero Operativo (NO)
+    - Transformar insumos en productos.
+- Tecnoestructura:
+    - Normalizar procesos, resultados y habilidades.
+- Staff de apoyo
+    - Propio sistema de toma de decisiones.
+    - Normalización de resultados, hacia la organización.
+
+
+### Mecanismos de coordinación:
+#### a. Adaptación mutua: 
+- Organizaciones simples o muy complejas sin experiencia previa.
+- Es horizantal.
+- Ceder - adaptarse - Coordinar.
+- Cerca del problema y la toma de decisiones.
+#### b. Supervisión directa
+- Las decisiones se toman en un solo nivel.
+- Centraliza las decisiones
+- Lo opuesto a la normalización de procesos.
+- Puestos sencillos en el nivel inferior.
+- Sube información y bajan órdenes.
+#### c. Normalización:
+1. de habilidades
+    - Su habilidades han sido adquiridas antes de ingresar a la organización.
+    - No requiere supervisión u ordenes de detalle para la ejecución de tareas.
+2. de Procesos
+    - Secuencial: Linea de montaje.
+    - Paralela: Fábrica de mesas.
+    - Reciproca: Embotelladora de bebidas.
+3. de resultados
+    - Aquellas organizaciones donde otro tipo de coordinación dificultaria las correcciones necesarias.
+    - La conducción asigna los recursos, establece las politicas y objetivos, superando los resultados.
+
+#### Resumen
+![resumen_orga](docs/resumen_orga.png)
 
 
 
-> Analisis sitemico de una organización: Organización como sistema para adentro y para afuera.
+## 2.Viernes 2/10/20: Pestel y Transformación digital
+
+
+> Análisis sistemico de una organización: Organización como sistema para adentro y para afuera.
 
 
 ### Acronimo [VUCA](https://blog.liderarte.org/vuca-que-significa/): 
@@ -329,15 +373,6 @@ Configuración Estructural | Principal Mec coordinación | Parte Fundamental | T
 
 
 
-### Mecanismos de coordinación:
-- Adaptación mutua
-- Supervisión directa
-- Normalización:
-    - de habilidades
-    - de tareas
-    - de resultados
-
-
 Revisar en la organización, que configuración tiene.
 
 ### Roles gerenciales:
@@ -350,7 +385,7 @@ Revisar en la organización, que configuración tiene.
     - Monitor: Supervición de la información.
     - Diseminador: Determinan a quien le envia la información. (Clearance). Que información se va a difundir.
     - Vocero: Dice por si mismos las cosas importantes
-- De decisión:
+- De Decisión:
     - Emprendedor
     - Gestor de disturbios: Gestión del poder. Disturbios hacia adentro o hacia afuera por temas de información, presupuesto o personales. Deben evitar los disturbios dentro de la organización.
     - Asignador de recursos: Fisicos, financieros, información, y de recursos humanos.
