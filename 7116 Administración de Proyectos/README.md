@@ -57,16 +57,6 @@
 
 > Análisis sistemico de una organización: Organización como sistema para adentro y para afuera.
 
-
-### Acronimo [VUCA](https://blog.liderarte.org/vuca-que-significa/): 
-
-- _Volatil_: Cambios constantes, rapidos y significativos. Ejemplo: Precios que suben y bajan. Tendencias que se revierten.
-- _Incierto_: Presente poco claro y resultados impredecibles.
-- _Complejo_: Muchos factores a analizar para la toma de desiciones. 
-- _Ambiguo_: Falta de claridad sobre un evento o dificultad para entender la situación actual
-
-
-
 ### Analisis PESTEL
 
 Es util por cuatro razones:
@@ -101,86 +91,145 @@ Luego de realizar un brainstoming de los factores
 - [Pestle](https://www.cipd.co.uk/knowledge/strategy/organisational-development/pestle-analysis-factsheet)
 - [Ejmplo Pestle](https://www.cipd.co.uk/Images/7583-PESTLE-example-retail-industry-2020_tcm18-27108.pdf)
 
-#### Economia digital
+### Economia digital
 
-- El cambio: 
-- Describir mundo: 
-    - Los cambios tecnologicos es mas veloz en lo tecnologico.
-    - Los mas rapidos se comen a los mas lentos.
-    - El mundo es _VOLATIL, AMBIGUO, INCIERTO, COMPLEJO_
-- Cambios Politicos: Debido a la Globalizacion, se dan muchos cambios de dirección
-- Cambios Economicos: America del sur aislada del mundo.
-- Cambio Social: Aumento la esperanza de vida y hay mas gente retirada y menos trabajando.
+
+
+### Acronimo [VUCA](https://blog.liderarte.org/vuca-que-significa/): 
+
+- _Volatil_: Cambios constantes, rapidos y significativos. Ejemplo: Precios que suben y bajan. Tendencias que se revierten.
+- _Incierto_: Presente poco claro y resultados impredecibles.
+- _Complejo_: Muchos factores a analizar para la toma de desiciones. 
+- _Ambiguo_: Falta de claridad sobre un evento o dificultad para entender la situación actual
+
+### Cambios:
+- Lo nuevo no es el cambio. Lo nuevo es la _velocidad de cambio_. Cambio técnologico.
+- En el nuevo mundo no es el pez grande que se come, _es el pez mas rapido que se come al mas lento_. **Klaus Scheab**
+
+- *Cambios Politicos*: Debido a la Globalizacion, se dan muchos cambios de dirección
+- *Cambios Economicos*: America del sur aislada del mundo.
+- *Cambios Social*: Aumento la esperanza de vida y hay mas gente retirada y menos trabajando.
         Diversidad, Sindicales, El comportamiento de los consumidores es mas complejo.
         Culturales, Sociales, Psicologico, Personales, comprador.
-- Tecnologico:...
-- Legales: Mayor regulación para los Direcivos.
+- *Tecnologico*:...
+- *Legales*: Mayor regulación para los Direcivos.
         Gig economy: precariza los empleos como Uber y Glovo. 
         Regulación Fatca para regular cuentas.
-- Ecologico: Salud ambiental
+- *Ecologico*: Salud ambiental
+
+
+### Globalización
+- 1.0 Poder de los paises
+- 2.0 Poder de los gobiernos
+- 3.0 Poder de las personas (hoy)
 - Globalización: Libro: La tierra es plana (Toman Firzman)
     Poderes: paises -> empresas -> personas (ahora)
 - Cuarta Revolución industrial.
-Disrupción Digital: Revisar el Vortice Digital, es el ojo de huracan.
-    La tecnologia generar la disrupcción y 
-    La industria financiera sufre la distupcción
-Tecnologia Distruptiva: (Se usan en conjunto orquestandolas.)
-    Mobile, Cuantica, IOT, Sistemas Expertos, BigData y nube. 
-    Robotica, Protesis, Autos autonomos. Impresiones 3D, Carne sintetica, blockchain.
-    Lo que se viene: - Mellisos digitales, - Productos Customizados, Papel inteligente, nano medicina.
 
-    Revisar Congreso de Garner y el  impacto en el Negocio
-    El talento en el Mundo: Faltan taletos para los nuevos trabajos del mundo.
 
-    Transformacion Digital con Personas, Tecnologia, y Procesos
-    
+### Conociendo al cliente
+![conociendo al cliente](docs/conociendo_cliente.png)
 
-    Estudio de We Are Social- Como avanza en el mundo con la tecnologia.
 
-    No hay que ver la tarea, si hay que ver el pantallaso total. No mirar a corto plazo.
 
-    Porque Cuestra la Transformacion? 
-        Incentivos a cortos plazos, 
-        ignorancia, 
-        Silos, 
-        Gap de destresa digital.
+### Disrupción Digital
+- Movilidad y redes sociales
+- Computación cuantica
+- Internet of Thing
+- Sistemas expertos
+- Big Data
+- Nube
+- Block chain
+
+> La tecnologia generar la disrupcción y la industria financiera sufre la distupcción
+> La disrupción se manifiesta combinando dos o mas técnologias.
+
+
+
+#### Tecnologia Distruptiva: (Se usan en conjunto orquestandolas.)
+- Mobile, Cuantica, IOT, Sistemas Expertos, BigData y nube. 
+- Robotica, Protesis, Autos autonomos. Impresiones 3D, Carne sintetica, blockchain.
+- Lo que se viene: - Mellisos digitales, - Productos Customizados, Papel inteligente, nano medicina.
+
+> Revisar Congreso de Garner y el  impacto en el Negocio
+
+- El talento en el Mundo: Faltan taletos para los nuevos trabajos del mundo.
+- Transformacion Digital con Personas, Tecnologia, y Procesos
+- Estudio de We Are Social- Como avanza en el mundo con la tecnologia.
+
+> No hay que ver la tarea, si hay que ver el pantallaso total. No mirar a corto plazo.
+
+- Porque Cuestra la Transformacion? 
+    - Incentivos a cortos plazos, 
+    - Ignorancia, 
+    - Silos, 
+    - Gap de destresa digital.
+
+#### Cultura organizacional
+
+Cultura es el conjunto de normas de comportamiento y reglas no escritas que dan forma a un entorno organizacional y la forma en que los individuos interactúan a fin de desarrollar su tarea en ese momento.
+
+> La cultura es como un pez en el agua, está alrededor de nosotros pero es difícil de distingir.
+
+##### Componentes:
+- Conocimiento: El 31% de las organizaciones informa que sus empleados son altamente consientes de cual es  la cultura de la organizacional deseada.
+- Actitud: El 13% de las organizaciones informa que los empleados muestran una fuerte creencia en la cultura organizacional deseada.
+- Comportamiento: El 10% de las organizaciones informaron que los empleados muestran un comportamiento fuertemente alieado con la cultura organizacional.
+
+#### Nuevos procesos:
+- Design Thinking
+- Lean Startup
+- Agile
+- User Experience
+- Customer Journey Layers
+
+#### Las 6D de una organización exponencial
+- Digitalización
+- Engañoso
+- Disruptivo
+- Demonetizar
+- Dematerializar
+- Democratizar
+
+[6D](https://singularityhub.com/2016/11/22/the-6-ds-of-tech-disruption-a-guide-to-the-digital-economy/)
 
 ---
-### CLASE: 6/10: TIM y Estrategia de los oceanos azules.
 
-* **CIO**: Chief Information Oficer
-    Cualidades:
-        - Los sectores deben estar alieados y aplicar la técnologia.
-        - Capacidad de liderazgo y motivación.
-        - Conseguir mejor gente: Habilidades duras y blandas.
-        - Capacidad de innovación
-        - Saber Negociar
+## 3 Martes 6/10: TIM y Estrategia de los oceanos azules.
 
-Tablero de control balanceado. Balance Scordcard(BSC).
+### **CIO**: Chief Information Officer
+Cualidades:
+    - Los sectores deben estar alieados y aplicar la técnologia.
+    - Capacidad de liderazgo y motivación.
+    - Conseguir mejor gente: Habilidades duras y blandas.
+    - Capacidad de innovación
+    - Saber Negociar
 
-    Imperativos Básicos: Tres objetivos que son independientes de la voluntad de quienes la dirigen.
-        - Supervivencia
-        - Crecimiento
-        - Rentabilidad
-    Estrategia: Habilita de utilizar los recursos inteligentemente.
-    Gestion estrategica: Accionar
+### Tablero de control balanceado. Balance Scordcard(BSC).
 
-    Herramienta para la medición de performance organización.
+#### Imperativos Básicos: Tres objetivos que son independientes de la voluntad de quienes la dirigen.
+- Supervivencia
+- Crecimiento
+- Rentabilidad
 
-        1- Financiera (Flujo de caja). Para satisfacer a los accionistas.
-        2- Clientes: Satisfacción del cliente
-        3- Interno: Mejorar los procesos internos 
-        4- Satisfacción de los empleados: Mas capacitaciones y crecimiento.
+_Estrategia_: Habilita de utilizar los recursos inteligentemente.
+_Gestion Estrategica_: Accionar
 
-        Personal mas capacitado genera mejores procesos, impactando en una mejora
-         en la satisfacción de los cliente, un cliente mas satisfecho trae mas ganancia.
+#### Herramienta para la medición de performance organización.
 
-    + Dos altarnativas por caracteristicas
-    + Indicar en las concluciones
+1. Financiera (Flujo de caja). Para satisfacer a los accionistas.
+2. Clientes: Satisfacción del cliente
+3. Interno: Mejorar los procesos internos 
+4. Satisfacción de los empleados: Mas capacitaciones y crecimiento.
 
-    Bibliografia????
+> Personal mas capacitado genera mejores procesos, impactando en una mejora en la satisfacción de los cliente, un cliente mas satisfecho trae mas ganancia.
 
-#### La estrategia del oceano Azul
+TP:
++ Dos altarnativas por caracteristicas
++ Indicar en las concluciones
+
+
+### La estrategia del oceano Azul
 
 _¿Como pasamos al oceano azul? Realizar las siguientes acciones_:
 
@@ -202,34 +251,32 @@ Si es si.
 - Entonces estamos probablemente a un **Oceano Azul**
 
 
-    Es importante analizar aquellos que no son clientes y tenerlos en cuenta como potenciales.
-
-    Eric Ries - Lean Star up:
-        Producto minimo 
+> Es importante analizar aquellos que no son clientes y tenerlos en cuenta como potenciales.
 
 
 
-### Clase 9/10/2020 - Penta Modelo - 6P
-    Enfoque sistemico: Estudio de la organizacion genericamente
+
+## 4 Viernes Clase 9/10/2020 - Penta Modelo y 6P
+
+Enfoque sistemico: Estudio de la organizacion genericamente
 
 
-#### PENTA MODELO (Autor Alberto Levi)
+### PENTA MODELO (Autor Alberto Levi)
 
-    Pilares: 
-        - Cultura: Formas de trabajo o politicas de la organización. Tienen que ver en como se hacen las cosas. Usos y costumbres.
-            Ejemplo: Los mail se guardan por 5 años. 
-        - Recurso: Todos los recursos: Personal, Financieros, Infraestructura, Tiempo, Información, Conocimiento.
-        - Mercado: A donde apunta los productos. Que productos comprar, Que proveedores existen, como Negociar.
-        - Gestion por Organización: Gestión intera. Relación entre sector. Tipo de supervicion. Revisar Autor Mintzberg.
-        - Estrategia:
+#### Pilares: 
+- Cultura: Formas de trabajo o politicas de la organización. Tienen que ver en como se hacen las cosas. Usos y costumbres.
+    Ejemplo: Los mail se guardan por 5 años. 
+- Recurso: Todos los recursos: Personal, Financieros, Infraestructura, Tiempo, Información, Conocimiento.
+- Mercado: A donde apunta los productos. Que productos comprar, Que proveedores existen, como Negociar.
+- Gestion por Organización: Gestión intera. Relación entre sector. Tipo de supervicion. Revisar Autor Mintzberg.
+- Estrategia:
 
-    Todos los pilares deben estar alineados con la Estrategia.!!
+> Todos los pilares deben estar alineados con la Estrategia.!!
 
-    Tarea: 
-        1- Conocer la herramienta.
-        2- Aplicar la herramienta relevando.
-        3- Analizar la herramienta y verifica que pasa con cada uno de los puntos.
-            ¿Para que sirve la herramienta?
+#### Tarea: 
+1. Conocer la herramienta.
+2. Aplicar la herramienta relevando.
+3. Analizar la herramienta y verifica que pasa con cada uno de los puntos. ¿Para que sirve la herramienta?
 
 #### 6P (Mercadotecnia)
 
