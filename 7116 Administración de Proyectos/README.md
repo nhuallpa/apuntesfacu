@@ -135,9 +135,9 @@ Luego de realizar un brainstoming de los factores
 
 #### Globalización
 
-* 1. 0 Poder de los paises
-* 2. 0 Poder de los gobiernos
-* 3. 0 Poder de las personas (hoy)
+* 1. Poder de los paises
+* 2. Poder de los gobiernos
+* 3. Poder de las personas (hoy)
 * Globalización: Libro: La tierra es plana (Toman Firzman)
 
     Poderes: paises -> empresas -> personas (ahora)
@@ -176,10 +176,10 @@ Luego de realizar un brainstoming de los factores
 > No hay que ver la tarea, si hay que ver el pantallaso total. No mirar a corto plazo. 
 
 * Porque Cuestra la Transformacion? 
-    - Incentivos a cortos plazos, 
-    - Ignorancia, 
-    - Silos, 
-    - Gap de destresa digital.
+- Incentivos a cortos plazos, 
+- Ignorancia, 
+- Silos, 
+- Gap de destresa digital.
 
 #### Cultura organizacional
 
@@ -246,9 +246,9 @@ Accionar. Es el arte de y la ciencia de *formular, desplegar, ejecutar, medir, m
 
 #### Elementos importantes a medir en un negocio:
 
-1- **Satisfacción del cliente**. Si crece su cuota de mercado tambien crecera. 
-2- **Satisfacción de los empleados**. Potenciara su productividad. su calidad, su orgullo y su creatividad. 
-3- **Flujo de Caja**. Es el pulso, el signo vital de la salud de la compañia. 
+1. **Satisfacción del cliente**. Si crece su cuota de mercado tambien crecera. 
+2. **Satisfacción de los empleados**. Potenciara su productividad. su calidad, su orgullo y su creatividad. 
+3. **Flujo de Caja**. Es el pulso, el signo vital de la salud de la compañia. 
 
 #### Herramienta para la medición de performance organización. 
 
