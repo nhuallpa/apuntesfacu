@@ -1,41 +1,45 @@
-
 # Administración de organizaciones
 
-- Productos Termoformado: http://www.pro-te.com.ar/tecnologia.php
-- Paso a paso restobar: 
+* Productos Termoformado: http://www.pro-te.com.ar/tecnologia.php
+* Paso a paso restobar: 
 
-## 1.  Martes 29/9/20 - Teoria de la organización
+## 1. Martes 29/9/20 - Teoria de la organización
 
 ### Partes de la organización
 
-- Apice Estrategico (AE):
+* Apice Estrategico (AE):
     - Establecer vinculos con los entornos
     - Desarrollar la estrategia de la organización
     - Ejercer supervisión directa.
     - Tomar decisiones.
-- Linea media (LM): Operacional
-- Nuclero Operativo (NO)
+* Linea media (LM): Operacional
+* Nuclero Operativo (NO)
     - Transformar insumos en productos.
-- Tecnoestructura:
+* Tecnoestructura:
     - Normalizar procesos, resultados y habilidades.
-- Staff de apoyo
+* Staff de apoyo
     - Propio sistema de toma de decisiones.
     - Normalización de resultados, hacia la organización.
 
-
 ### Mecanismos de coordinación:
+
 #### a. Adaptación mutua: 
-- Organizaciones simples o muy complejas sin experiencia previa.
-- Es horizantal.
-- Ceder - adaptarse - Coordinar.
-- Cerca del problema y la toma de decisiones.
+
+* Organizaciones simples o muy complejas sin experiencia previa. 
+* Es horizantal. 
+* Ceder - adaptarse - Coordinar. 
+* Cerca del problema y la toma de decisiones. 
+
 #### b. Supervisión directa
-- Las decisiones se toman en un solo nivel.
-- Centraliza las decisiones
-- Lo opuesto a la normalización de procesos.
-- Puestos sencillos en el nivel inferior.
-- Sube información y bajan órdenes.
+
+* Las decisiones se toman en un solo nivel. 
+* Centraliza las decisiones
+* Lo opuesto a la normalización de procesos. 
+* Puestos sencillos en el nivel inferior. 
+* Sube información y bajan órdenes. 
+
 #### c. Normalización:
+
 1. de habilidades
     - Su habilidades han sido adquiridas antes de ingresar a la organización.
     - No requiere supervisión u ordenes de detalle para la ejecución de tareas.
@@ -48,14 +52,14 @@
     - La conducción asigna los recursos, establece las politicas y objetivos, superando los resultados.
 
 #### Resumen
+
 ![resumen_orga](docs/resumen_orga.png)
 
+----
 
+## 2. Viernes 2/10/20: Pestel y Transformación digital
 
-## 2.Viernes 2/10/20: Pestel y Transformación digital
-
-
-> Análisis sistemico de una organización: Organización como sistema para adentro y para afuera.
+> Análisis sistemico de una organización: Organización como sistema para adentro y para afuera. 
 
 ### Analisis PESTEL
 
@@ -68,98 +72,110 @@ Es util por cuatro razones:
 
 #### Como utilizarlo?
 
-
 1. Paso 1: Realizar un brainstormin de los factores:
     - Politico: 
         - ¿Cuando son las siguiente elecciones? ¿Como podrian cambiar las politicas del gobierno o la región?
         - ¿Quienes son los contendientes mas probables al poder? ¿Cuales son las politicas de negocio o otras politicas que pueden afectar a la organización?
         - ¿Hay una legislación o impuesto pendiente que puede afectar el negocio, positiva o negativamente?
         - ¿Como las regulaciones pueden afectar el negocio? ¿Hay una tendencia a regularizar o desregularizar?
-        - ¿?
-- Econonomia: Inflación, Costos de vida, Horas de trabajo, Desocupación.
-- Socio culturales: Tendendias de los consumidores. Temas eticos, Balance de vidas, Habitos.
-- Tecnología: Transformación digital y como compiten. Como responde a las nuevas tecnologias.
-- Legislación: Antimonopolio, Derecho internacional, Regulaciones, cambios en la legislación que afectan al empleo.
-- Ecología: Influye en los consumidores, y el proceso productivo.
-- Analisís a nivel local, nacional e internacional.
+    - Econonomia: Inflación, Costos de vida, Horas de trabajo, Desocupación.
+        - ¿Cuan estable es la economia actual? 
+        - ¿Cual es al ratio de desempleo?¿Sera facil construir un equipo de trabajo? ¿Sera costoso contratar perfiles capacitados?
+        - ¿Es facil acceder a creditos para los clientes y los negocios? Si no es asi, ¿como afecta a tu organización?
+        - ¿Como la globalización afecta la economia?
+    - Socio culturales: Tendendias de los consumidores. Temas eticos, Balance de vidas, Habitos.
+        - ¿Cual es al ratio de crecimiento de populación y perfiles por edad? ¿Es probable que cambie?
+        - ¿Se va a desplazar alguna actitud generacional que afecte lo que se esta haciendo?
+        - ¿Cual es el nivel de salud, educación y movilidad de la ciudad? ¿Como seran estos cambios y que impacto trae?
+        - ¿Que patrones de empleo, tendencias de mercado de trabajo, actitudesa hacia el trabajo se pueden observar? ¿Hay una diferencia por grupos de edad?
+    - Tecnología: Transformación digital y como compiten. Como responde a las nuevas tecnologias.
+        - ¿Existe alguna técnologia que puedas utilizar?
+        - ¿Existe alguna técnologia en el horizonte que pueda afectar radicalmente tu trabajo o la industria?
+        - ¿Existe alguna?
+    - Legislación: Antimonopolio, Derecho internacional, Regulaciones, cambios en la legislación que afectan al empleo.
+    - Ecología: Influye en los consumidores, y el proceso productivo.
+        - Analisís a nivel local, nacional e internacional.
 
 Luego de realizar un brainstoming de los factores
 
 ##### Referencias
 
-- [Pestle MindTool](https://www.mindtools.com/pages/article/newTMC_09.htm)
-- [Pestle](https://www.cipd.co.uk/knowledge/strategy/organisational-development/pestle-analysis-factsheet)
-- [Ejmplo Pestle](https://www.cipd.co.uk/Images/7583-PESTLE-example-retail-industry-2020_tcm18-27108.pdf)
+* [Pestle MindTool](https://www.mindtools.com/pages/article/newTMC_09.htm)
+* [Pestle](https://www.cipd.co.uk/knowledge/strategy/organisational-development/pestle-analysis-factsheet)
+* [Ejmplo Pestle](https://www.cipd.co.uk/Images/7583-PESTLE-example-retail-industry-2020_tcm18-27108.pdf)
 
 ### Economia digital
 
+#### Acronimo [VUCA](https://blog.liderarte.org/vuca-que-significa/): 
 
+* _Volatil_: Cambios constantes, rapidos y significativos. Ejemplo: Precios que suben y bajan. Tendencias que se revierten. 
+* _Incierto_: Presente poco claro y resultados impredecibles. 
+* _Complejo_: Muchos factores a analizar para la toma de desiciones. 
+* _Ambiguo_: Falta de claridad sobre un evento o dificultad para entender la situación actual
 
-### Acronimo [VUCA](https://blog.liderarte.org/vuca-que-significa/): 
+#### Cambios:
 
-- _Volatil_: Cambios constantes, rapidos y significativos. Ejemplo: Precios que suben y bajan. Tendencias que se revierten.
-- _Incierto_: Presente poco claro y resultados impredecibles.
-- _Complejo_: Muchos factores a analizar para la toma de desiciones. 
-- _Ambiguo_: Falta de claridad sobre un evento o dificultad para entender la situación actual
+* Lo nuevo no es el cambio. Lo nuevo es la _velocidad de cambio_. Cambio técnologico. 
+* En el nuevo mundo no es el pez grande que se come, _es el pez mas rapido que se come al mas lento_. **Klaus Scheab**
 
-### Cambios:
-- Lo nuevo no es el cambio. Lo nuevo es la _velocidad de cambio_. Cambio técnologico.
-- En el nuevo mundo no es el pez grande que se come, _es el pez mas rapido que se come al mas lento_. **Klaus Scheab**
+* *Cambios Politicos*: Debido a la Globalizacion, se dan muchos cambios de dirección
+* *Cambios Economicos*: America del sur aislada del mundo. 
+* *Cambios Social*: Aumento la esperanza de vida y hay mas gente retirada y menos trabajando. 
 
-- *Cambios Politicos*: Debido a la Globalizacion, se dan muchos cambios de dirección
-- *Cambios Economicos*: America del sur aislada del mundo.
-- *Cambios Social*: Aumento la esperanza de vida y hay mas gente retirada y menos trabajando.
         Diversidad, Sindicales, El comportamiento de los consumidores es mas complejo.
         Culturales, Sociales, Psicologico, Personales, comprador.
-- *Tecnologico*:...
-- *Legales*: Mayor regulación para los Direcivos.
+
+* *Tecnologico*:... 
+* *Legales*: Mayor regulación para los Direcivos. 
+
         Gig economy: precariza los empleos como Uber y Glovo. 
         Regulación Fatca para regular cuentas.
-- *Ecologico*: Salud ambiental
 
+* *Ecologico*: Salud ambiental
 
-### Globalización
-- 1.0 Poder de los paises
-- 2.0 Poder de los gobiernos
-- 3.0 Poder de las personas (hoy)
-- Globalización: Libro: La tierra es plana (Toman Firzman)
+#### Globalización
+
+* 1. 0 Poder de los paises
+* 2. 0 Poder de los gobiernos
+* 3. 0 Poder de las personas (hoy)
+* Globalización: Libro: La tierra es plana (Toman Firzman)
+
     Poderes: paises -> empresas -> personas (ahora)
-- Cuarta Revolución industrial.
 
+* Cuarta Revolución industrial. 
 
-### Conociendo al cliente
+#### Conociendo al cliente
+
 ![conociendo al cliente](docs/conociendo_cliente.png)
 
+#### Disrupción Digital
 
-
-### Disrupción Digital
-- Movilidad y redes sociales
-- Computación cuantica
-- Internet of Thing
-- Sistemas expertos
-- Big Data
-- Nube
-- Block chain
+* Movilidad y redes sociales
+* Computación cuantica
+* Internet of Thing
+* Sistemas expertos
+* Big Data
+* Nube
+* Block chain
 
 > La tecnologia generar la disrupcción y la industria financiera sufre la distupcción
-> La disrupción se manifiesta combinando dos o mas técnologias.
+> La disrupción se manifiesta combinando dos o mas técnologias. 
 
+##### Tecnologia Distruptiva: (Se usan en conjunto orquestandolas. )
 
-
-#### Tecnologia Distruptiva: (Se usan en conjunto orquestandolas.)
-- Mobile, Cuantica, IOT, Sistemas Expertos, BigData y nube. 
-- Robotica, Protesis, Autos autonomos. Impresiones 3D, Carne sintetica, blockchain.
-- Lo que se viene: - Mellisos digitales, - Productos Customizados, Papel inteligente, nano medicina.
+* Mobile, Cuantica, IOT, Sistemas Expertos, BigData y nube. 
+* Robotica, Protesis, Autos autonomos. Impresiones 3D, Carne sintetica, blockchain. 
+* Lo que se viene: - Mellisos digitales, - Productos Customizados, Papel inteligente, nano medicina. 
 
 > Revisar Congreso de Garner y el  impacto en el Negocio
 
-- El talento en el Mundo: Faltan taletos para los nuevos trabajos del mundo.
-- Transformacion Digital con Personas, Tecnologia, y Procesos
-- Estudio de We Are Social- Como avanza en el mundo con la tecnologia.
+* El talento en el Mundo: Faltan taletos para los nuevos trabajos del mundo. 
+* Transformacion Digital con Personas, Tecnologia, y Procesos
+* Estudio de We Are Social- Como avanza en el mundo con la tecnologia. 
 
-> No hay que ver la tarea, si hay que ver el pantallaso total. No mirar a corto plazo.
+> No hay que ver la tarea, si hay que ver el pantallaso total. No mirar a corto plazo. 
 
-- Porque Cuestra la Transformacion? 
+* Porque Cuestra la Transformacion? 
     - Incentivos a cortos plazos, 
     - Ignorancia, 
     - Silos, 
@@ -167,128 +183,167 @@ Luego de realizar un brainstoming de los factores
 
 #### Cultura organizacional
 
-Cultura es el conjunto de normas de comportamiento y reglas no escritas que dan forma a un entorno organizacional y la forma en que los individuos interactúan a fin de desarrollar su tarea en ese momento.
+Cultura es el conjunto de normas de comportamiento y reglas no escritas que dan forma a un entorno organizacional y la forma en que los individuos interactúan a fin de desarrollar su tarea en ese momento. 
 
-> La cultura es como un pez en el agua, está alrededor de nosotros pero es difícil de distingir.
+> La cultura es como un pez en el agua, está alrededor de nosotros pero es difícil de distingir. 
 
 ##### Componentes:
-- Conocimiento: El 31% de las organizaciones informa que sus empleados son altamente consientes de cual es  la cultura de la organizacional deseada.
-- Actitud: El 13% de las organizaciones informa que los empleados muestran una fuerte creencia en la cultura organizacional deseada.
-- Comportamiento: El 10% de las organizaciones informaron que los empleados muestran un comportamiento fuertemente alieado con la cultura organizacional.
+
+* Conocimiento: El 31% de las organizaciones informa que sus empleados son altamente consientes de cual es  la cultura de la organizacional deseada. 
+* Actitud: El 13% de las organizaciones informa que los empleados muestran una fuerte creencia en la cultura organizacional deseada. 
+* Comportamiento: El 10% de las organizaciones informaron que los empleados muestran un comportamiento fuertemente alieado con la cultura organizacional. 
 
 #### Nuevos procesos:
-- Design Thinking
-- Lean Startup
-- Agile
-- User Experience
-- Customer Journey Layers
+
+* Design Thinking
+* Lean Startup
+* Agile
+* User Experience
+* Customer Journey Layers
 
 #### Las 6D de una organización exponencial
-- Digitalización
-- Engañoso
-- Disruptivo
-- Demonetizar
-- Dematerializar
-- Democratizar
+
+* Digitalización
+* Engañoso
+* Disruptivo
+* Demonetizar
+* Dematerializar
+* Democratizar
 
 [6D](https://singularityhub.com/2016/11/22/the-6-ds-of-tech-disruption-a-guide-to-the-digital-economy/)
 
 ---
 
-## 3 Martes 6/10: TIM y Estrategia de los oceanos azules.
+## 3. Martes 6/10: TIM y Estrategia de los oceanos azules. 
 
 ### **CIO**: Chief Information Officer
-Cualidades:
-    - Los sectores deben estar alieados y aplicar la técnologia.
-    - Capacidad de liderazgo y motivación.
-    - Conseguir mejor gente: Habilidades duras y blandas.
-    - Capacidad de innovación
-    - Saber Negociar
+Principales cualidades:
 
-### Tablero de control balanceado. Balance Scordcard(BSC).
+1. Visión estrategica. Los sectores deben estar alieados y aplicar la técnologia.
+2. Aplicar la tecnología alineada con el negocio.
+3. Capacidad de liderazgo y motivación.
+4. Conseguir mejor gente: Deben poseer habilidades duras y blandas.
+5. Capacidad de innovación, creatividad.
+6. Saber Negociar.
+7. Capacitación.
 
-#### Imperativos Básicos: Tres objetivos que son independientes de la voluntad de quienes la dirigen.
-- Supervivencia
-- Crecimiento
-- Rentabilidad
+### Tablero de control balanceado. Balance Scordcard(BSC). 
 
-_Estrategia_: Habilita de utilizar los recursos inteligentemente.
-_Gestion Estrategica_: Accionar
+#### Imperativos Básicos: 
+Tres objetivos que son independientes de la voluntad de quienes la dirigen. 
 
-#### Herramienta para la medición de performance organización.
+* Supervivencia
+* Crecimiento
+* Rentabilidad
+
+_Estrategia_: Habilita de utilizar los recursos inteligentemente. 
+
+#### Gestion Estrategica: 
+
+Accionar. Es el arte de y la ciencia de *formular, desplegar, ejecutar, medir, mejorar permanente*. 
+
+![Gestion Estrategica](docs/gestion-estrategica.png)
+
+#### Elementos importantes a medir en un negocio:
+
+1- **Satisfacción del cliente**. Si crece su cuota de mercado tambien crecera. 
+2- **Satisfacción de los empleados**. Potenciara su productividad. su calidad, su orgullo y su creatividad. 
+3- **Flujo de Caja**. Es el pulso, el signo vital de la salud de la compañia. 
+
+#### Herramienta para la medición de performance organización. 
 
 1. Financiera (Flujo de caja). Para satisfacer a los accionistas.
 2. Clientes: Satisfacción del cliente
 3. Interno: Mejorar los procesos internos 
 4. Satisfacción de los empleados: Mas capacitaciones y crecimiento.
 
-> Personal mas capacitado genera mejores procesos, impactando en una mejora en la satisfacción de los cliente, un cliente mas satisfecho trae mas ganancia.
+> Personal mas capacitado genera mejores procesos, impactando en una mejora en la satisfacción de los cliente, un cliente mas satisfecho trae mas ganancia. 
 
 TP:
-+ Dos altarnativas por caracteristicas
-+ Indicar en las concluciones
 
+* Dos altarnativas por caracteristicas
+* Indicar en las concluciones
+
+#### El Balance Scordcard
+
+![Balance Scordcard](docs/balanced-scorecard.png)
+
+Ejemplo:
+
+| PERPECTIVA | OBJETIVO ESTRATEGICO | METRICA | META      | INICIATIVAS                                            |
+|------------|----------------------|---------|-----------|--------------------------------------------------------|
+| **FINANCIERA** | Aumentar el ROI      | ROI     | 2017: 25% | Producto de mayor valor agregado para segmentos altos. |
+| **CLIENTE**    | Incrementar fidelidad de los clientes | % de renovación de contratos| 2019: 96% | Programa de fidelización|
+| **INTERNA**    | Disminuir tiempos de ciclo de entrega | Tiempo pedido-entrega | 2017: 40% | Reingenieria de proceso de distribución|
+| **APRENDIZAJE Y CRECIMIENTO** | Mejorar la retención del personal clave | Índice de rotación de personal | Menor al 2% | Remuneración variable por obejetivos propuestos | 
 
 ### La estrategia del oceano Azul
 
+Comó desarrollar un nuevo mercado donde la competencia no tiene ninguna importancia.
+
 _¿Como pasamos al oceano azul? Realizar las siguientes acciones_:
 
-- Reducir: 
-- Crear:
-- Incrementar:
-- Eliminar:
+* **Reducir**: ¿Cuantas variables se deben reducir muy por debajo de la norma de la industria?
+* **Crear**: ¿Cuáles variables se deben crear porque la industria nunca las ha ofrecido?
+* **Incrementar**: ¿Cuáles variables se deben incrementar muy por encima de la industria?
+* **Eliminar**: ¿Cuáles variables de la industria da por centado que se deben eliminar?
 
-_Preguntar para ver si es un oceano azul._
-- ¿Ofrece su idea una utilidad excepcional para el comprador?
+Con estas cuatro acciones creaemos una **nueva curva de valor**.
 
-Si es si.
-- ¿Es su precio accesible para el grueso de los compradores? Si se apunto a un taget de cliente especifico, no se hace la pregunta.
+_Preguntar para ver si es un oceano azul. _
 
-Si es si.
-- ¿Podra lograr su meta de costos con rentabilidad, con precio estrategico?
+* ¿Ofrece su idea una utilidad excepcional para el comprador?
 
-Si es si.
-- Entonces estamos probablemente a un **Oceano Azul**
+Si es si. 
 
+* ¿Es su precio accesible para el grueso de los compradores? Si se apunto a un taget de cliente especifico, no se hace la pregunta. 
 
-> Es importante analizar aquellos que no son clientes y tenerlos en cuenta como potenciales.
+Si es si. 
 
+* ¿Podra lograr su meta de costos con rentabilidad, con precio estrategico?
 
+Si es si. 
 
+* Entonces estamos probablemente a un **Oceano Azul**
 
-## 4 Viernes Clase 9/10/2020 - Penta Modelo y 6P
+> Es importante analizar aquellos que no son clientes y tenerlos en cuenta como potenciales. 
 
-Enfoque sistemico: Estudio de la organizacion genericamente
+## 4. Viernes Clase 9/10/2020 - Penta Modelo y 6P
 
+Enfoque sistemico: Estudio de la organizacion genericamente.
 
 ### PENTA MODELO (Autor Alberto Levi)
 
 #### Pilares: 
-- Cultura: Formas de trabajo o politicas de la organización. Tienen que ver en como se hacen las cosas. Usos y costumbres.
-    Ejemplo: Los mail se guardan por 5 años. 
-- Recurso: Todos los recursos: Personal, Financieros, Infraestructura, Tiempo, Información, Conocimiento.
-- Mercado: A donde apunta los productos. Que productos comprar, Que proveedores existen, como Negociar.
-- Gestion por Organización: Gestión intera. Relación entre sector. Tipo de supervicion. Revisar Autor Mintzberg.
-- Estrategia:
 
-> Todos los pilares deben estar alineados con la Estrategia.!!
+* Cultura: Formas de trabajo o politicas de la organización. Tienen que ver en como se hacen las cosas. Usos y costumbres. 
+
+    Ejemplo: Los mail se guardan por 5 años. 
+
+* Recurso: Todos los recursos: Personal, Financieros, Infraestructura, Tiempo, Información, Conocimiento. 
+* Mercado: A donde apunta los productos. Que productos comprar, Que proveedores existen, como Negociar. 
+* Gestion por Organización: Gestión intera. Relación entre sector. Tipo de supervicion. Revisar Autor Mintzberg. 
+* Estrategia:
+
+> Todos los pilares deben estar alineados con la Estrategia. !!
 
 #### Tarea: 
+
 1. Conocer la herramienta.
 2. Aplicar la herramienta relevando.
 3. Analizar la herramienta y verifica que pasa con cada uno de los puntos. ¿Para que sirve la herramienta?
 
 #### 6P (Mercadotecnia)
 
-Autores: Kotler y Druker en el area de mercadotecnia.
+Autores: Kotler y Druker en el area de mercadotecnia. 
 
-- Kotler: La mercadotecnia es una actividad humana cuya finalidad consiste en satisfacer
-las necesidades y deseos del ser humano mediante procesos de intercambio.
+* Kotler: La mercadotecnia es una actividad humana cuya finalidad consiste en satisfacer
 
-- Druker: La finalidad es conocer al consumidor.
+las necesidades y deseos del ser humano mediante procesos de intercambio. 
 
+* Druker: La finalidad es conocer al consumidor. 
 
-- Analizar el mercado, ver lo que necesita y visualizar el norte.
+* Analizar el mercado, ver lo que necesita y visualizar el norte. 
     - Cantidad de empresas: Alta o Baja
     - Diferenciación de productos: Alta o Baja
 
@@ -299,18 +354,18 @@ las necesidades y deseos del ser humano mediante procesos de intercambio.
 
     Ayuda a ver a que mercado el producto esta orientado.
 
-- Caracteristicas de las empresas:
+* Caracteristicas de las empresas:
     - Lideres (mayor participación relativa)
     - Retadoras (Se expanden agresivamente)
     - Seguidores
     - Encajonadas
     - Invasoras(Atacan con productos sustitutos)
 
-- Comercialización:
+* Comercialización:
 
     - **Vendemos experiencia**
 
-- Las 6P
+* Las 6P
     - Producto: Bien tangible o intangible. Para un segmento determinado del mercado.
         - Atributos: Basico, Real,....
         - Caracteristicas: Se pueden analizar algunos productos
@@ -343,15 +398,17 @@ las necesidades y deseos del ser humano mediante procesos de intercambio.
         - Dar a conocer el producto
             - Caracteristicas: 
         - Inteligencia de negecio: "Solo existen dos fuentes genuinas de venta competitiva"
+
             1- La habilidad para conocer mas de nuestros clientes que la competencia
             2- La habilidad para transformar ese conocimiento en acciones antes que la competencia.
+
         - Gestión de clientes, para poner **FOCO EN EL CLIENTE**
             - Adquirir clientes
             - Vincular clientes
             - Retener clientes
             - Para SATISFACER CLIENTES
 
-## 5.  Martes 13/10/2020 - Teoria de la organización
+## 5. Martes 13/10/2020 - Teoria de la organización
 
 ### Configuraciones estructurales
 
@@ -374,7 +431,9 @@ las necesidades y deseos del ser humano mediante procesos de intercambio.
         - Planificación de acciones.
         - Agrupaciones funcionales generales.
     - Factores de contingencia:????
+
         
+
 3. Burocracia profesional.
     - Coordinación: Normalización de habilidades.
     - Parte fundamental: Núcleo de operaciones.
@@ -408,31 +467,30 @@ las necesidades y deseos del ser humano mediante procesos de intercambio.
         - Eficiencia: No es eficiente para acciones ordinarias. Irregular carga de trabajo.
         - +DEMOCRACIA Y - BUROCRACIA => Pierde capacidad de INNOVAR.
     - Ejemplo: Una obra. Cada parte participa y se forma para un fin especifico.
+
     
 
-Configuración Estructural | Principal Mec coordinación | Parte Fundamental | Tipo de descentralización
--- | -- | -- | -- 
-**Estructura simple** | Supervisión directa | Ápice Estratégico | Centralización V - H
-**Burocracia Maquinal** | Normalización de procesos de trabajo | Tecnoestructura | Descentralización H Limitada
-**Burocracia Profesional** | Normalización de habilidades | Núcleo de Operaciones | Descentralización V y H 
-**Forma Divisional** | Normalización Outputs | Línea Media | Descentralización V Limitada 
-**Adhocracia** | Adaptación Mutua | Staff de Apoyo | Descentralización Selectiva
+| Configuración Estructural  | Principal Mec coordinación           | Parte Fundamental     | Tipo de descentralización    |
+|----------------------------|--------------------------------------|-----------------------|------------------------------|
+| **Estructura simple**      | Supervisión directa                  | Ápice Estratégico     | Centralización V - H         |
+| **Burocracia Maquinal**    | Normalización de procesos de trabajo | Tecnoestructura       | Descentralización H Limitada |
+| **Burocracia Profesional** | Normalización de habilidades         | Núcleo de Operaciones | Descentralización V y H      |
+| **Forma Divisional**       | Normalización Outputs                | Línea Media           | Descentralización V Limitada |
+| **Adhocracia**             | Adaptación Mutua                     | Staff de Apoyo        | Descentralización Selectiva  |
 
-
-
-Revisar en la organización, que configuración tiene.
+Revisar en la organización, que configuración tiene. 
 
 ### Roles gerenciales:
 
-- Interpersonal
+* Interpersonal
     - Figura Central
     - Lider
     - Vinculo
-- Información
+* Información
     - Monitor: Supervición de la información.
     - Diseminador: Determinan a quien le envia la información. (Clearance). Que información se va a difundir.
     - Vocero: Dice por si mismos las cosas importantes
-- De Decisión:
+* De Decisión:
     - Emprendedor
     - Gestor de disturbios: Gestión del poder. Disturbios hacia adentro o hacia afuera por temas de información, presupuesto o personales. Deben evitar los disturbios dentro de la organización.
     - Asignador de recursos: Fisicos, financieros, información, y de recursos humanos.
@@ -440,57 +498,58 @@ Revisar en la organización, que configuración tiene.
 
 ### Habilidades gerenciales:
 
-- Técnicas: Sabes lo que hay que hacer.
-- Interpersonales: Interactuar con todos. Con enfoque cooperativo. NO significa ser amistoso.
-- Conceptuales: Entender de que se trata la actividad.
-- Diagnostico: Entender lo que esta pasando.
-- Comunicación.
-- Toma de decisiones.
-- Administración del tiempo.
+* Técnicas: Sabes lo que hay que hacer. 
+* Interpersonales: Interactuar con todos. Con enfoque cooperativo. NO significa ser amistoso. 
+* Conceptuales: Entender de que se trata la actividad. 
+* Diagnostico: Entender lo que esta pasando. 
+* Comunicación. 
+* Toma de decisiones. 
+* Administración del tiempo. 
 
 ### Control y supervición:
-- Control
+
+* Control
     - Ejecuta
     - Responde a un programa
+
     - 
-- Supervisor
+
+* Supervisor
     - Ejecuta el apice Estrategico
     - Responde al conocimiento profesional, propio interes, experiencia, responsabilidad.
     - Lleva implicita la decisión
-    - 
 
+    - 
 
 ### Administración de Proyectos:
 
 Analís de factibilidad: 
 
-Analís de aceptabilidad: Con respecto al Costo.
+Analís de aceptabilidad: Con respecto al Costo. 
 
-Factibilidad: Posibilidad de realizarse con los recursos disponibles.
+Factibilidad: Posibilidad de realizarse con los recursos disponibles. 
 
-Viabilidad: Posibilidad de que el entorno nos permita realizar la tarea.
+Viabilidad: Posibilidad de que el entorno nos permita realizar la tarea. 
 
 Caracteristicas:
 
-- Especificidad
-- Singularidad
-- Transferencia
-
-
+* Especificidad
+* Singularidad
+* Transferencia
 
 ## 6. Viernes 16/10/20: ESTRATEGIA DELIBERADA
 
 ### Estrategia
 
-> _"La estrategia competitiva consiste en ser diferente. Significa la selección deliberada de un conjunto de actividades, para entregar una mezcla unica de valor."_ **Michel Proter**
+> _"La estrategia competitiva consiste en ser diferente. Significa la selección deliberada de un conjunto de actividades, para entregar una mezcla unica de valor. "_ **Michel Proter**
 
-> _"Las empresas deben redefinir sus estrategias para no solo generar riqueza a sus accionistas, sino tambien a la sociedad como un todo."_ **Michel Proter**
-
+> _"Las empresas deben redefinir sus estrategias para no solo generar riqueza a sus accionistas, sino tambien a la sociedad como un todo. "_ **Michel Proter**
 
 ### Estrategia Deliberada
 
 #### Componentes:
-- Misión, Visión y Valores
+
+* Misión, Visión y Valores
     - _Misión_: Forma en que la empresa quiere ser reconocida. Es un lema. ¿Que hacemos?¿Cual es tu negocio?
     - _Visión_: Define las metas que pretendemos conseguir en el futuro. Debe ser realista y alcanzable. Caracter inspirador y motivacional. 
         - ¿Que quiero lograr?
@@ -498,20 +557,22 @@ Caracteristicas:
         - ¿Para quien lo haré?
     - _Valores_: Principios éticos y cultura de la empresa. No mas de 6 o 7 valores. ¿Como somos? ¿En que creemos?. Deben ser descriptivos y claros
 
-- Objetivos, Metas, Cuadro Integral de Mando (PENDIENTE)
+* Objetivos, Metas, Cuadro Integral de Mando (PENDIENTE)
+
     En base a la misión, visión y valores, se definen los objetivos y las metas. 
 
-- Planificación de escenarios: Permite definir los **escenarios mas probables** analizando las variables mas relevantes de la industria.
+* Planificación de escenarios: Permite definir los **escenarios mas probables** analizando las variables mas relevantes de la industria. 
 
-    ![planif_escenarios](docs/planificacion_escenarios.png)
+    
+
+![planif_escenarios](docs/planificacion_escenarios.png)
 
     - **Fiebre de oro**: Fragmentada y Demanda Creciente, Ejemplo: Parripollos, Canchas de futbal. Hay muchos oferentes y mucha demanda. 
     - **Paraiso perdido**:  La unica forma es sacarle los clientes a un competidos debido a que hay menos demanda. LA demanda empieza a consolidarse.
     - **Guerra de desgaste**: Consolidada y Baja Demanda, Empieza a ver muy poco demanda, las empresas van comprando otras empresas para obtener los clientes a los otros.
     - **Jaula dorada**:  Pocos oferentes pero esta regulada, por ejemplo los monopolios.
 
-
-- Análisis de las Fuerzas competitivas
+* Análisis de las Fuerzas competitivas
     - Competencias Claves: 
         - Permite que la alta gerencia enfoque sus esfuerzos en desarrollar ventajas competitivas.
         - Permite _Conectar_ las estrategias de negocio con las competencias individuales y colectivas.
@@ -528,15 +589,23 @@ Caracteristicas:
         - Segmentación: No es separar a la gente. Es agrupar y reconocer los segmentos.
 
     - Estrategias:
+
         **Estrategia de liderazgo**: 
+
             - en costo, 
             - en ser el mejor, acompañado del precio ó 
             - en ser el unico, que hace determinada cosa.
+
         **Estrategia de Retador**:
+
             - Pelar el lugar al Lider.
+
         **Estrategia de Seguidor**
+
             - Copia al lider. Clon, imitador o adaptador.
+
         **Estrategia de Nichos**
+
             - Atiende a un tipo de usuario.
             - Atender a una etapa en la cadena de producción.
             - Personalizar el producto para un tipo de producto.
@@ -552,12 +621,10 @@ Caracteristicas:
         - La cadena de valor de empresa, se ve afectada por la cadena de valor de proveedores y compradores.
         - Ejeplo de Bancos.
 
-
-
-- Perfil de respuesta del Competidor
+* Perfil de respuesta del Competidor
     - Si bajo el precio de m producto, como afecta a mis competidores.
 
-- Autoanálisis
+* Autoanálisis
     - Analisis de desempeño.
     - Analisis de diferencias.
     - Estrategias pasadas y futuras.
@@ -574,54 +641,56 @@ Caracteristicas:
         - Desarrollo de mercado
         - Desarrollo de producto
         - Diversificación de mercados
-- FODA: 
+* FODA: 
     - Foralezas(internas): Ventajas competitivas
     - Oportunidades(externo): Contexto donde la empresa no tiene control. 
     - Debilidades(internas): 
     - Amenazas(Externas): Contexto donde la empresa no tiene control. Tipo de cambio.
-- Análisis CAME: 
+* Análisis CAME: 
     - Foralezas: -> Mantener
     - Oportunidades: -> Explotar
     - Debilidades: -> Corregir
     - Amenazas: -> Afrontar
 
-
-
-
 ## Clase de Martes 20/10/20: Cadena de Valor Agregado
 
-- Valor Agregado: Todo aquello que le podemos agregar a un producto o servicio.
-- ¿Se puedo ofrecer algo mejor?
+* Valor Agregado: Todo aquello que le podemos agregar a un producto o servicio. 
+* ¿Se puedo ofrecer algo mejor?
     - Menor costo
     - Mejor producto o servicio segun la persona.
     - Algo especial para él.
-- Cadena de valor: Tanto dentro de la empresa como fuera de la empresa, hay cadenas.
-- _Cuello de botella_:
+* Cadena de valor: Tanto dentro de la empresa como fuera de la empresa, hay cadenas. 
+* _Cuello de botella_:
     - Es el _recurso con menor capacidad_ en el proceso. Cuando se habla de recursos se tiene en cuenta el tiempo, mano de obra, productos intermedios, etc.
+
     > La restricción es la capacidad de toda la planta.
+
     - Tiene altos inventarios para procesar
     - Las etapas posteriores del proceso tienen _tiempo de espera_.
     - Ejemplo: La etapa3 dicta la capacidad maxima de todo el proceso.
+
         Etapa1:95 piezas
         Etapa2:110 piezas
         Etapa3:85 piezas
         Etapa4:90 piezas
+
     - Se producen tiempos ociosos.
 
-- Comparación con la misma empresa o con competidores.
-- Estudiar la audiencia y la horatoria para las presentaciones.
-- Es eslabon mas debil, determina la fortaleza de la cadena.
+* Comparación con la misma empresa o con competidores. 
+* Estudiar la audiencia y la horatoria para las presentaciones. 
+* Es eslabon mas debil, determina la fortaleza de la cadena. 
+
 -
 
 ## Estrategia Emergente
 
-- Lean start up:
+* Lean start up:
     - Plantear hipotesis
     - Experimentar
     - Aprendizaje
-- Diferencias:
+* Diferencias:
     - El cliente es el que paga. El usuario es el que usa el servicio/producto.
-- Modelo Blank:
+* Modelo Blank:
     - Descubrir al cliente: ¿Le interesa a alguien?
     - Refrendar(confirmar) al cliente: ¿Cuantos clientes y si van a pagar?
         - Se consiguen muchos cliente que pagan por el prototipo.
@@ -629,12 +698,12 @@ Caracteristicas:
     - Creación del cliente:  
         - Se consiguen muchos cliente que pagan por el PRODUCTO.
     - Construcción de la empresa: Se construye la empresa.
-- Piramide de Ries:
+* Piramide de Ries:
     - Producto: Entrega del valor. 
     - Estrategia: Creación del valor. 
     - Valor: Captura el valor.
-- Método Lean Canvas
-- Propuesta de valor, para transcribir en el canvas. Diferente propuesta de valor para cada segmento.
+* Método Lean Canvas
+* Propuesta de valor, para transcribir en el canvas. Diferente propuesta de valor para cada segmento. 
     - Trabajo con los clientes
     - Dolores para el cliente
     - Ganancia para el cliente
