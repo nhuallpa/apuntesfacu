@@ -314,18 +314,46 @@ Enfoque sistemico: Estudio de la organizacion genericamente.
 
 ### PENTA MODELO (Autor Alberto Levi)
 
+Penta ha sido diseñado como herramienta técnica para diagnosticar e intervenir en las empresas, con el objetivo de apoyarlas en sus intentos de CVE
+
+![Penta modelo](docs/modelo-penta.jpg)
+
 #### Pilares: 
 
-* Cultura: Formas de trabajo o politicas de la organización. Tienen que ver en como se hacen las cosas. Usos y costumbres. 
-
-    Ejemplo: Los mail se guardan por 5 años. 
-
-* Recurso: Todos los recursos: Personal, Financieros, Infraestructura, Tiempo, Información, Conocimiento. 
+* Cultura: Formas de trabajo o politicas de la organización. Tienen que ver en como se hacen las cosas. Usos y costumbres. Ejemplo: Los mail se guardan por 5 años. 
+* Recurso: Todos los recursos.
+    - Gente
+    - Productivos
+    - Financieros
+    - Infraestructura
+    - Marca
+    - Mística
+    - Crédito
+    - Tiempo
+    - Información
+    - Conocimiento
+    - Organicidad
+    - Capacidad de Maniobra
+    - Estabilidad
 * Mercado: A donde apunta los productos. Que productos comprar, Que proveedores existen, como Negociar. 
-* Gestion por Organización: Gestión intera. Relación entre sector. Tipo de supervicion. Revisar Autor Mintzberg. 
+    - Presión de Productos Sustitutos
+    - Barreras de Ingreso
+    - Barreras de Egreso
+    - Poder de Negociación de Proveedores
+* Gestion por Organización: Gestión intera. Relación entre sector. Tipo de supervicion.  **Revisar Autor Mintzberg**. 
+    - Procesos operativos.
+    - Sistema de información.
+    - Estructura organizacional.
 * Estrategia:
+    - Creación de Valor Económico
+    - Misión
+    - Estrategia de Portafolio
+    - Estrategia Competitiva de cada Negocio
+    - Empuje Estratégico
 
-> Todos los pilares deben estar alineados con la Estrategia. !!
+> Todos los pilares deben estar alineados con la Estrategia. 
+
+Referencia: [Video](https://www.youtube.com/watch?v=ICy36XQ8E6c)
 
 #### Tarea: 
 
@@ -333,7 +361,7 @@ Enfoque sistemico: Estudio de la organizacion genericamente.
 2. Aplicar la herramienta relevando.
 3. Analizar la herramienta y verifica que pasa con cada uno de los puntos. ¿Para que sirve la herramienta?
 
-#### 6P (Mercadotecnia)
+### 6P (Mercadotecnia)
 
 Autores: Kotler y Druker en el area de mercadotecnia. 
 
