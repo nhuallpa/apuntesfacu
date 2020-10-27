@@ -176,10 +176,10 @@ Luego de realizar un brainstoming de los factores
 > No hay que ver la tarea, si hay que ver el pantallaso total. No mirar a corto plazo. 
 
 * Porque Cuestra la Transformacion? 
-- Incentivos a cortos plazos, 
-- Ignorancia, 
-- Silos, 
-- Gap de destresa digital.
+    - Incentivos a cortos plazos, 
+    - Ignorancia, 
+    - Silos, 
+    - Gap de destresa digital.
 
 #### Cultura organizacional
 
@@ -202,6 +202,7 @@ Cultura es el conjunto de normas de comportamiento y reglas no escritas que dan 
 * Customer Journey Layers
 
 #### Las 6D de una organización exponencial
+Es una cadena de reacciones progresiones tecnologicas. 
 
 * Digitalización
 * Engañoso
@@ -368,7 +369,7 @@ Autores: Kotler y Druker en el area de mercadotecnia.
 * Druker: La finalidad es conocer al consumidor. 
 
 
-#### Tipos de marcados
+#### Tipos de mercados
 * Analizar el mercado, ver lo que necesita y visualizar el norte. 
     - Monopolio: Baja cantidad de empresas, Alta diferenciación de productos.
     - Oligopolio: Baja cantidad de empresas, Baja diferenciación de productos.
@@ -444,13 +445,13 @@ Autores: Kotler y Druker en el area de mercadotecnia.
 ### Configuraciones estructurales
 
 1. Estructura simple.
-    - Coordinación: Supervición directa.
+    - Coordinación: Supervisión directa.
     - Parte fundamental: Ápice estratégico.
     - Parametro de diseño: Centralización.
     - Factores de contingencia:????
     - Problemas: 
         - La decisión la toma una sola persona.
-        - Tiene a confundise lo operativo con lo estratégico.
+        - Tiende a confundise lo operativo con lo estratégico.
 
 2. Burocracia Maquinal.
     - Coordinación: Normalización de procesos.
@@ -550,8 +551,8 @@ Revisar en la organización, que configuración tiene.
 
 ### Administración de Proyectos:
 
-1. Analís de factibilidad: 
-2. Analís de aceptabilidad: Con respecto al Costo. 
+1. Analisís de factibilidad: 
+2. Analisís de aceptabilidad: Con respecto al Costo. 
 3. Factibilidad: Posibilidad de realizarse con los recursos disponibles. 
 4. Viabilidad: Posibilidad de que el entorno nos permita realizar la tarea. 
 
@@ -618,7 +619,7 @@ Caracteristicas:
         - en ser el mejor, acompañado del precio ó 
         - en ser el unico, que hace determinada cosa.
     - **Estrategia de Retador**:
-        - Pelar el lugar al Lider.
+        - Pelear el lugar al Lider.
     - **Estrategia de Seguidor**
         - Copia al lider. Clon, imitador o adaptador.
     - **Estrategia de Nichos**
@@ -647,12 +648,15 @@ Caracteristicas:
     - Analisis de organización interna.
     - Analisis de costos.
     - Recursos financieros.
-    - Matriz de BCG: Analisis de portafolios de productos: Participación en el mercado vs el Cecimiento.
+    - Matriz de BCG: **Analisis de portafolios de productos**: Participación en el mercado vs el Cecimiento.
+        ![](docs/analisis_producto.png)
         - Productos VACA: Productos que generan ganancias Netas. El mercado no crece pero se mantiene.
         - Productos PERRO: Productos con poca participacion y bajo crecimiento
         - Productos Estrellas: Son las vacas del mañana.
         - Productos Incognita: 
+
     - Matriz de Ansoff
+        ![](docs/matriz_ansoff.png)
         - Penetración de mercado
         - Desarrollo de mercado
         - Desarrollo de producto
