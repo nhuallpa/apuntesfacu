@@ -543,24 +543,17 @@ Revisar en la organización, que configuración tiene.
     - Ejecuta
     - Responde a un programa
 
-    - 
-
 * Supervisor
     - Ejecuta el apice Estrategico
     - Responde al conocimiento profesional, propio interes, experiencia, responsabilidad.
     - Lleva implicita la decisión
 
-    - 
-
 ### Administración de Proyectos:
 
-Analís de factibilidad: 
-
-Analís de aceptabilidad: Con respecto al Costo. 
-
-Factibilidad: Posibilidad de realizarse con los recursos disponibles. 
-
-Viabilidad: Posibilidad de que el entorno nos permita realizar la tarea. 
+1. Analís de factibilidad: 
+2. Analís de aceptabilidad: Con respecto al Costo. 
+3. Factibilidad: Posibilidad de realizarse con los recursos disponibles. 
+4. Viabilidad: Posibilidad de que el entorno nos permita realizar la tarea. 
 
 Caracteristicas:
 
@@ -598,10 +591,10 @@ Caracteristicas:
 
 ![planif_escenarios](docs/planificacion_escenarios.png)
 
-    - **Fiebre de oro**: Fragmentada y Demanda Creciente, Ejemplo: Parripollos, Canchas de futbal. Hay muchos oferentes y mucha demanda. 
-    - **Paraiso perdido**:  La unica forma es sacarle los clientes a un competidos debido a que hay menos demanda. LA demanda empieza a consolidarse.
-    - **Guerra de desgaste**: Consolidada y Baja Demanda, Empieza a ver muy poco demanda, las empresas van comprando otras empresas para obtener los clientes a los otros.
-    - **Jaula dorada**:  Pocos oferentes pero esta regulada, por ejemplo los monopolios.
+- **Fiebre de oro**: Fragmentada y Demanda Creciente, Ejemplo: Parripollos, Canchas de futbal. Hay muchos oferentes y mucha demanda. 
+- **Paraiso perdido**:  La unica forma es sacarle los clientes a un competidos debido a que hay menos demanda. La demanda empieza a consolidarse.
+- **Guerra de desgaste**: Consolidada y Baja Demanda, Empieza a ver muy poco demanda, las empresas van comprando otras empresas para obtener los clientes a los otros.
+- **Jaula dorada**:  Pocos oferentes pero esta regulada, por ejemplo los monopolios.
 
 * Análisis de las Fuerzas competitivas
     - Competencias Claves: 
@@ -619,41 +612,33 @@ Caracteristicas:
         - Posicionamiento: Tener un pedazo de la cabeza de tu cliente. Cuando el cliente pienza en un producto o servicio, lo primero que le llega a la mente es la marca.
         - Segmentación: No es separar a la gente. Es agrupar y reconocer los segmentos.
 
-    - Estrategias:
+* Estrategias:
+    - **Estrategia de liderazgo**: 
+        - en costo, 
+        - en ser el mejor, acompañado del precio ó 
+        - en ser el unico, que hace determinada cosa.
+    - **Estrategia de Retador**:
+        - Pelar el lugar al Lider.
+    - **Estrategia de Seguidor**
+        - Copia al lider. Clon, imitador o adaptador.
+    - **Estrategia de Nichos**
+        - Atiende a un tipo de usuario.
+        - Atender a una etapa en la cadena de producción.
+        - Personalizar el producto para un tipo de producto.
+        - Operar en un determinado segmento del mercado.
+        - Hago un producto para un canal de venta.
 
-        **Estrategia de liderazgo**: 
-
-            - en costo, 
-            - en ser el mejor, acompañado del precio ó 
-            - en ser el unico, que hace determinada cosa.
-
-        **Estrategia de Retador**:
-
-            - Pelar el lugar al Lider.
-
-        **Estrategia de Seguidor**
-
-            - Copia al lider. Clon, imitador o adaptador.
-
-        **Estrategia de Nichos**
-
-            - Atiende a un tipo de usuario.
-            - Atender a una etapa en la cadena de producción.
-            - Personalizar el producto para un tipo de producto.
-            - Operar en un determinado segmento del mercado.
-            - Hago un producto para un canal de venta.
-
-    - Cadena de Valor: (Mikel porter - Libro: Ventaja competitiva)
-        - Exiten criterios de evaluación
-            - Criterios de satisfacción
-            - Costo tecnologico sobre el costo total de la información.
-        - En los puntos donde hay incertidumbre o no hay información se deben hacer inferencias.
+* Cadena de Valor: (Mikel porter - Libro: Ventaja competitiva)
+    - Exiten criterios de evaluación
+        - Criterios de satisfacción
+        - Costo tecnologico sobre el costo total de la información.
+    - En los puntos donde hay incertidumbre o no hay información se deben hacer inferencias.
     - Cadena de valor ampliada:
         - La cadena de valor de empresa, se ve afectada por la cadena de valor de proveedores y compradores.
         - Ejeplo de Bancos.
 
 * Perfil de respuesta del Competidor
-    - Si bajo el precio de m producto, como afecta a mis competidores.
+    - Si bajo el precio de mi producto, como afecta a mis competidores.
 
 * Autoanálisis
     - Analisis de desempeño.
@@ -683,7 +668,9 @@ Caracteristicas:
     - Debilidades: -> Corregir
     - Amenazas: -> Afrontar
 
-## Clase de Martes 20/10/20: Cadena de Valor Agregado
+## 7. Martes 20/10/20: Cadena de Valor Agregado
+
+### Cadena de Valor Agregado
 
 * Valor Agregado: Todo aquello que le podemos agregar a un producto o servicio. 
 * ¿Se puedo ofrecer algo mejor?
@@ -698,46 +685,173 @@ Caracteristicas:
 
     - Tiene altos inventarios para procesar
     - Las etapas posteriores del proceso tienen _tiempo de espera_.
-    - Ejemplo: La etapa3 dicta la capacidad maxima de todo el proceso.
-
-        Etapa1:95 piezas
-        Etapa2:110 piezas
-        Etapa3:85 piezas
-        Etapa4:90 piezas
-
+    - Ejemplo: La etapa 3 dicta la capacidad maxima de todo el proceso.
+        - Etapa1:95 piezas
+        - Etapa2:110 piezas
+        - Etapa3:85 piezas
+        - Etapa4:90 piezas
     - Se producen tiempos ociosos.
-
-* Comparación con la misma empresa o con competidores. 
-* Estudiar la audiencia y la horatoria para las presentaciones. 
+* Solo existe una sola restricción que impide que la empresa gane dinero.
 * Es eslabon mas debil, determina la fortaleza de la cadena. 
+* Es una herramienta de comparación. Se compara la empresa con la misma empresa en otro momento o con otros competidores. 
 
--
+![Cadena de valor](docs/cadena-valor.png)
 
-## Estrategia Emergente
+### Eficiencia en Costos 
+Para ser eficientes se debe tener los 4 ejes rectores alineados.
 
-* Lean start up:
-    - Plantear hipotesis
-    - Experimentar
-    - Aprendizaje
-* Diferencias:
+1. **Experiencia(Expertice)**: Curva de aprendizaje.
+2. **Diseño de productos/servicios**: Un mal producto/servicio va en contra de tener eficiencia en costo.
+3. **Costo de abastecimiento**: Dale importancia a los costos de materia prima y tener una relación óptima con los proveedores.
+4. **Economia de escala**: Producción en masa (enlatado) puede traer ventajas en costos. Recupera la inversión del capital a través de volumen alto.
+
+![eficiena costos](docs/eficiencia-costos.png)
+
+### Interrupción crítica de cadenas de suministro complejas:
+
+Construyecto Transparencia y resiliencia: Ninguna empresa opera de manera aislada. Es escencial identificar los riesgos de continuidad de negocio. Desarrollar 3 pasos:
+
+1. Prevensión: 
+    - Hablar con proveedores criticos para contemplar sus planes.
+    - Identificar proveedores alternativos
+    - Revisar responsabilidad contractual en caso de demora.
+2. Respuesta:
+    - Almacenar suministros criticos.
+    - Continua comunicación con proveedores.
+    - Adaptar los pedidos y arreglos de envios para la distribución.
+3. Recuperarse:
+    - Encontrar nuevos proveedores.
+    - Revisar lecciónes aprendidas con proveedores criticos.
+    - Explorar clausulas contracturales.
+    - Revisar los KPI del contrato.
+
+La organización será capaz:
+
+- Que pueda cambiar de proveedor con poca anticipación.
+- Tener visibilidad en tiempo real en cada etapa sobre el desarrollo de puntos criticos.
+- Implementar otras medidas de gestión de riesgos para garantizar que su negocio siga siendo resilientes.
+
+
+> Objetivo: Mayor valor con menor costos.
+
+**TIPS**:
+> Estudiar la audiencia y la horatoria para las presentaciones. 
+
+----
+
+## 8. Viernes 30/10 - Estrategia Emergente
+
+* Todo lo que se digitaliza, baja sustancialmente los costos.
+* Comparación: 
+    - Estrategia deliberada: Estrategia formulada en forma racional, de arriba abajo siguiendo la secuencia 
+        1. Formulación
+        2. Implementación.
+        3. Control.
+    - Estrategia emergente: Estrategia observada en la practica y que no tiene que ser formulada de forma racional ni ser secuencial. ![estrategia emergente](docs/estrategia-emergente.png)
+### LEAN
+* Filosofica:
+    - Eliminar los residuos
+    - Enfoque en la mejora continua.
+    - Centrado en el cliente.
+    - Eliminar cualquier actividad que no agregue valor.
+* Lean Manufacturing:
+    1. Suprimir desperdicios
+    2. Trabajar en zero defectos.
+    3. Implicar al personal.
+    4. Adaptarse al cliente.
+    5. Optimizar los recursos.
+    6. Pensar en "on time delivery".
+    7. Utilizar KPIs útiles.
+* Lean Start Up:
+    - Experimenta sobre hipótesis(mide progreso).
+    - Lanza productos e itera.
+    - Aprendizaje validado.
+
+    ![](docs/lean-startup.png)
+
+* Diferencias en entre producto y servicio:
+
+    Producto                                    | Servicio
+    --------------------------------------------|----------
+    Producido                                   | Brindado.
+    Material                                    | Inmaterial.
+    Tangible                                    | Intangible.
+    Puede almacenarse                           | No puede almacenarse.
+    Aislado del cliente                         | Interacción con el cliente.
+    Se consume luego de producirse              | Se consume al mismo tiempo que se produce.
+    Pueden presentar defectos de la fabricación | Pueden observarse errores en el comportamiento.
+
     - El cliente es el que paga. El usuario es el que usa el servicio/producto.
-* Modelo Blank:
-    - Descubrir al cliente: ¿Le interesa a alguien?
-    - Refrendar(confirmar) al cliente: ¿Cuantos clientes y si van a pagar?
-        - Se consiguen muchos cliente que pagan por el prototipo.
-        - MVP: Minimo producto que se pueda usar.
-    - Creación del cliente:  
-        - Se consiguen muchos cliente que pagan por el PRODUCTO.
-    - Construcción de la empresa: Se construye la empresa.
-* Piramide de Ries:
-    - Producto: Entrega del valor. 
-    - Estrategia: Creación del valor. 
-    - Valor: Captura el valor.
-* Método Lean Canvas
-* Propuesta de valor, para transcribir en el canvas. Diferente propuesta de valor para cada segmento. 
-    - Trabajo con los clientes
-    - Dolores para el cliente
-    - Ganancia para el cliente
-    - Producto y Servicio: 
-    - Mitigadores de dolores: Garantias, valoraciones
-    - Creadores de ganancias: 
+
+### Modelo Blank:
+
+1. Descubrir al cliente: ¿Le interesa a alguien?
+    - Conocer la reacciones y devoluciones de los cliente para validar hipotesis planteadas.
+    - Realizar entrevistas e investigación-
+    - Termina cuando encuentro un producto para un grupo de clientes.
+    - Valido que al cliente le sirva el producto.
+    - Todo esto se llama "Ensamble Problema solución" + MVP1.0 + Evolución. 
+2. Refrendar(confirmar o validar) al cliente: ¿Cuantos clientes y si van a pagar?
+    - Vender el producto 
+    - Ensamble Producto Mercado: ¿?Hay un mercado que me permita tener un volumen? ¿O es limitado?
+    - Se consiguen muchos cliente que pagan por el prototipo.
+    - Ensamble Producto Mercado + Modelo de Negocio (como se vende, entrega, cobrar) + Mapa de ruta comercial.
+    - MVP: Minimo producto que se pueda usar.
+3. Creación del cliente:  
+    - Se consiguen muchos cliente que pagan por el PRODUCTO.
+    - Crear al mercado de masas.
+    - Definición de ruta de marketing.
+    - Negocio escalable.
+4. Construcción de la empresa: 
+    - Se construye la empresa.
+    - Creación de estructura y procesos que soportan el escalonado.
+    ![](docs/modelo-desarrollo-cliente.png)
+
+### Piramide de Ries:
+- Producto: Entrega del valor. 
+- Estrategia: Creación del valor. 
+- Valor: Captura el valor.
+
+![](docs/piramide-lean-startup.png)
+
+### Método Lean Canvas
+
+![](docs/lean-canvas.png)
+
+#### Propuesta de valor: 
+
+Para transcribir en el canvas. Diferentes propuesta de valor para cada segmento. 
+
+> La propuesta de valor no es el producto o servicio, sino el valor que entregamos a partir de él.
+
+* Condiciones:
+    - Relevante
+    - Diferente
+    - Creible
+
+#### Esquema de propuesta de valor: 
+
+![esquema de valor](docs/esquema-propuesta-valor.png)
+
+- Trabajo de los clientes o las necesidades.
+    - Funcionales, Sociales, Emocionales, Necesidades basicas.
+- Puntos de dolor para el cliente. Cual es su preocupación.
+    - Riesgos, costos, Sentimientos negativos, dificultades.
+- Ganancia esperadas o adicionales para el cliente.
+    - Satisfacción
+    - Expectativas de servicio y costo.
+    - ¿Qué les mejora la vida?
+    - ¿Qué les emociona?
+    - Beneficio, Precio, Opiniones, Comunidad, Servicio
+- Producto y Servicio: 
+    - Listar de productos.
+    - Market place
+- Mitigadores de dolores: Garantias, valoraciones
+    - Garantias, Valoraciones y perfiles, Ubicaciones y fotos
+- Creadores de ganancias: 
+    - Politica de incentivos, Ofrecer mejor opción, Masividad.
+
+> Todo esto se transcribe en el Lean Canvas.
+
+> Si hay dos segmento de cliente, realizar dos esquemas de valor, uno por cada semento.
+
