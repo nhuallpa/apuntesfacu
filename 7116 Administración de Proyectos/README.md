@@ -364,77 +364,80 @@ Referencia: [Video](https://www.youtube.com/watch?v=ICy36XQ8E6c)
 ### 6P (Mercadotecnia)
 
 Autores: Kotler y Druker en el area de mercadotecnia. 
-
-* Kotler: La mercadotecnia es una actividad humana cuya finalidad consiste en satisfacer
-
-las necesidades y deseos del ser humano mediante procesos de intercambio. 
-
+* Kotler: La mercadotecnia es una actividad humana cuya finalidad consiste en satisfacer las necesidades y deseos del ser humano mediante procesos de intercambio. 
 * Druker: La finalidad es conocer al consumidor. 
 
+
+#### Tipos de marcados
 * Analizar el mercado, ver lo que necesita y visualizar el norte. 
-    - Cantidad de empresas: Alta o Baja
-    - Diferenciación de productos: Alta o Baja
+    - Monopolio: Baja cantidad de empresas, Alta diferenciación de productos.
+    - Oligopolio: Baja cantidad de empresas, Baja diferenciación de productos.
+    - Competencia Imperfecta: Alta cantidad de empresas, Alta diferenciación de productos.
+    - Competencia Perfecta: Alta cantidad de empresas, Baja diferenciación de productos.
 
-    Monopolio: Baja cantidad de empresas, Alta diferenciación de productos.
-    Oligopolio: Baja cantidad de empresas, Baja diferenciación de productos.
-    Competencia Imperfecta: Alta cantidad de empresas, Alta diferenciación de productos.
-    Competencia Perfecta: Alta cantidad de empresas, Baja diferenciación de productos.
-
-    Ayuda a ver a que mercado el producto esta orientado.
+> Ayuda a ver a que mercado el producto esta orientado.
 
 * Caracteristicas de las empresas:
-    - Lideres (mayor participación relativa)
-    - Retadoras (Se expanden agresivamente)
-    - Seguidores
-    - Encajonadas
-    - Invasoras(Atacan con productos sustitutos)
+    - Lideres: mayor participación relativa.
+    - Retadoras: Se expanden agresivamente.
+    - Seguidores: Mantienen participación.
+    - Encajonadas: Atienden pequeños sectores.
+    - Invasoras: Atacan con productos sustitutos.
 
 * Comercialización:
-
+    - Tipos:
+        - Pasiva
+        - Productiva
+        - Estrategica
+        - Social
     - **Vendemos experiencia**
 
-* Las 6P
-    - Producto: Bien tangible o intangible. Para un segmento determinado del mercado.
-        - Atributos: Basico, Real,....
-        - Caracteristicas: Se pueden analizar algunos productos
-            - Producto Ideal: Zona 4 (Oportunidad)
-            - Producto Real Propio.
-            - Producto Real Competencia.
-        - Relacionado con **Boston Consulting Group y Matriz de Pareto** y se utilizan para poder elegir los productos mas importantes a analizar con el diagrama de caracteristicas.
-        - Ciclo de vida: Para ver en que etapa esta un producto, utilizar **Boston Consulting Group**
-            - Embrionario
-            - Crecimiento
-            - Madurez: Tiene un punto de camio tecnologico.
-            - Envejecimiento
-    - Paquete: Se analiza el empaquetado del producto, la marca. Se analizan la conveniencia del uso de marca. Buenas practicas para el nombre de Marca.
-    - Precio: Relacionado al segmento que aplica el producto seleccionado.
-        - Se revisa el percio de marcado.
-    - Plaza(o mercado): Lugar donde se realiza la oferta y la demanda. Darle importancia a la DISTRIBUCIÓN. Ejemplo: Canales de industria financiera. **Realizar Investigación de Mercado**. 
-        - El mercado esta _segmentado_. Se utilizan variables duras o blandas.
-            - Variables Duras: Edad, Sexo, Nacionalidad, Educación
-            - Variables blandas: Estilo de vida, prejuicios, estilo de mujer activa.
-        - _La segmentación es válida si el beneficio que obtengo por segmentar es mayor que el que obtendría si no lo hiciera_
-        - Estrategias de mercadotecnia
-            - Mercadotecnia indiferenciada: Mercado total y segmentos relevantes.
-            - Mercadotecnia diferenciada: Oferta especifica por segmento.
-            - Mercadotecnia concentrada: Porción del mercado o varios sumercados.
-        - Posicionamiento: Lugas que ocupa un producto en la mente de un consumidor.
-        - Herramienta **MATRIZ DE ANSOFF**
-            - Diversificación: Productos Nuevos y Mercado Nuevos
-    - Publicidad: Avisos segun tamao y costos; Pauta; Pieza publicitaria; Aviso.
-    - Promoción:
-        - Dar a conocer el producto
-            - Caracteristicas: 
-        - Inteligencia de negecio: "Solo existen dos fuentes genuinas de venta competitiva"
-
-            1- La habilidad para conocer mas de nuestros clientes que la competencia
-            2- La habilidad para transformar ese conocimiento en acciones antes que la competencia.
-
-        - Gestión de clientes, para poner **FOCO EN EL CLIENTE**
-            - Adquirir clientes
-            - Vincular clientes
-            - Retener clientes
-            - Para SATISFACER CLIENTES
+#### Las 6P
+- **Producto**: Bien tangible o intangible. Para un segmento determinado del mercado.
+    - Atributos: Basico, Real,....
+    - Caracteristicas: Se pueden analizar algunos productos
+        - Producto Ideal: Zona 4 (Oportunidad)
+        - Producto Real Propio.
+        - Producto Real Competencia.
+        ![producto](docs/producto.png)
+    - Relacionado con **Boston Consulting Group y Matriz de Pareto** y se utilizan para poder elegir los productos mas importantes a analizar con el diagrama de caracteristicas.
+    - Ciclo de vida: Para ver en que etapa esta un producto, utilizar **Boston Consulting Group**
+        - Embrionario
+        - Crecimiento
+        - Madurez: Tiene un punto de camio tecnologico.
+        - Envejecimiento
+- **Paquete**: Se analizá el empaquetado del producto, la marca. Se analizan la conveniencia del uso de marca. Buenas practicas para el nombre de Marca.
+- **Precio**: Relacionado al segmento que aplica el producto seleccionado.
+    - Se revisa el percio de marcado.
+    - Depende del objetivo.
+    - Es parte del producto.
+- **Plaza(o mercado)**: Lugar donde se realiza la oferta y la demanda. Darle importancia a la _DISTRIBUCIÓN_. Ejemplo: Canales de industria financiera. **Realizar Investigación de Mercado**. 
+    - El mercado esta _segmentado_. Se utilizan variables duras o blandas.
+        - Variables DURAS: Edad, Sexo, Nacionalidad, Educación
+        - Variables BLANDAS: Estilo de vida, prejuicios, estilo de mujer activa.
+    > _La segmentación es válida si el beneficio que obtengo por segmentar es mayor que el que obtendría si no lo hiciera_
+    - Estrategias de cobertura de mercado:
+        - Mercadotecnia **indiferenciada**: Mercado total y segmentos relevantes.
+        - Mercadotecnia **diferenciada**: Oferta especifica por segmento.
+        - Mercadotecnia **concentrada**: Porción del mercado o varios sumercados.
+    - Posicionamiento: Lugar que ocupa un producto en la mente de un consumidor.
+    - Herramienta **MATRIZ DE ANSOFF**
+        ![matriz](docs/matriz-ansoff.png)
+- **Publicidad**: Avisos según tamaño y costos; Pauta; Pieza publicitaria; Aviso.
+    - Aumentar participación en el mercado.
+    - Informar lanzamiento de nuevos productos.
+    - Reposicionar productos.
+    - Fijar la imagen de una empresa o producto.
+    - Aumentar barreras de entrada a un mercado.
+- **Promoción**:
+    - Dar a conocer el producto. 
+    - Inteligencia de negecio: "Solo existen dos fuentes genuinas de venta competitiva"
+        1. La habilidad para conocer mas de nuestros clientes que la competencia
+        2. La habilidad para transformar ese conocimiento en acciones antes que la competencia.
+    - Gestión de clientes, para poner **FOCO EN EL CLIENTE**. Para SATISFACER CLIENTES:
+        - Adquirir clientes
+        - Vincular clientes
+        - Retener clientes
 
 ## 5. Martes 13/10/2020 - Teoria de la organización
 
