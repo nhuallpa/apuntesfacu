@@ -652,15 +652,18 @@ Caracteristicas:
         ![](docs/analisis_producto.png)
         - Productos VACA: Productos que generan ganancias Netas. El mercado no crece pero se mantiene.
         - Productos PERRO: Productos con poca participacion y bajo crecimiento
-        - Productos Estrellas: Son las vacas del mañana.
+        - Productos Estrellas: No producen rentabilidad porque siguen pagando el costo del producto. Son las vacas del mañana.
         - Productos Incognita: 
 
+        Referencia: [Boston Consulting Group](https://ingenioempresa.com/matriz-bcg/)
+    
     - Matriz de Ansoff
-        ![](docs/matriz_ansoff.png)
         - Penetración de mercado
         - Desarrollo de mercado
         - Desarrollo de producto
         - Diversificación de mercados
+        ![](docs/matriz_ansoff.png)
+
 * FODA: 
     - Foralezas(internas): Ventajas competitivas
     - Oportunidades(externo): Contexto donde la empresa no tiene control. 
@@ -753,7 +756,7 @@ La organización será capaz:
         3. Control.
     - Estrategia emergente: Estrategia observada en la practica y que no tiene que ser formulada de forma racional ni ser secuencial. ![estrategia emergente](docs/estrategia-emergente.png)
 ### LEAN
-* Filosofica:
+* Filosofia:
     - Eliminar los residuos
     - Enfoque en la mejora continua.
     - Centrado en el cliente.
