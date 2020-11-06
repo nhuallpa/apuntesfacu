@@ -862,3 +862,172 @@ Para transcribir en el canvas. Diferentes propuesta de valor para cada segmento.
 
 > Si hay dos segmento de cliente, realizar dos esquemas de valor, uno por cada semento.
 
+
+
+## 9. Viernes 30/10/20 - Clima Laboral
+
+**Recursos**: Es un insumo producto o activo competitivo que la empresa controla y poseé. 
+- _Tangibles_: 
+    - Recursos fisicos
+    - Recursos financieros
+    - Activos Técnologicos.
+    - Recursos organizacionales.
+- _Intangibles_: 
+    - Activos humanos y capital intelectual
+    - Marca, imagen de la empresa y activos de la reputación.
+    - Relaciones: Alianzas y sociedades.
+    - Cultura y sistema de incentivos de la empresa: Normas de conducta, sist. de compensaciones, grado de motivación del personal.
+
+**Capacidad**: Es la habilidad de una empresa de desempeñar alguna actividad de manera muy eficiente. 
+
+Referencia: _A. Thompson, M. Peteraf, J. Gamble, A. Strickland. Administración estratégica. Teoría y casos.  2012.18ma ed. pp. 95_
+
+**Capacidad organizacional**: Son entidades más complejas que los recursos; en realidad, se forman a partir del uso de los recusos y aprovechan cierta combinación de los recursos de la empresa conforme se usan. Se basan en _conocimientos que residen en la gente y en el capital intelectual o en los procesos y sistemas organizacionales de la empresa, los cuales incorporan conocimiento tácito._ Ejemplos:
+1. El manejo de la marca General Mill, con el conocimiento de los administradores de marca de la empresa, la experiencia del departamenteo de marketing y la relación con los distribuidores.
+2. La capacidad de diseño de los videos juegos de Electronic Art, deriva de la creatividad y pericia tecnológica de sus muy talentosos desarrolladores.
+
+Referencia: _A. Thompson, M. Peteraf, J. Gamble, A. Strickland. Administración estratégica. Teoría y casos.  2012.18ma ed. pp. 96._
+
+**Capacidad dinamica**: Es la habilidad de modificar o aumentar los recursos y capacidades existentes. Trabaja los recursos y las personas.
+
+### Recursos Humanos (RRHH)
+
+¿Donde esta el apunte de Griffin para RRHH?
+
+
+## 9. Martes 03/11/20 - Motivación, Toma de decisión, Negociación.
+
+### 9.1 Motivación
+
+#### Teoria Clasicas 
+
+- **Motivación Maslow**:
+- **Motivación Herzberg**:
+Satisfaccion puede no estar alineado a las expectativas
+
+- **Motivación Mc Clain**
+    - Poder
+    - Afilicación
+    - Logro: Poder Lograrlo.
+
+- **Motivación Mc Gregor**:
+Factores X y Factores Y: Pueden relacionar con mecanismos de coordinación.
+    - Factores X: Se van a asociar con Supervisión directa y normalización de Procesos
+    - Factores Y: Se van a asociar con Adaptación Mutua, Normalización de resultados.
+
+### Teorías Contemporaneas
+
+- **Teoría de Existencia**, Relación y Crecimiento (ERC).
+
+- **Teoria de la expectativa**: Depende de dos coas; _cuanto queremos algo_ y que _probabilidad creemos tener de obtenerlos_.
+1. Combinación de fuerzas en el _individuo_ y en el cambio de _entorno_.
+2. Las personas toman _decisiones_ acerca de su comportamiento en las organizaciones.
+3. 
+4. 
+
+- **Teoria de la equidad**: Las personas estan motivas a buscar una _equidad social_ en las recompensas que reciben por el desempeño.
+
+- **Teoría del establecimiento de metas**: El comportamiento es el resultado de las metas. 
+
+
+> Obstaculos, los que usted percibe cuando pierde de vista el objetivo.
+
+
+
+### 9.2 Toma de decisión
+
+#### Etapas (Herbert Simon)
+
+1. Inteligencia: 
+2. Diseño: Diseñar curso de acción.
+3. Elección: Elegir entre distintos cursos de acción.
+4. Revisión: Evaluar las acciones pasadas.
+
+#### Etapas (Henrry Minztberg)
+
+1. Identificaciones
+    - Diagnostico   
+2. Desarrollar soluciones
+    - Busqueda
+    - Diseño
+3. Selección
+    - Estudio: Estudiar las soluciones disponibles.
+    - Evaluación - Elección
+    - Autorización
+
+> Proceso de desiciones Adhoc, ver libro
+
+#### Racionalidad limitada
+
+Atributos:
+
+- El individuo esta limitado por sus habilidades mentales, hábitos y reflejos. Nos limita en nuestra racionalidad en decidir algo.
+
+- La extensión del conocimiento y la información que posee. Por ejemplo sabemos mucho pero tenemos poca información ó sabes poco y tenemos mucha información. La información nos lleva a tomar decisiones bajo certeza, riesgos o incertidumbre.
+
+- Valores o concepto de proposito que pueden discreptar de los objetivos de la organización. _Las personas tienen una incruencia entres los valores personales y las de la organización_.
+
+#### Cursos de acción
+
+Para un curso de acción se deben definir:
+
+- Apto
+- Factibilidad
+- Viabilidad
+- Aceptabilidad
+
+
+### 9.3 Negociación
+
+Es una estrategia de comunicación.
+
+Necesidad de interactuar con alquien
+
+Actitu de receptividad y de maxima tolerancia.
+
+- _Necesidad_: 
+- _Deseo_: 
+- _Objetivo_: 
+- _Interés_: Bien que un actor posee, protege, mantiene.
+
+#### Tipos de negociación
+
+- Cooperativa: Distinto de amistoso
+- Adversarial: 
+
+![Modelo Cooperativo-adversaral]()
+
+#### Variables de la negociación
+
+- Poder
+- Información
+- Tiempo: administar el tiempo en función del espacio sin llegar a obligar llegar a un acuerdo.
+- Espacio: Donde se desarrolla la negociación
+
+#### Metodo de los principios - Método de Harvard
+
+- Separar a las personas del problema
+- Concentrarse en el interés y no enlas posiciones
+- Inventar opciones de mutuo beneficio
+- Insistir que los criterios
+
+
+#### Crisis
+
+El problema es un desvio de la realidad y debemos lograr volver a la realidad. 
+
+- Si el problema no tiene solución, entonces estamos en una realidad. Es un hecho que no se van a cumplir. Y aparecen nuevos actores.
+
+> La crisis es: Imprevisible, Inexplicable e imprevisible.
+
+- En el conflicto la variable estrategica es el poder. 
+
+- El vencedor del conflicto define la nueva realidad. La negociación comienza cuando se encuentra en la etapa de conflicto.
+
+> El ejecutivo Racional (Libro)
+> Teoria del conflicto (Remo Entelman)
+
+
+
+
+
