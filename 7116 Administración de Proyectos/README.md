@@ -895,9 +895,9 @@ Referencia: _A. Thompson, M. Peteraf, J. Gamble, A. Strickland. Administración 
 ¿Donde esta el apunte de Griffin para RRHH?
 
 
-## 9. Martes 03/11/20 - Motivación, Toma de decisión, Negociación.
+## 10. Martes 03/11/20 - Motivación, Toma de decisión, Negociación.
 
-### 9.1 Motivación
+### 10.1 Motivación
 
 #### Teoria Clasicas 
 
@@ -934,7 +934,7 @@ Factores X y Factores Y: Pueden relacionar con mecanismos de coordinación.
 
 
 
-### 9.2 Toma de decisión
+### 10.2 Toma de decisión
 
 #### Etapas (Herbert Simon)
 
@@ -977,7 +977,7 @@ Para un curso de acción se deben definir:
 - Aceptabilidad
 
 
-### 9.3 Negociación
+### 10.3 Negociación
 
 Es una estrategia de comunicación.
 
