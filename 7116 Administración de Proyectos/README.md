@@ -892,7 +892,29 @@ Referencia: _A. Thompson, M. Peteraf, J. Gamble, A. Strickland. Administración 
 
 ### Recursos Humanos (RRHH)
 
-¿Donde esta el apunte de Griffin para RRHH?
+_Reclutamiento_: Proceso de atraer personas calificadas para solicitar puestos que estan vacantes.
+
+_Proceso de Selección_: La intención del proceso de selección es recabar información de los solicitantes
+- Validación.
+    - Validación Predictiva.
+    - Validación del contenido.
+- Solicitud en blanco.
+- Pruebas.
+- Entrevistas.
+
+_Evaluación de desempeño_: Evaluación formal de que tan bien los empleados hacen su trabajo.
+
+_Grupos_
+- Grupo Funcional
+- Grupo informal
+- Grupo de tarea
+
+_Modelo de Tuckman_
+1. Formación
+2. Enfrentamiento/conflicto
+3. Normalización
+4. Desempeño
+5. Finalización/Disolución
 
 
 ## 10. Martes 03/11/20 - Motivación, Toma de decisión, Negociación.
@@ -901,19 +923,32 @@ Referencia: _A. Thompson, M. Peteraf, J. Gamble, A. Strickland. Administración 
 
 #### Teoria Clasicas 
 
-- **Motivación Maslow**:
+- **Motivación Maslow**: Piramide Jerarquía de necesidades.
+
+![](docs/piramide_maslow.png)
+
 - **Motivación Herzberg**:
-Satisfaccion puede no estar alineado a las expectativas
+    - Satisfaccion puede no estar alineado a las expectativas
+    - Las personas estan influenciadas por dos factores.
+        - La satisfacción: Es el principal resultado de los factores de motivación.
+        - La insatisfacción: Es principalmente el resultado de los factores de higiene.
+
+![](docs/herzberg.jpg)
+
 
 - **Motivación Mc Clain**
-    - Poder
-    - Afilicación
+    - Poder: Tener las competencias para hacer algo.
+    - Afilicación: Formar parte de una organización para aplicar esa competencia.
     - Logro: Poder Lograrlo.
 
 - **Motivación Mc Gregor**:
 Factores X y Factores Y: Pueden relacionar con mecanismos de coordinación.
-    - Factores X: Se van a asociar con Supervisión directa y normalización de Procesos
-    - Factores Y: Se van a asociar con Adaptación Mutua, Normalización de resultados.
+    - Factores X: 
+        - Ser humano rechaza el trabajo.
+        - Se van a asociar con Supervisión directa y normalización de Procesos
+    - Factores Y: 
+        - El ser humano ve el descanso como el trabajo.
+        - Se van a asociar con Adaptación Mutua, Normalización de resultados.
 
 ### Teorías Contemporaneas
 
@@ -987,29 +1022,48 @@ Actitu de receptividad y de maxima tolerancia.
 
 - _Necesidad_: 
 - _Deseo_: 
-- _Objetivo_: 
-- _Interés_: Bien que un actor posee, protege, mantiene.
+- _Objetivo_: (No detecten el objetivo)
+- _Interés_: Bien que un actor posee, protege, mantiene. (Lo oculto)
 
 #### Tipos de negociación
 
 - Cooperativa: Distinto de amistoso
-- Adversarial: 
+- Adversarial: Ganar - Perder
 
 ![Modelo Cooperativo-adversaral]()
 
 #### Variables de la negociación
 
-- Poder
-- Información
+- Poder: Imponer la voluntad a otro.
+- Información: Tener conocimento, adquierir conocimiento y tomar deciciones.
 - Tiempo: administar el tiempo en función del espacio sin llegar a obligar llegar a un acuerdo.
 - Espacio: Donde se desarrolla la negociación
 
 #### Metodo de los principios - Método de Harvard
 
-- Separar a las personas del problema
-- Concentrarse en el interés y no enlas posiciones
-- Inventar opciones de mutuo beneficio
-- Insistir que los criterios
+- Separar a las personas del problema(no enojarse con las personas).
+    - Personas - Actores
+    - Actúan y llevan a situaciones críticas.
+- Concentrarse en el interés y no en las posiciones(objetivo, ¿para que lo quiere?, ¿que tiene que satisfacer?)
+    - Objetivo SMART
+        - Especifico
+        - Medible
+        - Alcanzable
+        - Realista
+        - Tiempo limita.
+    - Interés esta velado
+    - Posición. 
+- Inventar opciones de _mutuo beneficio_(Se necesita saber lo que el otro quiere).
+    - Tiene que haber dialogo. Uno no puede salir mal de la negociación.
+    - Ayuda al acuerdo.
+    - ZOPA: Zona de posible acuerdo.
+        - Lo Máximo que puede dar.
+        - Lo Minimo que puedo pedir.
+- Insistir que los criterios sean objetivos
+    - Precio
+    - Ley. Directivas. Normas.
+    - Tiempo.
+    - Factores de gestión. Cosas que llevan tiempo.
 
 
 #### Crisis
@@ -1028,6 +1082,696 @@ El problema es un desvio de la realidad y debemos lograr volver a la realidad.
 > Teoria del conflicto (Remo Entelman)
 
 
+## 11. Viernes 06/11/20 - Simulación de negociación
 
 
+### Modelo Cynefin
+    - Complicado
+    - Complejo
+    - Caótico
+    - Claro
+
+
+### MAAN
+- Mejor Alternativa de Acuerdo Negociado.
+- No es piso ni techo.
+
+
+### Aspectos a tener en cuenta
+- Grado de liberta de la decisión para llegar a acuerdo y capacidad de firmar compromiso.
+- 
+- Libertad de acción: Obrar según la propia intención.
+- El acuerdo se puede diferir y comprometer al ápice estratégico. Despues de tener todas las alternativas, negocian los apicé estrategico.
+- Confundir la prudencia con la cobardia. 
+    - Parar
+    - Pensar
+ 
+
+
+- ver problema
+- Curso de accion
+- Elegir alternativas
+
+
+- Simulación
+    Vocero Jorge de Comercializacion
+    - El  
+
+- Operaciones
+    - Una hora.
+    - Cuatro horas.
+    - Ultima hora.
+    - No se entrega en el dia.
+
+## 12. Martes 10/11/20 - Cadena de valor y Simulación
+
+### Vinculos en la cadena de valor
+
+- La previsión de problemas internos evita demostraciones hacia el exterior de la empresa.
+
+> Posible solución: Integrar los sectores de operaciones o de comercialización.
+
+### Roles gerenciales en Practica
+
+- Resolución de conflicto
+- Monitor
+
+
+Dirección: https://meet.google.com/znz-eqie-kzm 
+La Plata: https://meet.google.com/qbr-awpj-ynx 
+
+
+## 12. - Innovación
+
+### Modelo CYNEFFIN
+- Claro/simple: Existe la mejor practica.Es un dominio controlado.
+    - Manuales
+    - procesos sistematizados y procedimientos.
+    - Recetas para cada situación.
+    - Tareas de los decisores:
+        - Percibir
+        - Catalogar
+        - Responder
+- Complicado: Es el mundo de los especialistas. Es un dominio controlado. BAU.
+    - 
+- Complejo: Cuesta determinar lo que va a pasar en el futuro.
+    - Etapa de experimentación.
+    - No se pueden percibir los resultados.
+    - No hay recomendación de expertos.
+    - Decisores:
+        - probaar
+        - percibir
+        -
+- Caotico: se debe estabilidar la situación.
+    - Es dificil encontrar patrones.
+    - No hay expertos.
+    - No hay practicas.
+    - Decisor:
+        - Actua
+        - Dar sentido
+        - Responde.
+    - Es un ambito de innovación.
+
+
+- Estabilizar la situación con patrones y ordenar. Ambito caotico.
+- Probar y experimentar en una situacion compleja. Evaluar las variables. Ambito complejo. 
+- Llamar a un experto para soluciar un problema. Ambito de complicado(expertos).
+- Armar una procedimiento. Ambito simple (Busines as usual).
+
+#### Diversidad:
+
+#### Generar Ventajas competitivas
+
+#### Empresas innovadoras: Tienen diversidad.
+
+#### Creatividad:
+    - Dedicar tiempo a pensar en el problema.
+    - Se puede potenciar, entrenar y desarrollar.
+    -Buscar información
+    - Perder miedo a equivocarse.
+    - Las ideas nacen vulnerables y trabajar en fortalecerlas.
+    - Capacidad de presentarla.
+
+#### Pensamiento de grupo
+    - Bajo la presión se anula la diversidad en el grupo. (presión de grupo). Antenta contra la diversidad y la innovación.
+    
+     
+
+## Clase Martes 17/11 : Comunicación
+
+### Teorá de las comunicaciones
+
+- Telefono descompuesto.
+
+### Ventana de Johari
+Entender la comunicaciones de una persona respecto a su entorno.
+
+Proceso de dar y recibir feedback.
+
+Ejercicios:
+-
+-
+
+|      | Información conocida por uno mismo | Información desconocida por uno mismo |
+|------------------------------------|-------|-------|
+| Información conocida por los demas | Abierto (1) | Ciego (2) |
+| Información desconocida por los demas | Oculto (3) | Desconocido (4) |
+
+La ventana de interacción en un nuevo grupo difiere de una ventana de interacción esperada con aprendisaje Grupal.
+
+
+### Inteligencia Emocional
+
+Autor referente: Daniel Goldman
+
+Clasifica las aptitudes en :
+
+1. Aptitudes Personales
+
+2. Aptitudes Sociales
+
+_El cociente intelectual repercute tan solo en el 20% del éxito laboral y profesional de las personas, sin embargo la inteligencia emocial lo hace en un 80%_
+
+### Educación Emocional
+
+![iceberg]()
+
+
+### Inteligencias Multiples
+
+Segun Garden, ninguno es mas inteligente que el otro. 
+
+-Linguistica.
+-Logico-matematica.
+-Espacial.
+-Musical.
+-Coroporal y cinestésica.
+-Interpersonal.
+-Naturista.
+
+### Asertividad
+Equilibro entre lo pasivo y lo agresivo
+
+![equilibro]()
+
+TODO: Hacer cuestionarios.
+
+### Análisis transaccional (Autor BERNE)
+
+Como una persona actua ante un determinado evento ante una determina acción.
+
+### PNL: Programación Neuro Linguística
+
+Clasificación segun la forma de aprendizaje.
+
+- ANCLAJE: Cualquier cosa que da acceso a un estado emocional.
+
+
+## Clase Martes 20/11 : Innovación
+
+
+### Herramientas
+
+#### Conceptual Blending
+
+Es costoso ver posibles innovaciones con los elementos presentes.
+
+Se necesito _unir puntas_.
+
+#### Cocreación
+
+Trabajar colaborativamente con el cliente. Entender el "Customer Journy"
+
+- Entrega de compras en el baul del auto.
+- Modelos de legos.
+
+#### Pensamiento lateral 
+
+![tabla pensamiento lateral]()
+
+**Pensamiento vertical**
+* Se buscan los caminos menos evidentes.
+* Utilza tecnicas para inundar el surco, abrir un nuevo surco o bloquear todos los surcos.
+
+#### 6 Sombreros para Pensar
+Se utiliza para generar nueva ideas
+
+![6sombreros]()
+
+El sombrero azul se utiliza como observador de los demas sombreros para que se pueden explorar todos los angulos, tanto positivos o negativos.
+
+#### Provocación Operativa
+
+* Elegir un punto de partida al azar
+
+
+#### Bainstorming
+#### Analogia
+#### Benchmarking
+#### Hitorieta
+#### Los monos
+
+
+## Clase 24/11 - 7 Habitos 
+
+## Clase 27/11 - Negociacion, Liderazgo
+
+### Negociacion
+
+- **Necesidad**
+- **Deseo**
+- **Objetivo**
+- **Interes***
+
+### Metodo Hardvard
+
+- Separar a las personas del problema.
+- Concentrarse en el interes y no en las posiciones.
+- Inventar opiones de mutuo beneficio. Cuidar el interes de las personas.
+- Insistir que los criterios sean objetivos.
+
+
+
+Buscar la mejor alternativa empezando desde un techo y un piso.
+
+---
+
+## Clase 18 - Liderazgo
+
+_Liderazgo Organizacional_: Es el conjunto de capacidades que un individuo tiene para influir en un colectivo de personas, haciendo que este colectivo trabaje con entusiasmo en el logro de objetivos comunes.
+
+_¿Que es el Managment?_:
+- 1.0: Estructura Piramidal
+- 2.0: Los gestores: Interes en los procesos. Estructuras en Silos.
+- 3.0: La apertura de la compañia: Inclusión de todos los grupos de interes. Equivocarse no esta mal.
+
+_Teorías del liderazgo_:
+- Teória del atributo: Atributos Naturales del liderazgo.
+- Teória de acontecimientos: Las crisis que genera condiciones extraordinarias en gente normal.
+- Teória del liderezgo Transformacional.
+
+_Estilos de liderazgo_
+- Liderazgo participativo.
+- Liderazgo Autocrático autoritario.
+- Liderazgo Autocrático paternalista.
+- Liderazgo Burocratico: Según un manual.
+- Liderazgo Carismático.
+- Liderazgo Permisivo: Los miembros del equipo trabajan por su cuenta. Son los expertos. Poco control.
+- Liderazgo Natural. Lider por reconocimento. Es democratico.
+- Liderazgo orientado a la Tarea.
+- Liderazgo Consciente: Voluntario + Contextual + Situacional
+
+
+
+
+
+
+
+---
+
+## Clase 20 - Coaching y Economia de la experiencia.
+
+### Coaching Ontologico
+Aporta una manera diferente de interpretar a los seres humanos y su modo de:
+- Relacionarse.
+- Actuar.
+- Alcanzar los objetivos que se proponen.
+
+**Caracteristicas**
+- Aprendizaje transformacional.
+- Cuestiona con respecto los modos tradicionales de percibir e interpretar.
+- Genera competencias emocionales, del hacer y pensar.
+- Nos conecta con nuestros recursos y con nuestra capacidad de intervenir.
+- Ayuda a solar lo seguro-conocido para diseñar un futuro diferente.
+
+### Modelos mentales
+- Contexto del mundo: Conjunto de objetos físicos, interpretaciones generalmente aceptadas y prácticas sociales que rodean.
+- Contexto mental: Conjunto de sentidos, supuestos, reglas de razonamientos, inferencias, etc. Que nos llevan a hacer determinada interpretación. 
+
+Vemos a través de los modelos mentales. El problema no es que tangamos diferentes modelos mentales, sino que lo reconozcamos y consideremos que la única forma correcta de ver las cosas es la nuestra.
+
+Nos aferrammos a nuestro punto de vista y solo reconocemos lo que lo avala.
+
+**Algunas consideraciones son**:
+- Todo lo que captamos lo filtramos a través de nuestro modelo mental.
+- Automatizan nuestro comportamiento rutinario.
+- Generan una economía del pensamiento, al no revisar las permisas cada vez que utilizamos el habito.
+
+### Escucha Efectiva
+- Escuchar implica entender al otro.
+- Entender al otro no implica estar deacuerdo.
+- Influye: Historia personal, social, cultura, intereses e intenciones, mundo emocional.
+
+
+> Escuchar = OIR + Interpretar
+
+### Victimas y protagonistas
+
+| VICTIMA   | PROTAGONISTA |
+|-----------|--------------|
+|Victima de las circunstancias - los malos resultados no son su culpa| Se ven como puntos de apalancamiento en el sistema. |
+| Beneficio: Inocencia | Beneficio: Fortalecimiento, facultación, Habilidad de influir el resultado y la integridad personal |
+| Costo: Impotencia | Costo: Responsabilidad | 
+
+### Pedido
+
+_Formato_: **Yo** pido (a vos/tu) que hagas **X** (algo) antes/en/o después del momento **Y**
+
+_Componentes_:
+- Mensaje
+- Emisor
+- Verbo
+- Receptor
+- Condiciones de satisfación
+- Intereses
+- Contexto de obviedad
+
+### Compromisos
+
+En la negociación de compromisos el objetivo es lograr una mutua comprensión y consentimiento de **quién** hará **que** y **cuándo**.
+
+_Formato_: **Yo** me comprometo a hacer **X** antes/en/o después del momento **Y**.
+
+
+_Condición de reciprocidad_: Voy **YO** a hacer **X** para el fin de semana **Y** si tengo **Z** antes de **W**.
+
+### Quejas y reclamos
+
+_Quejas improductivas_: Se expresan generalmente ante terceros que simpatizan con el afectado y le brinda su apoyo.
+
+_Reclamo productivo_: Busca restablecer las relaciones y reencausar los temas. Se realiza a quien incumplió.
+
+### Conflictos
+
+**Tipos de respuesta**:
+- Negarlos: No existe.
+- Evitarlos: No quiero tener problemas.
+- Desistir: Me rindo.
+- Avasallar: Ganar a toda costa
+- Compromiso: Parto de diferencias
+- Resolucion Creativa: Ganar - Ganar
+
+### La progresion del valor economico.
+
+![](docs/progracion_economia_valor.jpg)
+
+
+- Un negocio de transformación cobra por el beneficio que los clientes reciben al pasar el tiempo alli. (Ej universidad).
+- Un negocio de experiencia cobra por la sensación de los clientes de participar. (Ej: Disney)
+- Un negocio de servicio cobra por las actividades que desarrolla. (Ej: Delivery)
+- Un negocio de producto cobra por los atributos que identifican a un producto.
+- Un negocio de commodities cobra por productos indiferenciados.
+
+
+### Empresa de transformación
+- Cobran por el beneficio que reciben por pasar el tiempo alli.
+- Uno debe estar preparado para arriesgarse a no recibir el pago por el tiempo que uno pasa trabajando con los clientes que no se "transforman".
+
+> Descubrir dónde se encuentran las ofertas de su negocio en la escalera de valores es un primer paso crítico para comprender las necesidades de los clientes y las oportunidades del mercado.
+
+
+## UD3: Estado economico
+
+- Activo: 
+- Pasivo: deudas y compromisos
+    - Corriente: Pago a proveedor que se paga dentro del año.
+    - No corriente: Deuda con un proveedor que se paga el año que viene.
+
+Corrientes: Lo que entra en el ejercicio economico actual.
+
+No corrientes: Pasa al año que viene:
+
+ACTIVO = PASIVO+PATRIMONIO NETO
+
+Ejemplo: Pasivo una prende de un auto. Patrimonio Neto, es lo que aportan los socios.
+
+> ACTIVO - PASIVO = PN
+
+#### ACTIVO CORRIENTE
+Disponible:
+- Caja y Bancos (cuentas y cheques)
+
+Inversiones Corrientes
+- Cuentas por cobrar / Plazo fijo / Acciones que se puedan vender.
+
+Bienes de cambio:
+- Inventario de Productos terminados
+- Inventario de Productos en proceso.
+- Inventario de Materia Prima.
+
+Creditos:
+- Por ventas
+- Otros Créditos
+- Anticipos al personal.
+- Activos intangigles: Marcas, Franquincia.
+
+#### ACTIVO NO CORRIENTE
+- Creditos por Venta (No se liquida dentro del año)
+- Inversiones no corrientes - Inversiones inmobiliarias.
+- Bienes de uso, Maquinarias.
+
+#### PASIVO CORRIENTE
+- Cuentas a Pagar (Deudas comerciales Proveedores)
+- Deudas con el personal - Remuneraciones
+- Préstamos
+- Cargas Fiscales
+- Anticipo de Clientes
+- Otras Deudas
+
+
+
+## Evaluación de proyectos
+
+Tengo dinero para invertir y necesito decir en que proyecto nos conviene invertir.
+
+**Punto de equilibrio**: A partir de que momento estoy empezando a ganar dinero.
+
+
+
+academicowrm@hotmail.com 
+mbilelloarg@yahoo.com.ar 
+vemartz@yahoo.com.ar 
+mmorodriguez@yahoo.com.ar
+
+---
+
+## Clase 20 - Toma de Decisión .
+
+
+- La Decisión operativa esta normalizada.
+- **La decisión estrategica** impacta en la estructura. Muy pocas veces se tomá en una empresa.
+- **La decisión administrativa**, impone una modificación en el entorno. Puede ser de dos tipos:
+    * Administrativa: Tenemos antecedentes de estudios previos o vamos a una consultora para realizar el estudio para poder tomar una decisión.
+    * Procedimental: No tenemos antecedentes. Nos obliga a iniciar un proceso de toma de decisión.
+
+#### Etapas de Herbert Simon
+
+- **Inteligencia**: Ocación de tomar la decisión.
+- **Diseño**
+- **Elección**: Elegir entre 
+- **Revisión**: Evaluación de las elecciones pasadas.
+
+Referencia: Herberg Simon. _La nueva ciencia de la decisión gerencia_. El Ateno 1984, p. 36.
+
+#### Etapas de Henry Minstberg
+
+- **Identificación**
+    _Diagnóstico_: Se valora la situación de la decisión. Se debe estudiar todo el escenario.
+    Walter: ¿Que esta pasando?, ¿donde estoy? y ¿donde esta la gente?
+    _Problema_: Desvio de la realidad que tiene solución con los medios que tengo actualmente o potencialmente.
+    _Busqueda_: Buscar la soluciones 
+- **Selección**
+    _Estudio_: Soluciones ya disponible.
+    _Evaluación - elección_
+    _Autorización_: Personas que normalmente no participan en el proceso de decisión. 
+
+
+#### Racionalidad limitada HS
+
+Limites: (Bounded rationality)
+- El individuo esta limitado por sus habilidades menstals,....
+- La extensión del conocimiento y la información que posee.
+- Valores o concepto de propósito de los individuos que pueden discrepar de los objetivos de la organización.
+
+Referencia: Chun Wei, La organización inteteligente, 1999
+
+#### Tres tipos de decisión por Resnik. 
+
+__Estado, Acción y Resultado__
+
+- Certeza, podemos definir el resultado. Podemos definir el resultado.
+- Riesgo, tenemos que medir el resultado. Se puede medir el riesgo como probabilidad.
+- Incertidumbre, no podemos prever el resultado. Podemos estimar, en el largo plazo, o ente la falta de información. No podemos definr el resultado. Hay incertidumre.
+
+Ejemplo
+|       | estado      |
+|-------|-------|-----|
+|Accion | estan, voy | no estan, voy |
+
+
+_Predicción_. Afirmar eventos que no han ocurrido. Plantean un escenario. Ejemplo: Esta por llover.
+_Previsión_. Acciones sobre eventos que pueden ocurrir. Ejemplo: llevo paragua.
+Supuestos. Condiciones que se dan para que el plan sea optimo. Son hipotesis.
+
+TP: ¿En que escenario se mueve la empresa en estudio?
+
+_Problema_: Desvió de la realidad, que tiene solución con los medios de tenemos actual o potencialemten en una realación de tiempo y espacio determinado.
+
+_Decisión_: Compromiso con la acción.
+
+
+#### La información y la decisión.
+
+- Información: Conjunto interrelacionado de datos, tienen un sentido y aportan valor. Mintzberg: No todos lo gerentes procesan la información.
+    - Válida: Reflejar la realidad.
+    - Correcta:
+    - Oportuna: Tiempo y forma.
+    - Comprensible: En el código.
+    - Vigencia
+    - Pertinente: A quien le debe interesar - Rol de Diseminador / monitor del gerente (Mintzberg)
+- Conocimiento: Aplicación productiva de la información.
+
+#### Niveles de información
+
+
+Gerentes de operativos y de primera linea administran datos.
+
+La información genera valor cuando modifica el conocimiento del mundo circundante. Aumenta el valor esperado de una decisión basada en ese conocimiento.
+
+El incremento del valor esperado de la decisión es mayor que el costo de la información.
+
+#### Conocimiento Tácito
+
+Conocimento tácito Personal, informal, difícil de detectar, no requerido en la incorporación a la empresa. Adquirido en la empresa, de un modo no sistemático. _Expertise_. Soft Skill.
+
+* Socializacion TT. Externalización TE. Combinación EE. Internalización ET.
+
+* Conocimento Explicito: Capacitaciones
+
+#### Valor de estrategia:
+- Transforma conocimiento tácito en conocimiento explícito.
+
+
+## Teoria de costos
+
+¿Que es el costo?
+Es el valor monetario en el que se incurre cuando se utilizan factores productivos, para realizar una actividad economica de producción y/o servicios.
+
+Existen tres factores productos:
+1. Tierra,y su restribución es la Renta
+2. Trabajo,y su restribución es el Salario
+3. Capital,y su restribución es el interes
+
+Segun la vision **Microeconomica** el costo será determinado por:
+
+* Las condiciones físicas de la producción.
+* El precio de los insumos.
+* La eficiencia economica del productor.
+
+Según una visión **Macroeconomica** el costo social de la producción es el que paga la sociedad cuando los recursos son utilizados en la producción de un bien y/o servicio.
+
+El costo de oportunidad de producir una unidad del bien X, es la cantidad del bien Y que se debe sacrificar.
+
+**Costos directos**: Son los que se encuentran intrínsecamente relacionados con el nivel de producción del bien y/o servicio en cuestion. 
+Ej: producción de muebles es el costo de la madera utilizada.
+
+**Costo indirecto**: No son asignados a un bien particular, son costos prorrateados, o sea que se dividen o distribuyen los costos entre todos los tipos de producción. Ejemplos: Depreciación edilicia/vehículos. Mantenimiento de maquinas.
+
+**Corto y Largo Plazo**: En el corto plazo no se puede planificar los recursos para incrementar la producción (No se pueden cambiar las condiciones) pero en el largo plazo hay posibilidad de planificar la producción segun los insumos, mano de obras y maquinarias. 
+
+
+Los costos fijos estan relacionados con el corto plazo. 
+
+**Costos variables**: Se modifican de acuerdo al nivel de producción. Son insumos que se puede aumentar o disminuir segun sean necesario.
+
+#### Curvas de costos: 
+
+**Costos fijos promedios**
+CFP = CFT / q
+
+Si aumentamos la producción, vamos a tener una producción eficiente porque reduce el costo. Pero si aumentamos la produccion y el costo tambien aumenta, la producción no es eficiente.
+
+**Costos variables medios**:
+CVMe = CVT / q(cantidades productivas)
+
+Por ejemplo si contrantamos mas personal y si se produce menos, estamos siendo inneficienes.
+
+**Costo total medio**
+
+CTME = CFME + CVME
+
+**Costo marginal**
+Como se modifica el costo si modificamos una unidad de nuestra variables y evaluamos el costo.
+
+CMG = Delta CVT / delta Q
+
+**Relación con la funcción de producción**
+
+#### Ley de rendimientos marginales decrecientes
+
+El punto de equilibrio es el pundo donde nos volvemos rentables. Dejamos de estar en deficit y empezamos a tener ganancias si aumentamos el volumen de producción.
+
+#### Costos de Servicios
+
+Un servicio es intangible, no se puede almacenar, no es transportable, el cliente es el busca el servicio, se consume con la interacción del servicio y son percederos al momento que se utilizan.
+
+- Orientadas a brindar servicios especificos
+- Orientados a brindar servicios integrados.
+
+Calculo de costos de servicio
+
+- Sist por ordenes de trabajo.
+    1. Consiste en la generación de servicios heterogeneos.
+    2. Los costos se acumulan por pedidos.
+    3. Existe una identificacion por cada orden de trabajo.
+    4. Ejemplos: Auditoria, mantenimiento de impresoras.
+- Sist por ordenes de procesos.
+    Los costos de producción se acumulan por  deptartamento o sector, se aplica a prestadores de servicios homogenos, servicios de naturaleza.
+
+
+### La cuadricula (Matt Watkinson)
+
+Permite realizar una analisis 360 que sirve para la toma de desiciones.
+* Trata a la empresa como un sistema unico e interconectado.
+* Permite evaluar ideas o productos.
+
+
+
+- Desabilidad
+- Rentabilidad
+- Continuidad
+
+y se cursan con:
+
+- Clientes
+- Mercado
+- Organización
+
+Celdas:
+
+- Deseo y necesidades: Son valores y creencias. El objetivo es satisfacer a los cientes.
+    - Objetivos
+        - subtexto
+        - Criterio de satifacción
+    - Obstabulos
+        - operacionales
+        - experiencia
+        - financiera 
+- Ingresos
+    - Modelo de ingresos: Debe dar beneficio.
+    - Precio: Debe ser el valor óptimo.
+    - Volumen:
+- Cartera de clientes
+    - Conocimiento: Los clientes deben ser facilmente entendible y lo conoscan.
+    - Captación: Que los clientes compren el producto.
+    - Retención: Los clentes deben volver a comprar el producto. O sea retener a los clientes.
+- Rivalidad
+    - Categoria: El cliente tiene que tener en claro en que cateria esta.
+    - Territorio: A que territorio o segmento apunta el producto.
+    - Alternativas y sustitutos. 
+- Capacidad Negociadora
+    - Relacion con clientes
+    - Relación con proveedores
+        - lo mas valioso no es el dinero sino el poder.
+    - Normas y disposiciones
+        - Pueden afectar las necesidades de los cliente.
+- Imitabilidad
+    - Protección legal
+    - Ventajas duraderas
+        - Cuanto mas dificil sea imitar el producto.
+    - Retraso de la competencia
+- Ofertas
+    - Propuesta: Tiene que superar a los rivales.
+    - Atractivo de marca: Se honra a algo o a alqunos
+    - Experencia del cliente
+- Costos
+    - Costos fijos
+    - Costos variables
+    - Gastos de capital
+- Adaptibilidad
+    - Posición de caja
+    - Escalabilidad
+    - Complejidad y rigidez
+
+    
 
