@@ -102,7 +102,7 @@ Luego de realizar un brainstoming de los factores
 
 * [Pestle MindTool](https://www.mindtools.com/pages/article/newTMC_09.htm)
 * [Pestle](https://www.cipd.co.uk/knowledge/strategy/organisational-development/pestle-analysis-factsheet)
-* [Ejmplo Pestle](https://www.cipd.co.uk/Images/7583-PESTLE-example-retail-industry-2020_tcm18-27108.pdf)
+
 
 ### Economia digital
 
@@ -1518,8 +1518,7 @@ Creditos:
 - Anticipo de Clientes
 - Otras Deudas
 
-
-
+---
 ## Evaluación de proyectos
 
 Tengo dinero para invertir y necesito decir en que proyecto nos conviene invertir.
@@ -1535,7 +1534,7 @@ mmorodriguez@yahoo.com.ar
 
 ---
 
-## Clase 20 - Toma de Decisión .
+## Clase 20 - Toma de Decisión 
 
 
 - La Decisión operativa esta normalizada.
@@ -1547,8 +1546,8 @@ mmorodriguez@yahoo.com.ar
 #### Etapas de Herbert Simon
 
 - **Inteligencia**: Ocación de tomar la decisión.
-- **Diseño**
-- **Elección**: Elegir entre 
+- **Diseño**: Hallar posibles cursos de acción.
+- **Elección**: Elegir entre distintos cursos de acción.
 - **Revisión**: Evaluación de las elecciones pasadas.
 
 Referencia: Herberg Simon. _La nueva ciencia de la decisión gerencia_. El Ateno 1984, p. 36.
@@ -1557,7 +1556,8 @@ Referencia: Herberg Simon. _La nueva ciencia de la decisión gerencia_. El Ateno
 
 - **Identificación**
     _Diagnóstico_: Se valora la situación de la decisión. Se debe estudiar todo el escenario.
-    Walter: ¿Que esta pasando?, ¿donde estoy? y ¿donde esta la gente?
+    
+    > Walter: ¿Que esta pasando?, ¿donde estoy? y ¿donde esta la gente?
     _Problema_: Desvio de la realidad que tiene solución con los medios que tengo actualmente o potencialmente.
     _Busqueda_: Buscar la soluciones 
 - **Selección**
@@ -1631,7 +1631,7 @@ Conocimento tácito Personal, informal, difícil de detectar, no requerido en la
 #### Valor de estrategia:
 - Transforma conocimiento tácito en conocimiento explícito.
 
-
+---
 ## Teoria de costos
 
 ¿Que es el costo?
@@ -1712,66 +1712,130 @@ Calculo de costos de servicio
 ### La cuadricula (Matt Watkinson)
 
 Permite realizar una analisis 360 que sirve para la toma de desiciones.
+* Instrumento para la doma de decisiones.
+* Identificar problemas y oportunidades.
 * Trata a la empresa como un sistema unico e interconectado.
-* Permite evaluar ideas o productos.
+* Empresa como unico sistema
+* Permite evaluar ideas o productos de forma global
+* No se puede determinar su comportamiento mirando solo una parte
 
+#### Estructura de la cuadricula
 
+_METAS_:
+- Desabilidad: Que el producto sea deseado
+- Rentabilidad: Que el producto genere rentabilidad.
+- Continuidad: Ocurra a lo largo del tiempo
 
-- Desabilidad
-- Rentabilidad
-- Continuidad
+y se cursan con _CAPAS DE CAMBIO_:
 
-y se cursan con:
-
-- Clientes
+- Clientes 
 - Mercado
 - Organización
 
-Celdas:
+#### Celdas:
 
-- Deseo y necesidades: Son valores y creencias. El objetivo es satisfacer a los cientes.
+- _Deseo y necesidades_: Son valores y creencias. El objetivo es satisfacer a los cientes.
     - Objetivos
-        - subtexto
-        - Criterio de satifacción
+        - Subobjetivo: Metas que conduce a un comportamiento.
+        - Subtexto: Lo que piensa el cliente y no lo dice
+        - Criterio de satifacción: Como sabemos si los clientes estan contentos.
     - Obstabulos
         - operacionales
         - experiencia
         - financiera 
-- Ingresos
-    - Modelo de ingresos: Debe dar beneficio.
-    - Precio: Debe ser el valor óptimo.
-    - Volumen:
-- Cartera de clientes
-    - Conocimiento: Los clientes deben ser facilmente entendible y lo conoscan.
+- _Rentabilidad y Ingresos_ : Ingresos
+    - **Modelo de ingresos**: Royalties, Precio Fijo, Suscripcion, Pago por uso. Debe dar beneficio.
+    - **Precio**: Debe ser el valor óptimo. El precio se fija mirando el mercado.
+    - **Volumen**: Igual a la cantidad por frecuencia de compra.
+- _Continuidad y Clientes_: artera de clientes
+    - Conocimiento: Es vital conocer y mantener el recuedo de la **marca**. Los clientes deben ser facilmente entendible y lo conoscan.
     - Captación: Que los clientes compren el producto.
-    - Retención: Los clentes deben volver a comprar el producto. O sea retener a los clientes.
-- Rivalidad
+    - Retención: Los clentes deben volver a comprar el producto. O sea retener a los clientes. Personal, programas de loyalti.
+- _Desabilidad y Mercado_: Rivalidad
     - Categoria: El cliente tiene que tener en claro en que cateria esta.
-    - Territorio: A que territorio o segmento apunta el producto.
-    - Alternativas y sustitutos. 
-- Capacidad Negociadora
+    - Territorio: A que territorio fisico o segmento apunta el producto.
+    - Alternativas y sustitutos: Quienes son los competidores.
+- _Rentabilidad y Marcado_:Capacidad Negociadora
     - Relacion con clientes
-    - Relación con proveedores
-        - lo mas valioso no es el dinero sino el poder.
+    - Relación con proveedores: lo mas valioso no es el dinero sino el poder.
+        - Cuanto mas compras mas poder tenes.
+
     - Normas y disposiciones
         - Pueden afectar las necesidades de los cliente.
-- Imitabilidad
+- _Continuidad y Mercado_: Imitabilidad
     - Protección legal
     - Ventajas duraderas
         - Cuanto mas dificil sea imitar el producto.
     - Retraso de la competencia
-- Ofertas
+- _Organizacion y Deseabilidad_: Ofertas
     - Propuesta: Tiene que superar a los rivales.
     - Atractivo de marca: Se honra a algo o a alqunos
-    - Experencia del cliente
-- Costos
+    - Experencia del cliente: Puntos de contacto de los clietes con la empresa.
+- _Organización y Rentabilidad_ : Costos
+    Los costos tiene que ser monitoreados regularmente.
     - Costos fijos
     - Costos variables
-    - Gastos de capital
-- Adaptibilidad
+    - Gastos de capital: Realizar inversiones para poder bajar los costos. 
+    Al decidir sobre a estructura de costos hay que analizar el impacto en otras celdas de la grilla.
+- Organizacion y Continuidad: Adaptibilidad
     - Posición de caja
-    - Escalabilidad
-    - Complejidad y rigidez
+    - Escalabilidad: El negocio debe crecer y dejar de crecer.
+    - Complejidad y rigidez: Evaluar la estructura de la empresa.
 
     
+---
+## Calidad
+
+La calidad está asociada con la satisfacción de algien/algunos.
+
+
+- Cumplir con los requerimientos (Crosby)
+- Cumplir con los requerimientos de alguna persona. (Weinberg)
+    - Calidad es valor para alguna persona.
+- Adecuación al uso (Juran)
+    - Satisfacción de las necesidades del cliente.
+- Principios: IMPORTANTE
+    1. La calidad no se inyecta ni se compra.
+    2. La calidad se prevé y se diseña. Se diseña bien de entrada. 
+    3. La admin. de RRHH es importante. La calidad lo construyen las personas y es un proceso de mejora continua.
+    4. Se necesita el apoyo de la gerencia. O sea que viene de arriba hacia abajo.
+    5. Se debe liderar con el ejemplo.
+    6. Controlar la calidad de los componentes generados en las tareas iniciales reduce drasticamente los costos.
+
+- Se estudia la capacidad de desempeño para mejorar las personas y mejoren la empresa.
+
+- Visiones de calidad (IMPORTANTE)
+    - **Trasendente**: Ve la calidad como algo se puede reconocer pero no definir. El usuario lo persive.
+    - **De usuario**: 
+        - Adecuación al uso (Juran)
+    - **basada en el Valor**: 
+    - **Visión de construcción**. Que maqinaria, recursos paa 
+    - **Visión de producto**
+
+> La falta de calidad cuesta.
+
+### SEIS SIGMA
+Enfocado en el clientes, produce grandes grandes retornos de inversión. Cambia el modo en que opera la dirección.
+
+- Metamorfirmos: 
+    1. Interes en el cliente:
+    2. Cliente / Proveedor interno:
+    3. Producir mejor de entrada:
+    4. Empresas multicelular - Equipos reponsables asumen misiones.
+    5. Relaciones de confianza con y proveedores.
+    6. Sustituir control por prevención
+    7. Eliminación de desperdicios (no solo en producción sino tambien en administración)
+
+- 6 Prinicipios:
+    1. Enfoque genuino en el cliente.
+    2. Dirección basada en datos y hechos (atacar causas y no síntomas).
+    3. Los procesos estan donde esta la acción.
+    4. Dirección proactiva (metas, prioridades, prevención y cuestionamiento permanentes).
+    5. Colaboración sin barreras (trabajo en equipo).
+    6. Buscar la perfección.
+
+
+
+----
+Libro: Globalizando desde latinoamerica Arcor
 

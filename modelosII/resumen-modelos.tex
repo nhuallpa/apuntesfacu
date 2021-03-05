@@ -33,7 +33,7 @@ Cada centro de atención es, a su vez, un sistema constituido por:
 \end{itemize}
 
     \begin{figure}[h!]
-        \includegraphics[width=\linewidth]{imagenes/modelo_sistema.png}
+        \includegraphics[width=0.8\textwidth]{imagenes/modelo_sistema.png}
     \end{figure}
 
 Las colas se forman cuando la demande de un servicio dado en un intervalo de tiempo exede la capacidad para proveerlo.
@@ -107,6 +107,7 @@ En los sistemas de capacidad finita o de población impaciente, no todos los cli
     \item $\overline{A}$: Tasa de clientes que ingresaron al sistema pero que decidieron abandonarlo sin recibir el servicio.
 \end{itemize}
 
+
 \newpage
 \textbf{Estructuras de sistemas simples}:
 \begin{figure}[h!]
@@ -147,6 +148,12 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
 
 
 \subsubsection{Ecuacion de estado de regimen permante}
+
+Cuando el valor de las variables depende de las condiciones iniciales en las que se encontraba el sistema
+cuando comenzo el proceso de observación, se dice que el sistema esta en \textbf{régimen transitorio}.
+
+Si al transcurrir el tiempo, las variables se estabilizan y ya no dependen del estado inicial. Se dice que
+a partir de ese momento, el sistema alcanza el \textbf{regimen permanente (o estacionario)}
 
 \begin{equation}
     0 = p(n-1) \cdot \lambda_{n-1} - p(n) \cdot [\lambda_n + \mu_n] + p(n+1) \cdot \mu_{n+1}
@@ -217,7 +224,7 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
 
 \noindent
 \underline{HIPOTESIS}
-\begin{itemize}
+\begin{enumerate}
     \item El \textit{proceso de arribos} de clientes es de tipo \textbf{Poisson}.
     \item El \textit{proceso de servicio} tambien es de tipo \textbf{Poisson}.
     \item El sistema se encuentra en condiciones estables.
@@ -227,7 +234,7 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
     \item La capacidad del sistema es ilimitada.
     \item Los clientes que llegan al sistema \textbf{no presentan impaciencia}.
     \item La \textit{población de clientes} potenciales del sistema es \textbf{infinita}.
-\end{itemize}
+\end{enumerate}
 
 
 
@@ -398,7 +405,10 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
         pero como \(\lambda_n = \lambda\) para todo \(n=0,1,2,3,...,N-1\) y dado que \(\lambda_N=0\), entonces:
         \begin{equation} \label{eu_eqn}
             \overline{\lambda} = \sum_{0}^{N}\lambda_n \cdot p(n) = \sum_{0}^{N-1}\lambda \cdot p(n) = \lambda \cdot \sum_{0}^{N-1}p(n) = \lambda \cdot [1-P(N)]
-        \end{equation}  
+        \end{equation} 
+        
+        Esto es obvio, ya que la tasa efectiva de ingreso al sistema \(\overline{\lambda}\) es la tasa promedio de 
+        de arribos multiplicada por la probabilidad de ingresar al sistema \([1-p(N)]\).
     \item Calculo de \(\overline{\mu}\): 
         \[
             \overline{\mu} = \sum_{0}^{\infty}\mu_n \cdot p(n) 
@@ -407,6 +417,20 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
         \begin{equation} \label{eu_eqn}
             \overline{\mu} = \sum_{1}^{\infty}\mu \cdot p(n) = \mu \cdot [1-P(0)] = \mu \cdot H
         \end{equation}  
+    \item Factor de transito \(\rho\): Si el sistema se encuentra en equilibrio, la tasa promedio 
+    de ingreso  \(\overline{\lambda}\) debe ser igual a la tasa promedio de egreso \(\overline{\mu}\):
+
+    \begin{align*}
+        \overline{\lambda}&=\overline{\mu} \\
+        \lambda [1-p(N)] &= \mu [1-p(0)]
+    \end{align*}
+        
+    Entonces, otra expresión de tránsito resulta:
+
+    \[
+        \rho = \frac{1-p(0)}{1-p(N)}
+    \]
+    
     \item Calculo de \(\overline{R}\): El número promedio de clientes rechazados por unidad de tiempo \(\overline{R}\) es igual a la tasa promedio de arribos \(\lambda\) multiplicada por la probabilidad de no ingresar \([p(N)]\):        \begin{equation} \label{eu_eqn}
             \overline{R} = \lambda \cdot p(N)
         \end{equation}  
@@ -429,17 +453,17 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
 
 \noindent
 \underline{HIPOTESIS}
-\begin{itemize}
+\begin{enumerate}
     \item El \textit{proceso de arribos} de clientes es de tipo \textbf{Poisson}.
     \item El \textit{proceso de servicio} tambien es de tipo \textbf{Poisson}.
-    \item El sistema se encuentra en condiciones estables.
+    \item El sistema se encuentra en condiciones estables. Es decir, ha alcanzado condiciones de equilibrio de sus variables(regimen permanente).
     \item Los clientes que llegan al sistema forman una cola simple.
     \item La diciplina de atención es FIFO.
     \item Se dispone de \textbf{un solo canal} de atención.
     \item La capacidad del sistema es ilimitada.
     \item Los clientes que llegan al sistema \textbf{presentan impaciencia}. El fenómeno de impaciencia del tipo que \textbf{toma la desición antes de ingresar al sistema}.
     \item La \textit{población de clientes} potenciales del sistema es \textbf{infinita}.
-\end{itemize}
+\end{enumerate}
 
 \subsection{Modelo \(P/P/M\)}
 
@@ -453,7 +477,7 @@ Especifica las caracteristicas descriptivas de una unidad operativa de un sistem
     \item El sistema se encuentra en condiciones estables.
     \item Los clientes que llegan al sistema forman una cola simple.
     \item La diciplina de atención es FIFO.
-    \item \textbf{Hay varios canales de atención dispuestos en paralelo. Todos tienen la misma velocidad de atención}.
+    \item \textbf{Hay varios canales de atención dispuestos en paralelo. Todos tienen la misma velocidad de atención}. El primer canal que se desocupa comienza a atender al primer usuario que esta esperando.
     \item La capacidad del sistema es ilimitada.
     \item Los clientes que llegan al sistema \textbf{no presentan impaciencia}.
     \item La \textit{población de clientes} potenciales del sistema es \textbf{infinita}.
@@ -706,10 +730,23 @@ Si al calcular \(n_o = \frac{D}{q_o}\) no cumple la restricción, se debe calcul
 de q para dos valores enteros de \(n\) entre los valores de \(n_o\) y nos quedamos que el \(n\) con menor costo total esperado (CTE).
 
 
+
+
+
+
+
 \newpage
 \subsection{Modelo básico con protección de stock}
 
 El \textbf{Stock de Protección} es un nivel de existencias que se mantiene a los fines de absorber situaciones imprevistas.
+Se utiliza en los siguientes casos:
+
+\begin{itemize}
+    \item Absorber aleatoriedad de la demanda.
+    \item Tiempo de aprovisionamiento cuando la demanda es aleatoria.
+    \item Cuando el costos de agotamiento es muy alto(ejemplo: Materias primas).
+    \item Cuando se quiere mantener un excelente nivel de servicio.
+\end{itemize}
 
 \noindent
 \underline{HIPOTESIS:}
@@ -749,7 +786,7 @@ El \textbf{Stock de Protección} es un nivel de existencias que se mantiene a lo
 
 
 \begin{figure}[h!]
-    \includegraphics[width=\linewidth]{imagenes/stock-proteccion.png}
+    \includegraphics[width=0.8\textwidth]{imagenes/stock-proteccion.png}
 \end{figure}
 
 Para un ciclo cualquiera, tendremos la siguiente expresión del costo total esperado:
@@ -776,7 +813,7 @@ Obtenemos el \textbf{costo total esperado} con stock de protección:
     CTE_o = b \cdot D + \sqrt{2 \cdot k \cdot D \cdot T \cdot c_1} + S_P \cdot C_1 \cdot T
 \end{equation}
 
-Tambien hayamos \(t_o\) y \(n_o\)
+Tambien hallamos \(t_o\) y \(n_o\)
 
 \begin{equation}
     t_o = \sqrt{\frac{2 \cdot k \cdot T}{D \cdot c_1}}
@@ -792,8 +829,18 @@ Luego, al \textbf{stock de reorden} se suma el stock de protección:
     S_R = LT \cdot d + S_P
 \end{equation}
 
+El \textbf{stock maximo de almacen} es la suma de \(q_o\) y el stock de protección:
+
+\begin{equation}
+    S = q_o + S_P
+\end{equation}
+
 En conclución el \textbf{stock de protección} no impacta en el tamaño del lote \(q\), pero si impacta en el punto de 
 pedido \(S_R\) o punto de reorden. Sobre el stock de protección se pueden montar otros modelos. 
+
+
+
+
 
 \newpage
 \subsection{Modelo básico con agotamiento admitido}
@@ -838,7 +885,7 @@ El agotamiento de las existencias se verifica cuando no quedan más unidades dis
 \underline{MODELADO:}
 
 \begin{figure}[h!]
-    \includegraphics[width=\linewidth]{imagenes/stock-modelo-agotamiento.png}
+    \includegraphics[width=0.8\textwidth]{imagenes/stock-modelo-agotamiento.png}
 \end{figure}
 
 El costo total esperado por ciclo sera:
@@ -866,6 +913,10 @@ La expresión de \textbf{lote optimo de adquisición} es:
 La expresión del valor óptimo de la \textbf{cantidad máxima a almacenar} \(S\):
 
 \begin{equation}
+    S_o = \sqrt{\frac{2 \cdot k \cdot D}{T \cdot c_1}} \cdot \sqrt{\frac{c_2}{c_1+c_2}}
+\end{equation}
+
+\begin{equation}
     S_o = \frac{q_o \cdot c_2}{c_1 + c_2}
 \end{equation}
 
@@ -873,6 +924,11 @@ La expresión para la \textbf{cantidad máxima agotada óptima} por período:
 
 \begin{equation}
     S_{Ao} = q_o \cdot \frac{c_1}{c_1 + c_2}
+\end{equation}
+
+
+\begin{equation}
+    S_{Ao} = q_o - S_o
 \end{equation}
 
 Luego, hallamos el \textbf{Costo Total Esperado} óptimo, sera:
@@ -1006,7 +1062,25 @@ El tamaño de  stock maximo sera:
 
 Seguimos y hallamos \(t_o\); \(t_1\); \(t_2\) y \(n_o\):
 
+\begin{equation}
+    t_o = \frac{T}{D} \cdot q_o = \sqrt{\frac{2 \cdot k \cdot T}{D \cdot c_1 \cdot (1-\frac{d}{p})}}
+\end{equation}
 
+
+\begin{equation}
+    t_1 = \frac{q_o}{p} = \sqrt{\frac{2 \cdot k \cdot T}{D \cdot c_1 \cdot (1-\frac{d}{p})}}
+\end{equation}
+
+\begin{equation}
+    n_o = \frac{D}{q_o} = \sqrt{\frac{T \cdot c_1 \cdot (1-\frac{d}{p}) \cdot D }{2 \cdot k}}
+\end{equation}
+
+Para determinar el \textbf{stock de reorden}: 
+
+\begin{itemize}
+    \item Si \( LT \leq t-t_1 \implies S_R = LT \cdot d \)
+    \item Si \( LT > t-t_1 \implies S_R = (t-LT) \cdot (p-d)\)    
+\end{itemize}
 
 
 \subsection{Modelo Reaprovicionamiento Constantes - Descarga instantanea}
@@ -1014,8 +1088,76 @@ Seguimos y hallamos \(t_o\); \(t_1\); \(t_2\) y \(n_o\):
 \subsubsection{Hipotesis}
 \begin{itemize}
     \item Se admite un unico item.
-    \item La producción es conocida y se efectúa
+    \item La producción es conocida y se efectúa a tasa constante
+    \item La demanda se satisface con la descarga del producto por medio de lotes, a intervalos regulares de tiempo.
+    \item El lead time es conocido y constante.
+    \item No hay stock de protección.
+    \item \textbf{La descarga es instantanea}.
+    \item El horizonte de planeamiento es a largo plazo.
+    \item No se admite deficit del producto.
+    \item El costo de adquisición "b", cost. uni. de almacenamiento "\(c_1\)" y el costo de pedido "k" son independientes de la cantidad a pedir "q".
+    \item No hay restricciones sobre el tamaño a tomar del lote.
+    \item Todos los parametros monetarios estan expresados en moneda constante.
+    \item El producto se mide en una unidad continua. (Litros, kilogramos, etc).
 \end{itemize}
+
+\noindent
+\underline{PARAMETROS:}
+\begin{itemize}
+    \item Idem parametro de modelo básico.
+    \item \(P[u/t]\): Producción del producto a un periodo t. \(P=D\) en todo el periodo.
+    \item \(p[u/t]\): Tasa de producción
+\end{itemize}
+
+\noindent
+\underline{VARIABLES:}
+\begin{itemize}
+    \item Idem variables de modelo básico.
+\end{itemize}
+
+
+\noindent
+\underline{MODELADO:}
+
+\begin{figure}[h!]
+    \includegraphics[width=\linewidth]{imagenes/modelo-stock-aprovicionamiento-constante.png}
+\end{figure}
+Determinar el \(CTE\) en cada ciclo \(i\):
+\begin{equation}
+    CTE_i= b \cdot q + \frac{1}{2} \cdot S \cdot c_1 \cdot t + k
+\end{equation}
+
+Del grafico se puede obtener el numero de ciclos como:
+
+\begin{equation}
+    n = \frac{P}{q} = \frac{T}{t}
+\end{equation}
+
+Luego el \(CTE\) anual será:
+\begin{equation}
+    CTE = b \cdot P + \frac{1}{2} \cdot q \cdot c_1 \cdot T + k \cdot \frac{P}{q}
+\end{equation}
+
+Derivando con respecto a "q" e igualando a cero se obtiene la expresión del lote total de descarga (fórmula de Wilson) :
+
+\begin{equation}
+    q_o = \sqrt{\frac{2 \cdot k \cdot P}{T \cdot c_1 }}
+\end{equation}
+
+Reemplazando el \(q_o\), obtenemos el \(CTE_o\) óptimo:
+
+\begin{equation}
+    CTE_o = b \cdot D + \sqrt{2 \cdot k \cdot P \cdot T \cdot c_1 }
+\end{equation}
+
+Finalmente, conocido el plazo de descarga (LT), se podrá determinar el stock de reorden 
+mediante la siguiente expresión:
+
+\begin{equation}
+    S_r = q_o - LT \cdot p
+\end{equation}
+
+
 
 
 \end{document}

@@ -828,7 +828,7 @@ Subset-Sum(n, W)
 
 Se extiendo el problema de hallar caminos minimos utilizando \textbf{aristas ponderas negativas}. 
 Se puede hayar un camino global que pase por aristas ponderadas negativamente y que sea el optimo, 
-en vez de utilizar un algotimo de reedy de \textit{Dijkstra} que para este caso no seria óptimo.
+en vez de utilizar un algoritmo de greedy de \textit{Dijkstra} que para este caso no seria óptimo.
 
 Una solución por \textbf{fuerza bruta} seria, calcular para un grafo poderado \textbf{sin ciclos negativos}:
 
@@ -846,7 +846,7 @@ El algoritmo de \textbf{Bellman-Ford} halla el camino mínimo con aristas negati
 \underline{ANÁLISIS}
 
 Para llegar desde "s" a un nodo \(n_i\) puede haber utilizado diferntes caminino y longitudes.
-Lo puede hacer a travez de sus nodos predecesores \(pre[n_i]\).
+Lo puede hacer a través de sus nodos predecesores \(pre[n_i]\).
 
 Para poder llegar a \(n_i\) en \(j\) pasos, tengo que haber llegado a sus predeceroes en \(j-1\) pasos. 
 Asi sucesivamente hasta "s" se puede ir resolviendo \textit{sub casos}.
