@@ -1560,10 +1560,14 @@ Referencia: Herberg Simon. _La nueva ciencia de la decisión gerencia_. El Ateno
     > Walter: ¿Que esta pasando?, ¿donde estoy? y ¿donde esta la gente?
     _Problema_: Desvio de la realidad que tiene solución con los medios que tengo actualmente o potencialmente.
     _Busqueda_: Buscar la soluciones 
+- **Desarrollo de la solución**
+    - Busqueda
+    - Diseño
+
 - **Selección**
-    _Estudio_: Soluciones ya disponible.
-    _Evaluación - elección_
-    _Autorización_: Personas que normalmente no participan en el proceso de decisión. 
+    - _Estudio_: Soluciones ya disponible.
+    - _Evaluación - elección_
+    - _Autorización_: Personas que normalmente no participan en el proceso de decisión. 
 
 
 #### Racionalidad limitada HS
@@ -1584,20 +1588,24 @@ __Estado, Acción y Resultado__
 - Incertidumbre, no podemos prever el resultado. Podemos estimar, en el largo plazo, o ente la falta de información. No podemos definr el resultado. Hay incertidumre.
 
 Ejemplo
-|       | estado      |
-|-------|-------|-----|
+|       | estado     |               |
+|-------|------------|---------------|
 |Accion | estan, voy | no estan, voy |
+|Accion | estan, no voy | no estan, voy |
 
+**TOMA DE DECISIÓN**
 
-_Predicción_. Afirmar eventos que no han ocurrido. Plantean un escenario. Ejemplo: Esta por llover.
-_Previsión_. Acciones sobre eventos que pueden ocurrir. Ejemplo: llevo paragua.
+- _Predicción_. Afirmar eventos que no han ocurrido. Plantean un escenario. Ejemplo: Esta por llover.
+- _Previsión_. Acciones sobre eventos que pueden ocurrir. Ejemplo: llevo paragua.
 Supuestos. Condiciones que se dan para que el plan sea optimo. Son hipotesis.
+- _Supuestos_: Condiciones que se dan para que el plan sea optimo.
 
-TP: ¿En que escenario se mueve la empresa en estudio?
 
-_Problema_: Desvió de la realidad, que tiene solución con los medios de tenemos actual o potencialemten en una realación de tiempo y espacio determinado.
+> TP: ¿En que escenario se mueve la empresa en estudio?
 
-_Decisión_: Compromiso con la acción.
+- _Problema_: Desvió de la realidad, que tiene solución con los medios de tenemos actual o potencialemten en una realación de tiempo y espacio determinado.
+
+- _Decisión_: Compromiso con la acción.
 
 
 #### La información y la decisión.
@@ -1622,11 +1630,14 @@ El incremento del valor esperado de la decisión es mayor que el costo de la inf
 
 #### Conocimiento Tácito
 
-Conocimento tácito Personal, informal, difícil de detectar, no requerido en la incorporación a la empresa. Adquirido en la empresa, de un modo no sistemático. _Expertise_. Soft Skill.
+_Conocimento Tácito_: Es Personal, informal, difícil de detectar, no requerido en la incorporación a la empresa. Adquirido en la empresa, de un modo no sistemático. _Expertise_. Soft Skill, son habilitades que se aprenden con la experiencia. 
 
-* Socializacion TT. Externalización TE. Combinación EE. Internalización ET.
+* Socializacion TT: Tacito con Tacito, el conocimiento se socializó.
+* Externalización TE: Tacito con explicito, se externaliza el conocimiento.
+* Combinación EE: Se combina el conocimiento explicito de dos fuentes.
+* Internalización ET. Se transforma el conocimiento explicito en conocimento tacito para la persona.
 
-* Conocimento Explicito: Capacitaciones
+Conocimento Explicito: Capacitaciones
 
 #### Valor de estrategia:
 - Transforma conocimiento tácito en conocimiento explícito.
@@ -1685,30 +1696,56 @@ Como se modifica el costo si modificamos una unidad de nuestra variables y evalu
 
 CMG = Delta CVT / delta Q
 
+![curva_costos](docs/curva_costos.png)
+
+El costo total medio (CTME) va a estar formada por el CVME y el CFME. La curva de costo marginal siempre pasa por el minimo de las otras curvas. _Vamos a estar en un sector eficiente cuando las curvas de costos esten reduciendose, o sea pendiente decreciente._
+
 **Relación con la funcción de producción**
+
+![curva_produccion](docs/curva_produccion.png)
+
+El objetivo es llegar a estar en la cima de la curva. Sino hay que cambiar de escala, porque los recurso que se agregan van a estar funcionando de forma ineficientes.
+
+Si queremos cambiar de escala utilizamos la siguiente ley:
 
 #### Ley de rendimientos marginales decrecientes
 
 El punto de equilibrio es el pundo donde nos volvemos rentables. Dejamos de estar en deficit y empezamos a tener ganancias si aumentamos el volumen de producción.
 
+**Punto de equilibrio**
+
+![punto_equilibrio](docs/punto_equilibrio.png)
+
+
 #### Costos de Servicios
 
 Un servicio es intangible, no se puede almacenar, no es transportable, el cliente es el busca el servicio, se consume con la interacción del servicio y son percederos al momento que se utilizan.
 
-- Orientadas a brindar servicios especificos
-- Orientados a brindar servicios integrados.
+Empresas de servicios
+- Orientadas a brindar servicios especificos. Estudios juridicos, Contables
+- Orientados a brindar servicios integrados. Bancos, Seguros, Transporte, Salud.
 
-Calculo de costos de servicio
+Empresas intensivas en capital intelectual.
+    - El producto principal es la _venta de información_
 
-- Sist por ordenes de trabajo.
-    1. Consiste en la generación de servicios heterogeneos.
+Empresas intensivas en capital financiero.
+    - Bancos, seguros, financieras
+
+
+
+Formas de **Calculo de costos de servicio**
+
+- Sistemas por **ordenes de trabajo**.
+    1. Consiste en la generación de servicios heterogeneos a la medida del cliente.
     2. Los costos se acumulan por pedidos.
     3. Existe una identificacion por cada orden de trabajo.
     4. Ejemplos: Auditoria, mantenimiento de impresoras.
-- Sist por ordenes de procesos.
-    Los costos de producción se acumulan por  deptartamento o sector, se aplica a prestadores de servicios homogenos, servicios de naturaleza.
+- Sistemas por **ordenes de procesos**.
+    - Los costos de producción se acumulan por  deptartamento o sector, se aplica a prestadores de servicios homogenos, servicios de naturaleza.
+    Ejemplos: Servicios publicos. Medicina prepaga. 
 
 
+----
 ### La cuadricula (Matt Watkinson)
 
 Permite realizar una analisis 360 que sirve para la toma de desiciones.
@@ -1781,61 +1818,92 @@ y se cursan con _CAPAS DE CAMBIO_:
     - Posición de caja
     - Escalabilidad: El negocio debe crecer y dejar de crecer.
     - Complejidad y rigidez: Evaluar la estructura de la empresa.
+---
 
+## Riesgos
+
+Apuntes
     
 ---
 ## Calidad
 
 La calidad está asociada con la satisfacción de algien/algunos.
 
+> Segun Kotler, tenemos que definir la necesidad, deseo y la demanda.
 
-- Cumplir con los requerimientos (Crosby)
-- Cumplir con los requerimientos de alguna persona. (Weinberg)
-    - Calidad es valor para alguna persona.
-- Adecuación al uso (Juran)
-    - Satisfacción de las necesidades del cliente.
-- Principios: IMPORTANTE
-    1. La calidad no se inyecta ni se compra.
-    2. La calidad se prevé y se diseña. Se diseña bien de entrada. 
-    3. La admin. de RRHH es importante. La calidad lo construyen las personas y es un proceso de mejora continua.
-    4. Se necesita el apoyo de la gerencia. O sea que viene de arriba hacia abajo.
-    5. Se debe liderar con el ejemplo.
-    6. Controlar la calidad de los componentes generados en las tareas iniciales reduce drasticamente los costos.
+**Perpectiva de la calidad**:
 
-- Se estudia la capacidad de desempeño para mejorar las personas y mejoren la empresa.
+1. Cumplir con los requerimientos. _(Crosby)_
+2. Cumplir con los requerimientos de alguna persona. _(Weinberg)_
+    - Calidad es valor para alguna persona. Lo que es calidad para uno, no es calidad para otro.
+3. Adecuación al uso (Juran)
+    - Satisfacción de las necesidades del cliente. Utilizarlo para lo que fue diseñado el producto. No puede haber deficiencas.
 
-- Visiones de calidad (IMPORTANTE)
-    - **Trasendente**: Ve la calidad como algo se puede reconocer pero no definir. El usuario lo persive.
-    - **De usuario**: 
-        - Adecuación al uso (Juran)
-    - **basada en el Valor**: 
-    - **Visión de construcción**. Que maqinaria, recursos paa 
-    - **Visión de producto**
+> **Definición de Calidad**: Totalidad de aspectos y caracteristicas de un producto y servicio que se sustentan en su capacidad de cumplir las necesidades especificas o implicitas. _(ISO 8402 - 1986)_
+
+**Principios de Calidad**:
+
+1. La calidad no se inyecta ni se compra. 
+2. La calidad se prevé y se diseña. Se diseña bien de entrada. 
+3. La admin. de RRHH es importante. La calidad lo construyen las personas y es un proceso de mejora continua. 
+    * _Capacidad instalada_: Como la empresa administra la maquinaria y la mano de obra.
+    * _Evaluación de desempeño_: Se estudia la capacidad de desempeño para mejorar las personas y mejoren la empresa.
+4. Se necesita el apoyo de la gerencia. O sea que viene de arriba hacia abajo. 
+5. Se debe liderar con el ejemplo. El gerente debe tener en cuenta la calidad.
+6. Controlar la calidad de los componentes generados en las tareas iniciales reduce drasticamente los costos.
+
+
+**Visiones de calidad**
+
+- **Trasendente**: Ve la calidad como algo se puede reconocer pero no definir. El usuario lo persive. Veo tales recursos tangibles con visión trasendese. Es un ideal. Marca un rumbo
+- **Visión De usuario**: 
+    - Adecuación al uso (Juran)
+    - Basada en las caracteristicas del producto.
+    - Depende del contexto de uso.
+    - Performance, confiable, usabilidad.
+- **Visión de construcción**. Que maqinaria utilizo.
+    - Si hacemos un buen proceso, haacemos un buen producto.
+- **Visión de producto**:
+    - Facilidad de mantenimiento
+    - Flexibilidad, ¿Se puede cambiar?
+    - Facilidad de prueba?
+    - Corrección. ¿hace lo que quiero?
+- **Visión Basada en el Valor**: El cliente le da valor al producto y esta dispuesto a pagar. 
+    - Se diseña contra el costo. Alquien puede pagar un precio alto y otros pueden pagar un diseño mas barato. 
+    - Costo versus valor/beneficio
+
 
 > La falta de calidad cuesta.
 
 ### SEIS SIGMA
 Enfocado en el clientes, produce grandes grandes retornos de inversión. Cambia el modo en que opera la dirección.
 
-- Metamorfirmos: 
-    1. Interes en el cliente:
-    2. Cliente / Proveedor interno:
-    3. Producir mejor de entrada:
-    4. Empresas multicelular - Equipos reponsables asumen misiones.
-    5. Relaciones de confianza con y proveedores.
-    6. Sustituir control por prevención
-    7. Eliminación de desperdicios (no solo en producción sino tambien en administración)
+- **Metamorfirmos**: 
+    1. _Interes en el cliente_: (no en los procesos) Pensar en el cliente y satisfacer al cliente pero vinculado al uso. Preguntar que necesita el cliente.
+    2. _Cliente / Proveedor interno_: El cliente va a ver directamente al proveedor interno que va a resolver la necesidad.
+    3. _Producir mejor de entrada_: Detectar los defectos en el proceso.
+    4. _Empresas multicelular_ - Equipos reponsables asumen misiones. Trabajo de equipo decentralizado.
+    5. _Relaciones de confianza con proveedores y entre proveedores_.
+    6. Sustituir _control_ por _prevención_: En vez de controlar lo que salio, diseñemos bien de entrada, o sea en el proceso.
+    7. _Eliminación de desperdicios_ : no solo en producción sino tambien en administración
 
-- 6 Prinicipios:
-    1. Enfoque genuino en el cliente.
-    2. Dirección basada en datos y hechos (atacar causas y no síntomas).
-    3. Los procesos estan donde esta la acción.
-    4. Dirección proactiva (metas, prioridades, prevención y cuestionamiento permanentes).
-    5. Colaboración sin barreras (trabajo en equipo).
-    6. Buscar la perfección.
+**6Sigma** es estadistico. Los esfuerzos se centran en:
+* Mejorar la satisfacción del cliente
+* Reducir el tiempo del ciclo. 
+* Reducir los defectos
+
+
+**6 Prinicipios**:
+
+1. Enfoque genuino en el cliente. 
+2. Dirección basada en datos y hechos (atacar causas y no síntomas). Encontrar causa raiz de un problema utilizando los datos historicos.
+3. Los procesos estan donde esta la acción. El proceso esta en la fabricacion y control del proceso productivo. No solo en la comercialización.
+4. _Dirección proactiva_ (metas, prioridades, prevención y cuestionamiento permanentes). Que esta pasando, donde estoy? se esta cumpliendo lo que tenemos planeado?
+5. _Colaboración sin barreras_ (trabajo en equipo).
+6. _Buscar la perfección_. Calidad total de la organización.
 
 
 
 ----
 Libro: Globalizando desde latinoamerica Arcor
-
+ 
