@@ -1907,3 +1907,5 @@ Enfocado en el clientes, produce grandes grandes retornos de inversión. Cambia 
 ----
 Libro: Globalizando desde latinoamerica Arcor
  
+
+ -15 min de presentación de todo el trabajo. De todo lo aprendido.
