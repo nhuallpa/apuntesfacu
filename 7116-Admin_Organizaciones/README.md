@@ -1213,16 +1213,22 @@ Ejercicios:
 -
 
 |      | Información conocida por uno mismo | Información desconocida por uno mismo |
-|------------------------------------|-------|-------|
-| Información conocida por los demas | Abierto (1) | Ciego (2) |
+|---------------------------------------|-------|-------|
+| Información conocida por los demas    | Abierto (1) | Ciego (2) |
 | Información desconocida por los demas | Oculto (3) | Desconocido (4) |
 
 La ventana de interacción en un nuevo grupo difiere de una ventana de interacción esperada con aprendisaje Grupal.
 
 
 ### Inteligencia Emocional
+Capacidad de reconocer nuestros propios sentimientos y los ajenos, de motivarnos y de manejar bien las emociones, en nosotros mismos y en nuestras relaciones. _Daniel Goldman_
 
-Autor referente: Daniel Goldman
+**Usos**
+- Desarrollo personal de las personas.
+- En la crianza y educación de los hijos.
+- En el trabajo.
+- En toda relación del ser humano.
+
 
 Clasifica las aptitudes en :
 
@@ -1232,39 +1238,123 @@ Clasifica las aptitudes en :
 
 _El cociente intelectual repercute tan solo en el 20% del éxito laboral y profesional de las personas, sin embargo la inteligencia emocial lo hace en un 80%_
 
+
+**Competencias emocionales para lideres**
+- _Aptitudes Personales_
+    - **Auto conocimiento**: Concimiento de nuestas propias emociones y como nos afectan.
+        - Conciencia emocional
+        - Auto evaluación 
+        - precisa
+        - confianza.
+    - **Autoregulación**: Nos permite no dajarnos llevar por los sentimientos del momento.
+        - Autocontrol
+        - Confiabilidad
+        - Escrupulosidad
+        - Adaptabilidad
+        - Innovación.
+    - **Motivación**: Dirigir las emociones hacia un objetivo.
+        - Afán de triunfo
+        - Compromiso
+        - Iniciativa
+        - Optimismo.
+- _Aptitudes Sociales_
+    - **Empatia**: Reconocer las emociones ajenas.
+        - Comprender a los demas
+        - Ayudar a los demas a desarrollarse.
+        - Orientación hacia el servicio.
+        - Aprovechar la diversidad.
+        - Conciencia política.        
+    - **Habilidades Sociales**: Una buena relación con los demás es una de las cosas mas importantes para nuestras vidas y nuestro trabajo.
+        - Influencia
+        - Comunicación
+        - Manejo de conflictos
+        - Liderazgo
+        - Catalizador de cambios
+        - Creador de vinculos
+        - Colaboración y cooperación
+        - Habilidades de equipo
+
+Test:
+- https://habilidadsocial.com/test-de-inteligencia-emocional/#test
+- https://www.psicoactiva.com/test/test-de-inteligencia-emocional.htm
+- https://www.testgratis.net/inteligencia/test-inteligencia-emocional.aspx
+- https://blog.cognifit.com/es/test-inteligencia-emocional-medir-coeficiente-emocional/
+
+
+![IE](docs/inteligencia-emocional.png)
+La Inteligencia Emocional (IE) es la intersección entre Actuar, Sentir y Pensar. Y se aplican en todos los planos:
+- Plano emocional.
+- Plano de recursos humano.
+- Plano comercial.
+- Plano social.
+
 ### Educación Emocional
 
-![iceberg]()
+Inteligencia emocional aplicada en la educación. Importa la calidad de educación y no tanto el tiempo a la educación. Es fundamental la calidad.
 
+![ie-iceberg](docs/ie-iceberg.png)
+La conducta es visible y lo que no se ven son los pensamientos y la emoción.
 
 ### Inteligencias Multiples
 
 Segun Garden, ninguno es mas inteligente que el otro. 
 
--Linguistica.
--Logico-matematica.
--Espacial.
--Musical.
--Coroporal y cinestésica.
--Interpersonal.
--Naturista.
+![ie-multiples](docs/ie-multiples.png)
+
+Inteligencias:
+- Linguistica.
+- Logico-matematica.
+- Espacial.
+- Musical.
+- Coroporal y cinestésica.
+- Interpersonal.
+- Naturista.
 
 ### Asertividad
-Equilibro entre lo pasivo y lo agresivo
 
-![equilibro]()
+**Equilibro entre lo pasivo y lo agresivo**
+
+![equilibro](docs/ie-asertividad.png)
 
 TODO: Hacer cuestionarios.
 
 ### Análisis transaccional (Autor BERNE)
+El objetivo del analisis transaccional es lograr una mejor comprensión de como las personas se relacionan entre si, de modo que mejoren la comunicación y las relaciones humanas.
+
 
 Como una persona actua ante un determinado evento ante una determina acción.
 
+
 ### PNL: Programación Neuro Linguística
 
-Clasificación segun la forma de aprendizaje.
+PNL es el método para comunicarnos con eficiencia con nosotros mismos (comunicación intrapersonal) y los demas (comunicación interpersonal).
 
-- ANCLAJE: Cualquier cosa que da acceso a un estado emocional.
+**PNL explica el proceso de aprendizaje en fases**:
+- Incompetencia Inconciente
+- Incompetencia Conciente
+- Competencia Conciente
+- Competencia Inconciente
+
+**¿Para qué?**
+Se puede utilizar para desarrollar de manera rapida y eficaz un proceso de aprendizaje y asi superar una situación de estrés o de conflicto, negociar con mayores ventajas frente a nuestros adversarios.
+
+**¿Como aprendemos?**
+1. Visual
+    - Postura algo rigida.
+2. Auditivo
+3. Kinestésico: 
+    - Postura muy distendida
+    - Movimientos que miman las parabras
+    - Respiración profunda y amplia
+    - Voz grave, ritmo lento con muchas pausas.
+    - Referencia a las sensaciones en la elección de palabras.
+
+> En la comunicación entre dos personas, un 93% se basa en elementos de lenguaje no verbal.
+
+
+- CALIBRACIÓN: Observa comportamiento exterior, descubre el estado interno.
+- EMPATIA: Ponerse en el lugar del otro.
+- ANCLAJE: Asociación de un espacio fisico y una conducta o sensación.Cualquier cosa que da acceso a un estado emocional.
 
 
 ## Clase Martes 20/11 : Innovación
@@ -1313,6 +1403,48 @@ El sombrero azul se utiliza como observador de los demas sombreros para que se p
 
 
 ## Clase 24/11 - 7 Habitos 
+
+Estrategia de vida: Como aprovechar las fortalezas personales y oportunidades sociales para mejorar el desarrollo personal y social.
+
+Acciones para lograr los habitos:
+- Aprenderlos
+- Enseñarlos
+- Practicarlos
+
+El habito es la intersección de "que hacer", "como hacerlo" y "si quiero hacerlo"
+
+![habito](docs/habitos.png)
+
+### Los 7 habitos
+
+![7habito](docs/7habitos.png)
+
+
+* **Victoria Privada**
+    1. _SER PROACTIVO_: Es el producto basada en nuestras propias decisiones, basada en valores. Una persona que tiene motor propio. 
+    2. _COMIENCE CON EL FINAL EN MENTE_: Es importante saber la meta, el norte, a donde quiero llegar.
+    3. _HAGA PRIMERO, LO PRIMERO_: Determina como utiliza su tiempo. Lo importante es lo que Ud. tiene que hacer. Lo **urgente** es aquello que lo presiona a Ud. para que lo haga, como un telefono repicando, el correo sin contestar.
+
+* **Victoria Publica**    
+    4. _GANAR, GANAR_: Ambas partes deben ganar. 
+    5. _BUSQUE COMPRENDER PRIMERO Y SER COMPRENDIDO DESPÚES_: Es el habito de oír con profundidad.
+        - Se requiere mucha energía para oír en lugar de hablar.
+    6. _SINERGIA_: Es el habito de la cooperación creativa.
+        - El trabajo en equipo siempre va a ser mejor que el trabajo individual.
+
+7. _AMOLANDO EL SERRUCHO_: Hay que entrenarse para obtener mejores resultados.
+    - Renueve diaria y continuamente su Yo Fisico, su Yo Social y Emocional, su Mental y su Yo Espiritual.
+
+Claves para potencial la inteligencia emocial en el trabajo:
+    - "S" de Saludable.
+    - "S" de sereno.
+    - "S" de sincero.
+    - "S" de sencillo.
+    - "S" de simpatico.
+    - "S" de servicial.
+    - "S" de sinergico.
+
+
 
 ## Clase 27/11 - Negociacion, Liderazgo
 
@@ -1371,7 +1503,7 @@ _Estilos de liderazgo_
 
 ## Clase 20 - Coaching y Economia de la experiencia.
 
-### Coaching Ontologico
+### 20.1 Coaching Ontologico
 Aporta una manera diferente de interpretar a los seres humanos y su modo de:
 - Relacionarse.
 - Actuar.
@@ -1380,15 +1512,18 @@ Aporta una manera diferente de interpretar a los seres humanos y su modo de:
 **Caracteristicas**
 - Aprendizaje transformacional.
 - Cuestiona con respecto los modos tradicionales de percibir e interpretar.
+- Cambio de comportamientos.
 - Genera competencias emocionales, del hacer y pensar.
 - Nos conecta con nuestros recursos y con nuestra capacidad de intervenir.
-- Ayuda a solar lo seguro-conocido para diseñar un futuro diferente.
+- Ayuda a soltar lo seguro-conocido para diseñar un futuro diferente.
 
-### Modelos mentales
+> Es el arte de acompañar a otros a traer su mejor versión.
+
+### 20.2 Modelos mentales
 - Contexto del mundo: Conjunto de objetos físicos, interpretaciones generalmente aceptadas y prácticas sociales que rodean.
 - Contexto mental: Conjunto de sentidos, supuestos, reglas de razonamientos, inferencias, etc. Que nos llevan a hacer determinada interpretación. 
 
-Vemos a través de los modelos mentales. El problema no es que tangamos diferentes modelos mentales, sino que lo reconozcamos y consideremos que la única forma correcta de ver las cosas es la nuestra.
+Vemos a través de los modelos mentales. El problema no es que tengamos diferentes modelos mentales, sino que lo reconozcamos y consideremos que la única forma correcta de ver las cosas es la nuestra.
 
 Nos aferrammos a nuestro punto de vista y solo reconocemos lo que lo avala.
 
@@ -1397,13 +1532,44 @@ Nos aferrammos a nuestro punto de vista y solo reconocemos lo que lo avala.
 - Automatizan nuestro comportamiento rutinario.
 - Generan una economía del pensamiento, al no revisar las permisas cada vez que utilizamos el habito.
 
-### Escucha Efectiva
+### 20.3 Escucha Efectiva
 - Escuchar implica entender al otro.
 - Entender al otro no implica estar deacuerdo.
 - Influye: Historia personal, social, cultura, intereses e intenciones, mundo emocional.
 
 
 > Escuchar = OIR + Interpretar
+
+**Cuando escuchamos efectivamente, queremos entender**:
+- La forma de pensar.
+- Sus modelos mentales.
+- Sus creencias.
+- Sus culturas y sus valores.
+- Su visión de la situación, organización, el pais, el mundo.
+- Sus emociones.
+
+**Obstaculos de la escucha**
+- Aconsejar (Sin que lo pidan).
+- Solucionar el problema del otro.
+- No indagar, quedarnos en los superficial.
+- El pájaro carpintero.
+- El "yo en tu lugar".
+
+**Poder de la escucha efectiva**
+- Lenguaje
+    - Silencio respetuoso
+    - Sin juicios personales.
+    - Este es tu lugar
+- Emoción:
+    - Respeto y contención
+- Cuerpo:
+    - Predisposición corpotal.
+    - Centrado.
+    - Abierto.
+
+> Lenguaje + Emocion + Cuerpo = Comunicación efectiva
+
+
 
 ### Victimas y protagonistas
 
@@ -1422,9 +1588,9 @@ _Componentes_:
 - Emisor
 - Verbo
 - Receptor
-- Condiciones de satisfación
-- Intereses
-- Contexto de obviedad
+- Condiciones de satisfación: Deben ser observables.
+- Intereses: Detras de un pedido hay un interes.
+- Contexto de obviedad: Cosas que damos por sentadas.
 
 ### Compromisos
 
@@ -1434,6 +1600,8 @@ _Formato_: **Yo** me comprometo a hacer **X** antes/en/o después del momento **
 
 
 _Condición de reciprocidad_: Voy **YO** a hacer **X** para el fin de semana **Y** si tengo **Z** antes de **W**.
+
+
 
 ### Quejas y reclamos
 
@@ -1451,7 +1619,7 @@ _Reclamo productivo_: Busca restablecer las relaciones y reencausar los temas. S
 - Compromiso: Parto de diferencias
 - Resolucion Creativa: Ganar - Ganar
 
-### La progresion del valor economico.
+## La progresion del valor economico.
 
 ![](docs/progracion_economia_valor.jpg)
 
