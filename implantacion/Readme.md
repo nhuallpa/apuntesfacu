@@ -500,20 +500,24 @@ Elegir con criterio, como seria la contigencia si falla la implementación.
 ### Auditoria de calidad
 ### Auditoria contable
 - Da una opinión del balance que refleja la realidad de la salud del estado financiero de la empresa.
-- Que los estados contables son confiables.
-
-- Sist de control interno sobre el estado financiero. 
-Asegura que los sucesos lleguen a las cuentas contables justo a tiempo para que se puedan firmar las certificaciones.
-    - Las perdidas se deben registrar en el momento que se conoce. Por ejemplo, cuando se anticipa que no se puede cobrar una deuda. Es un criterio conservador para no manipular el resultado de la compañia.
+- Que los estados contables son confiables, que apliquen a las reglamentaciones locales e internacionales, y que representa la realidad economica y financiera.
+- Estudio de auditoria hecho por un agente externo del mercado.
+- _Sist de control interno sobre el estado financiero_
+Asegura que los sucesos lleguen a las cuentas contables justo a tiempo para que se puedan firmar las certificaciones. Todo lo que va a la contabilidad debe estar controlado.
+    - **Las perdidas se deben registrar en el momento que se conoce**. Por ejemplo, cuando se anticipa que no se puede cobrar una deuda. Es un criterio conservador para no manipular el resultado de la compañia.
     - Las ganancias se registran cuando se vuelven realidad.
+
+
+### Auditoria Externa
+Es alquien que no esta en relación de dependencia con la compañia.
 
 ### Auditoria Interna
 
-Personal que reporta al top managmente de la compañia.
-Tiene derecho a acceder a toda la información de la compañia. 
-Reasegura el sistema de control amplio de la compañia.
-
-- Proceso de negocio: Valida cantidad de empleados, validar los calculos de liquidaciones, validar calculo de nominas. Validar los aumentos. Reaseguro el control de la auditoria.
+* Personal que reporta directamente al top managmente de la compañia.
+* **Tiene derecho a acceder a toda la información de la compañia**. Se encuentra entre el generente general y el director. Esta sobre todos los departamentos. 
+* Revisa todos los proceso de negocio de la compañia: Ventas, compras, RRHH, Abastecimiento
+* **Reasegurar el sistema de control interno.**, pero no tiene recursos y dinero para invertir en la mejora de los controles, ni de realizar tareas de mejoras. Solo da recomendaciones.
+    * Ejemplo de Auditar RRHH:  Valida cantidad de empleados, validar los calculos de liquidaciones, validar calculo de nominas. Validar los aumentos. Se aplicaron todos los controles y aprobaciones.
 
 Identificar los riesgos probables y posibles para pensar en los controles para evitar daños a la compañia.
 

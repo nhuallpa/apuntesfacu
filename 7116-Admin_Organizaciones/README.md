@@ -1924,6 +1924,9 @@ Permite realizar una analisis 360 que sirve para la toma de desiciones.
 * Permite evaluar ideas o productos de forma global
 * No se puede determinar su comportamiento mirando solo una parte
 
+
+![cuadrilla-matt](docs/cuadrilla-matt.png)
+
 #### Estructura de la cuadricula
 
 _METAS_:
