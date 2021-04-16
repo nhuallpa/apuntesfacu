@@ -921,17 +921,30 @@ _Modelo de Tuckman_
 
 ### 10.1 Motivación
 
+- Motivación: Actitud positiva, temporal de una persona con respecto a un objeto.
+
 #### Teoria Clasicas 
 
 - **Motivación Maslow**: Piramide Jerarquía de necesidades.
+    - Hay **motivación** cuando satisfacemos necesidades. 
+    - Las necesidades se cumplen desde abajo hacia arriba de la piramide.
+
 
 ![](docs/piramide_maslow.png)
 
+- Autorealizacion
+- Reconocimiento
+- Afiliación
+- Seguridad
+- Fisiologia
+
 - **Motivación Herzberg**:
-    - Satisfaccion puede no estar alineado a las expectativas
-    - Las personas estan influenciadas por dos factores.
-        - La satisfacción: Es el principal resultado de los factores de motivación.
-        - La insatisfacción: Es principalmente el resultado de los factores de higiene.
+    - Satisfaccion puede no estar alineado a las _expectativas_.
+    - No se puede medir, pero se pueden hacer encuestas.
+    - No es un solo bloque. Las personas estan influenciadas por dos factores.
+        - _La satisfacción_: Es el principal resultado de los **factores de motivación**.
+        - _La insatisfacción_: Es principalmente el resultado de los **factores de higiene**.
+    - Ejemplo: Quizas puedo ir a brazil, pero no puedo ir a Alemania.
 
 ![](docs/herzberg.jpg)
 
@@ -947,29 +960,39 @@ Factores X y Factores Y: Pueden relacionar con mecanismos de coordinación.
         - Ser humano rechaza el trabajo.
         - Se van a asociar con Supervisión directa y normalización de Procesos
     - Factores Y: 
-        - El ser humano ve el descanso como el trabajo.
+        - El ser humano considera el descanso como el trabajo.
+        - El compromiso es función de las recompenzas asociadas con su logro.
+        - El potencial intelectual del ser humano se utiliza solo en partes.
         - Se van a asociar con Adaptación Mutua, Normalización de resultados.
 
 ### Teorías Contemporaneas
 
-- **Teoría de Existencia**, Relación y Crecimiento (ERC).
+- Hacerle ver a la gente que la organizacion los necesita.
 
-- **Teoria de la expectativa**: Depende de dos coas; _cuanto queremos algo_ y que _probabilidad creemos tener de obtenerlos_.
-1. Combinación de fuerzas en el _individuo_ y en el cambio de _entorno_.
-2. Las personas toman _decisiones_ acerca de su comportamiento en las organizaciones.
-3. 
-4. 
+- **Teoría de Existencia, Relación y Crecimiento (ERC)**.
+    - Amplia Maslow
+    - Puede pasar de una escala a la otra, sin cumplir una necesidad previa.
+
+- **Teoria de la expectativa**: La motivación depende de dos cosas: _cuanto queremos algo_ y que _probabilidad creemos tener de obtenerlos_.
+    1. El comportamiento esta determinado por la combinación de fuerzas en el _individuo_ y en el cambio de _entorno_.
+    2. Las personas toman _decisiones_ acerca de su comportamiento en las organizaciones.
+        - Ej: _Elijo un bajo perfil con el sueldo_. Aca la persona eligen y no el entorno.
+    3. Distintas personas tienen distintas necesidades, deseos y metas.
+    4. Las personas hacen elecciones entre planes de comportamientos alternos.
 
 - **Teoria de la equidad**: Las personas estan motivas a buscar una _equidad social_ en las recompensas que reciben por el desempeño.
+    - Ley de equidad. La gente pide equidad en la recompensa.
 
-- **Teoría del establecimiento de metas**: El comportamiento es el resultado de las metas. 
+- **Teoría del establecimiento de metas**: El comportamiento es el resultado de las metas e intensiones consientes. Hay dos problemas:
+    - Dificultades.
+    - Especificidad de la meta.
 
 
-> Obstaculos, los que usted percibe cuando pierde de vista el objetivo.
+> Obstaculos, los que usted percibe cuando pierde de vista el objetivo. _Henry Ford_.
 
 
 
-### 10.2 Toma de decisión
+### 10.2 Toma de decisión (SEGUIR POR ACA)
 
 #### Etapas (Herbert Simon)
 
@@ -1084,17 +1107,21 @@ El problema es un desvio de la realidad y debemos lograr volver a la realidad.
 
 ## 11. Viernes 06/11/20 - Simulación de negociación
 
+Obs: El VUCA ayuda para entender escenarios.
 
-### Modelo Cynefin
-    - Complicado
-    - Complejo
-    - Caótico
-    - Claro
+### Modelo Cynefin: 
+Es una herramienta que ayuda a tomar decisiones, ajustar los problemas.
+- Claro: Respondemos a las herramientas que tenemos: FODA, BCG, Competitivas.
+- Complicado: LLamar a los especializas para simplificar y hacer un procedimiento.
+- Complejo: Experimentar y aprender rapido.
+- Caótico: Contener y ganar tiempo. Un gerente no puede dejar de tomar decisiones. Alguna decisión se debe tomar ante una crisis para ir ganando los tiempos.
 
 
 ### MAAN
 - Mejor Alternativa de Acuerdo Negociado.
-- No es piso ni techo.
+- No es piso ni techo. Empieza a buscar alternativas hasta encontrar una mejor.
+- Mantiene el objetivo de la negociación.
+- Favorece la relación.
 
 
 ### Aspectos a tener en cuenta
@@ -1107,21 +1134,9 @@ El problema es un desvio de la realidad y debemos lograr volver a la realidad.
     - Pensar
  
 
-
 - ver problema
 - Curso de accion
 - Elegir alternativas
-
-
-- Simulación
-    Vocero Jorge de Comercializacion
-    - El  
-
-- Operaciones
-    - Una hora.
-    - Cuatro horas.
-    - Ultima hora.
-    - No se entrega en el dia.
 
 ## 12. Martes 10/11/20 - Cadena de valor y Simulación
 
@@ -1450,16 +1465,20 @@ Claves para potencial la inteligencia emocial en el trabajo:
 
 ### Negociacion
 
-- **Necesidad**
-- **Deseo**
-- **Objetivo**
-- **Interes***
+- **Necesidad**: Componente vital que el actor requiera para el logro de su razon de ser.
+- **Deseo**: Manifestación que un actor tiene en sus intensiones.
+- **Objetivo**: Objeto o situación que un actor desea poseer y empeña los medios para lograrlo.
+- **Interes**: Bien que un actor posee, protegue y mantiene.
+
+### Tipos de Negociacion
+- Cooperativa: (Es distinto de amistoso) Ganar-Ganar
+- Adversal: Ganar - Perder
 
 ### Metodo Hardvard
 
 - Separar a las personas del problema.
 - Concentrarse en el interes y no en las posiciones.
-- Inventar opiones de mutuo beneficio. Cuidar el interes de las personas.
+- Inventar opciones de mutuo beneficio. Cuidar el interes de las personas.
 - Insistir que los criterios sean objetivos.
 
 
@@ -1917,10 +1936,10 @@ Formas de **Calculo de costos de servicio**
 ### La cuadricula (Matt Watkinson)
 
 Permite realizar una analisis 360 que sirve para la toma de desiciones.
-* Instrumento para la doma de decisiones.
+* Instrumento para la Toma de decisiones.
 * Identificar problemas y oportunidades.
-* Trata a la empresa como un sistema unico e interconectado.
-* Empresa como unico sistema
+* Trata a la empresa como un sistema único e interconectado.
+* Empresa como único sistema
 * Permite evaluar ideas o productos de forma global
 * No se puede determinar su comportamiento mirando solo una parte
 
@@ -2080,3 +2099,73 @@ Libro: Globalizando desde latinoamerica Arcor
  
 
  -15 min de presentación de todo el trabajo. De todo lo aprendido.
+
+----
+
+# PREGUNTAS FINALES
+
+- **Maslow y otras de rrhh**. Listo
+- **VAN / TIR**
+    - [VAN](https://economipedia.com/definiciones/valor-actual-neto.html): Valor Actual Neto, es un criterio de inversión que consiste en actualizar cobros y pagos de un proyecto o inversión para conocer cuanto se va a ganar o perder con esa inversión. 
+        * Va a expresar una medida de rentabilidad del proyecto en terminos absolutos neto.
+    - [TIR](https://economipedia.com/definiciones/tasa-interna-de-retorno-tir.html): Es la tasa de interes o rentabilidad que ofrece una inversión. Es el porcentaje de beneficio o perdida que tendra una inversión para las cantidades que no se han retirado del proyecto.
+        * Es el valor de la tasa de descuento que hace que el VAN sea cero.
+- **Riesgos**. Apunte.
+- **Inteligencia Emocional**
+- **Balanced score card y Penta (que tienen en comun = > alineados a la estrategia)**
+    - Ambas herramientas buscan que los pilares y factores de la organización esten alineados a la estrategia.
+        - Penta Modelo: Habla sobre los pilares Estrategia, Mercado, Cultura, Gestión, Recursos.
+        - Balanced Score Card: Habla sobre 4 factores, Cliente, Aprendizaje y crecimiento, Interna y Financiera.
+
+- **Metodo de Harvard**: Metodo de negociación
+    - Separar a las personas del problema.
+    - Inventar opciones de mutuo beneficio.
+        - Se busca el dialogo.
+        - Debemos encontrar el interes. ¿Para que lo quiere?
+        - Para llegar a la **ZOPA**: Zona de posible acuerdo. Para empezar a **Negociar**
+            - Máximo demanda.
+            - Mínima oferta.
+    - Concentrase en el interes y no en las posiciones.
+        - El objetivo tiene que ser SMART.
+        - El interes esta velado.
+        - Cuidar el interes de las personas.
+    - Insistir que los criterios sean objetivo. Basadas en:
+        - Precios, forma de pago
+        - Ley. Directivas. Normas.
+        - Tiempos
+        - Factores de gestión.
+
+- **¿Qué relación existe entre los 7 hábitos y programación neurolingüística?**
+Ambas tecnicas buscan la mejora los habitos de uno mismos evaluando de que manera aprendemos mejor y que aspectos debemos mejorar la visión publica y privada de uno mismo. 
+- Si tuviese q evaluar distintos proyectos de inversión que usaría? (Van, tir, periodo de repago, análisis de riesgos)
+    - VAN:
+    - TIR:
+    - Periodo de Repago:
+    - Analisis de Riesgo
+    
+- **¿Como calificaría un riesgo?** 
+Simplificar su probabilidad mediante una escala coloquial, y a eso conjugarlo con una puntuación del impacto q me puede llegar a causar, ultiplicándolos por ejemplo tenés una calificación del riesgo, o usas una matriz de color)
+
+- **En que consiste la Grilla**:
+    - Realiza un analisis 360 de la organización.
+    - Evalua a la organización un unico sistema.
+    - Es una herramienta muy util para la toma de decisiones.
+
+
+- **Diferencia entre estrategia deliberada y emergente y con qué metodologías la asociaba**
+    - Deliverada: La estrategia es formulada en forma racional, desde arriba hacia abajo y de forma secuencial.
+        - Se formula, se implementa y se controla.
+        - Mision, Visón y Valores
+        - Cuadro integral de mando (Balance Scorecard)
+        - Planificacion de escenarios, define posibles escenarios.
+        - Analisis de fuerzas competitivas.
+        - Posicionamiento y segmentación.
+        - Tipos de estrategias.
+        - Cadena de valor.
+        - Autoanalisis: Matriz BSG, de profolios de productos.
+        - Matriz de Anssof: Penetración de mercados y desarrollo de productos y mercados.
+        - FODA
+        - CAME
+    - Emergente: La estrategia es observada en la practica y no tiene que ser formulada en forma racional, ni ser secuencial.
+        - Filosofia LEAN y Lean Start Up.
+        - Modelo Blank: Modelo de desarrollo del cliente.
