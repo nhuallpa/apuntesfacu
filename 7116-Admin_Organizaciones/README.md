@@ -1730,49 +1730,54 @@ mmorodriguez@yahoo.com.ar
     * Administrativa: Tenemos antecedentes de estudios previos o vamos a una consultora para realizar el estudio para poder tomar una decisión.
     * Procedimental: No tenemos antecedentes. Nos obliga a iniciar un proceso de toma de decisión.
 
-#### Etapas de Herbert Simon
+#### Etapas de Herbert Simon: 
+Existen 4 pasos para la **toma de decisiones**.
 
-- **Inteligencia**: Ocación de tomar la decisión.
-- **Diseño**: Hallar posibles cursos de acción.
+- **Inteligencia**: Determinar la **ocación** de tomar la decisión. Investigar el ambiente para encontrar las condiciones que exigen una decisión. Hay que definir cual es el problema, para ver si hay que seguir un proceso de decision.
+- **Diseño**: Hallar posibles **cursos de acción**. Analizar posibles cursos de acción.
 - **Elección**: Elegir entre distintos cursos de acción.
-- **Revisión**: Evaluación de las elecciones pasadas.
+- **Revisión**: Evaluación de las elecciones pasadas. Revisar los planes de alternativas que no se eligieron en el pasado.
 
 Referencia: Herberg Simon. _La nueva ciencia de la decisión gerencia_. El Ateno 1984, p. 36.
 
 #### Etapas de Henry Minstberg
 
 - **Identificación**
-    _Diagnóstico_: Se valora la situación de la decisión. Se debe estudiar todo el escenario.
+    * _Diagnóstico_: Se valora la situación de la decisión. Se debe estudiar todo el escenario.
     
     > Walter: ¿Que esta pasando?, ¿donde estoy? y ¿donde esta la gente?
-    _Problema_: Desvio de la realidad que tiene solución con los medios que tengo actualmente o potencialmente.
-    _Busqueda_: Buscar la soluciones 
+
+    * _Problema_: Desvio de la realidad que tiene solución con los medios que tengo actualmente o potencialmente.
+
+    * _Busqueda_: Buscar la soluciones 
 - **Desarrollo de la solución**
-    - Busqueda
-    - Diseño
+    - Busqueda: Intenta hallar soluciones ya disponibles.
+    - Diseño: Se desarrollan soluciones adecuadas para cada caso concreto. Los cursos de acción que podemos hacer.
 
 - **Selección**
-    - _Estudio_: Soluciones ya disponible.
-    - _Evaluación - elección_
+    - _Estudio_: Estuidar las soluciones ya disponible.
+    - _Evaluación - Elección_: La evaluación de una y elección de la mejor.
     - _Autorización_: Personas que normalmente no participan en el proceso de decisión. 
 
 
 #### Racionalidad limitada HS
 
 Limites: (Bounded rationality)
-- El individuo esta limitado por sus habilidades menstals,....
+- El individuo esta limitado por sus habilidades mentales, habitos y reflejos. Somos como somos.
 - La extensión del conocimiento y la información que posee.
 - Valores o concepto de propósito de los individuos que pueden discrepar de los objetivos de la organización.
 
-Referencia: Chun Wei, La organización inteteligente, 1999
+Referencia: Chun Wei, La organización inteligente, 1999
 
 #### Tres tipos de decisión por Resnik. 
 
 __Estado, Acción y Resultado__
 
-- Certeza, podemos definir el resultado. Podemos definir el resultado.
-- Riesgo, tenemos que medir el resultado. Se puede medir el riesgo como probabilidad.
-- Incertidumbre, no podemos prever el resultado. Podemos estimar, en el largo plazo, o ente la falta de información. No podemos definr el resultado. Hay incertidumre.
+Tres opción para la toma de decisión segun si hay:
+
+1. **Certeza**. Tenemos toda la información para la toma de decisión. Podemos definir el resultado. Podemos definir el resultado.
+2. **Riesgo**. Nunca vamos a tener toda la información. Tenemos que medir el resultado. Se puede medir el riesgo como probabilidad.
+3. **Incertidumbre**. No podemos preveer el resultado. Podemos estimar, en el largo plazo, o ente la falta de información. No podemos definr el resultado. Hay incertidumre.
 
 Ejemplo
 |       | estado     |               |
@@ -1780,13 +1785,31 @@ Ejemplo
 |Accion | estan, voy | no estan, voy |
 |Accion | estan, no voy | no estan, voy |
 
+
+
+**Diseñar cursos de acción**, definiendo:
+
+- Aptitud: Que este adecuado a la misión.
+- Factibilidad: Explota la capacidad propia con las oportunidades del mercado.
+- Viabilidad: El entorno social nos permita realizarlo.
+- Aceptabilidad: El costo que estoy dispuesto a pagar.
+
+Ejemplo: "Se rompio el auto"
+
+| Cursos de acción | 1- LLamar Grua | 2- Llamar a la plata | 3- Llamar a zarate     |
+|------------------|----------------|----------------------|------------------------|
+| Aptitud          | si             |                      |                        |
+| Factibilidad     | si             | si                   | si                     |
+| Viabilidad       | no se          |                      |                        |
+| Aceptabilidad    | no se          | no, problema         |  puede pedir hs extras |
+
+
 **TOMA DE DECISIÓN**
 
 - _Predicción_. Afirmar eventos que no han ocurrido. Plantean un escenario. Ejemplo: Esta por llover.
 - _Previsión_. Acciones sobre eventos que pueden ocurrir. Ejemplo: llevo paragua.
 Supuestos. Condiciones que se dan para que el plan sea optimo. Son hipotesis.
 - _Supuestos_: Condiciones que se dan para que el plan sea optimo.
-
 
 > TP: ¿En que escenario se mueve la empresa en estudio?
 
